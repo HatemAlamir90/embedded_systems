@@ -1,0 +1,1318 @@
+Version 3.2 HI-TECH Software Intermediate Code
+"666 /opt/microchip/xc8/v1.36/include/pic16f84a.h
+[v _T0IF `Vb ~T0 @X0 0 e@90 ]
+"632
+[v _RA3 `Vb ~T0 @X0 0 e@43 ]
+"628
+[v _RA1 `Vb ~T0 @X0 0 e@41 ]
+"626
+[v _RA0 `Vb ~T0 @X0 0 e@40 ]
+"630
+[v _RA2 `Vb ~T0 @X0 0 e@42 ]
+"636
+[v _RB0 `Vb ~T0 @X0 0 e@48 ]
+"638
+[v _RB1 `Vb ~T0 @X0 0 e@49 ]
+"640
+[v _RB2 `Vb ~T0 @X0 0 e@50 ]
+"642
+[v _RB3 `Vb ~T0 @X0 0 e@51 ]
+"654
+[v _RBIF `Vb ~T0 @X0 0 e@88 ]
+[v F278 `(v ~T0 @X0 1 tf1`ul ]
+"152 /opt/microchip/xc8/v1.36/include/pic.h
+[v __delay `JF278 ~T0 @X0 0 e ]
+[p i __delay ]
+"644 /opt/microchip/xc8/v1.36/include/pic16f84a.h
+[v _RB4 `Vb ~T0 @X0 0 e@52 ]
+"634
+[v _RA4 `Vb ~T0 @X0 0 e@44 ]
+"114 /opt/microchip/xc8/v1.36/include/eeprom_routines.h
+[v _eeprom_write `(v ~T0 @X0 0 ef2`uc`uc ]
+"646 /opt/microchip/xc8/v1.36/include/pic16f84a.h
+[v _RB5 `Vb ~T0 @X0 0 e@53 ]
+"648
+[v _RB6 `Vb ~T0 @X0 0 e@54 ]
+"115 /opt/microchip/xc8/v1.36/include/eeprom_routines.h
+[v _eeprom_read `(uc ~T0 @X0 0 ef1`uc ]
+"604 /opt/microchip/xc8/v1.36/include/pic16f84a.h
+[v _EEIE `Vb ~T0 @X0 0 e@94 ]
+[p mainexit ]
+"295
+[v _INTCON `Vuc ~T0 @X0 0 e@11 ]
+"372
+[v _OPTION_REG `Vuc ~T0 @X0 0 e@129 ]
+"160
+[v _PORTA `Vuc ~T0 @X0 0 e@5 ]
+"441
+[v _TRISA `Vuc ~T0 @X0 0 e@133 ]
+"203
+[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
+"484
+[v _TRISB `Vuc ~T0 @X0 0 e@134 ]
+"608
+[v _GIE `Vb ~T0 @X0 0 e@95 ]
+"28 /opt/microchip/xc8/v1.36/include/pic.h
+[v ___nop `(v ~T0 @X0 0 ef ]
+[p i ___nop ]
+[; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
+[; ;htc.h: 28: extern double __fpnormalize(double);
+[; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
+[; ;pic16f84a.h: 49: extern volatile unsigned char INDF @ 0x000;
+"51 /opt/microchip/xc8/v1.36/include/pic16f84a.h
+[; ;pic16f84a.h: 51: asm("INDF equ 00h");
+[; <" INDF equ 00h ;# ">
+[; ;pic16f84a.h: 55: extern volatile unsigned char TMR0 @ 0x001;
+"57
+[; ;pic16f84a.h: 57: asm("TMR0 equ 01h");
+[; <" TMR0 equ 01h ;# ">
+[; ;pic16f84a.h: 61: extern volatile unsigned char PCL @ 0x002;
+"63
+[; ;pic16f84a.h: 63: asm("PCL equ 02h");
+[; <" PCL equ 02h ;# ">
+[; ;pic16f84a.h: 67: extern volatile unsigned char STATUS @ 0x003;
+"69
+[; ;pic16f84a.h: 69: asm("STATUS equ 03h");
+[; <" STATUS equ 03h ;# ">
+[; ;pic16f84a.h: 72: typedef union {
+[; ;pic16f84a.h: 73: struct {
+[; ;pic16f84a.h: 74: unsigned C :1;
+[; ;pic16f84a.h: 75: unsigned DC :1;
+[; ;pic16f84a.h: 76: unsigned Z :1;
+[; ;pic16f84a.h: 77: unsigned nPD :1;
+[; ;pic16f84a.h: 78: unsigned nTO :1;
+[; ;pic16f84a.h: 79: unsigned RP :2;
+[; ;pic16f84a.h: 80: unsigned IRP :1;
+[; ;pic16f84a.h: 81: };
+[; ;pic16f84a.h: 82: struct {
+[; ;pic16f84a.h: 83: unsigned :5;
+[; ;pic16f84a.h: 84: unsigned RP0 :1;
+[; ;pic16f84a.h: 85: unsigned RP1 :1;
+[; ;pic16f84a.h: 86: };
+[; ;pic16f84a.h: 87: struct {
+[; ;pic16f84a.h: 88: unsigned CARRY :1;
+[; ;pic16f84a.h: 89: };
+[; ;pic16f84a.h: 90: struct {
+[; ;pic16f84a.h: 91: unsigned :2;
+[; ;pic16f84a.h: 92: unsigned ZERO :1;
+[; ;pic16f84a.h: 93: };
+[; ;pic16f84a.h: 94: } STATUSbits_t;
+[; ;pic16f84a.h: 95: extern volatile STATUSbits_t STATUSbits @ 0x003;
+[; ;pic16f84a.h: 154: extern volatile unsigned char FSR @ 0x004;
+"156
+[; ;pic16f84a.h: 156: asm("FSR equ 04h");
+[; <" FSR equ 04h ;# ">
+[; ;pic16f84a.h: 160: extern volatile unsigned char PORTA @ 0x005;
+"162
+[; ;pic16f84a.h: 162: asm("PORTA equ 05h");
+[; <" PORTA equ 05h ;# ">
+[; ;pic16f84a.h: 165: typedef union {
+[; ;pic16f84a.h: 166: struct {
+[; ;pic16f84a.h: 167: unsigned RA0 :1;
+[; ;pic16f84a.h: 168: unsigned RA1 :1;
+[; ;pic16f84a.h: 169: unsigned RA2 :1;
+[; ;pic16f84a.h: 170: unsigned RA3 :1;
+[; ;pic16f84a.h: 171: unsigned RA4 :1;
+[; ;pic16f84a.h: 172: };
+[; ;pic16f84a.h: 173: } PORTAbits_t;
+[; ;pic16f84a.h: 174: extern volatile PORTAbits_t PORTAbits @ 0x005;
+[; ;pic16f84a.h: 203: extern volatile unsigned char PORTB @ 0x006;
+"205
+[; ;pic16f84a.h: 205: asm("PORTB equ 06h");
+[; <" PORTB equ 06h ;# ">
+[; ;pic16f84a.h: 208: typedef union {
+[; ;pic16f84a.h: 209: struct {
+[; ;pic16f84a.h: 210: unsigned RB0 :1;
+[; ;pic16f84a.h: 211: unsigned RB1 :1;
+[; ;pic16f84a.h: 212: unsigned RB2 :1;
+[; ;pic16f84a.h: 213: unsigned RB3 :1;
+[; ;pic16f84a.h: 214: unsigned RB4 :1;
+[; ;pic16f84a.h: 215: unsigned RB5 :1;
+[; ;pic16f84a.h: 216: unsigned RB6 :1;
+[; ;pic16f84a.h: 217: unsigned RB7 :1;
+[; ;pic16f84a.h: 218: };
+[; ;pic16f84a.h: 219: } PORTBbits_t;
+[; ;pic16f84a.h: 220: extern volatile PORTBbits_t PORTBbits @ 0x006;
+[; ;pic16f84a.h: 264: extern volatile unsigned char EEDATA @ 0x008;
+"266
+[; ;pic16f84a.h: 266: asm("EEDATA equ 08h");
+[; <" EEDATA equ 08h ;# ">
+[; ;pic16f84a.h: 270: extern volatile unsigned char EEADR @ 0x009;
+"272
+[; ;pic16f84a.h: 272: asm("EEADR equ 09h");
+[; <" EEADR equ 09h ;# ">
+[; ;pic16f84a.h: 276: extern volatile unsigned char PCLATH @ 0x00A;
+"278
+[; ;pic16f84a.h: 278: asm("PCLATH equ 0Ah");
+[; <" PCLATH equ 0Ah ;# ">
+[; ;pic16f84a.h: 281: typedef union {
+[; ;pic16f84a.h: 282: struct {
+[; ;pic16f84a.h: 283: unsigned PCLATH :5;
+[; ;pic16f84a.h: 284: };
+[; ;pic16f84a.h: 285: } PCLATHbits_t;
+[; ;pic16f84a.h: 286: extern volatile PCLATHbits_t PCLATHbits @ 0x00A;
+[; ;pic16f84a.h: 295: extern volatile unsigned char INTCON @ 0x00B;
+"297
+[; ;pic16f84a.h: 297: asm("INTCON equ 0Bh");
+[; <" INTCON equ 0Bh ;# ">
+[; ;pic16f84a.h: 300: typedef union {
+[; ;pic16f84a.h: 301: struct {
+[; ;pic16f84a.h: 302: unsigned RBIF :1;
+[; ;pic16f84a.h: 303: unsigned INTF :1;
+[; ;pic16f84a.h: 304: unsigned T0IF :1;
+[; ;pic16f84a.h: 305: unsigned RBIE :1;
+[; ;pic16f84a.h: 306: unsigned INTE :1;
+[; ;pic16f84a.h: 307: unsigned T0IE :1;
+[; ;pic16f84a.h: 308: unsigned EEIE :1;
+[; ;pic16f84a.h: 309: unsigned GIE :1;
+[; ;pic16f84a.h: 310: };
+[; ;pic16f84a.h: 311: struct {
+[; ;pic16f84a.h: 312: unsigned :2;
+[; ;pic16f84a.h: 313: unsigned TMR0IF :1;
+[; ;pic16f84a.h: 314: unsigned :2;
+[; ;pic16f84a.h: 315: unsigned TMR0IE :1;
+[; ;pic16f84a.h: 316: };
+[; ;pic16f84a.h: 317: } INTCONbits_t;
+[; ;pic16f84a.h: 318: extern volatile INTCONbits_t INTCONbits @ 0x00B;
+[; ;pic16f84a.h: 372: extern volatile unsigned char OPTION_REG @ 0x081;
+"374
+[; ;pic16f84a.h: 374: asm("OPTION_REG equ 081h");
+[; <" OPTION_REG equ 081h ;# ">
+[; ;pic16f84a.h: 377: typedef union {
+[; ;pic16f84a.h: 378: struct {
+[; ;pic16f84a.h: 379: unsigned PS :3;
+[; ;pic16f84a.h: 380: unsigned PSA :1;
+[; ;pic16f84a.h: 381: unsigned T0SE :1;
+[; ;pic16f84a.h: 382: unsigned T0CS :1;
+[; ;pic16f84a.h: 383: unsigned INTEDG :1;
+[; ;pic16f84a.h: 384: unsigned nRBPU :1;
+[; ;pic16f84a.h: 385: };
+[; ;pic16f84a.h: 386: struct {
+[; ;pic16f84a.h: 387: unsigned PS0 :1;
+[; ;pic16f84a.h: 388: unsigned PS1 :1;
+[; ;pic16f84a.h: 389: unsigned PS2 :1;
+[; ;pic16f84a.h: 390: };
+[; ;pic16f84a.h: 391: } OPTION_REGbits_t;
+[; ;pic16f84a.h: 392: extern volatile OPTION_REGbits_t OPTION_REGbits @ 0x081;
+[; ;pic16f84a.h: 441: extern volatile unsigned char TRISA @ 0x085;
+"443
+[; ;pic16f84a.h: 443: asm("TRISA equ 085h");
+[; <" TRISA equ 085h ;# ">
+[; ;pic16f84a.h: 446: typedef union {
+[; ;pic16f84a.h: 447: struct {
+[; ;pic16f84a.h: 448: unsigned TRISA0 :1;
+[; ;pic16f84a.h: 449: unsigned TRISA1 :1;
+[; ;pic16f84a.h: 450: unsigned TRISA2 :1;
+[; ;pic16f84a.h: 451: unsigned TRISA3 :1;
+[; ;pic16f84a.h: 452: unsigned TRISA4 :1;
+[; ;pic16f84a.h: 453: };
+[; ;pic16f84a.h: 454: } TRISAbits_t;
+[; ;pic16f84a.h: 455: extern volatile TRISAbits_t TRISAbits @ 0x085;
+[; ;pic16f84a.h: 484: extern volatile unsigned char TRISB @ 0x086;
+"486
+[; ;pic16f84a.h: 486: asm("TRISB equ 086h");
+[; <" TRISB equ 086h ;# ">
+[; ;pic16f84a.h: 489: typedef union {
+[; ;pic16f84a.h: 490: struct {
+[; ;pic16f84a.h: 491: unsigned TRISB0 :1;
+[; ;pic16f84a.h: 492: unsigned TRISB1 :1;
+[; ;pic16f84a.h: 493: unsigned TRISB2 :1;
+[; ;pic16f84a.h: 494: unsigned TRISB3 :1;
+[; ;pic16f84a.h: 495: unsigned TRISB4 :1;
+[; ;pic16f84a.h: 496: unsigned TRISB5 :1;
+[; ;pic16f84a.h: 497: unsigned TRISB6 :1;
+[; ;pic16f84a.h: 498: unsigned TRISB7 :1;
+[; ;pic16f84a.h: 499: };
+[; ;pic16f84a.h: 500: } TRISBbits_t;
+[; ;pic16f84a.h: 501: extern volatile TRISBbits_t TRISBbits @ 0x086;
+[; ;pic16f84a.h: 545: extern volatile unsigned char EECON1 @ 0x088;
+"547
+[; ;pic16f84a.h: 547: asm("EECON1 equ 088h");
+[; <" EECON1 equ 088h ;# ">
+[; ;pic16f84a.h: 550: typedef union {
+[; ;pic16f84a.h: 551: struct {
+[; ;pic16f84a.h: 552: unsigned RD :1;
+[; ;pic16f84a.h: 553: unsigned WR :1;
+[; ;pic16f84a.h: 554: unsigned WREN :1;
+[; ;pic16f84a.h: 555: unsigned WRERR :1;
+[; ;pic16f84a.h: 556: unsigned EEIF :1;
+[; ;pic16f84a.h: 557: };
+[; ;pic16f84a.h: 558: } EECON1bits_t;
+[; ;pic16f84a.h: 559: extern volatile EECON1bits_t EECON1bits @ 0x088;
+[; ;pic16f84a.h: 588: extern volatile unsigned char EECON2 @ 0x089;
+"590
+[; ;pic16f84a.h: 590: asm("EECON2 equ 089h");
+[; <" EECON2 equ 089h ;# ">
+[; ;pic16f84a.h: 600: extern volatile __bit CARRY @ (((unsigned) &STATUS)*8) + 0;
+[; ;pic16f84a.h: 602: extern volatile __bit DC @ (((unsigned) &STATUS)*8) + 1;
+[; ;pic16f84a.h: 604: extern volatile __bit EEIE @ (((unsigned) &INTCON)*8) + 6;
+[; ;pic16f84a.h: 606: extern volatile __bit EEIF @ (((unsigned) &EECON1)*8) + 4;
+[; ;pic16f84a.h: 608: extern volatile __bit GIE @ (((unsigned) &INTCON)*8) + 7;
+[; ;pic16f84a.h: 610: extern volatile __bit INTE @ (((unsigned) &INTCON)*8) + 4;
+[; ;pic16f84a.h: 612: extern volatile __bit INTEDG @ (((unsigned) &OPTION_REG)*8) + 6;
+[; ;pic16f84a.h: 614: extern volatile __bit INTF @ (((unsigned) &INTCON)*8) + 1;
+[; ;pic16f84a.h: 616: extern volatile __bit IRP @ (((unsigned) &STATUS)*8) + 7;
+[; ;pic16f84a.h: 618: extern volatile __bit PS0 @ (((unsigned) &OPTION_REG)*8) + 0;
+[; ;pic16f84a.h: 620: extern volatile __bit PS1 @ (((unsigned) &OPTION_REG)*8) + 1;
+[; ;pic16f84a.h: 622: extern volatile __bit PS2 @ (((unsigned) &OPTION_REG)*8) + 2;
+[; ;pic16f84a.h: 624: extern volatile __bit PSA @ (((unsigned) &OPTION_REG)*8) + 3;
+[; ;pic16f84a.h: 626: extern volatile __bit RA0 @ (((unsigned) &PORTA)*8) + 0;
+[; ;pic16f84a.h: 628: extern volatile __bit RA1 @ (((unsigned) &PORTA)*8) + 1;
+[; ;pic16f84a.h: 630: extern volatile __bit RA2 @ (((unsigned) &PORTA)*8) + 2;
+[; ;pic16f84a.h: 632: extern volatile __bit RA3 @ (((unsigned) &PORTA)*8) + 3;
+[; ;pic16f84a.h: 634: extern volatile __bit RA4 @ (((unsigned) &PORTA)*8) + 4;
+[; ;pic16f84a.h: 636: extern volatile __bit RB0 @ (((unsigned) &PORTB)*8) + 0;
+[; ;pic16f84a.h: 638: extern volatile __bit RB1 @ (((unsigned) &PORTB)*8) + 1;
+[; ;pic16f84a.h: 640: extern volatile __bit RB2 @ (((unsigned) &PORTB)*8) + 2;
+[; ;pic16f84a.h: 642: extern volatile __bit RB3 @ (((unsigned) &PORTB)*8) + 3;
+[; ;pic16f84a.h: 644: extern volatile __bit RB4 @ (((unsigned) &PORTB)*8) + 4;
+[; ;pic16f84a.h: 646: extern volatile __bit RB5 @ (((unsigned) &PORTB)*8) + 5;
+[; ;pic16f84a.h: 648: extern volatile __bit RB6 @ (((unsigned) &PORTB)*8) + 6;
+[; ;pic16f84a.h: 650: extern volatile __bit RB7 @ (((unsigned) &PORTB)*8) + 7;
+[; ;pic16f84a.h: 652: extern volatile __bit RBIE @ (((unsigned) &INTCON)*8) + 3;
+[; ;pic16f84a.h: 654: extern volatile __bit RBIF @ (((unsigned) &INTCON)*8) + 0;
+[; ;pic16f84a.h: 656: extern volatile __bit RD @ (((unsigned) &EECON1)*8) + 0;
+[; ;pic16f84a.h: 658: extern volatile __bit RP0 @ (((unsigned) &STATUS)*8) + 5;
+[; ;pic16f84a.h: 660: extern volatile __bit RP1 @ (((unsigned) &STATUS)*8) + 6;
+[; ;pic16f84a.h: 662: extern volatile __bit T0CS @ (((unsigned) &OPTION_REG)*8) + 5;
+[; ;pic16f84a.h: 664: extern volatile __bit T0IE @ (((unsigned) &INTCON)*8) + 5;
+[; ;pic16f84a.h: 666: extern volatile __bit T0IF @ (((unsigned) &INTCON)*8) + 2;
+[; ;pic16f84a.h: 668: extern volatile __bit T0SE @ (((unsigned) &OPTION_REG)*8) + 4;
+[; ;pic16f84a.h: 670: extern volatile __bit TMR0IE @ (((unsigned) &INTCON)*8) + 5;
+[; ;pic16f84a.h: 672: extern volatile __bit TMR0IF @ (((unsigned) &INTCON)*8) + 2;
+[; ;pic16f84a.h: 674: extern volatile __bit TRISA0 @ (((unsigned) &TRISA)*8) + 0;
+[; ;pic16f84a.h: 676: extern volatile __bit TRISA1 @ (((unsigned) &TRISA)*8) + 1;
+[; ;pic16f84a.h: 678: extern volatile __bit TRISA2 @ (((unsigned) &TRISA)*8) + 2;
+[; ;pic16f84a.h: 680: extern volatile __bit TRISA3 @ (((unsigned) &TRISA)*8) + 3;
+[; ;pic16f84a.h: 682: extern volatile __bit TRISA4 @ (((unsigned) &TRISA)*8) + 4;
+[; ;pic16f84a.h: 684: extern volatile __bit TRISB0 @ (((unsigned) &TRISB)*8) + 0;
+[; ;pic16f84a.h: 686: extern volatile __bit TRISB1 @ (((unsigned) &TRISB)*8) + 1;
+[; ;pic16f84a.h: 688: extern volatile __bit TRISB2 @ (((unsigned) &TRISB)*8) + 2;
+[; ;pic16f84a.h: 690: extern volatile __bit TRISB3 @ (((unsigned) &TRISB)*8) + 3;
+[; ;pic16f84a.h: 692: extern volatile __bit TRISB4 @ (((unsigned) &TRISB)*8) + 4;
+[; ;pic16f84a.h: 694: extern volatile __bit TRISB5 @ (((unsigned) &TRISB)*8) + 5;
+[; ;pic16f84a.h: 696: extern volatile __bit TRISB6 @ (((unsigned) &TRISB)*8) + 6;
+[; ;pic16f84a.h: 698: extern volatile __bit TRISB7 @ (((unsigned) &TRISB)*8) + 7;
+[; ;pic16f84a.h: 700: extern volatile __bit WR @ (((unsigned) &EECON1)*8) + 1;
+[; ;pic16f84a.h: 702: extern volatile __bit WREN @ (((unsigned) &EECON1)*8) + 2;
+[; ;pic16f84a.h: 704: extern volatile __bit WRERR @ (((unsigned) &EECON1)*8) + 3;
+[; ;pic16f84a.h: 706: extern volatile __bit ZERO @ (((unsigned) &STATUS)*8) + 2;
+[; ;pic16f84a.h: 708: extern volatile __bit nPD @ (((unsigned) &STATUS)*8) + 3;
+[; ;pic16f84a.h: 710: extern volatile __bit nRBPU @ (((unsigned) &OPTION_REG)*8) + 7;
+[; ;pic16f84a.h: 712: extern volatile __bit nTO @ (((unsigned) &STATUS)*8) + 4;
+[; ;pic.h: 28: extern void __nop(void);
+[; ;pic.h: 77: extern unsigned int flash_read(unsigned short addr);
+[; ;pic.h: 141: extern void flash_erase(unsigned short addr);
+[; ;eeprom_routines.h: 114: extern void eeprom_write(unsigned char addr, unsigned char value);
+[; ;eeprom_routines.h: 115: extern unsigned char eeprom_read(unsigned char addr);
+[; ;eeprom_routines.h: 116: extern void eecpymem(volatile unsigned char *to, __eeprom unsigned char *from, unsigned char size);
+[; ;eeprom_routines.h: 117: extern void memcpyee(__eeprom unsigned char *to, const unsigned char *from, unsigned char size);
+[; ;pic.h: 152: extern __nonreentrant void _delay(unsigned long);
+[; ;pic.h: 186: extern unsigned char __resetbits;
+[; ;pic.h: 187: extern __bit __powerdown;
+[; ;pic.h: 188: extern __bit __timeout;
+"15 electronic_drawer_lock.c
+[p x FOSC=HS ]
+"17
+[p x WDTE=OFF ]
+"18
+[p x PWRTE=ON ]
+"19
+[p x CP=ON ]
+"21
+[; ;electronic_drawer_lock.c: 21: asm("\tpsect eeprom_data,class=EEDATA,delta=2,space=3,noexec"); asm("\tdb\t" "0" "," "0xFF" "," "0xFF" "," "0xFF" "," "0xFF" "," "0xFF" "," "0xFF" "," "0xFF");
+[; <" 	psect eeprom_data,class=EEDATA,delta=2,space=3,noexec ;# ">
+[; <" 	db	0,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF ;# ">
+"22
+[v _changing `Vb ~T0 @X0 1 e ]
+[; ;electronic_drawer_lock.c: 22: volatile bit changing;
+"23
+[v _wrong `Vb ~T0 @X0 1 e ]
+[; ;electronic_drawer_lock.c: 23: volatile bit wrong;
+"24
+[v _open `Vb ~T0 @X0 1 e ]
+[; ;electronic_drawer_lock.c: 24: volatile bit open;
+"25
+[v _sleeping `Vb ~T0 @X0 1 e ]
+[; ;electronic_drawer_lock.c: 25: volatile bit sleeping;
+"26
+[v _but_pres `Vb ~T0 @X0 1 e ]
+[; ;electronic_drawer_lock.c: 26: volatile bit but_pres;
+"27
+[v _digit_count `Vuc ~T0 @X0 1 e ]
+[; ;electronic_drawer_lock.c: 27: volatile unsigned char digit_count;
+"28
+[v _digits_entered `Vuc ~T0 @X0 1 e ]
+[; ;electronic_drawer_lock.c: 28: volatile unsigned char digits_entered;
+"29
+[v _digit `Vuc ~T0 @X0 1 e ]
+[; ;electronic_drawer_lock.c: 29: volatile unsigned char digit;
+"30
+[v _read_digit `Vuc ~T0 @X0 1 e ]
+[; ;electronic_drawer_lock.c: 30: volatile unsigned char read_digit;
+"31
+[v _last_pres_time_l `Vuc ~T0 @X0 1 e ]
+[; ;electronic_drawer_lock.c: 31: volatile unsigned char last_pres_time_l;
+"32
+[v _last_pres_time_h `Vuc ~T0 @X0 1 e ]
+[; ;electronic_drawer_lock.c: 32: volatile unsigned char last_pres_time_h;
+"33
+[v _w_led_time `Vuc ~T0 @X0 1 e ]
+[; ;electronic_drawer_lock.c: 33: volatile unsigned char w_led_time;
+"34
+[v _buz_time `Vuc ~T0 @X0 1 e ]
+[; ;electronic_drawer_lock.c: 34: volatile unsigned char buz_time;
+"35
+[v _ch_pres_cnt `Vuc ~T0 @X0 1 e ]
+[; ;electronic_drawer_lock.c: 35: volatile unsigned char ch_pres_cnt;
+"36
+[v _master_key `Vuc ~T0 @X0 -> 0 `x e ]
+[i _master_key
+:U ..
+-> -> 4 `i `uc
+-> -> 5 `i `uc
+-> -> 0 `i `uc
+-> -> 7 `i `uc
+-> -> 3 `i `uc
+-> -> 9 `i `uc
+-> -> 2 `i `uc
+-> -> 7 `i `uc
+..
+]
+[; ;electronic_drawer_lock.c: 36: volatile unsigned char master_key[] = {4, 5, 0, 7, 3, 9, 2, 7};
+[v F299 `(v ~T0 @X0 1 tf ]
+"39
+[v _isr `IF299 ~T0 @X0 1 e ]
+"40
+{
+[; ;electronic_drawer_lock.c: 39: void interrupt isr(void)
+[; ;electronic_drawer_lock.c: 40: {
+[e :U _isr ]
+[f ]
+[; ;electronic_drawer_lock.c: 41: if(T0IF)
+"41
+[e $ ! _T0IF 25  ]
+[; ;electronic_drawer_lock.c: 42: {
+"42
+{
+[; ;electronic_drawer_lock.c: 43: T0IF = 0b0;
+"43
+[e = _T0IF -> -> 0 `i `b ]
+[; ;electronic_drawer_lock.c: 44: if(RA3 == 0b1)
+"44
+[e $ ! == -> _RA3 `i -> 1 `i 26  ]
+[; ;electronic_drawer_lock.c: 45: {
+"45
+{
+[; ;electronic_drawer_lock.c: 46: w_led_time++;
+"46
+[e ++ _w_led_time -> -> 1 `i `uc ]
+[; ;electronic_drawer_lock.c: 47: if(w_led_time >= 31)
+"47
+[e $ ! >= -> _w_led_time `i -> 31 `i 27  ]
+[; ;electronic_drawer_lock.c: 48: {
+"48
+{
+[; ;electronic_drawer_lock.c: 49: RA3 = !0b1;
+"49
+[e = _RA3 ! != -> 1 `i -> 0 `i ]
+[; ;electronic_drawer_lock.c: 50: RA1 = !0b1;
+"50
+[e = _RA1 ! != -> 1 `i -> 0 `i ]
+[; ;electronic_drawer_lock.c: 51: w_led_time = 0;
+"51
+[e = _w_led_time -> -> 0 `i `uc ]
+"52
+}
+[e :U 27 ]
+"53
+}
+[e :U 26 ]
+[; ;electronic_drawer_lock.c: 52: }
+[; ;electronic_drawer_lock.c: 53: }
+[; ;electronic_drawer_lock.c: 54: if(RA1 == 0b1)
+"54
+[e $ ! == -> _RA1 `i -> 1 `i 28  ]
+[; ;electronic_drawer_lock.c: 55: {
+"55
+{
+[; ;electronic_drawer_lock.c: 56: if(!changing)
+"56
+[e $ ! ! _changing 29  ]
+[; ;electronic_drawer_lock.c: 57: buz_time++;
+"57
+[e ++ _buz_time -> -> 1 `i `uc ]
+[e :U 29 ]
+[; ;electronic_drawer_lock.c: 58: if(buz_time >= 46)
+"58
+[e $ ! >= -> _buz_time `i -> 46 `i 30  ]
+[; ;electronic_drawer_lock.c: 59: {
+"59
+{
+[; ;electronic_drawer_lock.c: 60: RA1 = !0b1;
+"60
+[e = _RA1 ! != -> 1 `i -> 0 `i ]
+[; ;electronic_drawer_lock.c: 61: RA0 = !0b1;
+"61
+[e = _RA0 ! != -> 1 `i -> 0 `i ]
+"62
+}
+[e :U 30 ]
+"63
+}
+[e :U 28 ]
+[; ;electronic_drawer_lock.c: 62: }
+[; ;electronic_drawer_lock.c: 63: }
+[; ;electronic_drawer_lock.c: 64: if(!but_pres)
+"64
+[e $ ! ! _but_pres 31  ]
+[; ;electronic_drawer_lock.c: 65: last_pres_time_l++;
+"65
+[e ++ _last_pres_time_l -> -> 1 `i `uc ]
+[e :U 31 ]
+[; ;electronic_drawer_lock.c: 66: if(last_pres_time_l >= 255)
+"66
+[e $ ! >= -> _last_pres_time_l `i -> 255 `i 32  ]
+[; ;electronic_drawer_lock.c: 67: last_pres_time_h++;
+"67
+[e ++ _last_pres_time_h -> -> 1 `i `uc ]
+[e :U 32 ]
+[; ;electronic_drawer_lock.c: 68: if(last_pres_time_h >= 4)
+"68
+[e $ ! >= -> _last_pres_time_h `i -> 4 `i 33  ]
+[; ;electronic_drawer_lock.c: 69: {
+"69
+{
+[; ;electronic_drawer_lock.c: 71: last_pres_time_h = 0;
+"71
+[e = _last_pres_time_h -> -> 0 `i `uc ]
+[; ;electronic_drawer_lock.c: 72: digits_entered = 0;
+"72
+[e = _digits_entered -> -> 0 `i `uc ]
+[; ;electronic_drawer_lock.c: 73: wrong = 0b0;
+"73
+[e = _wrong -> -> 0 `i `b ]
+[; ;electronic_drawer_lock.c: 74: ch_pres_cnt = 0;
+"74
+[e = _ch_pres_cnt -> -> 0 `i `uc ]
+[; ;electronic_drawer_lock.c: 75: RA2 = !0b1;
+"75
+[e = _RA2 ! != -> 1 `i -> 0 `i ]
+[; ;electronic_drawer_lock.c: 76: RA3 = !0b1;
+"76
+[e = _RA3 ! != -> 1 `i -> 0 `i ]
+[; ;electronic_drawer_lock.c: 77: RA1 = !0b1;
+"77
+[e = _RA1 ! != -> 1 `i -> 0 `i ]
+[; ;electronic_drawer_lock.c: 78: RB0 = !0b1;
+"78
+[e = _RB0 ! != -> 1 `i -> 0 `i ]
+[; ;electronic_drawer_lock.c: 79: RB1 = !0b1;
+"79
+[e = _RB1 ! != -> 1 `i -> 0 `i ]
+[; ;electronic_drawer_lock.c: 80: RB2 = !0b1;
+"80
+[e = _RB2 ! != -> 1 `i -> 0 `i ]
+[; ;electronic_drawer_lock.c: 81: RB3 = 0b1;
+"81
+[e = _RB3 -> -> 1 `i `b ]
+[; ;electronic_drawer_lock.c: 82: sleeping = 0b1;
+"82
+[e = _sleeping -> -> 1 `i `b ]
+[; ;electronic_drawer_lock.c: 83: asm("sleep");
+"83
+[; <" sleep ;# ">
+"84
+}
+[e :U 33 ]
+"85
+}
+[e :U 25 ]
+[; ;electronic_drawer_lock.c: 84: }
+[; ;electronic_drawer_lock.c: 85: }
+[; ;electronic_drawer_lock.c: 86: if(RBIF)
+"86
+[e $ ! _RBIF 34  ]
+[; ;electronic_drawer_lock.c: 87: {
+"87
+{
+[; ;electronic_drawer_lock.c: 88: _delay((unsigned long)((150)*(4000000/4000.0)));
+"88
+[e ( __delay (1 -> * -> -> 150 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;electronic_drawer_lock.c: 89: digit = 10;
+"89
+[e = _digit -> -> 10 `i `uc ]
+[; ;electronic_drawer_lock.c: 90: last_pres_time_l = 0;
+"90
+[e = _last_pres_time_l -> -> 0 `i `uc ]
+[; ;electronic_drawer_lock.c: 91: last_pres_time_h = 0;
+"91
+[e = _last_pres_time_h -> -> 0 `i `uc ]
+[; ;electronic_drawer_lock.c: 92: if(sleeping)
+"92
+[e $ ! _sleeping 35  ]
+[; ;electronic_drawer_lock.c: 93: {
+"93
+{
+[; ;electronic_drawer_lock.c: 94: sleeping = 0b0;
+"94
+[e = _sleeping -> -> 0 `i `b ]
+[; ;electronic_drawer_lock.c: 95: return;
+"95
+[e $UE 24  ]
+"96
+}
+[e :U 35 ]
+[; ;electronic_drawer_lock.c: 96: }
+[; ;electronic_drawer_lock.c: 97: if(RB4 == 0b1)
+"97
+[e $ ! == -> _RB4 `i -> 1 `i 36  ]
+[; ;electronic_drawer_lock.c: 98: {
+"98
+{
+[; ;electronic_drawer_lock.c: 99: but_pres = 0b1;
+"99
+[e = _but_pres -> -> 1 `i `b ]
+[; ;electronic_drawer_lock.c: 100: if(RB0 == 0b1)
+"100
+[e $ ! == -> _RB0 `i -> 1 `i 37  ]
+[; ;electronic_drawer_lock.c: 101: {
+"101
+{
+[; ;electronic_drawer_lock.c: 102: digit = 1;
+"102
+[e = _digit -> -> 1 `i `uc ]
+"103
+}
+[; ;electronic_drawer_lock.c: 103: }
+[e $U 38  ]
+"104
+[e :U 37 ]
+[; ;electronic_drawer_lock.c: 104: else if(RB1 == 0b1)
+[e $ ! == -> _RB1 `i -> 1 `i 39  ]
+[; ;electronic_drawer_lock.c: 105: {
+"105
+{
+[; ;electronic_drawer_lock.c: 106: digit = 4;
+"106
+[e = _digit -> -> 4 `i `uc ]
+"107
+}
+[; ;electronic_drawer_lock.c: 107: }
+[e $U 40  ]
+"108
+[e :U 39 ]
+[; ;electronic_drawer_lock.c: 108: else if(RB2 == 0b1)
+[e $ ! == -> _RB2 `i -> 1 `i 41  ]
+[; ;electronic_drawer_lock.c: 109: {
+"109
+{
+[; ;electronic_drawer_lock.c: 110: digit = 7;
+"110
+[e = _digit -> -> 7 `i `uc ]
+"111
+}
+[; ;electronic_drawer_lock.c: 111: }
+[e $U 42  ]
+"112
+[e :U 41 ]
+[; ;electronic_drawer_lock.c: 112: else if(RB3 == 0b1)
+[e $ ! == -> _RB3 `i -> 1 `i 43  ]
+[; ;electronic_drawer_lock.c: 113: {
+"113
+{
+[; ;electronic_drawer_lock.c: 115: digits_entered = 0;
+"115
+[e = _digits_entered -> -> 0 `i `uc ]
+[; ;electronic_drawer_lock.c: 116: wrong = 0b0;
+"116
+[e = _wrong -> -> 0 `i `b ]
+[; ;electronic_drawer_lock.c: 120: if(open)
+"120
+[e $ ! _open 44  ]
+[; ;electronic_drawer_lock.c: 121: {
+"121
+{
+[; ;electronic_drawer_lock.c: 125: if(changing)
+"125
+[e $ ! _changing 45  ]
+[; ;electronic_drawer_lock.c: 126: {
+"126
+{
+[; ;electronic_drawer_lock.c: 127: changing = 0b0;
+"127
+[e = _changing -> -> 0 `i `b ]
+[; ;electronic_drawer_lock.c: 128: RA4 = !0b0;
+"128
+[e = _RA4 ! != -> 0 `i -> 0 `i ]
+"129
+}
+[; ;electronic_drawer_lock.c: 129: }
+[e $U 46  ]
+"135
+[e :U 45 ]
+[; ;electronic_drawer_lock.c: 135: else
+[; ;electronic_drawer_lock.c: 136: {
+"136
+{
+[; ;electronic_drawer_lock.c: 137: ch_pres_cnt++;
+"137
+[e ++ _ch_pres_cnt -> -> 1 `i `uc ]
+[; ;electronic_drawer_lock.c: 138: if(ch_pres_cnt >= 3)
+"138
+[e $ ! >= -> _ch_pres_cnt `i -> 3 `i 47  ]
+[; ;electronic_drawer_lock.c: 139: {
+"139
+{
+[; ;electronic_drawer_lock.c: 140: ch_pres_cnt = 0;
+"140
+[e = _ch_pres_cnt -> -> 0 `i `uc ]
+[; ;electronic_drawer_lock.c: 142: changing = 0b1;
+"142
+[e = _changing -> -> 1 `i `b ]
+[; ;electronic_drawer_lock.c: 143: digit_count = 0;
+"143
+[e = _digit_count -> -> 0 `i `uc ]
+[; ;electronic_drawer_lock.c: 145: eeprom_write(0, 0);
+"145
+[e ( _eeprom_write (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;electronic_drawer_lock.c: 146: RA4 = 0b0;
+"146
+[e = _RA4 -> -> 0 `i `b ]
+"147
+}
+[e :U 47 ]
+"148
+}
+[e :U 46 ]
+[; ;electronic_drawer_lock.c: 147: }
+[; ;electronic_drawer_lock.c: 148: }
+[; ;electronic_drawer_lock.c: 149: RA1 = 0b1;
+"149
+[e = _RA1 -> -> 1 `i `b ]
+[; ;electronic_drawer_lock.c: 150: _delay((unsigned long)((300)*(4000000/4000.0)));
+"150
+[e ( __delay (1 -> * -> -> 300 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;electronic_drawer_lock.c: 151: RA1 = !0b1;
+"151
+[e = _RA1 ! != -> 1 `i -> 0 `i ]
+"152
+}
+[e :U 44 ]
+[; ;electronic_drawer_lock.c: 152: }
+[; ;electronic_drawer_lock.c: 153: RBIF = 0b0;
+"153
+[e = _RBIF -> -> 0 `i `b ]
+[; ;electronic_drawer_lock.c: 154: return;
+"154
+[e $UE 24  ]
+"155
+}
+[e :U 43 ]
+"156
+[e :U 42 ]
+[e :U 40 ]
+[e :U 38 ]
+}
+[; ;electronic_drawer_lock.c: 155: }
+[; ;electronic_drawer_lock.c: 156: }
+[e $U 48  ]
+"157
+[e :U 36 ]
+[; ;electronic_drawer_lock.c: 157: else if(RB5 == 0b1)
+[e $ ! == -> _RB5 `i -> 1 `i 49  ]
+[; ;electronic_drawer_lock.c: 158: {
+"158
+{
+[; ;electronic_drawer_lock.c: 159: but_pres = 0b1;
+"159
+[e = _but_pres -> -> 1 `i `b ]
+[; ;electronic_drawer_lock.c: 160: if(RB0 == 0b1)
+"160
+[e $ ! == -> _RB0 `i -> 1 `i 50  ]
+[; ;electronic_drawer_lock.c: 161: {
+"161
+{
+[; ;electronic_drawer_lock.c: 162: digit = 2;
+"162
+[e = _digit -> -> 2 `i `uc ]
+"163
+}
+[; ;electronic_drawer_lock.c: 163: }
+[e $U 51  ]
+"164
+[e :U 50 ]
+[; ;electronic_drawer_lock.c: 164: else if(RB1 == 0b1)
+[e $ ! == -> _RB1 `i -> 1 `i 52  ]
+[; ;electronic_drawer_lock.c: 165: {
+"165
+{
+[; ;electronic_drawer_lock.c: 166: digit = 5;
+"166
+[e = _digit -> -> 5 `i `uc ]
+"167
+}
+[; ;electronic_drawer_lock.c: 167: }
+[e $U 53  ]
+"168
+[e :U 52 ]
+[; ;electronic_drawer_lock.c: 168: else if(RB2 == 0b1)
+[e $ ! == -> _RB2 `i -> 1 `i 54  ]
+[; ;electronic_drawer_lock.c: 169: {
+"169
+{
+[; ;electronic_drawer_lock.c: 170: digit = 8;
+"170
+[e = _digit -> -> 8 `i `uc ]
+"171
+}
+[; ;electronic_drawer_lock.c: 171: }
+[e $U 55  ]
+"172
+[e :U 54 ]
+[; ;electronic_drawer_lock.c: 172: else if(RB3 == 0b1)
+[e $ ! == -> _RB3 `i -> 1 `i 56  ]
+[; ;electronic_drawer_lock.c: 173: {
+"173
+{
+[; ;electronic_drawer_lock.c: 174: digit = 0;
+"174
+[e = _digit -> -> 0 `i `uc ]
+"175
+}
+[e :U 56 ]
+"176
+[e :U 55 ]
+[e :U 53 ]
+[e :U 51 ]
+}
+[; ;electronic_drawer_lock.c: 175: }
+[; ;electronic_drawer_lock.c: 176: }
+[e $U 57  ]
+"177
+[e :U 49 ]
+[; ;electronic_drawer_lock.c: 177: else if(RB6 == 0b1)
+[e $ ! == -> _RB6 `i -> 1 `i 58  ]
+[; ;electronic_drawer_lock.c: 178: {
+"178
+{
+[; ;electronic_drawer_lock.c: 179: but_pres = 0b1;
+"179
+[e = _but_pres -> -> 1 `i `b ]
+[; ;electronic_drawer_lock.c: 180: if(RB0 == 0b1)
+"180
+[e $ ! == -> _RB0 `i -> 1 `i 59  ]
+[; ;electronic_drawer_lock.c: 181: {
+"181
+{
+[; ;electronic_drawer_lock.c: 182: digit = 3;
+"182
+[e = _digit -> -> 3 `i `uc ]
+"183
+}
+[; ;electronic_drawer_lock.c: 183: }
+[e $U 60  ]
+"184
+[e :U 59 ]
+[; ;electronic_drawer_lock.c: 184: else if(RB1 == 0b1)
+[e $ ! == -> _RB1 `i -> 1 `i 61  ]
+[; ;electronic_drawer_lock.c: 185: {
+"185
+{
+[; ;electronic_drawer_lock.c: 186: digit = 6;
+"186
+[e = _digit -> -> 6 `i `uc ]
+"187
+}
+[; ;electronic_drawer_lock.c: 187: }
+[e $U 62  ]
+"188
+[e :U 61 ]
+[; ;electronic_drawer_lock.c: 188: else if(RB2 == 0b1)
+[e $ ! == -> _RB2 `i -> 1 `i 63  ]
+[; ;electronic_drawer_lock.c: 189: {
+"189
+{
+[; ;electronic_drawer_lock.c: 190: digit = 9;
+"190
+[e = _digit -> -> 9 `i `uc ]
+"191
+}
+[; ;electronic_drawer_lock.c: 191: }
+[e $U 64  ]
+"192
+[e :U 63 ]
+[; ;electronic_drawer_lock.c: 192: else if(RB3 == 0b1)
+[e $ ! == -> _RB3 `i -> 1 `i 65  ]
+[; ;electronic_drawer_lock.c: 193: {
+"193
+{
+[; ;electronic_drawer_lock.c: 198: if(!changing)
+"198
+[e $ ! ! _changing 66  ]
+[; ;electronic_drawer_lock.c: 199: {
+"199
+{
+[; ;electronic_drawer_lock.c: 201: if(open)
+"201
+[e $ ! _open 67  ]
+[; ;electronic_drawer_lock.c: 202: {
+"202
+{
+[; ;electronic_drawer_lock.c: 203: RA0 = !0b1;
+"203
+[e = _RA0 ! != -> 1 `i -> 0 `i ]
+[; ;electronic_drawer_lock.c: 204: open = 0b0;
+"204
+[e = _open -> -> 0 `i `b ]
+[; ;electronic_drawer_lock.c: 205: RA2 = !0b1;
+"205
+[e = _RA2 ! != -> 1 `i -> 0 `i ]
+"206
+}
+[; ;electronic_drawer_lock.c: 206: }
+[e $U 68  ]
+"207
+[e :U 67 ]
+[; ;electronic_drawer_lock.c: 207: else if(wrong)
+[e $ ! _wrong 69  ]
+[; ;electronic_drawer_lock.c: 208: {
+"208
+{
+[; ;electronic_drawer_lock.c: 209: w_led_time = 0;
+"209
+[e = _w_led_time -> -> 0 `i `uc ]
+[; ;electronic_drawer_lock.c: 210: RA3 = 0b1;
+"210
+[e = _RA3 -> -> 1 `i `b ]
+[; ;electronic_drawer_lock.c: 211: RA1 = 0b1;
+"211
+[e = _RA1 -> -> 1 `i `b ]
+"212
+}
+[; ;electronic_drawer_lock.c: 212: }
+[e $U 70  ]
+"216
+[e :U 69 ]
+[; ;electronic_drawer_lock.c: 216: else if(digits_entered == digit_count || digits_entered == 8)
+[e $ ! || == -> _digits_entered `i -> _digit_count `i == -> _digits_entered `i -> 8 `i 71  ]
+[; ;electronic_drawer_lock.c: 217: {
+"217
+{
+[; ;electronic_drawer_lock.c: 218: RA3 = !0b1;
+"218
+[e = _RA3 ! != -> 1 `i -> 0 `i ]
+[; ;electronic_drawer_lock.c: 219: RA0 = 0b1;
+"219
+[e = _RA0 -> -> 1 `i `b ]
+[; ;electronic_drawer_lock.c: 220: open = 0b1;
+"220
+[e = _open -> -> 1 `i `b ]
+[; ;electronic_drawer_lock.c: 221: RA2 = 0b1;
+"221
+[e = _RA2 -> -> 1 `i `b ]
+[; ;electronic_drawer_lock.c: 222: buz_time = 0;
+"222
+[e = _buz_time -> -> 0 `i `uc ]
+[; ;electronic_drawer_lock.c: 223: RA1 = 0b1;
+"223
+[e = _RA1 -> -> 1 `i `b ]
+"224
+}
+[; ;electronic_drawer_lock.c: 224: }
+[e $U 72  ]
+"225
+[e :U 71 ]
+[; ;electronic_drawer_lock.c: 225: else
+[; ;electronic_drawer_lock.c: 226: {
+"226
+{
+[; ;electronic_drawer_lock.c: 227: w_led_time = 0;
+"227
+[e = _w_led_time -> -> 0 `i `uc ]
+[; ;electronic_drawer_lock.c: 228: RA3 = 0b1;
+"228
+[e = _RA3 -> -> 1 `i `b ]
+[; ;electronic_drawer_lock.c: 229: RA1 = 0b1;
+"229
+[e = _RA1 -> -> 1 `i `b ]
+"230
+}
+[e :U 72 ]
+[e :U 70 ]
+[e :U 68 ]
+[; ;electronic_drawer_lock.c: 230: }
+[; ;electronic_drawer_lock.c: 231: wrong = 0b0;
+"231
+[e = _wrong -> -> 0 `i `b ]
+[; ;electronic_drawer_lock.c: 232: digits_entered = 0;
+"232
+[e = _digits_entered -> -> 0 `i `uc ]
+[; ;electronic_drawer_lock.c: 233: ch_pres_cnt = 0;
+"233
+[e = _ch_pres_cnt -> -> 0 `i `uc ]
+"234
+}
+[e :U 66 ]
+[; ;electronic_drawer_lock.c: 234: }
+[; ;electronic_drawer_lock.c: 235: RBIF = 0b0;
+"235
+[e = _RBIF -> -> 0 `i `b ]
+[; ;electronic_drawer_lock.c: 236: return;
+"236
+[e $UE 24  ]
+"237
+}
+[e :U 65 ]
+"238
+[e :U 64 ]
+[e :U 62 ]
+[e :U 60 ]
+}
+[; ;electronic_drawer_lock.c: 237: }
+[; ;electronic_drawer_lock.c: 238: }
+[e $U 73  ]
+"239
+[e :U 58 ]
+[; ;electronic_drawer_lock.c: 239: else
+[; ;electronic_drawer_lock.c: 240: {
+"240
+{
+[; ;electronic_drawer_lock.c: 241: but_pres = 0b0;
+"241
+[e = _but_pres -> -> 0 `i `b ]
+[; ;electronic_drawer_lock.c: 242: RBIF = 0b0;
+"242
+[e = _RBIF -> -> 0 `i `b ]
+[; ;electronic_drawer_lock.c: 243: return;
+"243
+[e $UE 24  ]
+"244
+}
+[e :U 73 ]
+[e :U 57 ]
+[e :U 48 ]
+[; ;electronic_drawer_lock.c: 244: }
+[; ;electronic_drawer_lock.c: 245: if(digit < 10)
+"245
+[e $ ! < -> _digit `i -> 10 `i 74  ]
+[; ;electronic_drawer_lock.c: 246: {
+"246
+{
+[; ;electronic_drawer_lock.c: 251: if(changing)
+"251
+[e $ ! _changing 75  ]
+[; ;electronic_drawer_lock.c: 252: {
+"252
+{
+[; ;electronic_drawer_lock.c: 254: if(digit_count < (64 - 2))
+"254
+[e $ ! < -> _digit_count `i - -> 64 `i -> 2 `i 76  ]
+[; ;electronic_drawer_lock.c: 255: {
+"255
+{
+[; ;electronic_drawer_lock.c: 256: digit_count++;
+"256
+[e ++ _digit_count -> -> 1 `i `uc ]
+[; ;electronic_drawer_lock.c: 257: eeprom_write(digit_count, digit);
+"257
+[e ( _eeprom_write (2 , _digit_count _digit ]
+[; ;electronic_drawer_lock.c: 258: eeprom_write(0, digit_count);
+"258
+[e ( _eeprom_write (2 , -> -> 0 `i `uc _digit_count ]
+[; ;electronic_drawer_lock.c: 259: RA1 = 0b1;
+"259
+[e = _RA1 -> -> 1 `i `b ]
+[; ;electronic_drawer_lock.c: 260: _delay((unsigned long)((300)*(4000000/4000.0)));
+"260
+[e ( __delay (1 -> * -> -> 300 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;electronic_drawer_lock.c: 261: RA1 = !0b1;
+"261
+[e = _RA1 ! != -> 1 `i -> 0 `i ]
+"262
+}
+[e :U 76 ]
+"264
+}
+[; ;electronic_drawer_lock.c: 262: }
+[; ;electronic_drawer_lock.c: 264: }
+[e $U 77  ]
+"268
+[e :U 75 ]
+[; ;electronic_drawer_lock.c: 268: else if(!open)
+[e $ ! ! _open 78  ]
+[; ;electronic_drawer_lock.c: 269: {
+"269
+{
+[; ;electronic_drawer_lock.c: 270: if(!wrong)
+"270
+[e $ ! ! _wrong 79  ]
+[; ;electronic_drawer_lock.c: 271: {
+"271
+{
+[; ;electronic_drawer_lock.c: 272: digits_entered++;
+"272
+[e ++ _digits_entered -> -> 1 `i `uc ]
+[; ;electronic_drawer_lock.c: 273: read_digit = eeprom_read(digits_entered);
+"273
+[e = _read_digit ( _eeprom_read (1 _digits_entered ]
+[; ;electronic_drawer_lock.c: 276: if(read_digit != digit)
+"276
+[e $ ! != -> _read_digit `i -> _digit `i 80  ]
+[; ;electronic_drawer_lock.c: 277: {
+"277
+{
+[; ;electronic_drawer_lock.c: 279: if(digits_entered > 8 || digit != master_key[digits_entered - 1])
+"279
+[e $ ! || > -> _digits_entered `i -> 8 `i != -> _digit `i -> *U + &U _master_key * -> -> - -> _digits_entered `i -> 1 `i `ui `ux -> -> # *U &U _master_key `ui `ux `i 81  ]
+[; ;electronic_drawer_lock.c: 280: wrong = 0b1;
+"280
+[e = _wrong -> -> 1 `i `b ]
+[e :U 81 ]
+"281
+}
+[e :U 80 ]
+"282
+}
+[e :U 79 ]
+[; ;electronic_drawer_lock.c: 281: }
+[; ;electronic_drawer_lock.c: 282: }
+[; ;electronic_drawer_lock.c: 283: RA1 = 0b1;
+"283
+[e = _RA1 -> -> 1 `i `b ]
+[; ;electronic_drawer_lock.c: 284: _delay((unsigned long)((300)*(4000000/4000.0)));
+"284
+[e ( __delay (1 -> * -> -> 300 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;electronic_drawer_lock.c: 285: RA1 = !0b1;
+"285
+[e = _RA1 ! != -> 1 `i -> 0 `i ]
+"286
+}
+[e :U 78 ]
+"287
+[e :U 77 ]
+}
+[e :U 74 ]
+[; ;electronic_drawer_lock.c: 286: }
+[; ;electronic_drawer_lock.c: 287: }
+[; ;electronic_drawer_lock.c: 288: RBIF = 0b0;
+"288
+[e = _RBIF -> -> 0 `i `b ]
+"289
+}
+[e :U 34 ]
+[; ;electronic_drawer_lock.c: 289: }
+[; ;electronic_drawer_lock.c: 290: if(EEIE)
+"290
+[e $ ! _EEIE 82  ]
+[; ;electronic_drawer_lock.c: 291: {
+"291
+{
+[; ;electronic_drawer_lock.c: 292: RA1 = !0b1;
+"292
+[e = _RA1 ! != -> 1 `i -> 0 `i ]
+[; ;electronic_drawer_lock.c: 293: EEIE = 0b0;
+"293
+[e = _EEIE -> -> 0 `i `b ]
+"294
+}
+[e :U 82 ]
+[; ;electronic_drawer_lock.c: 294: }
+[; ;electronic_drawer_lock.c: 295: }
+"295
+[e :UE 24 ]
+}
+"298
+[v _main `(v ~T0 @X0 1 ef ]
+"299
+{
+[; ;electronic_drawer_lock.c: 298: void main(void)
+[; ;electronic_drawer_lock.c: 299: {
+[e :U _main ]
+[f ]
+[; ;electronic_drawer_lock.c: 311: INTCON = 0x68;
+"311
+[e = _INTCON -> -> 104 `i `uc ]
+[; ;electronic_drawer_lock.c: 321: OPTION_REG = 0x87;
+"321
+[e = _OPTION_REG -> -> 135 `i `uc ]
+[; ;electronic_drawer_lock.c: 324: PORTA = 0x00;
+"324
+[e = _PORTA -> -> 0 `i `uc ]
+[; ;electronic_drawer_lock.c: 325: TRISA = 0x00;
+"325
+[e = _TRISA -> -> 0 `i `uc ]
+[; ;electronic_drawer_lock.c: 328: PORTB = 0x00;
+"328
+[e = _PORTB -> -> 0 `i `uc ]
+[; ;electronic_drawer_lock.c: 329: TRISB = 0xF0;
+"329
+[e = _TRISB -> -> 240 `i `uc ]
+[; ;electronic_drawer_lock.c: 332: changing = 0b0;
+"332
+[e = _changing -> -> 0 `i `b ]
+[; ;electronic_drawer_lock.c: 333: wrong = 0b0;
+"333
+[e = _wrong -> -> 0 `i `b ]
+[; ;electronic_drawer_lock.c: 334: open = 0b0;
+"334
+[e = _open -> -> 0 `i `b ]
+[; ;electronic_drawer_lock.c: 335: sleeping = 0b0;
+"335
+[e = _sleeping -> -> 0 `i `b ]
+[; ;electronic_drawer_lock.c: 336: but_pres = 0b0;
+"336
+[e = _but_pres -> -> 0 `i `b ]
+[; ;electronic_drawer_lock.c: 337: digit_count = eeprom_read(0);
+"337
+[e = _digit_count ( _eeprom_read (1 -> -> 0 `i `uc ]
+[; ;electronic_drawer_lock.c: 338: digits_entered = 0;
+"338
+[e = _digits_entered -> -> 0 `i `uc ]
+[; ;electronic_drawer_lock.c: 339: last_pres_time_l = 0;
+"339
+[e = _last_pres_time_l -> -> 0 `i `uc ]
+[; ;electronic_drawer_lock.c: 340: last_pres_time_h = 0;
+"340
+[e = _last_pres_time_h -> -> 0 `i `uc ]
+[; ;electronic_drawer_lock.c: 341: w_led_time = 0;
+"341
+[e = _w_led_time -> -> 0 `i `uc ]
+[; ;electronic_drawer_lock.c: 342: ch_pres_cnt = 0;
+"342
+[e = _ch_pres_cnt -> -> 0 `i `uc ]
+[; ;electronic_drawer_lock.c: 343: RA0 = !0b1;
+"343
+[e = _RA0 ! != -> 1 `i -> 0 `i ]
+[; ;electronic_drawer_lock.c: 344: RA2 = 0b1;
+"344
+[e = _RA2 -> -> 1 `i `b ]
+[; ;electronic_drawer_lock.c: 345: RA3 = 0b1;
+"345
+[e = _RA3 -> -> 1 `i `b ]
+[; ;electronic_drawer_lock.c: 346: RA4 = 0b0;
+"346
+[e = _RA4 -> -> 0 `i `b ]
+[; ;electronic_drawer_lock.c: 347: _delay((unsigned long)((1000)*(4000000/4000.0)));
+"347
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;electronic_drawer_lock.c: 348: RA2 = !0b1;
+"348
+[e = _RA2 ! != -> 1 `i -> 0 `i ]
+[; ;electronic_drawer_lock.c: 349: RA3 = !0b1;
+"349
+[e = _RA3 ! != -> 1 `i -> 0 `i ]
+[; ;electronic_drawer_lock.c: 350: RA4 = !0b0;
+"350
+[e = _RA4 ! != -> 0 `i -> 0 `i ]
+[; ;electronic_drawer_lock.c: 351: RA1 = !0b1;
+"351
+[e = _RA1 ! != -> 1 `i -> 0 `i ]
+[; ;electronic_drawer_lock.c: 352: (GIE = 1);
+"352
+[e = _GIE -> -> 1 `i `b ]
+[; ;electronic_drawer_lock.c: 353: while(1)
+"353
+[e :U 85 ]
+[; ;electronic_drawer_lock.c: 354: {
+"354
+{
+[; ;electronic_drawer_lock.c: 355: RB1 = !0b1;
+"355
+[e = _RB1 ! != -> 1 `i -> 0 `i ]
+[; ;electronic_drawer_lock.c: 356: RB2 = !0b1;
+"356
+[e = _RB2 ! != -> 1 `i -> 0 `i ]
+[; ;electronic_drawer_lock.c: 357: RB3 = !0b1;
+"357
+[e = _RB3 ! != -> 1 `i -> 0 `i ]
+[; ;electronic_drawer_lock.c: 358: RB0 = 0b1;
+"358
+[e = _RB0 -> -> 1 `i `b ]
+[; ;electronic_drawer_lock.c: 359: __nop();
+"359
+[e ( ___nop ..  ]
+[; ;electronic_drawer_lock.c: 360: while(but_pres);
+"360
+[e $U 87  ]
+[e :U 88 ]
+[e :U 87 ]
+[e $ _but_pres 88  ]
+[e :U 89 ]
+[; ;electronic_drawer_lock.c: 362: RB0 = !0b1;
+"362
+[e = _RB0 ! != -> 1 `i -> 0 `i ]
+[; ;electronic_drawer_lock.c: 363: RB2 = !0b1;
+"363
+[e = _RB2 ! != -> 1 `i -> 0 `i ]
+[; ;electronic_drawer_lock.c: 364: RB3 = !0b1;
+"364
+[e = _RB3 ! != -> 1 `i -> 0 `i ]
+[; ;electronic_drawer_lock.c: 365: RB1 = 0b1;
+"365
+[e = _RB1 -> -> 1 `i `b ]
+[; ;electronic_drawer_lock.c: 366: __nop();
+"366
+[e ( ___nop ..  ]
+[; ;electronic_drawer_lock.c: 367: while(but_pres);
+"367
+[e $U 90  ]
+[e :U 91 ]
+[e :U 90 ]
+[e $ _but_pres 91  ]
+[e :U 92 ]
+[; ;electronic_drawer_lock.c: 369: RB0 = !0b1;
+"369
+[e = _RB0 ! != -> 1 `i -> 0 `i ]
+[; ;electronic_drawer_lock.c: 370: RB1 = !0b1;
+"370
+[e = _RB1 ! != -> 1 `i -> 0 `i ]
+[; ;electronic_drawer_lock.c: 371: RB3 = !0b1;
+"371
+[e = _RB3 ! != -> 1 `i -> 0 `i ]
+[; ;electronic_drawer_lock.c: 372: RB2 = 0b1;
+"372
+[e = _RB2 -> -> 1 `i `b ]
+[; ;electronic_drawer_lock.c: 373: __nop();
+"373
+[e ( ___nop ..  ]
+[; ;electronic_drawer_lock.c: 374: while(but_pres);
+"374
+[e $U 93  ]
+[e :U 94 ]
+[e :U 93 ]
+[e $ _but_pres 94  ]
+[e :U 95 ]
+[; ;electronic_drawer_lock.c: 376: RB0 = !0b1;
+"376
+[e = _RB0 ! != -> 1 `i -> 0 `i ]
+[; ;electronic_drawer_lock.c: 377: RB1 = !0b1;
+"377
+[e = _RB1 ! != -> 1 `i -> 0 `i ]
+[; ;electronic_drawer_lock.c: 378: RB2 = !0b1;
+"378
+[e = _RB2 ! != -> 1 `i -> 0 `i ]
+[; ;electronic_drawer_lock.c: 379: RB3 = 0b1;
+"379
+[e = _RB3 -> -> 1 `i `b ]
+[; ;electronic_drawer_lock.c: 380: __nop();
+"380
+[e ( ___nop ..  ]
+[; ;electronic_drawer_lock.c: 381: while(but_pres);
+"381
+[e $U 96  ]
+[e :U 97 ]
+[e :U 96 ]
+[e $ _but_pres 97  ]
+[e :U 98 ]
+"382
+}
+[e :U 84 ]
+"353
+[e $U 85  ]
+[e :U 86 ]
+[; ;electronic_drawer_lock.c: 382: }
+[; ;electronic_drawer_lock.c: 383: }
+"383
+[e :UE 83 ]
+}

@@ -1,0 +1,132 @@
+[p LITE_MODE AUTOSTATIC PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F877A ]
+[d frameptr 6 ]
+"62 /opt/microchip/xc8/v1.37/sources/common/float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 /opt/microchip/xc8/v1.37/sources/common/ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"6 /opt/microchip/xc8/v1.37/sources/common/lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"6 /opt/microchip/xc8/v1.37/sources/pic/eeprom.c
+[v _eecpymem eecpymem `(v  1 e 1 0 ]
+"39
+[v _memcpyee memcpyee `(v  1 e 1 0 ]
+"49 /home/atom/Documents/Work/MyWork/ECS/test.X/test.c
+[v _main main `(v  1 e 1 0 ]
+"131
+[v _init init `(v  1 e 1 0 ]
+"155
+[v _isr isr `II(v  1 e 1 0 ]
+"55 /opt/microchip/xc8/v1.37/include/pic16f877a.h
+[v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
+"442
+[v _INTCON INTCON `VEuc  1 e 1 @11 ]
+"519
+[v _PIR1 PIR1 `VEuc  1 e 1 @12 ]
+"580
+[v _PIR2 PIR2 `VEuc  1 e 1 @13 ]
+"625
+[v _TMR1L TMR1L `VEuc  1 e 1 @14 ]
+"631
+[v _TMR1H TMR1H `VEuc  1 e 1 @15 ]
+"637
+[v _T1CON T1CON `VEuc  1 e 1 @16 ]
+"717
+[v _T2CON T2CON `VEuc  1 e 1 @18 ]
+"880
+[v _CCP1CON CCP1CON `VEuc  1 e 1 @23 ]
+"1061
+[v _CCP2CON CCP2CON `VEuc  1 e 1 @29 ]
+"1124
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @31 ]
+"1219
+[v _OPTION_REG OPTION_REG `VEuc  1 e 1 @129 ]
+"1288
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
+"1337
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
+"1398
+[v _TRISC TRISC `VEuc  1 e 1 @135 ]
+"1459
+[v _TRISD TRISD `VEuc  1 e 1 @136 ]
+"1520
+[v _TRISE TRISE `VEuc  1 e 1 @137 ]
+"1576
+[v _PIE1 PIE1 `VEuc  1 e 1 @140 ]
+"1637
+[v _PIE2 PIE2 `VEuc  1 e 1 @141 ]
+"1770
+[v _PR2 PR2 `VEuc  1 e 1 @146 ]
+"2036
+[v _CMCON CMCON `VEuc  1 e 1 @156 ]
+"2105
+[v _CVRCON CVRCON `VEuc  1 e 1 @157 ]
+"2175
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @159 ]
+"2443
+[v _GIE GIE `VEb  1 e 0 @95 ]
+"2467
+[v _INTF INTF `VEb  1 e 0 @89 ]
+"2511
+[v _RA5 RA5 `VEb  1 e 0 @45 ]
+"2521
+[v _RB4 RB4 `VEb  1 e 0 @52 ]
+"2531
+[v _RBIF RBIF `VEb  1 e 0 @88 ]
+"2533
+[v _RC0 RC0 `VEb  1 e 0 @56 ]
+"2535
+[v _RC1 RC1 `VEb  1 e 0 @57 ]
+"2537
+[v _RC2 RC2 `VEb  1 e 0 @58 ]
+"2539
+[v _RC3 RC3 `VEb  1 e 0 @59 ]
+"2563
+[v _RD0 RD0 `VEb  1 e 0 @64 ]
+"2565
+[v _RD1 RD1 `VEb  1 e 0 @65 ]
+"2605
+[v _SPEN SPEN `VEb  1 e 0 @199 ]
+"2609
+[v _SSPEN SSPEN `VEb  1 e 0 @165 ]
+"2657
+[v _TMR1IF TMR1IF `VEb  1 e 0 @96 ]
+"2659
+[v _TMR1ON TMR1ON `VEb  1 e 0 @128 ]
+"40 /home/atom/Documents/Work/MyWork/ECS/test.X/test.c
+[v _mot_rot mot_rot `VEb  1 e 0 0 ]
+"42
+[v _mot_high mot_high `VEb  1 e 0 0 ]
+"44
+[v _seconds seconds `VEuc  1 e 1 0 ]
+"49
+[v _main main `(v  1 e 1 0 ]
+{
+"125
+} 0
+"131
+[v _init init `(v  1 e 1 0 ]
+{
+"152
+} 0
+"155
+[v _isr isr `II(v  1 e 1 0 ]
+{
+"157
+[v isr@mot_is_on mot_is_on `b  1 s 0 mot_is_on ]
+"158
+[v isr@mot_is_left mot_is_left `b  1 s 0 mot_is_left ]
+"243
+} 0
+"6 /opt/microchip/xc8/v1.37/sources/common/lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+{
+"11
+[v ___lwmod@counter counter `uc  1 a 1 5 ]
+"6
+[v ___lwmod@divisor divisor `ui  1 p 2 0 ]
+[v ___lwmod@dividend dividend `ui  1 p 2 2 ]
+"26
+} 0

@@ -1,0 +1,246 @@
+
+
+Microchip Technology PIC18 LITE Macro Assembler V1.21 build 54009 
+                                                                                               Mon Jan 20 15:10:14 2014
+
+Microchip Technology Omniscient Code Generator (Lite mode) build 54009
+     1                           	processor	18F458
+     2                           	fnconf	rparam,??,?,0
+     3                           	opt	pw 120
+     4                           	opt	lm
+     5                           	psect	text0,global,reloc=2,class=CODE,delta=1
+     6                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     7                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1
+     8                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1
+     9                           	psect	rparam,global,class=COMRAM,space=1,delta=1
+    10  0000                     _CMCON	set	4020
+    11  0000                     _TRISD	set	3989
+    12  0000                     _CVREN	set	32175
+    13  0000                     _GIE	set	32663
+    14  0000                     _TRISE1	set	31921
+    15                           
+    16                           ; 0 bytes @ 0x0
+    17 ;;
+    18 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+    19 ;;
+    20 ;; *************** function _main *****************
+    21 ;; Defined at:
+    22 ;;		line 6 in file "TestComp.c"
+    23 ;; Parameters:    Size  Location     Type
+    24 ;;		None
+    25 ;; Auto vars:     Size  Location     Type
+    26 ;;		None
+    27 ;; Return value:  Size  Location     Type
+    28 ;;		None               void
+    29 ;; Registers used:
+    30 ;;		wreg, status,2, status,0
+    31 ;; Tracked objects:
+    32 ;;		On entry : 0/0
+    33 ;;		On exit  : 0/0
+    34 ;;		Unchanged: 0/0
+    35 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+    36 ;;      Params:         0       0       0       0       0       0       0
+    37 ;;      Locals:         0       0       0       0       0       0       0
+    38 ;;      Temps:          0       0       0       0       0       0       0
+    39 ;;      Totals:         0       0       0       0       0       0       0
+    40 ;;Total ram usage:        0 bytes
+    41 ;; This function calls:
+    42 ;;		Nothing
+    43 ;; This function is called by:
+    44 ;;		Startup code after reset
+    45 ;; This function uses a non-reentrant model
+    46 ;;
+    47                           
+    48                           	psect	text0
+    49  003FE4                     __ptext0:
+    50                           	opt stack 0
+    51  003FE4  FFFF               	dw	65535	; assembler added errata NOP
+    52                           
+    53                           ; #config settings
+    54  003FE6                     _main:
+    55                           	opt stack 31
+    56                           
+    57                           ;incstack = 0
+    58  003FE6  FFFF               	dw	65535
+    59                           
+    60                           ;TestComp.c: 7: CMCON &= 0xCF;
+    61                           
+    62                           ;incstack = 0
+    63  003FE8  0ECF               	movlw	207
+    64  003FEA  16B4               	andwf	4020,f,c	;volatile
+    65                           
+    66                           ;TestComp.c: 8: CMCON &= 0xF8;
+    67  003FEC  0EF8               	movlw	248
+    68  003FEE  16B4               	andwf	4020,f,c	;volatile
+    69                           
+    70                           ;TestComp.c: 9: CMCON |= 0x01;
+    71  003FF0  80B4               	bsf	4020,0,c	;volatile
+    72                           
+    73                           ;TestComp.c: 10: TRISD = 0xFF;
+    74  003FF2  6895               	setf	3989,c	;volatile
+    75                           
+    76                           ;TestComp.c: 11: CVREN = 0b0;
+    77  003FF4  9EB5               	bcf	4021,7,c	;volatile
+    78                           
+    79                           ;TestComp.c: 12: GIE = 0b0;
+    80  003FF6  9EF2               	bcf	intcon,7,c	;volatile
+    81                           
+    82                           ;TestComp.c: 13: TRISE1 = 0b0;
+    83  003FF8  9296               	bcf	3990,1,c	;volatile
+    84  003FFA                     l13:
+    85  003FFA  FFFF               	dw	65535	; assembler added errata NOP
+    86  003FFC  D7FE               	goto	l13
+    87  003FFE                     __end_of_main:
+    88                           	opt stack 0
+    89  003FFE  FFFF               	dw	65535	; assembler added errata NOP
+    90  0000                     intcon	equ	0xFF2
+    91                           
+    92                           	psect	cinit
+    93  003FD6                     __pcinit:
+    94                           	opt stack 0
+    95  003FD6                     start_initialization:
+    96                           	opt stack 0
+    97  003FD6                     __initialization:
+    98                           	opt stack 0
+    99  003FD6                     end_of_initialization:
+   100                           	opt stack 0
+   101  003FD6                     __end_of__initialization:
+   102                           	opt stack 0
+   103  003FD6  0100               	movlb	0
+   104  003FD8  EFF3  F01F         	goto	_main	;jump to C main() function
+   105                           intcon	equ	0xFF2
+   106                           
+   107                           	psect	cstackCOMRAM
+   108  000000                     __pcstackCOMRAM:
+   109                           	opt stack 0
+   110  000000                     intcon	equ	0xFF2
+   111                           intcon	equ	0xFF2
+   112                           
+   113                           	psect	rparam
+   114  0000                     intcon	equ	0xFF2
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         0
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM           95      0       0
+    BANK0           160      0       0
+    BANK1           256      0       0
+    BANK2           256      0       0
+    BANK3           256      0       0
+    BANK4           256      0       0
+    BANK5           256      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMRAM
+
+    None.
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 0     0      0       0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 0
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMRAM           5F      0       0       0        0.0%
+EEDATA             100      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+COMRAM              5F      0       0       1        0.0%
+STACK                0      0       0       2        0.0%
+BITBANK0            A0      0       0       3        0.0%
+BANK0               A0      0       0       4        0.0%
+BITBANK1           100      0       0       5        0.0%
+BANK1              100      0       0       6        0.0%
+BITBANK2           100      0       0       7        0.0%
+BANK2              100      0       0       8        0.0%
+ABS                  0      0       0       9        0.0%
+BITBANK3           100      0       0      10        0.0%
+BANK3              100      0       0      11        0.0%
+BITBANK4           100      0       0      12        0.0%
+BANK4              100      0       0      13        0.0%
+BITBANK5           100      0       0      14        0.0%
+BANK5              100      0       0      15        0.0%
+BIGRAM             5FF      0       0      16        0.0%
+DATA                 0      0       0      17        0.0%
+BITSFR_1             0      0       0      40        0.0%
+SFR_1                0      0       0      40        0.0%
+BITSFR               0      0       0      40        0.0%
+SFR                  0      0       0      40        0.0%
+
+
+Microchip Technology PIC18 Macro Assembler V1.21 build 54009 
+Symbol Table                                                                                   Mon Jan 20 15:10:14 2014
+
+                                                             l13 3FFA  
+                                                    __CFG_OSC$HS 000000  
+                                                            _GIE 007F97  
+                                                   __CFG_WDT$OFF 000000  
+                                                           _main 3FE6  
+                                                           start 0002  
+                                                          ?_main 0000  
+                                                          _CMCON 000FB4  
+                                                          _CVREN 007DAF  
+                                                          _TRISD 000F95  
+                                                __initialization 3FD6  
+                                                   __end_of_main 3FFE  
+                                                         ??_main 0000  
+                                                  __activetblptr 000000  
+                                                         _TRISE1 007CB1  
+                                                     __accesstop 0060  
+                                        __end_of__initialization 3FD6  
+                                                 __pcstackCOMRAM 0000  
+                                                        __Hparam 0000  
+                                                        __Lparam 0000  
+                                                        __pcinit 3FD6  
+                                                        __ramtop 0600  
+                                                        __ptext0 3FE4  
+                                           end_of_initialization 3FD6  
+                                            start_initialization 3FD6  
+                                                       __Hrparam 0000  
+                                                       __Lrparam 0000  
+                                                  __size_of_main 0018  

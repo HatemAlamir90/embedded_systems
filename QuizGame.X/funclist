@@ -1,0 +1,4 @@
+_main: CODE, 280 0 22
+__initialization: CODE, 312 0 0
+_isr: CODE, 8 0 266
+Total: 288

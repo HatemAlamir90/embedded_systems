@@ -1,0 +1,3802 @@
+Version 3.2 HI-TECH Software Intermediate Code
+"50 auto_washing_machine.c
+[c E1105 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 .. ]
+[n E1105 state BEGINNING SUSPENSION A B C D F G H J K L M N P Q NO_SPIN HALF_LOAD  ]
+[p mainexit ]
+"2443 /opt/microchip/xc8/v1.36/include/pic16f877a.h
+[v _GIE `Vb ~T0 @X0 0 e@95 ]
+"2733
+[v _TRISD7 `Vb ~T0 @X0 0 e@1095 ]
+"2577
+[v _RD7 `Vb ~T0 @X0 0 e@71 ]
+"2675
+[v _TRISA0 `Vb ~T0 @X0 0 e@1064 ]
+"2501
+[v _RA0 `Vb ~T0 @X0 0 e@40 ]
+"442
+[v _INTCON `Vuc ~T0 @X0 0 e@11 ]
+"1576
+[v _PIE1 `Vuc ~T0 @X0 0 e@140 ]
+"1637
+[v _PIE2 `Vuc ~T0 @X0 0 e@141 ]
+"519
+[v _PIR1 `Vuc ~T0 @X0 0 e@12 ]
+"580
+[v _PIR2 `Vuc ~T0 @X0 0 e@13 ]
+"1219
+[v _OPTION_REG `Vuc ~T0 @X0 0 e@129 ]
+"1124
+[v _ADCON0 `Vuc ~T0 @X0 0 e@31 ]
+"2175
+[v _ADCON1 `Vuc ~T0 @X0 0 e@159 ]
+"2036
+[v _CMCON `Vuc ~T0 @X0 0 e@156 ]
+"2105
+[v _CVRCON `Vuc ~T0 @X0 0 e@157 ]
+"2609
+[v _SSPEN `Vb ~T0 @X0 0 e@165 ]
+"1288
+[v _TRISA `Vuc ~T0 @X0 0 e@133 ]
+"1337
+[v _TRISB `Vuc ~T0 @X0 0 e@134 ]
+"880
+[v _CCP1CON `Vuc ~T0 @X0 0 e@23 ]
+"1061
+[v _CCP2CON `Vuc ~T0 @X0 0 e@29 ]
+"2605
+[v _SPEN `Vb ~T0 @X0 0 e@199 ]
+"1398
+[v _TRISC `Vuc ~T0 @X0 0 e@135 ]
+"1459
+[v _TRISD `Vuc ~T0 @X0 0 e@136 ]
+"1520
+[v _TRISE `Vuc ~T0 @X0 0 e@137 ]
+"55
+[v _TMR0 `Vuc ~T0 @X0 0 e@1 ]
+"637
+[v _T1CON `Vuc ~T0 @X0 0 e@16 ]
+"717
+[v _T2CON `Vuc ~T0 @X0 0 e@18 ]
+"1770
+[v _PR2 `Vuc ~T0 @X0 0 e@146 ]
+"89 auto_washing_machine.c
+[v _init `(v ~T0 @X0 0 ef ]
+"92
+[v _state_a `(v ~T0 @X0 0 ef ]
+"94
+[v _state_b `(v ~T0 @X0 0 ef ]
+"96
+[v _state_c `(v ~T0 @X0 0 ef ]
+"98
+[v _state_d `(v ~T0 @X0 0 ef ]
+"100
+[v _state_f `(v ~T0 @X0 0 ef ]
+"102
+[v _state_g `(v ~T0 @X0 0 ef ]
+"104
+[v _state_h `(v ~T0 @X0 0 ef ]
+"107
+[v _state_j `(v ~T0 @X0 0 ef ]
+"109
+[v _state_k `(v ~T0 @X0 0 ef ]
+"111
+[v _state_l `(v ~T0 @X0 0 ef ]
+"113
+[v _state_m `(v ~T0 @X0 0 ef ]
+"115
+[v _state_n `(v ~T0 @X0 0 ef ]
+"117
+[v _state_p `(v ~T0 @X0 0 ef ]
+"119
+[v _state_q `(v ~T0 @X0 0 ef ]
+"2533 /opt/microchip/xc8/v1.36/include/pic16f877a.h
+[v _RC0 `Vb ~T0 @X0 0 e@56 ]
+"2535
+[v _RC1 `Vb ~T0 @X0 0 e@57 ]
+"2537
+[v _RC2 `Vb ~T0 @X0 0 e@58 ]
+"2569
+[v _RD3 `Vb ~T0 @X0 0 e@67 ]
+"2503
+[v _RA1 `Vb ~T0 @X0 0 e@41 ]
+"2505
+[v _RA2 `Vb ~T0 @X0 0 e@42 ]
+"2507
+[v _RA3 `Vb ~T0 @X0 0 e@43 ]
+"2511
+[v _RA5 `Vb ~T0 @X0 0 e@45 ]
+"2565
+[v _RD1 `Vb ~T0 @X0 0 e@65 ]
+"2563
+[v _RD0 `Vb ~T0 @X0 0 e@64 ]
+"2567
+[v _RD2 `Vb ~T0 @X0 0 e@66 ]
+"270
+[v _PORTC `Vuc ~T0 @X0 0 e@7 ]
+"625
+[v _TMR1L `Vuc ~T0 @X0 0 e@14 ]
+"631
+[v _TMR1H `Vuc ~T0 @X0 0 e@15 ]
+"2659
+[v _TMR1ON `Vb ~T0 @X0 0 e@128 ]
+"711
+[v _TMR2 `Vuc ~T0 @X0 0 e@17 ]
+"2665
+[v _TMR2ON `Vb ~T0 @X0 0 e@146 ]
+"294 auto_washing_machine.c
+[v _discharge `(v ~T0 @X0 0 ef ]
+"2517 /opt/microchip/xc8/v1.36/include/pic16f877a.h
+[v _RB2 `Vb ~T0 @X0 0 e@50 ]
+"2515
+[v _RB1 `Vb ~T0 @X0 0 e@49 ]
+"2519
+[v _RB3 `Vb ~T0 @X0 0 e@51 ]
+"2657
+[v _TMR1IF `Vb ~T0 @X0 0 e@96 ]
+[v F1091 `(v ~T0 @X0 1 tf1`ul ]
+"152 /opt/microchip/xc8/v1.36/include/pic.h
+[v __delay `JF1091 ~T0 @X0 0 e ]
+[p i __delay ]
+"2663 /opt/microchip/xc8/v1.36/include/pic16f877a.h
+[v _TMR2IF `Vb ~T0 @X0 0 e@97 ]
+"2579
+[v _RE0 `Vb ~T0 @X0 0 e@72 ]
+"668 auto_washing_machine.c
+[v _suspend `(v ~T0 @X0 0 ef ]
+"2581 /opt/microchip/xc8/v1.36/include/pic16f877a.h
+[v _RE1 `Vb ~T0 @X0 0 e@73 ]
+"107 stepper.h
+[v _rev_cw `(v ~T0 @X0 0 ef ]
+"152
+[v _mot_off `(v ~T0 @X0 0 ef ]
+"2467 /opt/microchip/xc8/v1.36/include/pic16f877a.h
+[v _INTF `Vb ~T0 @X0 0 e@89 ]
+"2571
+[v _RD4 `Vb ~T0 @X0 0 e@68 ]
+"669 auto_washing_machine.c
+[v _resume `(v ~T0 @X0 0 ef ]
+"2513 /opt/microchip/xc8/v1.36/include/pic16f877a.h
+[v _RB0 `Vb ~T0 @X0 0 e@48 ]
+"2531
+[v _RBIF `Vb ~T0 @X0 0 e@88 ]
+"2523
+[v _RB5 `Vb ~T0 @X0 0 e@53 ]
+"2573
+[v _RD5 `Vb ~T0 @X0 0 e@69 ]
+"2521
+[v _RB4 `Vb ~T0 @X0 0 e@52 ]
+"2575
+[v _RD6 `Vb ~T0 @X0 0 e@70 ]
+"2527
+[v _RB7 `Vb ~T0 @X0 0 e@55 ]
+"2525
+[v _RB6 `Vb ~T0 @X0 0 e@54 ]
+[; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
+[; ;htc.h: 28: extern double __fpnormalize(double);
+[; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
+[; ;pic16f877a.h: 49: extern volatile unsigned char INDF @ 0x000;
+"51 /opt/microchip/xc8/v1.36/include/pic16f877a.h
+[; ;pic16f877a.h: 51: asm("INDF equ 00h");
+[; <" INDF equ 00h ;# ">
+[; ;pic16f877a.h: 55: extern volatile unsigned char TMR0 @ 0x001;
+"57
+[; ;pic16f877a.h: 57: asm("TMR0 equ 01h");
+[; <" TMR0 equ 01h ;# ">
+[; ;pic16f877a.h: 61: extern volatile unsigned char PCL @ 0x002;
+"63
+[; ;pic16f877a.h: 63: asm("PCL equ 02h");
+[; <" PCL equ 02h ;# ">
+[; ;pic16f877a.h: 67: extern volatile unsigned char STATUS @ 0x003;
+"69
+[; ;pic16f877a.h: 69: asm("STATUS equ 03h");
+[; <" STATUS equ 03h ;# ">
+[; ;pic16f877a.h: 72: typedef union {
+[; ;pic16f877a.h: 73: struct {
+[; ;pic16f877a.h: 74: unsigned C :1;
+[; ;pic16f877a.h: 75: unsigned DC :1;
+[; ;pic16f877a.h: 76: unsigned Z :1;
+[; ;pic16f877a.h: 77: unsigned nPD :1;
+[; ;pic16f877a.h: 78: unsigned nTO :1;
+[; ;pic16f877a.h: 79: unsigned RP :2;
+[; ;pic16f877a.h: 80: unsigned IRP :1;
+[; ;pic16f877a.h: 81: };
+[; ;pic16f877a.h: 82: struct {
+[; ;pic16f877a.h: 83: unsigned :5;
+[; ;pic16f877a.h: 84: unsigned RP0 :1;
+[; ;pic16f877a.h: 85: unsigned RP1 :1;
+[; ;pic16f877a.h: 86: };
+[; ;pic16f877a.h: 87: struct {
+[; ;pic16f877a.h: 88: unsigned CARRY :1;
+[; ;pic16f877a.h: 89: };
+[; ;pic16f877a.h: 90: struct {
+[; ;pic16f877a.h: 91: unsigned :2;
+[; ;pic16f877a.h: 92: unsigned ZERO :1;
+[; ;pic16f877a.h: 93: };
+[; ;pic16f877a.h: 94: } STATUSbits_t;
+[; ;pic16f877a.h: 95: extern volatile STATUSbits_t STATUSbits @ 0x003;
+[; ;pic16f877a.h: 154: extern volatile unsigned char FSR @ 0x004;
+"156
+[; ;pic16f877a.h: 156: asm("FSR equ 04h");
+[; <" FSR equ 04h ;# ">
+[; ;pic16f877a.h: 160: extern volatile unsigned char PORTA @ 0x005;
+"162
+[; ;pic16f877a.h: 162: asm("PORTA equ 05h");
+[; <" PORTA equ 05h ;# ">
+[; ;pic16f877a.h: 165: typedef union {
+[; ;pic16f877a.h: 166: struct {
+[; ;pic16f877a.h: 167: unsigned RA0 :1;
+[; ;pic16f877a.h: 168: unsigned RA1 :1;
+[; ;pic16f877a.h: 169: unsigned RA2 :1;
+[; ;pic16f877a.h: 170: unsigned RA3 :1;
+[; ;pic16f877a.h: 171: unsigned RA4 :1;
+[; ;pic16f877a.h: 172: unsigned RA5 :1;
+[; ;pic16f877a.h: 173: };
+[; ;pic16f877a.h: 174: } PORTAbits_t;
+[; ;pic16f877a.h: 175: extern volatile PORTAbits_t PORTAbits @ 0x005;
+[; ;pic16f877a.h: 209: extern volatile unsigned char PORTB @ 0x006;
+"211
+[; ;pic16f877a.h: 211: asm("PORTB equ 06h");
+[; <" PORTB equ 06h ;# ">
+[; ;pic16f877a.h: 214: typedef union {
+[; ;pic16f877a.h: 215: struct {
+[; ;pic16f877a.h: 216: unsigned RB0 :1;
+[; ;pic16f877a.h: 217: unsigned RB1 :1;
+[; ;pic16f877a.h: 218: unsigned RB2 :1;
+[; ;pic16f877a.h: 219: unsigned RB3 :1;
+[; ;pic16f877a.h: 220: unsigned RB4 :1;
+[; ;pic16f877a.h: 221: unsigned RB5 :1;
+[; ;pic16f877a.h: 222: unsigned RB6 :1;
+[; ;pic16f877a.h: 223: unsigned RB7 :1;
+[; ;pic16f877a.h: 224: };
+[; ;pic16f877a.h: 225: } PORTBbits_t;
+[; ;pic16f877a.h: 226: extern volatile PORTBbits_t PORTBbits @ 0x006;
+[; ;pic16f877a.h: 270: extern volatile unsigned char PORTC @ 0x007;
+"272
+[; ;pic16f877a.h: 272: asm("PORTC equ 07h");
+[; <" PORTC equ 07h ;# ">
+[; ;pic16f877a.h: 275: typedef union {
+[; ;pic16f877a.h: 276: struct {
+[; ;pic16f877a.h: 277: unsigned RC0 :1;
+[; ;pic16f877a.h: 278: unsigned RC1 :1;
+[; ;pic16f877a.h: 279: unsigned RC2 :1;
+[; ;pic16f877a.h: 280: unsigned RC3 :1;
+[; ;pic16f877a.h: 281: unsigned RC4 :1;
+[; ;pic16f877a.h: 282: unsigned RC5 :1;
+[; ;pic16f877a.h: 283: unsigned RC6 :1;
+[; ;pic16f877a.h: 284: unsigned RC7 :1;
+[; ;pic16f877a.h: 285: };
+[; ;pic16f877a.h: 286: } PORTCbits_t;
+[; ;pic16f877a.h: 287: extern volatile PORTCbits_t PORTCbits @ 0x007;
+[; ;pic16f877a.h: 331: extern volatile unsigned char PORTD @ 0x008;
+"333
+[; ;pic16f877a.h: 333: asm("PORTD equ 08h");
+[; <" PORTD equ 08h ;# ">
+[; ;pic16f877a.h: 336: typedef union {
+[; ;pic16f877a.h: 337: struct {
+[; ;pic16f877a.h: 338: unsigned RD0 :1;
+[; ;pic16f877a.h: 339: unsigned RD1 :1;
+[; ;pic16f877a.h: 340: unsigned RD2 :1;
+[; ;pic16f877a.h: 341: unsigned RD3 :1;
+[; ;pic16f877a.h: 342: unsigned RD4 :1;
+[; ;pic16f877a.h: 343: unsigned RD5 :1;
+[; ;pic16f877a.h: 344: unsigned RD6 :1;
+[; ;pic16f877a.h: 345: unsigned RD7 :1;
+[; ;pic16f877a.h: 346: };
+[; ;pic16f877a.h: 347: } PORTDbits_t;
+[; ;pic16f877a.h: 348: extern volatile PORTDbits_t PORTDbits @ 0x008;
+[; ;pic16f877a.h: 392: extern volatile unsigned char PORTE @ 0x009;
+"394
+[; ;pic16f877a.h: 394: asm("PORTE equ 09h");
+[; <" PORTE equ 09h ;# ">
+[; ;pic16f877a.h: 397: typedef union {
+[; ;pic16f877a.h: 398: struct {
+[; ;pic16f877a.h: 399: unsigned RE0 :1;
+[; ;pic16f877a.h: 400: unsigned RE1 :1;
+[; ;pic16f877a.h: 401: unsigned RE2 :1;
+[; ;pic16f877a.h: 402: };
+[; ;pic16f877a.h: 403: } PORTEbits_t;
+[; ;pic16f877a.h: 404: extern volatile PORTEbits_t PORTEbits @ 0x009;
+[; ;pic16f877a.h: 423: extern volatile unsigned char PCLATH @ 0x00A;
+"425
+[; ;pic16f877a.h: 425: asm("PCLATH equ 0Ah");
+[; <" PCLATH equ 0Ah ;# ">
+[; ;pic16f877a.h: 428: typedef union {
+[; ;pic16f877a.h: 429: struct {
+[; ;pic16f877a.h: 430: unsigned PCLATH :5;
+[; ;pic16f877a.h: 431: };
+[; ;pic16f877a.h: 432: } PCLATHbits_t;
+[; ;pic16f877a.h: 433: extern volatile PCLATHbits_t PCLATHbits @ 0x00A;
+[; ;pic16f877a.h: 442: extern volatile unsigned char INTCON @ 0x00B;
+"444
+[; ;pic16f877a.h: 444: asm("INTCON equ 0Bh");
+[; <" INTCON equ 0Bh ;# ">
+[; ;pic16f877a.h: 447: typedef union {
+[; ;pic16f877a.h: 448: struct {
+[; ;pic16f877a.h: 449: unsigned RBIF :1;
+[; ;pic16f877a.h: 450: unsigned INTF :1;
+[; ;pic16f877a.h: 451: unsigned TMR0IF :1;
+[; ;pic16f877a.h: 452: unsigned RBIE :1;
+[; ;pic16f877a.h: 453: unsigned INTE :1;
+[; ;pic16f877a.h: 454: unsigned TMR0IE :1;
+[; ;pic16f877a.h: 455: unsigned PEIE :1;
+[; ;pic16f877a.h: 456: unsigned GIE :1;
+[; ;pic16f877a.h: 457: };
+[; ;pic16f877a.h: 458: struct {
+[; ;pic16f877a.h: 459: unsigned :2;
+[; ;pic16f877a.h: 460: unsigned T0IF :1;
+[; ;pic16f877a.h: 461: unsigned :2;
+[; ;pic16f877a.h: 462: unsigned T0IE :1;
+[; ;pic16f877a.h: 463: };
+[; ;pic16f877a.h: 464: } INTCONbits_t;
+[; ;pic16f877a.h: 465: extern volatile INTCONbits_t INTCONbits @ 0x00B;
+[; ;pic16f877a.h: 519: extern volatile unsigned char PIR1 @ 0x00C;
+"521
+[; ;pic16f877a.h: 521: asm("PIR1 equ 0Ch");
+[; <" PIR1 equ 0Ch ;# ">
+[; ;pic16f877a.h: 524: typedef union {
+[; ;pic16f877a.h: 525: struct {
+[; ;pic16f877a.h: 526: unsigned TMR1IF :1;
+[; ;pic16f877a.h: 527: unsigned TMR2IF :1;
+[; ;pic16f877a.h: 528: unsigned CCP1IF :1;
+[; ;pic16f877a.h: 529: unsigned SSPIF :1;
+[; ;pic16f877a.h: 530: unsigned TXIF :1;
+[; ;pic16f877a.h: 531: unsigned RCIF :1;
+[; ;pic16f877a.h: 532: unsigned ADIF :1;
+[; ;pic16f877a.h: 533: unsigned PSPIF :1;
+[; ;pic16f877a.h: 534: };
+[; ;pic16f877a.h: 535: } PIR1bits_t;
+[; ;pic16f877a.h: 536: extern volatile PIR1bits_t PIR1bits @ 0x00C;
+[; ;pic16f877a.h: 580: extern volatile unsigned char PIR2 @ 0x00D;
+"582
+[; ;pic16f877a.h: 582: asm("PIR2 equ 0Dh");
+[; <" PIR2 equ 0Dh ;# ">
+[; ;pic16f877a.h: 585: typedef union {
+[; ;pic16f877a.h: 586: struct {
+[; ;pic16f877a.h: 587: unsigned CCP2IF :1;
+[; ;pic16f877a.h: 588: unsigned :2;
+[; ;pic16f877a.h: 589: unsigned BCLIF :1;
+[; ;pic16f877a.h: 590: unsigned EEIF :1;
+[; ;pic16f877a.h: 591: unsigned :1;
+[; ;pic16f877a.h: 592: unsigned CMIF :1;
+[; ;pic16f877a.h: 593: };
+[; ;pic16f877a.h: 594: } PIR2bits_t;
+[; ;pic16f877a.h: 595: extern volatile PIR2bits_t PIR2bits @ 0x00D;
+[; ;pic16f877a.h: 619: extern volatile unsigned short TMR1 @ 0x00E;
+"621
+[; ;pic16f877a.h: 621: asm("TMR1 equ 0Eh");
+[; <" TMR1 equ 0Eh ;# ">
+[; ;pic16f877a.h: 625: extern volatile unsigned char TMR1L @ 0x00E;
+"627
+[; ;pic16f877a.h: 627: asm("TMR1L equ 0Eh");
+[; <" TMR1L equ 0Eh ;# ">
+[; ;pic16f877a.h: 631: extern volatile unsigned char TMR1H @ 0x00F;
+"633
+[; ;pic16f877a.h: 633: asm("TMR1H equ 0Fh");
+[; <" TMR1H equ 0Fh ;# ">
+[; ;pic16f877a.h: 637: extern volatile unsigned char T1CON @ 0x010;
+"639
+[; ;pic16f877a.h: 639: asm("T1CON equ 010h");
+[; <" T1CON equ 010h ;# ">
+[; ;pic16f877a.h: 642: typedef union {
+[; ;pic16f877a.h: 643: struct {
+[; ;pic16f877a.h: 644: unsigned TMR1ON :1;
+[; ;pic16f877a.h: 645: unsigned TMR1CS :1;
+[; ;pic16f877a.h: 646: unsigned nT1SYNC :1;
+[; ;pic16f877a.h: 647: unsigned T1OSCEN :1;
+[; ;pic16f877a.h: 648: unsigned T1CKPS :2;
+[; ;pic16f877a.h: 649: };
+[; ;pic16f877a.h: 650: struct {
+[; ;pic16f877a.h: 651: unsigned :2;
+[; ;pic16f877a.h: 652: unsigned T1SYNC :1;
+[; ;pic16f877a.h: 653: unsigned :1;
+[; ;pic16f877a.h: 654: unsigned T1CKPS0 :1;
+[; ;pic16f877a.h: 655: unsigned T1CKPS1 :1;
+[; ;pic16f877a.h: 656: };
+[; ;pic16f877a.h: 657: struct {
+[; ;pic16f877a.h: 658: unsigned :2;
+[; ;pic16f877a.h: 659: unsigned T1INSYNC :1;
+[; ;pic16f877a.h: 660: };
+[; ;pic16f877a.h: 661: } T1CONbits_t;
+[; ;pic16f877a.h: 662: extern volatile T1CONbits_t T1CONbits @ 0x010;
+[; ;pic16f877a.h: 711: extern volatile unsigned char TMR2 @ 0x011;
+"713
+[; ;pic16f877a.h: 713: asm("TMR2 equ 011h");
+[; <" TMR2 equ 011h ;# ">
+[; ;pic16f877a.h: 717: extern volatile unsigned char T2CON @ 0x012;
+"719
+[; ;pic16f877a.h: 719: asm("T2CON equ 012h");
+[; <" T2CON equ 012h ;# ">
+[; ;pic16f877a.h: 722: typedef union {
+[; ;pic16f877a.h: 723: struct {
+[; ;pic16f877a.h: 724: unsigned T2CKPS :2;
+[; ;pic16f877a.h: 725: unsigned TMR2ON :1;
+[; ;pic16f877a.h: 726: unsigned TOUTPS :4;
+[; ;pic16f877a.h: 727: };
+[; ;pic16f877a.h: 728: struct {
+[; ;pic16f877a.h: 729: unsigned T2CKPS0 :1;
+[; ;pic16f877a.h: 730: unsigned T2CKPS1 :1;
+[; ;pic16f877a.h: 731: unsigned :1;
+[; ;pic16f877a.h: 732: unsigned TOUTPS0 :1;
+[; ;pic16f877a.h: 733: unsigned TOUTPS1 :1;
+[; ;pic16f877a.h: 734: unsigned TOUTPS2 :1;
+[; ;pic16f877a.h: 735: unsigned TOUTPS3 :1;
+[; ;pic16f877a.h: 736: };
+[; ;pic16f877a.h: 737: } T2CONbits_t;
+[; ;pic16f877a.h: 738: extern volatile T2CONbits_t T2CONbits @ 0x012;
+[; ;pic16f877a.h: 787: extern volatile unsigned char SSPBUF @ 0x013;
+"789
+[; ;pic16f877a.h: 789: asm("SSPBUF equ 013h");
+[; <" SSPBUF equ 013h ;# ">
+[; ;pic16f877a.h: 793: extern volatile unsigned char SSPCON @ 0x014;
+"795
+[; ;pic16f877a.h: 795: asm("SSPCON equ 014h");
+[; <" SSPCON equ 014h ;# ">
+[; ;pic16f877a.h: 798: typedef union {
+[; ;pic16f877a.h: 799: struct {
+[; ;pic16f877a.h: 800: unsigned SSPM :4;
+[; ;pic16f877a.h: 801: unsigned CKP :1;
+[; ;pic16f877a.h: 802: unsigned SSPEN :1;
+[; ;pic16f877a.h: 803: unsigned SSPOV :1;
+[; ;pic16f877a.h: 804: unsigned WCOL :1;
+[; ;pic16f877a.h: 805: };
+[; ;pic16f877a.h: 806: struct {
+[; ;pic16f877a.h: 807: unsigned SSPM0 :1;
+[; ;pic16f877a.h: 808: unsigned SSPM1 :1;
+[; ;pic16f877a.h: 809: unsigned SSPM2 :1;
+[; ;pic16f877a.h: 810: unsigned SSPM3 :1;
+[; ;pic16f877a.h: 811: };
+[; ;pic16f877a.h: 812: } SSPCONbits_t;
+[; ;pic16f877a.h: 813: extern volatile SSPCONbits_t SSPCONbits @ 0x014;
+[; ;pic16f877a.h: 862: extern volatile unsigned short CCPR1 @ 0x015;
+"864
+[; ;pic16f877a.h: 864: asm("CCPR1 equ 015h");
+[; <" CCPR1 equ 015h ;# ">
+[; ;pic16f877a.h: 868: extern volatile unsigned char CCPR1L @ 0x015;
+"870
+[; ;pic16f877a.h: 870: asm("CCPR1L equ 015h");
+[; <" CCPR1L equ 015h ;# ">
+[; ;pic16f877a.h: 874: extern volatile unsigned char CCPR1H @ 0x016;
+"876
+[; ;pic16f877a.h: 876: asm("CCPR1H equ 016h");
+[; <" CCPR1H equ 016h ;# ">
+[; ;pic16f877a.h: 880: extern volatile unsigned char CCP1CON @ 0x017;
+"882
+[; ;pic16f877a.h: 882: asm("CCP1CON equ 017h");
+[; <" CCP1CON equ 017h ;# ">
+[; ;pic16f877a.h: 885: typedef union {
+[; ;pic16f877a.h: 886: struct {
+[; ;pic16f877a.h: 887: unsigned CCP1M :4;
+[; ;pic16f877a.h: 888: unsigned CCP1Y :1;
+[; ;pic16f877a.h: 889: unsigned CCP1X :1;
+[; ;pic16f877a.h: 890: };
+[; ;pic16f877a.h: 891: struct {
+[; ;pic16f877a.h: 892: unsigned CCP1M0 :1;
+[; ;pic16f877a.h: 893: unsigned CCP1M1 :1;
+[; ;pic16f877a.h: 894: unsigned CCP1M2 :1;
+[; ;pic16f877a.h: 895: unsigned CCP1M3 :1;
+[; ;pic16f877a.h: 896: };
+[; ;pic16f877a.h: 897: } CCP1CONbits_t;
+[; ;pic16f877a.h: 898: extern volatile CCP1CONbits_t CCP1CONbits @ 0x017;
+[; ;pic16f877a.h: 937: extern volatile unsigned char RCSTA @ 0x018;
+"939
+[; ;pic16f877a.h: 939: asm("RCSTA equ 018h");
+[; <" RCSTA equ 018h ;# ">
+[; ;pic16f877a.h: 942: typedef union {
+[; ;pic16f877a.h: 943: struct {
+[; ;pic16f877a.h: 944: unsigned RX9D :1;
+[; ;pic16f877a.h: 945: unsigned OERR :1;
+[; ;pic16f877a.h: 946: unsigned FERR :1;
+[; ;pic16f877a.h: 947: unsigned ADDEN :1;
+[; ;pic16f877a.h: 948: unsigned CREN :1;
+[; ;pic16f877a.h: 949: unsigned SREN :1;
+[; ;pic16f877a.h: 950: unsigned RX9 :1;
+[; ;pic16f877a.h: 951: unsigned SPEN :1;
+[; ;pic16f877a.h: 952: };
+[; ;pic16f877a.h: 953: struct {
+[; ;pic16f877a.h: 954: unsigned RCD8 :1;
+[; ;pic16f877a.h: 955: unsigned :5;
+[; ;pic16f877a.h: 956: unsigned RC9 :1;
+[; ;pic16f877a.h: 957: };
+[; ;pic16f877a.h: 958: struct {
+[; ;pic16f877a.h: 959: unsigned :6;
+[; ;pic16f877a.h: 960: unsigned nRC8 :1;
+[; ;pic16f877a.h: 961: };
+[; ;pic16f877a.h: 962: struct {
+[; ;pic16f877a.h: 963: unsigned :6;
+[; ;pic16f877a.h: 964: unsigned RC8_9 :1;
+[; ;pic16f877a.h: 965: };
+[; ;pic16f877a.h: 966: } RCSTAbits_t;
+[; ;pic16f877a.h: 967: extern volatile RCSTAbits_t RCSTAbits @ 0x018;
+[; ;pic16f877a.h: 1031: extern volatile unsigned char TXREG @ 0x019;
+"1033
+[; ;pic16f877a.h: 1033: asm("TXREG equ 019h");
+[; <" TXREG equ 019h ;# ">
+[; ;pic16f877a.h: 1037: extern volatile unsigned char RCREG @ 0x01A;
+"1039
+[; ;pic16f877a.h: 1039: asm("RCREG equ 01Ah");
+[; <" RCREG equ 01Ah ;# ">
+[; ;pic16f877a.h: 1043: extern volatile unsigned short CCPR2 @ 0x01B;
+"1045
+[; ;pic16f877a.h: 1045: asm("CCPR2 equ 01Bh");
+[; <" CCPR2 equ 01Bh ;# ">
+[; ;pic16f877a.h: 1049: extern volatile unsigned char CCPR2L @ 0x01B;
+"1051
+[; ;pic16f877a.h: 1051: asm("CCPR2L equ 01Bh");
+[; <" CCPR2L equ 01Bh ;# ">
+[; ;pic16f877a.h: 1055: extern volatile unsigned char CCPR2H @ 0x01C;
+"1057
+[; ;pic16f877a.h: 1057: asm("CCPR2H equ 01Ch");
+[; <" CCPR2H equ 01Ch ;# ">
+[; ;pic16f877a.h: 1061: extern volatile unsigned char CCP2CON @ 0x01D;
+"1063
+[; ;pic16f877a.h: 1063: asm("CCP2CON equ 01Dh");
+[; <" CCP2CON equ 01Dh ;# ">
+[; ;pic16f877a.h: 1066: typedef union {
+[; ;pic16f877a.h: 1067: struct {
+[; ;pic16f877a.h: 1068: unsigned CCP2M :4;
+[; ;pic16f877a.h: 1069: unsigned CCP2Y :1;
+[; ;pic16f877a.h: 1070: unsigned CCP2X :1;
+[; ;pic16f877a.h: 1071: };
+[; ;pic16f877a.h: 1072: struct {
+[; ;pic16f877a.h: 1073: unsigned CCP2M0 :1;
+[; ;pic16f877a.h: 1074: unsigned CCP2M1 :1;
+[; ;pic16f877a.h: 1075: unsigned CCP2M2 :1;
+[; ;pic16f877a.h: 1076: unsigned CCP2M3 :1;
+[; ;pic16f877a.h: 1077: };
+[; ;pic16f877a.h: 1078: } CCP2CONbits_t;
+[; ;pic16f877a.h: 1079: extern volatile CCP2CONbits_t CCP2CONbits @ 0x01D;
+[; ;pic16f877a.h: 1118: extern volatile unsigned char ADRESH @ 0x01E;
+"1120
+[; ;pic16f877a.h: 1120: asm("ADRESH equ 01Eh");
+[; <" ADRESH equ 01Eh ;# ">
+[; ;pic16f877a.h: 1124: extern volatile unsigned char ADCON0 @ 0x01F;
+"1126
+[; ;pic16f877a.h: 1126: asm("ADCON0 equ 01Fh");
+[; <" ADCON0 equ 01Fh ;# ">
+[; ;pic16f877a.h: 1129: typedef union {
+[; ;pic16f877a.h: 1130: struct {
+[; ;pic16f877a.h: 1131: unsigned ADON :1;
+[; ;pic16f877a.h: 1132: unsigned :1;
+[; ;pic16f877a.h: 1133: unsigned GO_nDONE :1;
+[; ;pic16f877a.h: 1134: unsigned CHS :3;
+[; ;pic16f877a.h: 1135: unsigned ADCS :2;
+[; ;pic16f877a.h: 1136: };
+[; ;pic16f877a.h: 1137: struct {
+[; ;pic16f877a.h: 1138: unsigned :2;
+[; ;pic16f877a.h: 1139: unsigned GO :1;
+[; ;pic16f877a.h: 1140: unsigned CHS0 :1;
+[; ;pic16f877a.h: 1141: unsigned CHS1 :1;
+[; ;pic16f877a.h: 1142: unsigned CHS2 :1;
+[; ;pic16f877a.h: 1143: unsigned ADCS0 :1;
+[; ;pic16f877a.h: 1144: unsigned ADCS1 :1;
+[; ;pic16f877a.h: 1145: };
+[; ;pic16f877a.h: 1146: struct {
+[; ;pic16f877a.h: 1147: unsigned :2;
+[; ;pic16f877a.h: 1148: unsigned nDONE :1;
+[; ;pic16f877a.h: 1149: };
+[; ;pic16f877a.h: 1150: struct {
+[; ;pic16f877a.h: 1151: unsigned :2;
+[; ;pic16f877a.h: 1152: unsigned GO_DONE :1;
+[; ;pic16f877a.h: 1153: };
+[; ;pic16f877a.h: 1154: } ADCON0bits_t;
+[; ;pic16f877a.h: 1155: extern volatile ADCON0bits_t ADCON0bits @ 0x01F;
+[; ;pic16f877a.h: 1219: extern volatile unsigned char OPTION_REG @ 0x081;
+"1221
+[; ;pic16f877a.h: 1221: asm("OPTION_REG equ 081h");
+[; <" OPTION_REG equ 081h ;# ">
+[; ;pic16f877a.h: 1224: typedef union {
+[; ;pic16f877a.h: 1225: struct {
+[; ;pic16f877a.h: 1226: unsigned PS :3;
+[; ;pic16f877a.h: 1227: unsigned PSA :1;
+[; ;pic16f877a.h: 1228: unsigned T0SE :1;
+[; ;pic16f877a.h: 1229: unsigned T0CS :1;
+[; ;pic16f877a.h: 1230: unsigned INTEDG :1;
+[; ;pic16f877a.h: 1231: unsigned nRBPU :1;
+[; ;pic16f877a.h: 1232: };
+[; ;pic16f877a.h: 1233: struct {
+[; ;pic16f877a.h: 1234: unsigned PS0 :1;
+[; ;pic16f877a.h: 1235: unsigned PS1 :1;
+[; ;pic16f877a.h: 1236: unsigned PS2 :1;
+[; ;pic16f877a.h: 1237: };
+[; ;pic16f877a.h: 1238: } OPTION_REGbits_t;
+[; ;pic16f877a.h: 1239: extern volatile OPTION_REGbits_t OPTION_REGbits @ 0x081;
+[; ;pic16f877a.h: 1288: extern volatile unsigned char TRISA @ 0x085;
+"1290
+[; ;pic16f877a.h: 1290: asm("TRISA equ 085h");
+[; <" TRISA equ 085h ;# ">
+[; ;pic16f877a.h: 1293: typedef union {
+[; ;pic16f877a.h: 1294: struct {
+[; ;pic16f877a.h: 1295: unsigned TRISA0 :1;
+[; ;pic16f877a.h: 1296: unsigned TRISA1 :1;
+[; ;pic16f877a.h: 1297: unsigned TRISA2 :1;
+[; ;pic16f877a.h: 1298: unsigned TRISA3 :1;
+[; ;pic16f877a.h: 1299: unsigned TRISA4 :1;
+[; ;pic16f877a.h: 1300: unsigned TRISA5 :1;
+[; ;pic16f877a.h: 1301: };
+[; ;pic16f877a.h: 1302: } TRISAbits_t;
+[; ;pic16f877a.h: 1303: extern volatile TRISAbits_t TRISAbits @ 0x085;
+[; ;pic16f877a.h: 1337: extern volatile unsigned char TRISB @ 0x086;
+"1339
+[; ;pic16f877a.h: 1339: asm("TRISB equ 086h");
+[; <" TRISB equ 086h ;# ">
+[; ;pic16f877a.h: 1342: typedef union {
+[; ;pic16f877a.h: 1343: struct {
+[; ;pic16f877a.h: 1344: unsigned TRISB0 :1;
+[; ;pic16f877a.h: 1345: unsigned TRISB1 :1;
+[; ;pic16f877a.h: 1346: unsigned TRISB2 :1;
+[; ;pic16f877a.h: 1347: unsigned TRISB3 :1;
+[; ;pic16f877a.h: 1348: unsigned TRISB4 :1;
+[; ;pic16f877a.h: 1349: unsigned TRISB5 :1;
+[; ;pic16f877a.h: 1350: unsigned TRISB6 :1;
+[; ;pic16f877a.h: 1351: unsigned TRISB7 :1;
+[; ;pic16f877a.h: 1352: };
+[; ;pic16f877a.h: 1353: } TRISBbits_t;
+[; ;pic16f877a.h: 1354: extern volatile TRISBbits_t TRISBbits @ 0x086;
+[; ;pic16f877a.h: 1398: extern volatile unsigned char TRISC @ 0x087;
+"1400
+[; ;pic16f877a.h: 1400: asm("TRISC equ 087h");
+[; <" TRISC equ 087h ;# ">
+[; ;pic16f877a.h: 1403: typedef union {
+[; ;pic16f877a.h: 1404: struct {
+[; ;pic16f877a.h: 1405: unsigned TRISC0 :1;
+[; ;pic16f877a.h: 1406: unsigned TRISC1 :1;
+[; ;pic16f877a.h: 1407: unsigned TRISC2 :1;
+[; ;pic16f877a.h: 1408: unsigned TRISC3 :1;
+[; ;pic16f877a.h: 1409: unsigned TRISC4 :1;
+[; ;pic16f877a.h: 1410: unsigned TRISC5 :1;
+[; ;pic16f877a.h: 1411: unsigned TRISC6 :1;
+[; ;pic16f877a.h: 1412: unsigned TRISC7 :1;
+[; ;pic16f877a.h: 1413: };
+[; ;pic16f877a.h: 1414: } TRISCbits_t;
+[; ;pic16f877a.h: 1415: extern volatile TRISCbits_t TRISCbits @ 0x087;
+[; ;pic16f877a.h: 1459: extern volatile unsigned char TRISD @ 0x088;
+"1461
+[; ;pic16f877a.h: 1461: asm("TRISD equ 088h");
+[; <" TRISD equ 088h ;# ">
+[; ;pic16f877a.h: 1464: typedef union {
+[; ;pic16f877a.h: 1465: struct {
+[; ;pic16f877a.h: 1466: unsigned TRISD0 :1;
+[; ;pic16f877a.h: 1467: unsigned TRISD1 :1;
+[; ;pic16f877a.h: 1468: unsigned TRISD2 :1;
+[; ;pic16f877a.h: 1469: unsigned TRISD3 :1;
+[; ;pic16f877a.h: 1470: unsigned TRISD4 :1;
+[; ;pic16f877a.h: 1471: unsigned TRISD5 :1;
+[; ;pic16f877a.h: 1472: unsigned TRISD6 :1;
+[; ;pic16f877a.h: 1473: unsigned TRISD7 :1;
+[; ;pic16f877a.h: 1474: };
+[; ;pic16f877a.h: 1475: } TRISDbits_t;
+[; ;pic16f877a.h: 1476: extern volatile TRISDbits_t TRISDbits @ 0x088;
+[; ;pic16f877a.h: 1520: extern volatile unsigned char TRISE @ 0x089;
+"1522
+[; ;pic16f877a.h: 1522: asm("TRISE equ 089h");
+[; <" TRISE equ 089h ;# ">
+[; ;pic16f877a.h: 1525: typedef union {
+[; ;pic16f877a.h: 1526: struct {
+[; ;pic16f877a.h: 1527: unsigned TRISE0 :1;
+[; ;pic16f877a.h: 1528: unsigned TRISE1 :1;
+[; ;pic16f877a.h: 1529: unsigned TRISE2 :1;
+[; ;pic16f877a.h: 1530: unsigned :1;
+[; ;pic16f877a.h: 1531: unsigned PSPMODE :1;
+[; ;pic16f877a.h: 1532: unsigned IBOV :1;
+[; ;pic16f877a.h: 1533: unsigned OBF :1;
+[; ;pic16f877a.h: 1534: unsigned IBF :1;
+[; ;pic16f877a.h: 1535: };
+[; ;pic16f877a.h: 1536: } TRISEbits_t;
+[; ;pic16f877a.h: 1537: extern volatile TRISEbits_t TRISEbits @ 0x089;
+[; ;pic16f877a.h: 1576: extern volatile unsigned char PIE1 @ 0x08C;
+"1578
+[; ;pic16f877a.h: 1578: asm("PIE1 equ 08Ch");
+[; <" PIE1 equ 08Ch ;# ">
+[; ;pic16f877a.h: 1581: typedef union {
+[; ;pic16f877a.h: 1582: struct {
+[; ;pic16f877a.h: 1583: unsigned TMR1IE :1;
+[; ;pic16f877a.h: 1584: unsigned TMR2IE :1;
+[; ;pic16f877a.h: 1585: unsigned CCP1IE :1;
+[; ;pic16f877a.h: 1586: unsigned SSPIE :1;
+[; ;pic16f877a.h: 1587: unsigned TXIE :1;
+[; ;pic16f877a.h: 1588: unsigned RCIE :1;
+[; ;pic16f877a.h: 1589: unsigned ADIE :1;
+[; ;pic16f877a.h: 1590: unsigned PSPIE :1;
+[; ;pic16f877a.h: 1591: };
+[; ;pic16f877a.h: 1592: } PIE1bits_t;
+[; ;pic16f877a.h: 1593: extern volatile PIE1bits_t PIE1bits @ 0x08C;
+[; ;pic16f877a.h: 1637: extern volatile unsigned char PIE2 @ 0x08D;
+"1639
+[; ;pic16f877a.h: 1639: asm("PIE2 equ 08Dh");
+[; <" PIE2 equ 08Dh ;# ">
+[; ;pic16f877a.h: 1642: typedef union {
+[; ;pic16f877a.h: 1643: struct {
+[; ;pic16f877a.h: 1644: unsigned CCP2IE :1;
+[; ;pic16f877a.h: 1645: unsigned :2;
+[; ;pic16f877a.h: 1646: unsigned BCLIE :1;
+[; ;pic16f877a.h: 1647: unsigned EEIE :1;
+[; ;pic16f877a.h: 1648: unsigned :1;
+[; ;pic16f877a.h: 1649: unsigned CMIE :1;
+[; ;pic16f877a.h: 1650: };
+[; ;pic16f877a.h: 1651: } PIE2bits_t;
+[; ;pic16f877a.h: 1652: extern volatile PIE2bits_t PIE2bits @ 0x08D;
+[; ;pic16f877a.h: 1676: extern volatile unsigned char PCON @ 0x08E;
+"1678
+[; ;pic16f877a.h: 1678: asm("PCON equ 08Eh");
+[; <" PCON equ 08Eh ;# ">
+[; ;pic16f877a.h: 1681: typedef union {
+[; ;pic16f877a.h: 1682: struct {
+[; ;pic16f877a.h: 1683: unsigned nBOR :1;
+[; ;pic16f877a.h: 1684: unsigned nPOR :1;
+[; ;pic16f877a.h: 1685: };
+[; ;pic16f877a.h: 1686: struct {
+[; ;pic16f877a.h: 1687: unsigned nBO :1;
+[; ;pic16f877a.h: 1688: };
+[; ;pic16f877a.h: 1689: } PCONbits_t;
+[; ;pic16f877a.h: 1690: extern volatile PCONbits_t PCONbits @ 0x08E;
+[; ;pic16f877a.h: 1709: extern volatile unsigned char SSPCON2 @ 0x091;
+"1711
+[; ;pic16f877a.h: 1711: asm("SSPCON2 equ 091h");
+[; <" SSPCON2 equ 091h ;# ">
+[; ;pic16f877a.h: 1714: typedef union {
+[; ;pic16f877a.h: 1715: struct {
+[; ;pic16f877a.h: 1716: unsigned SEN :1;
+[; ;pic16f877a.h: 1717: unsigned RSEN :1;
+[; ;pic16f877a.h: 1718: unsigned PEN :1;
+[; ;pic16f877a.h: 1719: unsigned RCEN :1;
+[; ;pic16f877a.h: 1720: unsigned ACKEN :1;
+[; ;pic16f877a.h: 1721: unsigned ACKDT :1;
+[; ;pic16f877a.h: 1722: unsigned ACKSTAT :1;
+[; ;pic16f877a.h: 1723: unsigned GCEN :1;
+[; ;pic16f877a.h: 1724: };
+[; ;pic16f877a.h: 1725: } SSPCON2bits_t;
+[; ;pic16f877a.h: 1726: extern volatile SSPCON2bits_t SSPCON2bits @ 0x091;
+[; ;pic16f877a.h: 1770: extern volatile unsigned char PR2 @ 0x092;
+"1772
+[; ;pic16f877a.h: 1772: asm("PR2 equ 092h");
+[; <" PR2 equ 092h ;# ">
+[; ;pic16f877a.h: 1776: extern volatile unsigned char SSPADD @ 0x093;
+"1778
+[; ;pic16f877a.h: 1778: asm("SSPADD equ 093h");
+[; <" SSPADD equ 093h ;# ">
+[; ;pic16f877a.h: 1782: extern volatile unsigned char SSPSTAT @ 0x094;
+"1784
+[; ;pic16f877a.h: 1784: asm("SSPSTAT equ 094h");
+[; <" SSPSTAT equ 094h ;# ">
+[; ;pic16f877a.h: 1787: typedef union {
+[; ;pic16f877a.h: 1788: struct {
+[; ;pic16f877a.h: 1789: unsigned BF :1;
+[; ;pic16f877a.h: 1790: unsigned UA :1;
+[; ;pic16f877a.h: 1791: unsigned R_nW :1;
+[; ;pic16f877a.h: 1792: unsigned S :1;
+[; ;pic16f877a.h: 1793: unsigned P :1;
+[; ;pic16f877a.h: 1794: unsigned D_nA :1;
+[; ;pic16f877a.h: 1795: unsigned CKE :1;
+[; ;pic16f877a.h: 1796: unsigned SMP :1;
+[; ;pic16f877a.h: 1797: };
+[; ;pic16f877a.h: 1798: struct {
+[; ;pic16f877a.h: 1799: unsigned :2;
+[; ;pic16f877a.h: 1800: unsigned R :1;
+[; ;pic16f877a.h: 1801: unsigned :2;
+[; ;pic16f877a.h: 1802: unsigned D :1;
+[; ;pic16f877a.h: 1803: };
+[; ;pic16f877a.h: 1804: struct {
+[; ;pic16f877a.h: 1805: unsigned :2;
+[; ;pic16f877a.h: 1806: unsigned I2C_READ :1;
+[; ;pic16f877a.h: 1807: unsigned I2C_START :1;
+[; ;pic16f877a.h: 1808: unsigned I2C_STOP :1;
+[; ;pic16f877a.h: 1809: unsigned I2C_DATA :1;
+[; ;pic16f877a.h: 1810: };
+[; ;pic16f877a.h: 1811: struct {
+[; ;pic16f877a.h: 1812: unsigned :2;
+[; ;pic16f877a.h: 1813: unsigned nW :1;
+[; ;pic16f877a.h: 1814: unsigned :2;
+[; ;pic16f877a.h: 1815: unsigned nA :1;
+[; ;pic16f877a.h: 1816: };
+[; ;pic16f877a.h: 1817: struct {
+[; ;pic16f877a.h: 1818: unsigned :2;
+[; ;pic16f877a.h: 1819: unsigned nWRITE :1;
+[; ;pic16f877a.h: 1820: unsigned :2;
+[; ;pic16f877a.h: 1821: unsigned nADDRESS :1;
+[; ;pic16f877a.h: 1822: };
+[; ;pic16f877a.h: 1823: struct {
+[; ;pic16f877a.h: 1824: unsigned :2;
+[; ;pic16f877a.h: 1825: unsigned R_W :1;
+[; ;pic16f877a.h: 1826: unsigned :2;
+[; ;pic16f877a.h: 1827: unsigned D_A :1;
+[; ;pic16f877a.h: 1828: };
+[; ;pic16f877a.h: 1829: struct {
+[; ;pic16f877a.h: 1830: unsigned :2;
+[; ;pic16f877a.h: 1831: unsigned READ_WRITE :1;
+[; ;pic16f877a.h: 1832: unsigned :2;
+[; ;pic16f877a.h: 1833: unsigned DATA_ADDRESS :1;
+[; ;pic16f877a.h: 1834: };
+[; ;pic16f877a.h: 1835: } SSPSTATbits_t;
+[; ;pic16f877a.h: 1836: extern volatile SSPSTATbits_t SSPSTATbits @ 0x094;
+[; ;pic16f877a.h: 1950: extern volatile unsigned char TXSTA @ 0x098;
+"1952
+[; ;pic16f877a.h: 1952: asm("TXSTA equ 098h");
+[; <" TXSTA equ 098h ;# ">
+[; ;pic16f877a.h: 1955: typedef union {
+[; ;pic16f877a.h: 1956: struct {
+[; ;pic16f877a.h: 1957: unsigned TX9D :1;
+[; ;pic16f877a.h: 1958: unsigned TRMT :1;
+[; ;pic16f877a.h: 1959: unsigned BRGH :1;
+[; ;pic16f877a.h: 1960: unsigned :1;
+[; ;pic16f877a.h: 1961: unsigned SYNC :1;
+[; ;pic16f877a.h: 1962: unsigned TXEN :1;
+[; ;pic16f877a.h: 1963: unsigned TX9 :1;
+[; ;pic16f877a.h: 1964: unsigned CSRC :1;
+[; ;pic16f877a.h: 1965: };
+[; ;pic16f877a.h: 1966: struct {
+[; ;pic16f877a.h: 1967: unsigned TXD8 :1;
+[; ;pic16f877a.h: 1968: unsigned :5;
+[; ;pic16f877a.h: 1969: unsigned nTX8 :1;
+[; ;pic16f877a.h: 1970: };
+[; ;pic16f877a.h: 1971: struct {
+[; ;pic16f877a.h: 1972: unsigned :6;
+[; ;pic16f877a.h: 1973: unsigned TX8_9 :1;
+[; ;pic16f877a.h: 1974: };
+[; ;pic16f877a.h: 1975: } TXSTAbits_t;
+[; ;pic16f877a.h: 1976: extern volatile TXSTAbits_t TXSTAbits @ 0x098;
+[; ;pic16f877a.h: 2030: extern volatile unsigned char SPBRG @ 0x099;
+"2032
+[; ;pic16f877a.h: 2032: asm("SPBRG equ 099h");
+[; <" SPBRG equ 099h ;# ">
+[; ;pic16f877a.h: 2036: extern volatile unsigned char CMCON @ 0x09C;
+"2038
+[; ;pic16f877a.h: 2038: asm("CMCON equ 09Ch");
+[; <" CMCON equ 09Ch ;# ">
+[; ;pic16f877a.h: 2041: typedef union {
+[; ;pic16f877a.h: 2042: struct {
+[; ;pic16f877a.h: 2043: unsigned CM :3;
+[; ;pic16f877a.h: 2044: unsigned CIS :1;
+[; ;pic16f877a.h: 2045: unsigned C1INV :1;
+[; ;pic16f877a.h: 2046: unsigned C2INV :1;
+[; ;pic16f877a.h: 2047: unsigned C1OUT :1;
+[; ;pic16f877a.h: 2048: unsigned C2OUT :1;
+[; ;pic16f877a.h: 2049: };
+[; ;pic16f877a.h: 2050: struct {
+[; ;pic16f877a.h: 2051: unsigned CM0 :1;
+[; ;pic16f877a.h: 2052: unsigned CM1 :1;
+[; ;pic16f877a.h: 2053: unsigned CM2 :1;
+[; ;pic16f877a.h: 2054: };
+[; ;pic16f877a.h: 2055: } CMCONbits_t;
+[; ;pic16f877a.h: 2056: extern volatile CMCONbits_t CMCONbits @ 0x09C;
+[; ;pic16f877a.h: 2105: extern volatile unsigned char CVRCON @ 0x09D;
+"2107
+[; ;pic16f877a.h: 2107: asm("CVRCON equ 09Dh");
+[; <" CVRCON equ 09Dh ;# ">
+[; ;pic16f877a.h: 2110: typedef union {
+[; ;pic16f877a.h: 2111: struct {
+[; ;pic16f877a.h: 2112: unsigned CVR :4;
+[; ;pic16f877a.h: 2113: unsigned :1;
+[; ;pic16f877a.h: 2114: unsigned CVRR :1;
+[; ;pic16f877a.h: 2115: unsigned CVROE :1;
+[; ;pic16f877a.h: 2116: unsigned CVREN :1;
+[; ;pic16f877a.h: 2117: };
+[; ;pic16f877a.h: 2118: struct {
+[; ;pic16f877a.h: 2119: unsigned CVR0 :1;
+[; ;pic16f877a.h: 2120: unsigned CVR1 :1;
+[; ;pic16f877a.h: 2121: unsigned CVR2 :1;
+[; ;pic16f877a.h: 2122: unsigned CVR3 :1;
+[; ;pic16f877a.h: 2123: };
+[; ;pic16f877a.h: 2124: } CVRCONbits_t;
+[; ;pic16f877a.h: 2125: extern volatile CVRCONbits_t CVRCONbits @ 0x09D;
+[; ;pic16f877a.h: 2169: extern volatile unsigned char ADRESL @ 0x09E;
+"2171
+[; ;pic16f877a.h: 2171: asm("ADRESL equ 09Eh");
+[; <" ADRESL equ 09Eh ;# ">
+[; ;pic16f877a.h: 2175: extern volatile unsigned char ADCON1 @ 0x09F;
+"2177
+[; ;pic16f877a.h: 2177: asm("ADCON1 equ 09Fh");
+[; <" ADCON1 equ 09Fh ;# ">
+[; ;pic16f877a.h: 2180: typedef union {
+[; ;pic16f877a.h: 2181: struct {
+[; ;pic16f877a.h: 2182: unsigned PCFG :4;
+[; ;pic16f877a.h: 2183: unsigned :2;
+[; ;pic16f877a.h: 2184: unsigned ADCS2 :1;
+[; ;pic16f877a.h: 2185: unsigned ADFM :1;
+[; ;pic16f877a.h: 2186: };
+[; ;pic16f877a.h: 2187: struct {
+[; ;pic16f877a.h: 2188: unsigned PCFG0 :1;
+[; ;pic16f877a.h: 2189: unsigned PCFG1 :1;
+[; ;pic16f877a.h: 2190: unsigned PCFG2 :1;
+[; ;pic16f877a.h: 2191: unsigned PCFG3 :1;
+[; ;pic16f877a.h: 2192: };
+[; ;pic16f877a.h: 2193: } ADCON1bits_t;
+[; ;pic16f877a.h: 2194: extern volatile ADCON1bits_t ADCON1bits @ 0x09F;
+[; ;pic16f877a.h: 2233: extern volatile unsigned char EEDATA @ 0x10C;
+"2235
+[; ;pic16f877a.h: 2235: asm("EEDATA equ 010Ch");
+[; <" EEDATA equ 010Ch ;# ">
+[; ;pic16f877a.h: 2239: extern volatile unsigned char EEADR @ 0x10D;
+"2241
+[; ;pic16f877a.h: 2241: asm("EEADR equ 010Dh");
+[; <" EEADR equ 010Dh ;# ">
+[; ;pic16f877a.h: 2245: extern volatile unsigned char EEDATH @ 0x10E;
+"2247
+[; ;pic16f877a.h: 2247: asm("EEDATH equ 010Eh");
+[; <" EEDATH equ 010Eh ;# ">
+[; ;pic16f877a.h: 2251: extern volatile unsigned char EEADRH @ 0x10F;
+"2253
+[; ;pic16f877a.h: 2253: asm("EEADRH equ 010Fh");
+[; <" EEADRH equ 010Fh ;# ">
+[; ;pic16f877a.h: 2257: extern volatile unsigned char EECON1 @ 0x18C;
+"2259
+[; ;pic16f877a.h: 2259: asm("EECON1 equ 018Ch");
+[; <" EECON1 equ 018Ch ;# ">
+[; ;pic16f877a.h: 2262: typedef union {
+[; ;pic16f877a.h: 2263: struct {
+[; ;pic16f877a.h: 2264: unsigned RD :1;
+[; ;pic16f877a.h: 2265: unsigned WR :1;
+[; ;pic16f877a.h: 2266: unsigned WREN :1;
+[; ;pic16f877a.h: 2267: unsigned WRERR :1;
+[; ;pic16f877a.h: 2268: unsigned :3;
+[; ;pic16f877a.h: 2269: unsigned EEPGD :1;
+[; ;pic16f877a.h: 2270: };
+[; ;pic16f877a.h: 2271: } EECON1bits_t;
+[; ;pic16f877a.h: 2272: extern volatile EECON1bits_t EECON1bits @ 0x18C;
+[; ;pic16f877a.h: 2301: extern volatile unsigned char EECON2 @ 0x18D;
+"2303
+[; ;pic16f877a.h: 2303: asm("EECON2 equ 018Dh");
+[; <" EECON2 equ 018Dh ;# ">
+[; ;pic16f877a.h: 2313: extern volatile __bit ACKDT @ (((unsigned) &SSPCON2)*8) + 5;
+[; ;pic16f877a.h: 2315: extern volatile __bit ACKEN @ (((unsigned) &SSPCON2)*8) + 4;
+[; ;pic16f877a.h: 2317: extern volatile __bit ACKSTAT @ (((unsigned) &SSPCON2)*8) + 6;
+[; ;pic16f877a.h: 2319: extern volatile __bit ADCS0 @ (((unsigned) &ADCON0)*8) + 6;
+[; ;pic16f877a.h: 2321: extern volatile __bit ADCS1 @ (((unsigned) &ADCON0)*8) + 7;
+[; ;pic16f877a.h: 2323: extern volatile __bit ADCS2 @ (((unsigned) &ADCON1)*8) + 6;
+[; ;pic16f877a.h: 2325: extern volatile __bit ADDEN @ (((unsigned) &RCSTA)*8) + 3;
+[; ;pic16f877a.h: 2327: extern volatile __bit ADFM @ (((unsigned) &ADCON1)*8) + 7;
+[; ;pic16f877a.h: 2329: extern volatile __bit ADIE @ (((unsigned) &PIE1)*8) + 6;
+[; ;pic16f877a.h: 2331: extern volatile __bit ADIF @ (((unsigned) &PIR1)*8) + 6;
+[; ;pic16f877a.h: 2333: extern volatile __bit ADON @ (((unsigned) &ADCON0)*8) + 0;
+[; ;pic16f877a.h: 2335: extern volatile __bit BCLIE @ (((unsigned) &PIE2)*8) + 3;
+[; ;pic16f877a.h: 2337: extern volatile __bit BCLIF @ (((unsigned) &PIR2)*8) + 3;
+[; ;pic16f877a.h: 2339: extern volatile __bit BF @ (((unsigned) &SSPSTAT)*8) + 0;
+[; ;pic16f877a.h: 2341: extern volatile __bit BRGH @ (((unsigned) &TXSTA)*8) + 2;
+[; ;pic16f877a.h: 2343: extern volatile __bit C1INV @ (((unsigned) &CMCON)*8) + 4;
+[; ;pic16f877a.h: 2345: extern volatile __bit C1OUT @ (((unsigned) &CMCON)*8) + 6;
+[; ;pic16f877a.h: 2347: extern volatile __bit C2INV @ (((unsigned) &CMCON)*8) + 5;
+[; ;pic16f877a.h: 2349: extern volatile __bit C2OUT @ (((unsigned) &CMCON)*8) + 7;
+[; ;pic16f877a.h: 2351: extern volatile __bit CARRY @ (((unsigned) &STATUS)*8) + 0;
+[; ;pic16f877a.h: 2353: extern volatile __bit CCP1IE @ (((unsigned) &PIE1)*8) + 2;
+[; ;pic16f877a.h: 2355: extern volatile __bit CCP1IF @ (((unsigned) &PIR1)*8) + 2;
+[; ;pic16f877a.h: 2357: extern volatile __bit CCP1M0 @ (((unsigned) &CCP1CON)*8) + 0;
+[; ;pic16f877a.h: 2359: extern volatile __bit CCP1M1 @ (((unsigned) &CCP1CON)*8) + 1;
+[; ;pic16f877a.h: 2361: extern volatile __bit CCP1M2 @ (((unsigned) &CCP1CON)*8) + 2;
+[; ;pic16f877a.h: 2363: extern volatile __bit CCP1M3 @ (((unsigned) &CCP1CON)*8) + 3;
+[; ;pic16f877a.h: 2365: extern volatile __bit CCP1X @ (((unsigned) &CCP1CON)*8) + 5;
+[; ;pic16f877a.h: 2367: extern volatile __bit CCP1Y @ (((unsigned) &CCP1CON)*8) + 4;
+[; ;pic16f877a.h: 2369: extern volatile __bit CCP2IE @ (((unsigned) &PIE2)*8) + 0;
+[; ;pic16f877a.h: 2371: extern volatile __bit CCP2IF @ (((unsigned) &PIR2)*8) + 0;
+[; ;pic16f877a.h: 2373: extern volatile __bit CCP2M0 @ (((unsigned) &CCP2CON)*8) + 0;
+[; ;pic16f877a.h: 2375: extern volatile __bit CCP2M1 @ (((unsigned) &CCP2CON)*8) + 1;
+[; ;pic16f877a.h: 2377: extern volatile __bit CCP2M2 @ (((unsigned) &CCP2CON)*8) + 2;
+[; ;pic16f877a.h: 2379: extern volatile __bit CCP2M3 @ (((unsigned) &CCP2CON)*8) + 3;
+[; ;pic16f877a.h: 2381: extern volatile __bit CCP2X @ (((unsigned) &CCP2CON)*8) + 5;
+[; ;pic16f877a.h: 2383: extern volatile __bit CCP2Y @ (((unsigned) &CCP2CON)*8) + 4;
+[; ;pic16f877a.h: 2385: extern volatile __bit CHS0 @ (((unsigned) &ADCON0)*8) + 3;
+[; ;pic16f877a.h: 2387: extern volatile __bit CHS1 @ (((unsigned) &ADCON0)*8) + 4;
+[; ;pic16f877a.h: 2389: extern volatile __bit CHS2 @ (((unsigned) &ADCON0)*8) + 5;
+[; ;pic16f877a.h: 2391: extern volatile __bit CIS @ (((unsigned) &CMCON)*8) + 3;
+[; ;pic16f877a.h: 2393: extern volatile __bit CKE @ (((unsigned) &SSPSTAT)*8) + 6;
+[; ;pic16f877a.h: 2395: extern volatile __bit CKP @ (((unsigned) &SSPCON)*8) + 4;
+[; ;pic16f877a.h: 2397: extern volatile __bit CM0 @ (((unsigned) &CMCON)*8) + 0;
+[; ;pic16f877a.h: 2399: extern volatile __bit CM1 @ (((unsigned) &CMCON)*8) + 1;
+[; ;pic16f877a.h: 2401: extern volatile __bit CM2 @ (((unsigned) &CMCON)*8) + 2;
+[; ;pic16f877a.h: 2403: extern volatile __bit CMIE @ (((unsigned) &PIE2)*8) + 6;
+[; ;pic16f877a.h: 2405: extern volatile __bit CMIF @ (((unsigned) &PIR2)*8) + 6;
+[; ;pic16f877a.h: 2407: extern volatile __bit CREN @ (((unsigned) &RCSTA)*8) + 4;
+[; ;pic16f877a.h: 2409: extern volatile __bit CSRC @ (((unsigned) &TXSTA)*8) + 7;
+[; ;pic16f877a.h: 2411: extern volatile __bit CVR0 @ (((unsigned) &CVRCON)*8) + 0;
+[; ;pic16f877a.h: 2413: extern volatile __bit CVR1 @ (((unsigned) &CVRCON)*8) + 1;
+[; ;pic16f877a.h: 2415: extern volatile __bit CVR2 @ (((unsigned) &CVRCON)*8) + 2;
+[; ;pic16f877a.h: 2417: extern volatile __bit CVR3 @ (((unsigned) &CVRCON)*8) + 3;
+[; ;pic16f877a.h: 2419: extern volatile __bit CVREN @ (((unsigned) &CVRCON)*8) + 7;
+[; ;pic16f877a.h: 2421: extern volatile __bit CVROE @ (((unsigned) &CVRCON)*8) + 6;
+[; ;pic16f877a.h: 2423: extern volatile __bit CVRR @ (((unsigned) &CVRCON)*8) + 5;
+[; ;pic16f877a.h: 2425: extern volatile __bit DATA_ADDRESS @ (((unsigned) &SSPSTAT)*8) + 5;
+[; ;pic16f877a.h: 2427: extern volatile __bit DC @ (((unsigned) &STATUS)*8) + 1;
+[; ;pic16f877a.h: 2429: extern volatile __bit D_A @ (((unsigned) &SSPSTAT)*8) + 5;
+[; ;pic16f877a.h: 2431: extern volatile __bit D_nA @ (((unsigned) &SSPSTAT)*8) + 5;
+[; ;pic16f877a.h: 2433: extern volatile __bit EEIE @ (((unsigned) &PIE2)*8) + 4;
+[; ;pic16f877a.h: 2435: extern volatile __bit EEIF @ (((unsigned) &PIR2)*8) + 4;
+[; ;pic16f877a.h: 2437: extern volatile __bit EEPGD @ (((unsigned) &EECON1)*8) + 7;
+[; ;pic16f877a.h: 2439: extern volatile __bit FERR @ (((unsigned) &RCSTA)*8) + 2;
+[; ;pic16f877a.h: 2441: extern volatile __bit GCEN @ (((unsigned) &SSPCON2)*8) + 7;
+[; ;pic16f877a.h: 2443: extern volatile __bit GIE @ (((unsigned) &INTCON)*8) + 7;
+[; ;pic16f877a.h: 2445: extern volatile __bit GO @ (((unsigned) &ADCON0)*8) + 2;
+[; ;pic16f877a.h: 2447: extern volatile __bit GO_DONE @ (((unsigned) &ADCON0)*8) + 2;
+[; ;pic16f877a.h: 2449: extern volatile __bit GO_nDONE @ (((unsigned) &ADCON0)*8) + 2;
+[; ;pic16f877a.h: 2451: extern volatile __bit I2C_DATA @ (((unsigned) &SSPSTAT)*8) + 5;
+[; ;pic16f877a.h: 2453: extern volatile __bit I2C_READ @ (((unsigned) &SSPSTAT)*8) + 2;
+[; ;pic16f877a.h: 2455: extern volatile __bit I2C_START @ (((unsigned) &SSPSTAT)*8) + 3;
+[; ;pic16f877a.h: 2457: extern volatile __bit I2C_STOP @ (((unsigned) &SSPSTAT)*8) + 4;
+[; ;pic16f877a.h: 2459: extern volatile __bit IBF @ (((unsigned) &TRISE)*8) + 7;
+[; ;pic16f877a.h: 2461: extern volatile __bit IBOV @ (((unsigned) &TRISE)*8) + 5;
+[; ;pic16f877a.h: 2463: extern volatile __bit INTE @ (((unsigned) &INTCON)*8) + 4;
+[; ;pic16f877a.h: 2465: extern volatile __bit INTEDG @ (((unsigned) &OPTION_REG)*8) + 6;
+[; ;pic16f877a.h: 2467: extern volatile __bit INTF @ (((unsigned) &INTCON)*8) + 1;
+[; ;pic16f877a.h: 2469: extern volatile __bit IRP @ (((unsigned) &STATUS)*8) + 7;
+[; ;pic16f877a.h: 2471: extern volatile __bit OBF @ (((unsigned) &TRISE)*8) + 6;
+[; ;pic16f877a.h: 2473: extern volatile __bit OERR @ (((unsigned) &RCSTA)*8) + 1;
+[; ;pic16f877a.h: 2475: extern volatile __bit PCFG0 @ (((unsigned) &ADCON1)*8) + 0;
+[; ;pic16f877a.h: 2477: extern volatile __bit PCFG1 @ (((unsigned) &ADCON1)*8) + 1;
+[; ;pic16f877a.h: 2479: extern volatile __bit PCFG2 @ (((unsigned) &ADCON1)*8) + 2;
+[; ;pic16f877a.h: 2481: extern volatile __bit PCFG3 @ (((unsigned) &ADCON1)*8) + 3;
+[; ;pic16f877a.h: 2483: extern volatile __bit PEIE @ (((unsigned) &INTCON)*8) + 6;
+[; ;pic16f877a.h: 2485: extern volatile __bit PEN @ (((unsigned) &SSPCON2)*8) + 2;
+[; ;pic16f877a.h: 2487: extern volatile __bit PS0 @ (((unsigned) &OPTION_REG)*8) + 0;
+[; ;pic16f877a.h: 2489: extern volatile __bit PS1 @ (((unsigned) &OPTION_REG)*8) + 1;
+[; ;pic16f877a.h: 2491: extern volatile __bit PS2 @ (((unsigned) &OPTION_REG)*8) + 2;
+[; ;pic16f877a.h: 2493: extern volatile __bit PSA @ (((unsigned) &OPTION_REG)*8) + 3;
+[; ;pic16f877a.h: 2495: extern volatile __bit PSPIE @ (((unsigned) &PIE1)*8) + 7;
+[; ;pic16f877a.h: 2497: extern volatile __bit PSPIF @ (((unsigned) &PIR1)*8) + 7;
+[; ;pic16f877a.h: 2499: extern volatile __bit PSPMODE @ (((unsigned) &TRISE)*8) + 4;
+[; ;pic16f877a.h: 2501: extern volatile __bit RA0 @ (((unsigned) &PORTA)*8) + 0;
+[; ;pic16f877a.h: 2503: extern volatile __bit RA1 @ (((unsigned) &PORTA)*8) + 1;
+[; ;pic16f877a.h: 2505: extern volatile __bit RA2 @ (((unsigned) &PORTA)*8) + 2;
+[; ;pic16f877a.h: 2507: extern volatile __bit RA3 @ (((unsigned) &PORTA)*8) + 3;
+[; ;pic16f877a.h: 2509: extern volatile __bit RA4 @ (((unsigned) &PORTA)*8) + 4;
+[; ;pic16f877a.h: 2511: extern volatile __bit RA5 @ (((unsigned) &PORTA)*8) + 5;
+[; ;pic16f877a.h: 2513: extern volatile __bit RB0 @ (((unsigned) &PORTB)*8) + 0;
+[; ;pic16f877a.h: 2515: extern volatile __bit RB1 @ (((unsigned) &PORTB)*8) + 1;
+[; ;pic16f877a.h: 2517: extern volatile __bit RB2 @ (((unsigned) &PORTB)*8) + 2;
+[; ;pic16f877a.h: 2519: extern volatile __bit RB3 @ (((unsigned) &PORTB)*8) + 3;
+[; ;pic16f877a.h: 2521: extern volatile __bit RB4 @ (((unsigned) &PORTB)*8) + 4;
+[; ;pic16f877a.h: 2523: extern volatile __bit RB5 @ (((unsigned) &PORTB)*8) + 5;
+[; ;pic16f877a.h: 2525: extern volatile __bit RB6 @ (((unsigned) &PORTB)*8) + 6;
+[; ;pic16f877a.h: 2527: extern volatile __bit RB7 @ (((unsigned) &PORTB)*8) + 7;
+[; ;pic16f877a.h: 2529: extern volatile __bit RBIE @ (((unsigned) &INTCON)*8) + 3;
+[; ;pic16f877a.h: 2531: extern volatile __bit RBIF @ (((unsigned) &INTCON)*8) + 0;
+[; ;pic16f877a.h: 2533: extern volatile __bit RC0 @ (((unsigned) &PORTC)*8) + 0;
+[; ;pic16f877a.h: 2535: extern volatile __bit RC1 @ (((unsigned) &PORTC)*8) + 1;
+[; ;pic16f877a.h: 2537: extern volatile __bit RC2 @ (((unsigned) &PORTC)*8) + 2;
+[; ;pic16f877a.h: 2539: extern volatile __bit RC3 @ (((unsigned) &PORTC)*8) + 3;
+[; ;pic16f877a.h: 2541: extern volatile __bit RC4 @ (((unsigned) &PORTC)*8) + 4;
+[; ;pic16f877a.h: 2543: extern volatile __bit RC5 @ (((unsigned) &PORTC)*8) + 5;
+[; ;pic16f877a.h: 2545: extern volatile __bit RC6 @ (((unsigned) &PORTC)*8) + 6;
+[; ;pic16f877a.h: 2547: extern volatile __bit RC7 @ (((unsigned) &PORTC)*8) + 7;
+[; ;pic16f877a.h: 2549: extern volatile __bit RC8_9 @ (((unsigned) &RCSTA)*8) + 6;
+[; ;pic16f877a.h: 2551: extern volatile __bit RC9 @ (((unsigned) &RCSTA)*8) + 6;
+[; ;pic16f877a.h: 2553: extern volatile __bit RCD8 @ (((unsigned) &RCSTA)*8) + 0;
+[; ;pic16f877a.h: 2555: extern volatile __bit RCEN @ (((unsigned) &SSPCON2)*8) + 3;
+[; ;pic16f877a.h: 2557: extern volatile __bit RCIE @ (((unsigned) &PIE1)*8) + 5;
+[; ;pic16f877a.h: 2559: extern volatile __bit RCIF @ (((unsigned) &PIR1)*8) + 5;
+[; ;pic16f877a.h: 2561: extern volatile __bit RD @ (((unsigned) &EECON1)*8) + 0;
+[; ;pic16f877a.h: 2563: extern volatile __bit RD0 @ (((unsigned) &PORTD)*8) + 0;
+[; ;pic16f877a.h: 2565: extern volatile __bit RD1 @ (((unsigned) &PORTD)*8) + 1;
+[; ;pic16f877a.h: 2567: extern volatile __bit RD2 @ (((unsigned) &PORTD)*8) + 2;
+[; ;pic16f877a.h: 2569: extern volatile __bit RD3 @ (((unsigned) &PORTD)*8) + 3;
+[; ;pic16f877a.h: 2571: extern volatile __bit RD4 @ (((unsigned) &PORTD)*8) + 4;
+[; ;pic16f877a.h: 2573: extern volatile __bit RD5 @ (((unsigned) &PORTD)*8) + 5;
+[; ;pic16f877a.h: 2575: extern volatile __bit RD6 @ (((unsigned) &PORTD)*8) + 6;
+[; ;pic16f877a.h: 2577: extern volatile __bit RD7 @ (((unsigned) &PORTD)*8) + 7;
+[; ;pic16f877a.h: 2579: extern volatile __bit RE0 @ (((unsigned) &PORTE)*8) + 0;
+[; ;pic16f877a.h: 2581: extern volatile __bit RE1 @ (((unsigned) &PORTE)*8) + 1;
+[; ;pic16f877a.h: 2583: extern volatile __bit RE2 @ (((unsigned) &PORTE)*8) + 2;
+[; ;pic16f877a.h: 2585: extern volatile __bit READ_WRITE @ (((unsigned) &SSPSTAT)*8) + 2;
+[; ;pic16f877a.h: 2587: extern volatile __bit RP0 @ (((unsigned) &STATUS)*8) + 5;
+[; ;pic16f877a.h: 2589: extern volatile __bit RP1 @ (((unsigned) &STATUS)*8) + 6;
+[; ;pic16f877a.h: 2591: extern volatile __bit RSEN @ (((unsigned) &SSPCON2)*8) + 1;
+[; ;pic16f877a.h: 2593: extern volatile __bit RX9 @ (((unsigned) &RCSTA)*8) + 6;
+[; ;pic16f877a.h: 2595: extern volatile __bit RX9D @ (((unsigned) &RCSTA)*8) + 0;
+[; ;pic16f877a.h: 2597: extern volatile __bit R_W @ (((unsigned) &SSPSTAT)*8) + 2;
+[; ;pic16f877a.h: 2599: extern volatile __bit R_nW @ (((unsigned) &SSPSTAT)*8) + 2;
+[; ;pic16f877a.h: 2601: extern volatile __bit SEN @ (((unsigned) &SSPCON2)*8) + 0;
+[; ;pic16f877a.h: 2603: extern volatile __bit SMP @ (((unsigned) &SSPSTAT)*8) + 7;
+[; ;pic16f877a.h: 2605: extern volatile __bit SPEN @ (((unsigned) &RCSTA)*8) + 7;
+[; ;pic16f877a.h: 2607: extern volatile __bit SREN @ (((unsigned) &RCSTA)*8) + 5;
+[; ;pic16f877a.h: 2609: extern volatile __bit SSPEN @ (((unsigned) &SSPCON)*8) + 5;
+[; ;pic16f877a.h: 2611: extern volatile __bit SSPIE @ (((unsigned) &PIE1)*8) + 3;
+[; ;pic16f877a.h: 2613: extern volatile __bit SSPIF @ (((unsigned) &PIR1)*8) + 3;
+[; ;pic16f877a.h: 2615: extern volatile __bit SSPM0 @ (((unsigned) &SSPCON)*8) + 0;
+[; ;pic16f877a.h: 2617: extern volatile __bit SSPM1 @ (((unsigned) &SSPCON)*8) + 1;
+[; ;pic16f877a.h: 2619: extern volatile __bit SSPM2 @ (((unsigned) &SSPCON)*8) + 2;
+[; ;pic16f877a.h: 2621: extern volatile __bit SSPM3 @ (((unsigned) &SSPCON)*8) + 3;
+[; ;pic16f877a.h: 2623: extern volatile __bit SSPOV @ (((unsigned) &SSPCON)*8) + 6;
+[; ;pic16f877a.h: 2625: extern volatile __bit SYNC @ (((unsigned) &TXSTA)*8) + 4;
+[; ;pic16f877a.h: 2627: extern volatile __bit T0CS @ (((unsigned) &OPTION_REG)*8) + 5;
+[; ;pic16f877a.h: 2629: extern volatile __bit T0IE @ (((unsigned) &INTCON)*8) + 5;
+[; ;pic16f877a.h: 2631: extern volatile __bit T0IF @ (((unsigned) &INTCON)*8) + 2;
+[; ;pic16f877a.h: 2633: extern volatile __bit T0SE @ (((unsigned) &OPTION_REG)*8) + 4;
+[; ;pic16f877a.h: 2635: extern volatile __bit T1CKPS0 @ (((unsigned) &T1CON)*8) + 4;
+[; ;pic16f877a.h: 2637: extern volatile __bit T1CKPS1 @ (((unsigned) &T1CON)*8) + 5;
+[; ;pic16f877a.h: 2639: extern volatile __bit T1INSYNC @ (((unsigned) &T1CON)*8) + 2;
+[; ;pic16f877a.h: 2641: extern volatile __bit T1OSCEN @ (((unsigned) &T1CON)*8) + 3;
+[; ;pic16f877a.h: 2643: extern volatile __bit T1SYNC @ (((unsigned) &T1CON)*8) + 2;
+[; ;pic16f877a.h: 2645: extern volatile __bit T2CKPS0 @ (((unsigned) &T2CON)*8) + 0;
+[; ;pic16f877a.h: 2647: extern volatile __bit T2CKPS1 @ (((unsigned) &T2CON)*8) + 1;
+[; ;pic16f877a.h: 2649: extern volatile __bit TMR0IE @ (((unsigned) &INTCON)*8) + 5;
+[; ;pic16f877a.h: 2651: extern volatile __bit TMR0IF @ (((unsigned) &INTCON)*8) + 2;
+[; ;pic16f877a.h: 2653: extern volatile __bit TMR1CS @ (((unsigned) &T1CON)*8) + 1;
+[; ;pic16f877a.h: 2655: extern volatile __bit TMR1IE @ (((unsigned) &PIE1)*8) + 0;
+[; ;pic16f877a.h: 2657: extern volatile __bit TMR1IF @ (((unsigned) &PIR1)*8) + 0;
+[; ;pic16f877a.h: 2659: extern volatile __bit TMR1ON @ (((unsigned) &T1CON)*8) + 0;
+[; ;pic16f877a.h: 2661: extern volatile __bit TMR2IE @ (((unsigned) &PIE1)*8) + 1;
+[; ;pic16f877a.h: 2663: extern volatile __bit TMR2IF @ (((unsigned) &PIR1)*8) + 1;
+[; ;pic16f877a.h: 2665: extern volatile __bit TMR2ON @ (((unsigned) &T2CON)*8) + 2;
+[; ;pic16f877a.h: 2667: extern volatile __bit TOUTPS0 @ (((unsigned) &T2CON)*8) + 3;
+[; ;pic16f877a.h: 2669: extern volatile __bit TOUTPS1 @ (((unsigned) &T2CON)*8) + 4;
+[; ;pic16f877a.h: 2671: extern volatile __bit TOUTPS2 @ (((unsigned) &T2CON)*8) + 5;
+[; ;pic16f877a.h: 2673: extern volatile __bit TOUTPS3 @ (((unsigned) &T2CON)*8) + 6;
+[; ;pic16f877a.h: 2675: extern volatile __bit TRISA0 @ (((unsigned) &TRISA)*8) + 0;
+[; ;pic16f877a.h: 2677: extern volatile __bit TRISA1 @ (((unsigned) &TRISA)*8) + 1;
+[; ;pic16f877a.h: 2679: extern volatile __bit TRISA2 @ (((unsigned) &TRISA)*8) + 2;
+[; ;pic16f877a.h: 2681: extern volatile __bit TRISA3 @ (((unsigned) &TRISA)*8) + 3;
+[; ;pic16f877a.h: 2683: extern volatile __bit TRISA4 @ (((unsigned) &TRISA)*8) + 4;
+[; ;pic16f877a.h: 2685: extern volatile __bit TRISA5 @ (((unsigned) &TRISA)*8) + 5;
+[; ;pic16f877a.h: 2687: extern volatile __bit TRISB0 @ (((unsigned) &TRISB)*8) + 0;
+[; ;pic16f877a.h: 2689: extern volatile __bit TRISB1 @ (((unsigned) &TRISB)*8) + 1;
+[; ;pic16f877a.h: 2691: extern volatile __bit TRISB2 @ (((unsigned) &TRISB)*8) + 2;
+[; ;pic16f877a.h: 2693: extern volatile __bit TRISB3 @ (((unsigned) &TRISB)*8) + 3;
+[; ;pic16f877a.h: 2695: extern volatile __bit TRISB4 @ (((unsigned) &TRISB)*8) + 4;
+[; ;pic16f877a.h: 2697: extern volatile __bit TRISB5 @ (((unsigned) &TRISB)*8) + 5;
+[; ;pic16f877a.h: 2699: extern volatile __bit TRISB6 @ (((unsigned) &TRISB)*8) + 6;
+[; ;pic16f877a.h: 2701: extern volatile __bit TRISB7 @ (((unsigned) &TRISB)*8) + 7;
+[; ;pic16f877a.h: 2703: extern volatile __bit TRISC0 @ (((unsigned) &TRISC)*8) + 0;
+[; ;pic16f877a.h: 2705: extern volatile __bit TRISC1 @ (((unsigned) &TRISC)*8) + 1;
+[; ;pic16f877a.h: 2707: extern volatile __bit TRISC2 @ (((unsigned) &TRISC)*8) + 2;
+[; ;pic16f877a.h: 2709: extern volatile __bit TRISC3 @ (((unsigned) &TRISC)*8) + 3;
+[; ;pic16f877a.h: 2711: extern volatile __bit TRISC4 @ (((unsigned) &TRISC)*8) + 4;
+[; ;pic16f877a.h: 2713: extern volatile __bit TRISC5 @ (((unsigned) &TRISC)*8) + 5;
+[; ;pic16f877a.h: 2715: extern volatile __bit TRISC6 @ (((unsigned) &TRISC)*8) + 6;
+[; ;pic16f877a.h: 2717: extern volatile __bit TRISC7 @ (((unsigned) &TRISC)*8) + 7;
+[; ;pic16f877a.h: 2719: extern volatile __bit TRISD0 @ (((unsigned) &TRISD)*8) + 0;
+[; ;pic16f877a.h: 2721: extern volatile __bit TRISD1 @ (((unsigned) &TRISD)*8) + 1;
+[; ;pic16f877a.h: 2723: extern volatile __bit TRISD2 @ (((unsigned) &TRISD)*8) + 2;
+[; ;pic16f877a.h: 2725: extern volatile __bit TRISD3 @ (((unsigned) &TRISD)*8) + 3;
+[; ;pic16f877a.h: 2727: extern volatile __bit TRISD4 @ (((unsigned) &TRISD)*8) + 4;
+[; ;pic16f877a.h: 2729: extern volatile __bit TRISD5 @ (((unsigned) &TRISD)*8) + 5;
+[; ;pic16f877a.h: 2731: extern volatile __bit TRISD6 @ (((unsigned) &TRISD)*8) + 6;
+[; ;pic16f877a.h: 2733: extern volatile __bit TRISD7 @ (((unsigned) &TRISD)*8) + 7;
+[; ;pic16f877a.h: 2735: extern volatile __bit TRISE0 @ (((unsigned) &TRISE)*8) + 0;
+[; ;pic16f877a.h: 2737: extern volatile __bit TRISE1 @ (((unsigned) &TRISE)*8) + 1;
+[; ;pic16f877a.h: 2739: extern volatile __bit TRISE2 @ (((unsigned) &TRISE)*8) + 2;
+[; ;pic16f877a.h: 2741: extern volatile __bit TRMT @ (((unsigned) &TXSTA)*8) + 1;
+[; ;pic16f877a.h: 2743: extern volatile __bit TX8_9 @ (((unsigned) &TXSTA)*8) + 6;
+[; ;pic16f877a.h: 2745: extern volatile __bit TX9 @ (((unsigned) &TXSTA)*8) + 6;
+[; ;pic16f877a.h: 2747: extern volatile __bit TX9D @ (((unsigned) &TXSTA)*8) + 0;
+[; ;pic16f877a.h: 2749: extern volatile __bit TXD8 @ (((unsigned) &TXSTA)*8) + 0;
+[; ;pic16f877a.h: 2751: extern volatile __bit TXEN @ (((unsigned) &TXSTA)*8) + 5;
+[; ;pic16f877a.h: 2753: extern volatile __bit TXIE @ (((unsigned) &PIE1)*8) + 4;
+[; ;pic16f877a.h: 2755: extern volatile __bit TXIF @ (((unsigned) &PIR1)*8) + 4;
+[; ;pic16f877a.h: 2757: extern volatile __bit UA @ (((unsigned) &SSPSTAT)*8) + 1;
+[; ;pic16f877a.h: 2759: extern volatile __bit WCOL @ (((unsigned) &SSPCON)*8) + 7;
+[; ;pic16f877a.h: 2761: extern volatile __bit WR @ (((unsigned) &EECON1)*8) + 1;
+[; ;pic16f877a.h: 2763: extern volatile __bit WREN @ (((unsigned) &EECON1)*8) + 2;
+[; ;pic16f877a.h: 2765: extern volatile __bit WRERR @ (((unsigned) &EECON1)*8) + 3;
+[; ;pic16f877a.h: 2767: extern volatile __bit ZERO @ (((unsigned) &STATUS)*8) + 2;
+[; ;pic16f877a.h: 2769: extern volatile __bit nA @ (((unsigned) &SSPSTAT)*8) + 5;
+[; ;pic16f877a.h: 2771: extern volatile __bit nADDRESS @ (((unsigned) &SSPSTAT)*8) + 5;
+[; ;pic16f877a.h: 2773: extern volatile __bit nBO @ (((unsigned) &PCON)*8) + 0;
+[; ;pic16f877a.h: 2775: extern volatile __bit nBOR @ (((unsigned) &PCON)*8) + 0;
+[; ;pic16f877a.h: 2777: extern volatile __bit nDONE @ (((unsigned) &ADCON0)*8) + 2;
+[; ;pic16f877a.h: 2779: extern volatile __bit nPD @ (((unsigned) &STATUS)*8) + 3;
+[; ;pic16f877a.h: 2781: extern volatile __bit nPOR @ (((unsigned) &PCON)*8) + 1;
+[; ;pic16f877a.h: 2783: extern volatile __bit nRBPU @ (((unsigned) &OPTION_REG)*8) + 7;
+[; ;pic16f877a.h: 2785: extern volatile __bit nRC8 @ (((unsigned) &RCSTA)*8) + 6;
+[; ;pic16f877a.h: 2787: extern volatile __bit nT1SYNC @ (((unsigned) &T1CON)*8) + 2;
+[; ;pic16f877a.h: 2789: extern volatile __bit nTO @ (((unsigned) &STATUS)*8) + 4;
+[; ;pic16f877a.h: 2791: extern volatile __bit nTX8 @ (((unsigned) &TXSTA)*8) + 6;
+[; ;pic16f877a.h: 2793: extern volatile __bit nW @ (((unsigned) &SSPSTAT)*8) + 2;
+[; ;pic16f877a.h: 2795: extern volatile __bit nWRITE @ (((unsigned) &SSPSTAT)*8) + 2;
+[; ;pic.h: 28: extern void __nop(void);
+[; ;pic.h: 77: extern unsigned int flash_read(unsigned short addr);
+[; ;eeprom_routines.h: 114: extern void eeprom_write(unsigned char addr, unsigned char value);
+[; ;eeprom_routines.h: 115: extern unsigned char eeprom_read(unsigned char addr);
+[; ;eeprom_routines.h: 116: extern void eecpymem(volatile unsigned char *to, __eeprom unsigned char *from, unsigned char size);
+[; ;eeprom_routines.h: 117: extern void memcpyee(__eeprom unsigned char *to, const unsigned char *from, unsigned char size);
+[; ;pic.h: 152: extern __nonreentrant void _delay(unsigned long);
+[; ;pic.h: 186: extern unsigned char __resetbits;
+[; ;pic.h: 187: extern __bit __powerdown;
+[; ;pic.h: 188: extern __bit __timeout;
+[; ;stepper.h: 61: void step_cw(void);
+[; ;stepper.h: 84: void step_ccw(void);
+[; ;stepper.h: 107: void rev_cw(void);
+[; ;stepper.h: 130: void rev_ccw(void);
+[; ;stepper.h: 152: void mot_off(void);
+"19 auto_washing_machine.c
+[p x FOSC=XT ]
+"22
+[p x WDTE=ON ]
+"24
+[p x PWRTE=ON ]
+"26
+[p x BOREN=ON ]
+"28
+[p x LVP=OFF ]
+"31
+[p x CPD=ON ]
+"33
+[p x WRT=HALF ]
+"35
+[p x DEBUG=OFF ]
+"38
+[p x CP=ON ]
+"50
+[v _cur_state `E1105 ~T0 @X0 1 e ]
+[v _prev_state `E1105 ~T0 @X0 1 e ]
+[v _skip_beg `E1105 ~T0 @X0 1 e ]
+[v _skip_end `E1105 ~T0 @X0 1 e ]
+[v _temp `E1105 ~T0 @X0 1 e ]
+[v _temp_beg `E1105 ~T0 @X0 1 e ]
+[v _temp_end `E1105 ~T0 @X0 1 e ]
+[; ;auto_washing_machine.c: 50: enum state{BEGINNING= -2,SUSPENSION,A,B,C,D,F,G,H,J,K,L,M,N,P,Q,NO_SPIN, HALF_LOAD} cur_state, prev_state, skip_beg, skip_end, temp, temp, temp_beg, temp_end;
+"52
+[v _no_spin `Vb ~T0 @X0 1 e ]
+[; ;auto_washing_machine.c: 52: volatile bit no_spin;
+"54
+[v _half_load `Vb ~T0 @X0 1 e ]
+[; ;auto_washing_machine.c: 54: volatile bit half_load;
+"56
+[v _dp_on `Vb ~T0 @X0 1 e ]
+[; ;auto_washing_machine.c: 56: volatile bit dp_on;
+"58
+[v _dp_is_on `b ~T0 @X0 1 s ]
+[; ;auto_washing_machine.c: 58: static bit dp_is_on;
+"60
+[v _mot_rot `Vb ~T0 @X0 1 e ]
+[; ;auto_washing_machine.c: 60: volatile bit mot_rot;
+"62
+[v _mot_is_rot `b ~T0 @X0 1 s ]
+[; ;auto_washing_machine.c: 62: static bit mot_is_rot;
+"64
+[v _mot_high `Vb ~T0 @X0 1 e ]
+[; ;auto_washing_machine.c: 64: volatile bit mot_high;
+"66
+[v _ht_on `Vb ~T0 @X0 1 e ]
+[; ;auto_washing_machine.c: 66: volatile bit ht_on;
+"68
+[v _ht_is_on `b ~T0 @X0 1 s ]
+[; ;auto_washing_machine.c: 68: static bit ht_is_on;
+"70
+[v _sol1_on `Vb ~T0 @X0 1 e ]
+[; ;auto_washing_machine.c: 70: volatile bit sol1_on;
+"72
+[v _sol2_on `Vb ~T0 @X0 1 e ]
+[; ;auto_washing_machine.c: 72: volatile bit sol2_on;
+"74
+[v _sol3_on `Vb ~T0 @X0 1 e ]
+[; ;auto_washing_machine.c: 74: volatile bit sol3_on;
+"76
+[v _sol_is_on `b ~T0 @X0 1 s ]
+[; ;auto_washing_machine.c: 76: static bit sol_is_on;
+"78
+[v _rot_time `Vuc ~T0 @X0 1 e ]
+[; ;auto_washing_machine.c: 78: volatile unsigned char rot_time;
+"80
+[v _seconds `Vuc ~T0 @X0 1 e ]
+[; ;auto_washing_machine.c: 80: volatile unsigned char seconds;
+"82
+[v _idle_time `Vuc ~T0 @X0 1 e ]
+[; ;auto_washing_machine.c: 82: volatile unsigned char idle_time;
+"84
+[v _sol_op_time `Vuc ~T0 @X0 1 e ]
+[; ;auto_washing_machine.c: 84: volatile unsigned char sol_op_time;
+"86
+[v _dp_op_time `Vuc ~T0 @X0 1 e ]
+[; ;auto_washing_machine.c: 86: volatile unsigned char dp_op_time;
+[; ;auto_washing_machine.c: 89: void init(void);
+[; ;auto_washing_machine.c: 92: void state_a(void);
+[; ;auto_washing_machine.c: 94: void state_b(void);
+[; ;auto_washing_machine.c: 96: void state_c(void);
+[; ;auto_washing_machine.c: 98: void state_d(void);
+[; ;auto_washing_machine.c: 100: void state_f(void);
+[; ;auto_washing_machine.c: 102: void state_g(void);
+[; ;auto_washing_machine.c: 104: void state_h(void);
+[; ;auto_washing_machine.c: 107: void state_j(void);
+[; ;auto_washing_machine.c: 109: void state_k(void);
+[; ;auto_washing_machine.c: 111: void state_l(void);
+[; ;auto_washing_machine.c: 113: void state_m(void);
+[; ;auto_washing_machine.c: 115: void state_n(void);
+[; ;auto_washing_machine.c: 117: void state_p(void);
+[; ;auto_washing_machine.c: 119: void state_q(void);
+"122
+[v _main `(v ~T0 @X0 1 ef ]
+"123
+{
+[; ;auto_washing_machine.c: 122: void main(void)
+[; ;auto_washing_machine.c: 123: {
+[e :U _main ]
+[f ]
+[; ;auto_washing_machine.c: 124: (GIE = 0);
+"124
+[e = _GIE -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 125: TRISD7 = 0b0;
+"125
+[e = _TRISD7 -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 126: RD7 = 0b1;
+"126
+[e = _RD7 -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 127: TRISA0 = 0b0;
+"127
+[e = _TRISA0 -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 128: RA0 = !0b1;
+"128
+[e = _RA0 ! != -> 1 `i -> 0 `i ]
+[; ;auto_washing_machine.c: 138: INTCON = 0x58;
+"138
+[e = _INTCON -> -> 88 `i `uc ]
+[; ;auto_washing_machine.c: 144: PIE1 = 0x03;
+"144
+[e = _PIE1 -> -> 3 `i `uc ]
+[; ;auto_washing_machine.c: 145: PIE2 = 0x00;
+"145
+[e = _PIE2 -> -> 0 `i `uc ]
+[; ;auto_washing_machine.c: 147: PIR1 = 0x00;
+"147
+[e = _PIR1 -> -> 0 `i `uc ]
+[; ;auto_washing_machine.c: 148: PIR2 = 0x00;
+"148
+[e = _PIR2 -> -> 0 `i `uc ]
+[; ;auto_washing_machine.c: 158: OPTION_REG = 0x0F;
+"158
+[e = _OPTION_REG -> -> 15 `i `uc ]
+[; ;auto_washing_machine.c: 161: ADCON0 = 0x00;
+"161
+[e = _ADCON0 -> -> 0 `i `uc ]
+[; ;auto_washing_machine.c: 162: ADCON1 = 0x07;
+"162
+[e = _ADCON1 -> -> 7 `i `uc ]
+[; ;auto_washing_machine.c: 163: CMCON = 0x07;
+"163
+[e = _CMCON -> -> 7 `i `uc ]
+[; ;auto_washing_machine.c: 164: CVRCON = 0x00;
+"164
+[e = _CVRCON -> -> 0 `i `uc ]
+[; ;auto_washing_machine.c: 165: SSPEN = 0b0;
+"165
+[e = _SSPEN -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 166: TRISA = 0x00;
+"166
+[e = _TRISA -> -> 0 `i `uc ]
+[; ;auto_washing_machine.c: 169: TRISB = 0xFF;
+"169
+[e = _TRISB -> -> 255 `i `uc ]
+[; ;auto_washing_machine.c: 172: CCP1CON = 0x00;
+"172
+[e = _CCP1CON -> -> 0 `i `uc ]
+[; ;auto_washing_machine.c: 173: CCP2CON = 0x00;
+"173
+[e = _CCP2CON -> -> 0 `i `uc ]
+[; ;auto_washing_machine.c: 174: SPEN = 0b0;
+"174
+[e = _SPEN -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 175: TRISC = 0x00;
+"175
+[e = _TRISC -> -> 0 `i `uc ]
+[; ;auto_washing_machine.c: 178: TRISD = 0x00;
+"178
+[e = _TRISD -> -> 0 `i `uc ]
+[; ;auto_washing_machine.c: 181: TRISE = 0x03;
+"181
+[e = _TRISE -> -> 3 `i `uc ]
+[; ;auto_washing_machine.c: 183: TMR0 = 0x00;
+"183
+[e = _TMR0 -> -> 0 `i `uc ]
+[; ;auto_washing_machine.c: 192: T1CON = 0x30;
+"192
+[e = _T1CON -> -> 48 `i `uc ]
+[; ;auto_washing_machine.c: 195: T2CON = 0x7B;
+"195
+[e = _T2CON -> -> 123 `i `uc ]
+[; ;auto_washing_machine.c: 196: PR2 = 0xFF;
+"196
+[e = _PR2 -> -> 255 `i `uc ]
+[; ;auto_washing_machine.c: 198: init();
+"198
+[e ( _init ..  ]
+[; ;auto_washing_machine.c: 199: (GIE = 1);
+"199
+[e = _GIE -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 201: while(1)
+"201
+[e :U 98 ]
+[; ;auto_washing_machine.c: 202: {
+"202
+{
+[; ;auto_washing_machine.c: 203: asm("clrwdt");
+"203
+[; <" clrwdt ;# ">
+[; ;auto_washing_machine.c: 204: if(A == cur_state)
+"204
+[e $ ! == -> . `E1105 2 `i -> _cur_state `i 100  ]
+[; ;auto_washing_machine.c: 205: state_a();
+"205
+[e ( _state_a ..  ]
+[e $U 101  ]
+"206
+[e :U 100 ]
+[; ;auto_washing_machine.c: 206: else if(B == cur_state)
+[e $ ! == -> . `E1105 3 `i -> _cur_state `i 102  ]
+[; ;auto_washing_machine.c: 207: state_b();
+"207
+[e ( _state_b ..  ]
+[e $U 103  ]
+"208
+[e :U 102 ]
+[; ;auto_washing_machine.c: 208: else if(C == cur_state)
+[e $ ! == -> . `E1105 4 `i -> _cur_state `i 104  ]
+[; ;auto_washing_machine.c: 209: state_c();
+"209
+[e ( _state_c ..  ]
+[e $U 105  ]
+"210
+[e :U 104 ]
+[; ;auto_washing_machine.c: 210: else if(D == cur_state)
+[e $ ! == -> . `E1105 5 `i -> _cur_state `i 106  ]
+[; ;auto_washing_machine.c: 211: state_d();
+"211
+[e ( _state_d ..  ]
+[e $U 107  ]
+"212
+[e :U 106 ]
+[; ;auto_washing_machine.c: 212: else if(F == cur_state)
+[e $ ! == -> . `E1105 6 `i -> _cur_state `i 108  ]
+[; ;auto_washing_machine.c: 213: state_f();
+"213
+[e ( _state_f ..  ]
+[e $U 109  ]
+"214
+[e :U 108 ]
+[; ;auto_washing_machine.c: 214: else if(G == cur_state)
+[e $ ! == -> . `E1105 7 `i -> _cur_state `i 110  ]
+[; ;auto_washing_machine.c: 215: state_g();
+"215
+[e ( _state_g ..  ]
+[e $U 111  ]
+"216
+[e :U 110 ]
+[; ;auto_washing_machine.c: 216: else if(H == cur_state)
+[e $ ! == -> . `E1105 8 `i -> _cur_state `i 112  ]
+[; ;auto_washing_machine.c: 217: state_h();
+"217
+[e ( _state_h ..  ]
+[e $U 113  ]
+"218
+[e :U 112 ]
+[; ;auto_washing_machine.c: 218: else if(J == cur_state)
+[e $ ! == -> . `E1105 9 `i -> _cur_state `i 114  ]
+[; ;auto_washing_machine.c: 219: state_j();
+"219
+[e ( _state_j ..  ]
+[e $U 115  ]
+"220
+[e :U 114 ]
+[; ;auto_washing_machine.c: 220: else if(K == cur_state)
+[e $ ! == -> . `E1105 10 `i -> _cur_state `i 116  ]
+[; ;auto_washing_machine.c: 221: state_k();
+"221
+[e ( _state_k ..  ]
+[e $U 117  ]
+"222
+[e :U 116 ]
+[; ;auto_washing_machine.c: 222: else if(L == cur_state)
+[e $ ! == -> . `E1105 11 `i -> _cur_state `i 118  ]
+[; ;auto_washing_machine.c: 223: state_l();
+"223
+[e ( _state_l ..  ]
+[e $U 119  ]
+"224
+[e :U 118 ]
+[; ;auto_washing_machine.c: 224: else if(M == cur_state)
+[e $ ! == -> . `E1105 12 `i -> _cur_state `i 120  ]
+[; ;auto_washing_machine.c: 225: state_m();
+"225
+[e ( _state_m ..  ]
+[e $U 121  ]
+"226
+[e :U 120 ]
+[; ;auto_washing_machine.c: 226: else if(N == cur_state)
+[e $ ! == -> . `E1105 13 `i -> _cur_state `i 122  ]
+[; ;auto_washing_machine.c: 227: state_n();
+"227
+[e ( _state_n ..  ]
+[e $U 123  ]
+"228
+[e :U 122 ]
+[; ;auto_washing_machine.c: 228: else if(P == cur_state)
+[e $ ! == -> . `E1105 14 `i -> _cur_state `i 124  ]
+[; ;auto_washing_machine.c: 229: state_p();
+"229
+[e ( _state_p ..  ]
+[e $U 125  ]
+"230
+[e :U 124 ]
+[; ;auto_washing_machine.c: 230: else if(Q == cur_state)
+[e $ ! == -> . `E1105 15 `i -> _cur_state `i 126  ]
+[; ;auto_washing_machine.c: 231: state_q();
+"231
+[e ( _state_q ..  ]
+[e :U 126 ]
+"232
+[e :U 125 ]
+[e :U 123 ]
+[e :U 121 ]
+[e :U 119 ]
+[e :U 117 ]
+[e :U 115 ]
+[e :U 113 ]
+[e :U 111 ]
+[e :U 109 ]
+[e :U 107 ]
+[e :U 105 ]
+[e :U 103 ]
+[e :U 101 ]
+}
+[e :U 97 ]
+"201
+[e $U 98  ]
+[e :U 99 ]
+[; ;auto_washing_machine.c: 232: }
+[; ;auto_washing_machine.c: 233: }
+"233
+[e :UE 96 ]
+}
+"239
+[v _init `(v ~T0 @X0 1 ef ]
+"240
+{
+[; ;auto_washing_machine.c: 239: void init(void)
+[; ;auto_washing_machine.c: 240: {
+[e :U _init ]
+[f ]
+[; ;auto_washing_machine.c: 242: cur_state = BEGINNING;
+"242
+[e = _cur_state . `E1105 0 ]
+[; ;auto_washing_machine.c: 243: prev_state = BEGINNING;
+"243
+[e = _prev_state . `E1105 0 ]
+[; ;auto_washing_machine.c: 244: skip_beg = BEGINNING;
+"244
+[e = _skip_beg . `E1105 0 ]
+[; ;auto_washing_machine.c: 245: skip_end = A;
+"245
+[e = _skip_end . `E1105 2 ]
+[; ;auto_washing_machine.c: 247: seconds = 0x00;
+"247
+[e = _seconds -> -> 0 `i `uc ]
+[; ;auto_washing_machine.c: 250: RC0 = !0b1;
+"250
+[e = _RC0 ! != -> 1 `i -> 0 `i ]
+[; ;auto_washing_machine.c: 251: RC1 = !0b1;
+"251
+[e = _RC1 ! != -> 1 `i -> 0 `i ]
+[; ;auto_washing_machine.c: 252: RC2 = 0b1;
+"252
+[e = _RC2 -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 253: mot_rot = 0b0;
+"253
+[e = _mot_rot -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 254: mot_is_rot = 0b0;
+"254
+[e = _mot_is_rot -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 255: mot_high = 0b0;
+"255
+[e = _mot_high -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 256: rot_time = 0x00;
+"256
+[e = _rot_time -> -> 0 `i `uc ]
+[; ;auto_washing_machine.c: 258: RD3 = !0b1;
+"258
+[e = _RD3 ! != -> 1 `i -> 0 `i ]
+[; ;auto_washing_machine.c: 259: sol1_on = 0b0;
+"259
+[e = _sol1_on -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 260: sol2_on = 0b0;
+"260
+[e = _sol2_on -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 261: sol3_on = 0b0;
+"261
+[e = _sol3_on -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 262: sol_is_on = 0b0;
+"262
+[e = _sol_is_on -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 263: RA1 = !0b1;
+"263
+[e = _RA1 ! != -> 1 `i -> 0 `i ]
+[; ;auto_washing_machine.c: 264: RA2 = !0b1;
+"264
+[e = _RA2 ! != -> 1 `i -> 0 `i ]
+[; ;auto_washing_machine.c: 265: RA3 = !0b1;
+"265
+[e = _RA3 ! != -> 1 `i -> 0 `i ]
+[; ;auto_washing_machine.c: 266: RA5 = !0b1;
+"266
+[e = _RA5 ! != -> 1 `i -> 0 `i ]
+[; ;auto_washing_machine.c: 267: sol_op_time = 0x00;
+"267
+[e = _sol_op_time -> -> 0 `i `uc ]
+[; ;auto_washing_machine.c: 269: RD1 = !0b1;
+"269
+[e = _RD1 ! != -> 1 `i -> 0 `i ]
+[; ;auto_washing_machine.c: 270: dp_on = 0b0;
+"270
+[e = _dp_on -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 271: dp_is_on = 0b0;
+"271
+[e = _dp_is_on -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 272: dp_op_time = 0x00;
+"272
+[e = _dp_op_time -> -> 0 `i `uc ]
+[; ;auto_washing_machine.c: 274: RD0 = !0b1;
+"274
+[e = _RD0 ! != -> 1 `i -> 0 `i ]
+[; ;auto_washing_machine.c: 275: ht_is_on = 0b0;
+"275
+[e = _ht_is_on -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 276: ht_on = 0b0;
+"276
+[e = _ht_on -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 278: no_spin = 0b0;
+"278
+[e = _no_spin -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 279: half_load = 0b0;
+"279
+[e = _half_load -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 281: RD2 = !0b1;
+"281
+[e = _RD2 ! != -> 1 `i -> 0 `i ]
+[; ;auto_washing_machine.c: 285: (PORTC = ((unsigned char)(unsigned char)A << 4) | (PORTC & 0x0F));
+"285
+[e = _PORTC -> | << -> -> . `E1105 2 `uc `i -> 4 `i & -> _PORTC `i -> 15 `i `uc ]
+[; ;auto_washing_machine.c: 287: TMR1L = 0x00;
+"287
+[e = _TMR1L -> -> 0 `i `uc ]
+[; ;auto_washing_machine.c: 288: TMR1H = 0x00;
+"288
+[e = _TMR1H -> -> 0 `i `uc ]
+[; ;auto_washing_machine.c: 289: TMR1ON = 0b1;
+"289
+[e = _TMR1ON -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 290: TMR2 = 0x00;
+"290
+[e = _TMR2 -> -> 0 `i `uc ]
+[; ;auto_washing_machine.c: 291: TMR2ON = 0b0;
+"291
+[e = _TMR2ON -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 292: }
+"292
+[e :UE 127 ]
+}
+[; ;auto_washing_machine.c: 294: void discharge(void);
+"296
+[v _state_a `(v ~T0 @X0 1 ef ]
+"297
+{
+[; ;auto_washing_machine.c: 296: void state_a(void)
+[; ;auto_washing_machine.c: 297: {
+[e :U _state_a ]
+[f ]
+[; ;auto_washing_machine.c: 298: (PORTC = ((unsigned char)(int)A << 4) | (PORTC & 0x0F));
+"298
+[e = _PORTC -> | << -> -> -> . `E1105 2 `i `uc `i -> 4 `i & -> _PORTC `i -> 15 `i `uc ]
+[; ;auto_washing_machine.c: 299: mot_rot = 0b0;
+"299
+[e = _mot_rot -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 302: discharge();
+"302
+[e ( _discharge ..  ]
+[; ;auto_washing_machine.c: 304: sol_op_time = 0;
+"304
+[e = _sol_op_time -> -> 0 `i `uc ]
+[; ;auto_washing_machine.c: 305: sol1_on = 0b1;
+"305
+[e = _sol1_on -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 306: ht_on = 0b1;
+"306
+[e = _ht_on -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 309: while(0b0 != RB2)
+"309
+[e $U 129  ]
+[e :U 130 ]
+[; ;auto_washing_machine.c: 310: asm("clrwdt");
+"310
+[; <" clrwdt ;# ">
+[e :U 129 ]
+"309
+[e $ != -> 0 `i -> _RB2 `i 130  ]
+[e :U 131 ]
+[; ;auto_washing_machine.c: 311: mot_high = 0b0;
+"311
+[e = _mot_high -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 312: mot_rot = 0b1;
+"312
+[e = _mot_rot -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 315: if(0b0 == half_load)
+"315
+[e $ ! == -> 0 `i -> _half_load `i 132  ]
+[; ;auto_washing_machine.c: 316: {
+"316
+{
+[; ;auto_washing_machine.c: 318: while(0b0 != RB1)
+"318
+[e $U 133  ]
+[e :U 134 ]
+[; ;auto_washing_machine.c: 319: asm("clrwdt");
+"319
+[; <" clrwdt ;# ">
+[e :U 133 ]
+"318
+[e $ != -> 0 `i -> _RB1 `i 134  ]
+[e :U 135 ]
+"320
+}
+[e :U 132 ]
+[; ;auto_washing_machine.c: 320: }
+[; ;auto_washing_machine.c: 321: sol1_on = 0b0;
+"321
+[e = _sol1_on -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 323: rot_time = 0;
+"323
+[e = _rot_time -> -> 0 `i `uc ]
+[; ;auto_washing_machine.c: 324: while(rot_time < 1u)
+"324
+[e $U 136  ]
+[e :U 137 ]
+[; ;auto_washing_machine.c: 325: asm("clrwdt");
+"325
+[; <" clrwdt ;# ">
+[e :U 136 ]
+"324
+[e $ < -> _rot_time `ui -> 1 `ui 137  ]
+[e :U 138 ]
+[; ;auto_washing_machine.c: 327: discharge();
+"327
+[e ( _discharge ..  ]
+[; ;auto_washing_machine.c: 328: (GIE = 0);
+"328
+[e = _GIE -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 329: prev_state = A;
+"329
+[e = _prev_state . `E1105 2 ]
+[; ;auto_washing_machine.c: 330: if(A == skip_beg)
+"330
+[e $ ! == -> . `E1105 2 `i -> _skip_beg `i 139  ]
+[; ;auto_washing_machine.c: 331: cur_state = skip_end;
+"331
+[e = _cur_state _skip_end ]
+[e $U 140  ]
+"332
+[e :U 139 ]
+[; ;auto_washing_machine.c: 332: else
+[; ;auto_washing_machine.c: 333: cur_state = B;
+"333
+[e = _cur_state . `E1105 3 ]
+[e :U 140 ]
+[; ;auto_washing_machine.c: 334: (GIE = 1);
+"334
+[e = _GIE -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 335: }
+"335
+[e :UE 128 ]
+}
+"338
+[v _state_b `(v ~T0 @X0 1 ef ]
+"339
+{
+[; ;auto_washing_machine.c: 338: void state_b(void)
+[; ;auto_washing_machine.c: 339: {
+[e :U _state_b ]
+[f ]
+[; ;auto_washing_machine.c: 340: (PORTC = ((unsigned char)(unsigned char)B << 4) | (PORTC & 0x0F));
+"340
+[e = _PORTC -> | << -> -> . `E1105 3 `uc `i -> 4 `i & -> _PORTC `i -> 15 `i `uc ]
+[; ;auto_washing_machine.c: 341: mot_rot = 0b0;
+"341
+[e = _mot_rot -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 344: if(C != prev_state && D != prev_state)
+"344
+[e $ ! && != -> . `E1105 4 `i -> _prev_state `i != -> . `E1105 5 `i -> _prev_state `i 142  ]
+[; ;auto_washing_machine.c: 345: discharge();
+"345
+[e ( _discharge ..  ]
+[e :U 142 ]
+[; ;auto_washing_machine.c: 348: sol_op_time = 0;
+"348
+[e = _sol_op_time -> -> 0 `i `uc ]
+[; ;auto_washing_machine.c: 349: sol2_on = 0b1;
+"349
+[e = _sol2_on -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 350: ht_on = 0b1;
+"350
+[e = _ht_on -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 352: if(0b1 == half_load)
+"352
+[e $ ! == -> 1 `i -> _half_load `i 143  ]
+[; ;auto_washing_machine.c: 353: {
+"353
+{
+[; ;auto_washing_machine.c: 354: while(0b0 != RB2)
+"354
+[e $U 144  ]
+[e :U 145 ]
+[; ;auto_washing_machine.c: 355: asm("clrwdt");
+"355
+[; <" clrwdt ;# ">
+[e :U 144 ]
+"354
+[e $ != -> 0 `i -> _RB2 `i 145  ]
+[e :U 146 ]
+"356
+}
+[; ;auto_washing_machine.c: 356: }
+[e $U 147  ]
+"357
+[e :U 143 ]
+[; ;auto_washing_machine.c: 357: else
+[; ;auto_washing_machine.c: 358: {
+"358
+{
+[; ;auto_washing_machine.c: 359: while(0b0 != RB1)
+"359
+[e $U 148  ]
+[e :U 149 ]
+[; ;auto_washing_machine.c: 360: asm("clrwdt");
+"360
+[; <" clrwdt ;# ">
+[e :U 148 ]
+"359
+[e $ != -> 0 `i -> _RB1 `i 149  ]
+[e :U 150 ]
+"361
+}
+[e :U 147 ]
+[; ;auto_washing_machine.c: 361: }
+[; ;auto_washing_machine.c: 362: sol2_on = 0b0;
+"362
+[e = _sol2_on -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 364: mot_rot = 0b1;
+"364
+[e = _mot_rot -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 365: rot_time = 0;
+"365
+[e = _rot_time -> -> 0 `i `uc ]
+[; ;auto_washing_machine.c: 366: while(rot_time < 1u)
+"366
+[e $U 151  ]
+[e :U 152 ]
+[; ;auto_washing_machine.c: 367: asm("clrwdt");
+"367
+[; <" clrwdt ;# ">
+[e :U 151 ]
+"366
+[e $ < -> _rot_time `ui -> 1 `ui 152  ]
+[e :U 153 ]
+[; ;auto_washing_machine.c: 369: (GIE = 0);
+"369
+[e = _GIE -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 370: prev_state = B;
+"370
+[e = _prev_state . `E1105 3 ]
+[; ;auto_washing_machine.c: 371: if(B == skip_beg)
+"371
+[e $ ! == -> . `E1105 3 `i -> _skip_beg `i 154  ]
+[; ;auto_washing_machine.c: 372: cur_state = skip_end;
+"372
+[e = _cur_state _skip_end ]
+[e $U 155  ]
+"373
+[e :U 154 ]
+[; ;auto_washing_machine.c: 373: else
+[; ;auto_washing_machine.c: 374: cur_state = C;
+"374
+[e = _cur_state . `E1105 4 ]
+[e :U 155 ]
+[; ;auto_washing_machine.c: 375: (GIE = 1);
+"375
+[e = _GIE -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 376: }
+"376
+[e :UE 141 ]
+}
+"379
+[v _state_c `(v ~T0 @X0 1 ef ]
+"380
+{
+[; ;auto_washing_machine.c: 379: void state_c(void)
+[; ;auto_washing_machine.c: 380: {
+[e :U _state_c ]
+[f ]
+[; ;auto_washing_machine.c: 381: (PORTC = ((unsigned char)(unsigned char)C << 4) | (PORTC & 0x0F));
+"381
+[e = _PORTC -> | << -> -> . `E1105 4 `uc `i -> 4 `i & -> _PORTC `i -> 15 `i `uc ]
+[; ;auto_washing_machine.c: 384: if(B != prev_state && D != prev_state)
+"384
+[e $ ! && != -> . `E1105 3 `i -> _prev_state `i != -> . `E1105 5 `i -> _prev_state `i 157  ]
+[; ;auto_washing_machine.c: 385: {
+"385
+{
+[; ;auto_washing_machine.c: 386: mot_rot = 0b0;
+"386
+[e = _mot_rot -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 387: discharge();
+"387
+[e ( _discharge ..  ]
+"388
+}
+[e :U 157 ]
+[; ;auto_washing_machine.c: 388: }
+[; ;auto_washing_machine.c: 391: sol_op_time = 0;
+"391
+[e = _sol_op_time -> -> 0 `i `uc ]
+[; ;auto_washing_machine.c: 392: sol2_on = 0b1;
+"392
+[e = _sol2_on -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 393: ht_on = 0b1;
+"393
+[e = _ht_on -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 395: if(0b1 == half_load)
+"395
+[e $ ! == -> 1 `i -> _half_load `i 158  ]
+[; ;auto_washing_machine.c: 396: {
+"396
+{
+[; ;auto_washing_machine.c: 397: while(0b0 != RB2)
+"397
+[e $U 159  ]
+[e :U 160 ]
+[; ;auto_washing_machine.c: 398: asm("clrwdt");
+"398
+[; <" clrwdt ;# ">
+[e :U 159 ]
+"397
+[e $ != -> 0 `i -> _RB2 `i 160  ]
+[e :U 161 ]
+"399
+}
+[; ;auto_washing_machine.c: 399: }
+[e $U 162  ]
+"400
+[e :U 158 ]
+[; ;auto_washing_machine.c: 400: else
+[; ;auto_washing_machine.c: 401: {
+"401
+{
+[; ;auto_washing_machine.c: 402: while(0b0 != RB1)
+"402
+[e $U 163  ]
+[e :U 164 ]
+[; ;auto_washing_machine.c: 403: asm("clrwdt");
+"403
+[; <" clrwdt ;# ">
+[e :U 163 ]
+"402
+[e $ != -> 0 `i -> _RB1 `i 164  ]
+[e :U 165 ]
+"404
+}
+[e :U 162 ]
+[; ;auto_washing_machine.c: 404: }
+[; ;auto_washing_machine.c: 405: sol2_on = 0b0;
+"405
+[e = _sol2_on -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 407: rot_time = 0;
+"407
+[e = _rot_time -> -> 0 `i `uc ]
+[; ;auto_washing_machine.c: 408: mot_rot = 0b1;
+"408
+[e = _mot_rot -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 409: while(rot_time < 1u)
+"409
+[e $U 166  ]
+[e :U 167 ]
+[; ;auto_washing_machine.c: 410: asm("clrwdt");
+"410
+[; <" clrwdt ;# ">
+[e :U 166 ]
+"409
+[e $ < -> _rot_time `ui -> 1 `ui 167  ]
+[e :U 168 ]
+[; ;auto_washing_machine.c: 412: (GIE = 0);
+"412
+[e = _GIE -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 413: prev_state = C;
+"413
+[e = _prev_state . `E1105 4 ]
+[; ;auto_washing_machine.c: 414: if(C == skip_beg)
+"414
+[e $ ! == -> . `E1105 4 `i -> _skip_beg `i 169  ]
+[; ;auto_washing_machine.c: 415: cur_state = skip_end;
+"415
+[e = _cur_state _skip_end ]
+[e $U 170  ]
+"416
+[e :U 169 ]
+[; ;auto_washing_machine.c: 416: else
+[; ;auto_washing_machine.c: 417: cur_state = D;
+"417
+[e = _cur_state . `E1105 5 ]
+[e :U 170 ]
+[; ;auto_washing_machine.c: 418: (GIE = 1);
+"418
+[e = _GIE -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 419: }
+"419
+[e :UE 156 ]
+}
+"422
+[v _state_d `(v ~T0 @X0 1 ef ]
+"423
+{
+[; ;auto_washing_machine.c: 422: void state_d(void)
+[; ;auto_washing_machine.c: 423: {
+[e :U _state_d ]
+[f ]
+[; ;auto_washing_machine.c: 424: (PORTC = ((unsigned char)(unsigned char)D << 4) | (PORTC & 0x0F));
+"424
+[e = _PORTC -> | << -> -> . `E1105 5 `uc `i -> 4 `i & -> _PORTC `i -> 15 `i `uc ]
+[; ;auto_washing_machine.c: 427: if(B != prev_state && C != prev_state)
+"427
+[e $ ! && != -> . `E1105 3 `i -> _prev_state `i != -> . `E1105 4 `i -> _prev_state `i 172  ]
+[; ;auto_washing_machine.c: 428: {
+"428
+{
+[; ;auto_washing_machine.c: 429: mot_rot = 0b0;
+"429
+[e = _mot_rot -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 430: discharge();
+"430
+[e ( _discharge ..  ]
+"431
+}
+[e :U 172 ]
+[; ;auto_washing_machine.c: 431: }
+[; ;auto_washing_machine.c: 434: sol_op_time = 0;
+"434
+[e = _sol_op_time -> -> 0 `i `uc ]
+[; ;auto_washing_machine.c: 435: sol2_on = 0b1;
+"435
+[e = _sol2_on -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 436: ht_on = 0b1;
+"436
+[e = _ht_on -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 438: if(0b1 == half_load)
+"438
+[e $ ! == -> 1 `i -> _half_load `i 173  ]
+[; ;auto_washing_machine.c: 439: {
+"439
+{
+[; ;auto_washing_machine.c: 440: while(0b0 != RB2)
+"440
+[e $U 174  ]
+[e :U 175 ]
+[; ;auto_washing_machine.c: 441: asm("clrwdt");
+"441
+[; <" clrwdt ;# ">
+[e :U 174 ]
+"440
+[e $ != -> 0 `i -> _RB2 `i 175  ]
+[e :U 176 ]
+"442
+}
+[; ;auto_washing_machine.c: 442: }
+[e $U 177  ]
+"443
+[e :U 173 ]
+[; ;auto_washing_machine.c: 443: else
+[; ;auto_washing_machine.c: 444: {
+"444
+{
+[; ;auto_washing_machine.c: 445: while(0b0 != RB1)
+"445
+[e $U 178  ]
+[e :U 179 ]
+[; ;auto_washing_machine.c: 446: asm("clrwdt");
+"446
+[; <" clrwdt ;# ">
+[e :U 178 ]
+"445
+[e $ != -> 0 `i -> _RB1 `i 179  ]
+[e :U 180 ]
+"447
+}
+[e :U 177 ]
+[; ;auto_washing_machine.c: 447: }
+[; ;auto_washing_machine.c: 448: sol2_on = 0b0;
+"448
+[e = _sol2_on -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 450: mot_rot = 0b1;
+"450
+[e = _mot_rot -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 451: rot_time = 0;
+"451
+[e = _rot_time -> -> 0 `i `uc ]
+[; ;auto_washing_machine.c: 452: while(rot_time < 1u)
+"452
+[e $U 181  ]
+[e :U 182 ]
+[; ;auto_washing_machine.c: 453: asm("clrwdt");
+"453
+[; <" clrwdt ;# ">
+[e :U 181 ]
+"452
+[e $ < -> _rot_time `ui -> 1 `ui 182  ]
+[e :U 183 ]
+[; ;auto_washing_machine.c: 455: mot_rot = 0b0;
+"455
+[e = _mot_rot -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 456: discharge();
+"456
+[e ( _discharge ..  ]
+[; ;auto_washing_machine.c: 458: (GIE = 0);
+"458
+[e = _GIE -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 459: prev_state = D;
+"459
+[e = _prev_state . `E1105 5 ]
+[; ;auto_washing_machine.c: 460: if(D == skip_beg)
+"460
+[e $ ! == -> . `E1105 5 `i -> _skip_beg `i 184  ]
+[; ;auto_washing_machine.c: 461: cur_state = skip_end;
+"461
+[e = _cur_state _skip_end ]
+[e $U 185  ]
+"462
+[e :U 184 ]
+[; ;auto_washing_machine.c: 462: else
+[; ;auto_washing_machine.c: 463: cur_state = F;
+"463
+[e = _cur_state . `E1105 6 ]
+[e :U 185 ]
+[; ;auto_washing_machine.c: 464: (GIE = 1);
+"464
+[e = _GIE -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 465: }
+"465
+[e :UE 171 ]
+}
+"468
+[v _state_f `(v ~T0 @X0 1 ef ]
+"469
+{
+[; ;auto_washing_machine.c: 468: void state_f(void)
+[; ;auto_washing_machine.c: 469: {
+[e :U _state_f ]
+[f ]
+[; ;auto_washing_machine.c: 470: (PORTC = ((unsigned char)(unsigned char)F << 4) | (PORTC & 0x0F));
+"470
+[e = _PORTC -> | << -> -> . `E1105 6 `uc `i -> 4 `i & -> _PORTC `i -> 15 `i `uc ]
+[; ;auto_washing_machine.c: 471: ht_on = 0b0;
+"471
+[e = _ht_on -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 472: mot_rot = 0b1;
+"472
+[e = _mot_rot -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 474: discharge();
+"474
+[e ( _discharge ..  ]
+[; ;auto_washing_machine.c: 477: sol_op_time = 0;
+"477
+[e = _sol_op_time -> -> 0 `i `uc ]
+[; ;auto_washing_machine.c: 478: sol2_on = 0b1;
+"478
+[e = _sol2_on -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 480: if(0b1 == half_load)
+"480
+[e $ ! == -> 1 `i -> _half_load `i 187  ]
+[; ;auto_washing_machine.c: 481: {
+"481
+{
+[; ;auto_washing_machine.c: 482: while(0b0 != RB2)
+"482
+[e $U 188  ]
+[e :U 189 ]
+[; ;auto_washing_machine.c: 483: asm("clrwdt");
+"483
+[; <" clrwdt ;# ">
+[e :U 188 ]
+"482
+[e $ != -> 0 `i -> _RB2 `i 189  ]
+[e :U 190 ]
+"484
+}
+[; ;auto_washing_machine.c: 484: }
+[e $U 191  ]
+"485
+[e :U 187 ]
+[; ;auto_washing_machine.c: 485: else
+[; ;auto_washing_machine.c: 486: {
+"486
+{
+[; ;auto_washing_machine.c: 487: while(0b0 != RB1)
+"487
+[e $U 192  ]
+[e :U 193 ]
+[; ;auto_washing_machine.c: 488: asm("clrwdt");
+"488
+[; <" clrwdt ;# ">
+[e :U 192 ]
+"487
+[e $ != -> 0 `i -> _RB1 `i 193  ]
+[e :U 194 ]
+"489
+}
+[e :U 191 ]
+[; ;auto_washing_machine.c: 489: }
+[; ;auto_washing_machine.c: 490: sol2_on = 0b0;
+"490
+[e = _sol2_on -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 492: rot_time = 0;
+"492
+[e = _rot_time -> -> 0 `i `uc ]
+[; ;auto_washing_machine.c: 493: while(rot_time < 1)
+"493
+[e $U 195  ]
+[e :U 196 ]
+[; ;auto_washing_machine.c: 494: asm("clrwdt");
+"494
+[; <" clrwdt ;# ">
+[e :U 195 ]
+"493
+[e $ < -> _rot_time `i -> 1 `i 196  ]
+[e :U 197 ]
+[; ;auto_washing_machine.c: 496: discharge();
+"496
+[e ( _discharge ..  ]
+[; ;auto_washing_machine.c: 497: sol_op_time = 0;
+"497
+[e = _sol_op_time -> -> 0 `i `uc ]
+[; ;auto_washing_machine.c: 498: sol2_on = 0b1;
+"498
+[e = _sol2_on -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 499: if(0b1 == half_load)
+"499
+[e $ ! == -> 1 `i -> _half_load `i 198  ]
+[; ;auto_washing_machine.c: 500: {
+"500
+{
+[; ;auto_washing_machine.c: 501: while(0b0 != RB2)
+"501
+[e $U 199  ]
+[e :U 200 ]
+[; ;auto_washing_machine.c: 502: asm("clrwdt");
+"502
+[; <" clrwdt ;# ">
+[e :U 199 ]
+"501
+[e $ != -> 0 `i -> _RB2 `i 200  ]
+[e :U 201 ]
+"503
+}
+[; ;auto_washing_machine.c: 503: }
+[e $U 202  ]
+"504
+[e :U 198 ]
+[; ;auto_washing_machine.c: 504: else
+[; ;auto_washing_machine.c: 505: {
+"505
+{
+[; ;auto_washing_machine.c: 506: while(0b0 != RB1)
+"506
+[e $U 203  ]
+[e :U 204 ]
+[; ;auto_washing_machine.c: 507: asm("clrwdt");
+"507
+[; <" clrwdt ;# ">
+[e :U 203 ]
+"506
+[e $ != -> 0 `i -> _RB1 `i 204  ]
+[e :U 205 ]
+"508
+}
+[e :U 202 ]
+[; ;auto_washing_machine.c: 508: }
+[; ;auto_washing_machine.c: 509: sol2_on = 0b0;
+"509
+[e = _sol2_on -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 510: rot_time = 0;
+"510
+[e = _rot_time -> -> 0 `i `uc ]
+[; ;auto_washing_machine.c: 511: while(rot_time < 1)
+"511
+[e $U 206  ]
+[e :U 207 ]
+[; ;auto_washing_machine.c: 512: asm("clrwdt");
+"512
+[; <" clrwdt ;# ">
+[e :U 206 ]
+"511
+[e $ < -> _rot_time `i -> 1 `i 207  ]
+[e :U 208 ]
+[; ;auto_washing_machine.c: 514: discharge();
+"514
+[e ( _discharge ..  ]
+[; ;auto_washing_machine.c: 515: sol_op_time = 0;
+"515
+[e = _sol_op_time -> -> 0 `i `uc ]
+[; ;auto_washing_machine.c: 516: sol2_on = 0b1;
+"516
+[e = _sol2_on -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 518: if(0b1 == half_load)
+"518
+[e $ ! == -> 1 `i -> _half_load `i 209  ]
+[; ;auto_washing_machine.c: 519: {
+"519
+{
+[; ;auto_washing_machine.c: 520: while(0b0 != RB2)
+"520
+[e $U 210  ]
+[e :U 211 ]
+[; ;auto_washing_machine.c: 521: asm("clrwdt");
+"521
+[; <" clrwdt ;# ">
+[e :U 210 ]
+"520
+[e $ != -> 0 `i -> _RB2 `i 211  ]
+[e :U 212 ]
+"522
+}
+[; ;auto_washing_machine.c: 522: }
+[e $U 213  ]
+"523
+[e :U 209 ]
+[; ;auto_washing_machine.c: 523: else
+[; ;auto_washing_machine.c: 524: {
+"524
+{
+[; ;auto_washing_machine.c: 525: while(0b0 != RB1)
+"525
+[e $U 214  ]
+[e :U 215 ]
+[; ;auto_washing_machine.c: 526: asm("clrwdt");
+"526
+[; <" clrwdt ;# ">
+[e :U 214 ]
+"525
+[e $ != -> 0 `i -> _RB1 `i 215  ]
+[e :U 216 ]
+"527
+}
+[e :U 213 ]
+[; ;auto_washing_machine.c: 527: }
+[; ;auto_washing_machine.c: 528: sol2_on = 0b0;
+"528
+[e = _sol2_on -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 530: rot_time = 0;
+"530
+[e = _rot_time -> -> 0 `i `uc ]
+[; ;auto_washing_machine.c: 531: while(rot_time < 1u)
+"531
+[e $U 217  ]
+[e :U 218 ]
+[; ;auto_washing_machine.c: 532: asm("clrwdt");
+"532
+[; <" clrwdt ;# ">
+[e :U 217 ]
+"531
+[e $ < -> _rot_time `ui -> 1 `ui 218  ]
+[e :U 219 ]
+[; ;auto_washing_machine.c: 534: discharge();
+"534
+[e ( _discharge ..  ]
+[; ;auto_washing_machine.c: 536: (GIE = 0);
+"536
+[e = _GIE -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 537: prev_state = F;
+"537
+[e = _prev_state . `E1105 6 ]
+[; ;auto_washing_machine.c: 538: if(F == skip_beg)
+"538
+[e $ ! == -> . `E1105 6 `i -> _skip_beg `i 220  ]
+[; ;auto_washing_machine.c: 539: cur_state = skip_end;
+"539
+[e = _cur_state _skip_end ]
+[e $U 221  ]
+"540
+[e :U 220 ]
+[; ;auto_washing_machine.c: 540: else
+[; ;auto_washing_machine.c: 541: cur_state = G;
+"541
+[e = _cur_state . `E1105 7 ]
+[e :U 221 ]
+[; ;auto_washing_machine.c: 542: (GIE = 1);
+"542
+[e = _GIE -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 543: }
+"543
+[e :UE 186 ]
+}
+"546
+[v _state_g `(v ~T0 @X0 1 ef ]
+"547
+{
+[; ;auto_washing_machine.c: 546: void state_g(void)
+[; ;auto_washing_machine.c: 547: {
+[e :U _state_g ]
+[f ]
+[; ;auto_washing_machine.c: 548: (PORTC = ((unsigned char)(unsigned char)G << 4) | (PORTC & 0x0F));
+"548
+[e = _PORTC -> | << -> -> . `E1105 7 `uc `i -> 4 `i & -> _PORTC `i -> 15 `i `uc ]
+[; ;auto_washing_machine.c: 549: ht_on = 0b0;
+"549
+[e = _ht_on -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 551: mot_rot = 0b1;
+"551
+[e = _mot_rot -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 552: discharge();
+"552
+[e ( _discharge ..  ]
+[; ;auto_washing_machine.c: 554: if(0b0 == no_spin)
+"554
+[e $ ! == -> 0 `i -> _no_spin `i 223  ]
+[; ;auto_washing_machine.c: 555: {
+"555
+{
+[; ;auto_washing_machine.c: 556: mot_high = 0b1;
+"556
+[e = _mot_high -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 557: rot_time = 0;
+"557
+[e = _rot_time -> -> 0 `i `uc ]
+[; ;auto_washing_machine.c: 558: while(rot_time < 1u)
+"558
+[e $U 224  ]
+[e :U 225 ]
+[; ;auto_washing_machine.c: 559: asm("clrwdt");
+"559
+[; <" clrwdt ;# ">
+[e :U 224 ]
+"558
+[e $ < -> _rot_time `ui -> 1 `ui 225  ]
+[e :U 226 ]
+[; ;auto_washing_machine.c: 560: mot_high = 0b0;
+"560
+[e = _mot_high -> -> 0 `i `b ]
+"561
+}
+[e :U 223 ]
+[; ;auto_washing_machine.c: 561: }
+[; ;auto_washing_machine.c: 563: sol_op_time = 0;
+"563
+[e = _sol_op_time -> -> 0 `i `uc ]
+[; ;auto_washing_machine.c: 564: sol3_on = 0b1;
+"564
+[e = _sol3_on -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 565: if(0b1 == half_load)
+"565
+[e $ ! == -> 1 `i -> _half_load `i 227  ]
+[; ;auto_washing_machine.c: 566: {
+"566
+{
+[; ;auto_washing_machine.c: 567: while(0b0 != RB2)
+"567
+[e $U 228  ]
+[e :U 229 ]
+[; ;auto_washing_machine.c: 568: asm("clrwdt");
+"568
+[; <" clrwdt ;# ">
+[e :U 228 ]
+"567
+[e $ != -> 0 `i -> _RB2 `i 229  ]
+[e :U 230 ]
+"569
+}
+[; ;auto_washing_machine.c: 569: }
+[e $U 231  ]
+"570
+[e :U 227 ]
+[; ;auto_washing_machine.c: 570: else
+[; ;auto_washing_machine.c: 571: {
+"571
+{
+[; ;auto_washing_machine.c: 572: while(0b0 != RB1)
+"572
+[e $U 232  ]
+[e :U 233 ]
+[; ;auto_washing_machine.c: 573: asm("clrwdt");
+"573
+[; <" clrwdt ;# ">
+[e :U 232 ]
+"572
+[e $ != -> 0 `i -> _RB1 `i 233  ]
+[e :U 234 ]
+"574
+}
+[e :U 231 ]
+[; ;auto_washing_machine.c: 574: }
+[; ;auto_washing_machine.c: 575: sol3_on = 0b0;
+"575
+[e = _sol3_on -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 576: rot_time = 0;
+"576
+[e = _rot_time -> -> 0 `i `uc ]
+[; ;auto_washing_machine.c: 577: while(rot_time < 1u)
+"577
+[e $U 235  ]
+[e :U 236 ]
+[; ;auto_washing_machine.c: 578: asm("clrwdt");
+"578
+[; <" clrwdt ;# ">
+[e :U 235 ]
+"577
+[e $ < -> _rot_time `ui -> 1 `ui 236  ]
+[e :U 237 ]
+[; ;auto_washing_machine.c: 580: discharge();
+"580
+[e ( _discharge ..  ]
+[; ;auto_washing_machine.c: 582: (GIE = 0);
+"582
+[e = _GIE -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 583: prev_state = G;
+"583
+[e = _prev_state . `E1105 7 ]
+[; ;auto_washing_machine.c: 584: if(G == skip_beg)
+"584
+[e $ ! == -> . `E1105 7 `i -> _skip_beg `i 238  ]
+[; ;auto_washing_machine.c: 585: cur_state = skip_end;
+"585
+[e = _cur_state _skip_end ]
+[e $U 239  ]
+"586
+[e :U 238 ]
+[; ;auto_washing_machine.c: 586: else
+[; ;auto_washing_machine.c: 587: cur_state = H;
+"587
+[e = _cur_state . `E1105 8 ]
+[e :U 239 ]
+[; ;auto_washing_machine.c: 588: (GIE = 1);
+"588
+[e = _GIE -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 589: }
+"589
+[e :UE 222 ]
+}
+"592
+[v _state_h `(v ~T0 @X0 1 ef ]
+"593
+{
+[; ;auto_washing_machine.c: 592: void state_h(void)
+[; ;auto_washing_machine.c: 593: {
+[e :U _state_h ]
+[f ]
+[; ;auto_washing_machine.c: 594: if(0b0 == no_spin)
+"594
+[e $ ! == -> 0 `i -> _no_spin `i 241  ]
+[; ;auto_washing_machine.c: 595: {
+"595
+{
+[; ;auto_washing_machine.c: 596: (PORTC = ((unsigned char)(unsigned char)H << 4) | (PORTC & 0x0F));
+"596
+[e = _PORTC -> | << -> -> . `E1105 8 `uc `i -> 4 `i & -> _PORTC `i -> 15 `i `uc ]
+[; ;auto_washing_machine.c: 597: ht_on = 0b0;
+"597
+[e = _ht_on -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 598: discharge();
+"598
+[e ( _discharge ..  ]
+[; ;auto_washing_machine.c: 599: mot_high = 0b1;
+"599
+[e = _mot_high -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 600: mot_rot = 0b1;
+"600
+[e = _mot_rot -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 601: rot_time = 0b0;
+"601
+[e = _rot_time -> -> 0 `i `uc ]
+[; ;auto_washing_machine.c: 602: while(rot_time < 1u)
+"602
+[e $U 242  ]
+[e :U 243 ]
+[; ;auto_washing_machine.c: 603: asm("clrwdt");
+"603
+[; <" clrwdt ;# ">
+[e :U 242 ]
+"602
+[e $ < -> _rot_time `ui -> 1 `ui 243  ]
+[e :U 244 ]
+"604
+}
+[e :U 241 ]
+[; ;auto_washing_machine.c: 604: }
+[; ;auto_washing_machine.c: 606: (GIE = 0);
+"606
+[e = _GIE -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 607: prev_state = H;
+"607
+[e = _prev_state . `E1105 8 ]
+[; ;auto_washing_machine.c: 608: if(H == skip_beg)
+"608
+[e $ ! == -> . `E1105 8 `i -> _skip_beg `i 245  ]
+[; ;auto_washing_machine.c: 609: cur_state = skip_end;
+"609
+[e = _cur_state _skip_end ]
+[e $U 246  ]
+"610
+[e :U 245 ]
+[; ;auto_washing_machine.c: 610: else
+[; ;auto_washing_machine.c: 611: init();
+"611
+[e ( _init ..  ]
+[e :U 246 ]
+[; ;auto_washing_machine.c: 612: (GIE = 1);
+"612
+[e = _GIE -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 613: }
+"613
+[e :UE 240 ]
+}
+"616
+[v _state_j `(v ~T0 @X0 1 ef ]
+"617
+{
+[; ;auto_washing_machine.c: 616: void state_j(void)
+[; ;auto_washing_machine.c: 617: {
+[e :U _state_j ]
+[f ]
+[; ;auto_washing_machine.c: 619: }
+"619
+[e :UE 247 ]
+}
+"622
+[v _state_k `(v ~T0 @X0 1 ef ]
+"623
+{
+[; ;auto_washing_machine.c: 622: void state_k(void)
+[; ;auto_washing_machine.c: 623: {
+[e :U _state_k ]
+[f ]
+[; ;auto_washing_machine.c: 625: }
+"625
+[e :UE 248 ]
+}
+"628
+[v _state_l `(v ~T0 @X0 1 ef ]
+"629
+{
+[; ;auto_washing_machine.c: 628: void state_l(void)
+[; ;auto_washing_machine.c: 629: {
+[e :U _state_l ]
+[f ]
+[; ;auto_washing_machine.c: 631: }
+"631
+[e :UE 249 ]
+}
+"634
+[v _state_m `(v ~T0 @X0 1 ef ]
+"635
+{
+[; ;auto_washing_machine.c: 634: void state_m(void)
+[; ;auto_washing_machine.c: 635: {
+[e :U _state_m ]
+[f ]
+[; ;auto_washing_machine.c: 637: }
+"637
+[e :UE 250 ]
+}
+"640
+[v _state_n `(v ~T0 @X0 1 ef ]
+"641
+{
+[; ;auto_washing_machine.c: 640: void state_n(void)
+[; ;auto_washing_machine.c: 641: {
+[e :U _state_n ]
+[f ]
+[; ;auto_washing_machine.c: 643: }
+"643
+[e :UE 251 ]
+}
+"646
+[v _state_p `(v ~T0 @X0 1 ef ]
+"647
+{
+[; ;auto_washing_machine.c: 646: void state_p(void)
+[; ;auto_washing_machine.c: 647: {
+[e :U _state_p ]
+[f ]
+[; ;auto_washing_machine.c: 649: }
+"649
+[e :UE 252 ]
+}
+"652
+[v _state_q `(v ~T0 @X0 1 ef ]
+"653
+{
+[; ;auto_washing_machine.c: 652: void state_q(void)
+[; ;auto_washing_machine.c: 653: {
+[e :U _state_q ]
+[f ]
+[; ;auto_washing_machine.c: 655: }
+"655
+[e :UE 253 ]
+}
+"657
+[v _discharge `(v ~T0 @X0 1 ef ]
+"658
+{
+[; ;auto_washing_machine.c: 657: void discharge(void)
+[; ;auto_washing_machine.c: 658: {
+[e :U _discharge ]
+[f ]
+[; ;auto_washing_machine.c: 659: if(0b0 != RB3)
+"659
+[e $ ! != -> 0 `i -> _RB3 `i 255  ]
+[; ;auto_washing_machine.c: 660: {
+"660
+{
+[; ;auto_washing_machine.c: 661: dp_op_time = 0;
+"661
+[e = _dp_op_time -> -> 0 `i `uc ]
+[; ;auto_washing_machine.c: 662: dp_on = 0b1;
+"662
+[e = _dp_on -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 663: while(0b0 != RB3)
+"663
+[e $U 256  ]
+[e :U 257 ]
+[; ;auto_washing_machine.c: 664: asm("clrwdt");
+"664
+[; <" clrwdt ;# ">
+[e :U 256 ]
+"663
+[e $ != -> 0 `i -> _RB3 `i 257  ]
+[e :U 258 ]
+[; ;auto_washing_machine.c: 665: dp_on = 0b0;
+"665
+[e = _dp_on -> -> 0 `i `b ]
+"666
+}
+[e :U 255 ]
+[; ;auto_washing_machine.c: 666: }
+[; ;auto_washing_machine.c: 667: }
+"667
+[e :UE 254 ]
+}
+[; ;auto_washing_machine.c: 668: void suspend(void);
+[; ;auto_washing_machine.c: 669: void resume(void);
+[v F1221 `(v ~T0 @X0 1 tf ]
+"671
+[v _isr `IF1221 ~T0 @X0 1 e ]
+"672
+{
+[; ;auto_washing_machine.c: 671: void interrupt isr(void)
+[; ;auto_washing_machine.c: 672: {
+[e :U _isr ]
+[f ]
+"674
+[v F1222 `ui ~T0 @X0 1 s i ]
+"676
+[v F1223 `ul ~T0 @X0 1 s ticks ]
+"678
+[v F1224 `b ~T0 @X0 1 s mot_is_left ]
+"680
+[v F1225 `b ~T0 @X0 1 s mot_is_high ]
+[; ;auto_washing_machine.c: 674: static unsigned int i;
+[; ;auto_washing_machine.c: 676: static unsigned long ticks;
+[; ;auto_washing_machine.c: 678: static bit mot_is_left;
+[; ;auto_washing_machine.c: 680: static bit mot_is_high;
+[; ;auto_washing_machine.c: 682: if(TMR1IF == 0b1)
+"682
+[e $ ! == -> _TMR1IF `i -> 1 `i 260  ]
+[; ;auto_washing_machine.c: 683: {
+"683
+{
+[; ;auto_washing_machine.c: 685: if(SUSPENSION != cur_state)
+"685
+[e $ ! != -> . `E1105 1 `i -> _cur_state `i 261  ]
+[; ;auto_washing_machine.c: 686: {
+"686
+{
+[; ;auto_washing_machine.c: 687: seconds++;
+"687
+[e ++ _seconds -> -> 1 `i `uc ]
+[; ;auto_washing_machine.c: 690: if(0b1 == mot_rot)
+"690
+[e $ ! == -> 1 `i -> _mot_rot `i 262  ]
+[; ;auto_washing_machine.c: 691: {
+"691
+{
+[; ;auto_washing_machine.c: 692: if(!mot_high && (seconds % 3u == 0))
+"692
+[e $ ! && ! _mot_high == % -> _seconds `ui -> 3 `ui -> -> 0 `i `ui 263  ]
+[; ;auto_washing_machine.c: 693: {
+"693
+{
+[; ;auto_washing_machine.c: 694: if(mot_is_rot)
+"694
+[e $ ! _mot_is_rot 264  ]
+[; ;auto_washing_machine.c: 695: {
+"695
+{
+[; ;auto_washing_machine.c: 696: RC0 = !0b1;
+"696
+[e = _RC0 ! != -> 1 `i -> 0 `i ]
+[; ;auto_washing_machine.c: 697: mot_is_rot = 0b0;
+"697
+[e = _mot_is_rot -> -> 0 `i `b ]
+"698
+}
+[; ;auto_washing_machine.c: 698: }
+[e $U 265  ]
+"699
+[e :U 264 ]
+[; ;auto_washing_machine.c: 699: else
+[; ;auto_washing_machine.c: 700: {
+"700
+{
+[; ;auto_washing_machine.c: 701: mot_is_left ^= 0b1;
+"701
+[e =^ F1224 -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 702: if(mot_is_left)
+"702
+[e $ ! F1224 266  ]
+[; ;auto_washing_machine.c: 703: RC2 = !0b1;
+"703
+[e = _RC2 ! != -> 1 `i -> 0 `i ]
+[e $U 267  ]
+"704
+[e :U 266 ]
+[; ;auto_washing_machine.c: 704: else
+[; ;auto_washing_machine.c: 705: RC2 = 0b1;
+"705
+[e = _RC2 -> -> 1 `i `b ]
+[e :U 267 ]
+[; ;auto_washing_machine.c: 706: RC0 = 0b1;
+"706
+[e = _RC0 -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 707: mot_is_rot = 0b1;
+"707
+[e = _mot_is_rot -> -> 1 `i `b ]
+"708
+}
+[e :U 265 ]
+"709
+}
+[; ;auto_washing_machine.c: 708: }
+[; ;auto_washing_machine.c: 709: }
+[e $U 268  ]
+"713
+[e :U 263 ]
+[; ;auto_washing_machine.c: 713: else if(mot_high && !mot_is_high)
+[e $ ! && _mot_high ! F1225 269  ]
+[; ;auto_washing_machine.c: 714: {
+"714
+{
+[; ;auto_washing_machine.c: 715: if(mot_is_left)
+"715
+[e $ ! F1224 270  ]
+[; ;auto_washing_machine.c: 716: {
+"716
+{
+[; ;auto_washing_machine.c: 717: RC0 = !0b1;
+"717
+[e = _RC0 ! != -> 1 `i -> 0 `i ]
+[; ;auto_washing_machine.c: 718: _delay((unsigned long)((2000)*(4000000/4000.0)));
+"718
+[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"719
+}
+[e :U 270 ]
+[; ;auto_washing_machine.c: 719: }
+[; ;auto_washing_machine.c: 720: RC2 = 0b1;
+"720
+[e = _RC2 -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 721: mot_is_left = 0b0;
+"721
+[e = F1224 -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 722: RC1 = 0b1;
+"722
+[e = _RC1 -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 723: mot_is_high = 0b1;
+"723
+[e = F1225 -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 724: RC0 = 0b1;
+"724
+[e = _RC0 -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 725: mot_is_rot = 0b1;
+"725
+[e = _mot_is_rot -> -> 1 `i `b ]
+"726
+}
+[; ;auto_washing_machine.c: 726: }
+[e $U 271  ]
+"727
+[e :U 269 ]
+[; ;auto_washing_machine.c: 727: else if(!mot_high && mot_is_high)
+[e $ ! && ! _mot_high F1225 272  ]
+[; ;auto_washing_machine.c: 728: {
+"728
+{
+[; ;auto_washing_machine.c: 729: RC1 = !0b1;
+"729
+[e = _RC1 ! != -> 1 `i -> 0 `i ]
+[; ;auto_washing_machine.c: 730: mot_is_high = 0b0;
+"730
+[e = F1225 -> -> 0 `i `b ]
+"731
+}
+[e :U 272 ]
+"732
+[e :U 271 ]
+[e :U 268 ]
+}
+[; ;auto_washing_machine.c: 731: }
+[; ;auto_washing_machine.c: 732: }
+[e $U 273  ]
+"733
+[e :U 262 ]
+[; ;auto_washing_machine.c: 733: else if(!mot_rot && mot_is_rot)
+[e $ ! && ! _mot_rot _mot_is_rot 274  ]
+[; ;auto_washing_machine.c: 734: {
+"734
+{
+[; ;auto_washing_machine.c: 735: RC0 = !0b1;
+"735
+[e = _RC0 ! != -> 1 `i -> 0 `i ]
+[; ;auto_washing_machine.c: 736: mot_is_rot = 0b0;
+"736
+[e = _mot_is_rot -> -> 0 `i `b ]
+"737
+}
+[e :U 274 ]
+"739
+[e :U 273 ]
+[; ;auto_washing_machine.c: 737: }
+[; ;auto_washing_machine.c: 739: if(seconds >= 114)
+[e $ ! >= -> _seconds `i -> 114 `i 275  ]
+[; ;auto_washing_machine.c: 740: {
+"740
+{
+[; ;auto_washing_machine.c: 741: seconds = 0;
+"741
+[e = _seconds -> -> 0 `i `uc ]
+[; ;auto_washing_machine.c: 744: if(BEGINNING == cur_state)
+"744
+[e $ ! == -> . `E1105 0 `i -> _cur_state `i 276  ]
+[; ;auto_washing_machine.c: 745: {
+"745
+{
+[; ;auto_washing_machine.c: 746: idle_time++;
+"746
+[e ++ _idle_time -> -> 1 `i `uc ]
+[; ;auto_washing_machine.c: 747: if(idle_time >= 20u)
+"747
+[e $ ! >= -> _idle_time `ui -> 20 `ui 277  ]
+[; ;auto_washing_machine.c: 748: RD7 = !0b1;
+"748
+[e = _RD7 ! != -> 1 `i -> 0 `i ]
+[e :U 277 ]
+"749
+}
+[e :U 276 ]
+[; ;auto_washing_machine.c: 749: }
+[; ;auto_washing_machine.c: 753: if(sol1_on || sol2_on || sol3_on)
+"753
+[e $ ! || || _sol1_on _sol2_on _sol3_on 278  ]
+[; ;auto_washing_machine.c: 754: {
+"754
+{
+[; ;auto_washing_machine.c: 755: sol_op_time++;
+"755
+[e ++ _sol_op_time -> -> 1 `i `uc ]
+[; ;auto_washing_machine.c: 756: if(sol_op_time >= 10u)
+"756
+[e $ ! >= -> _sol_op_time `ui -> 10 `ui 279  ]
+[; ;auto_washing_machine.c: 757: RA0 = 0b1;
+"757
+[e = _RA0 -> -> 1 `i `b ]
+[e :U 279 ]
+"758
+}
+[e :U 278 ]
+[; ;auto_washing_machine.c: 758: }
+[; ;auto_washing_machine.c: 762: if(0b1 == dp_on)
+"762
+[e $ ! == -> 1 `i -> _dp_on `i 280  ]
+[; ;auto_washing_machine.c: 763: {
+"763
+{
+[; ;auto_washing_machine.c: 764: dp_op_time++;
+"764
+[e ++ _dp_op_time -> -> 1 `i `uc ]
+[; ;auto_washing_machine.c: 765: if(dp_op_time >= 10u)
+"765
+[e $ ! >= -> _dp_op_time `ui -> 10 `ui 281  ]
+[; ;auto_washing_machine.c: 766: RA0 = 0b1;
+"766
+[e = _RA0 -> -> 1 `i `b ]
+[e :U 281 ]
+"767
+}
+[e :U 280 ]
+[; ;auto_washing_machine.c: 767: }
+[; ;auto_washing_machine.c: 769: if(0b1 == mot_rot)
+"769
+[e $ ! == -> 1 `i -> _mot_rot `i 282  ]
+[; ;auto_washing_machine.c: 770: rot_time++;
+"770
+[e ++ _rot_time -> -> 1 `i `uc ]
+[e :U 282 ]
+"771
+}
+[e :U 275 ]
+"772
+}
+[e :U 261 ]
+[; ;auto_washing_machine.c: 771: }
+[; ;auto_washing_machine.c: 772: }
+[; ;auto_washing_machine.c: 773: TMR1IF = 0b0;
+"773
+[e = _TMR1IF -> -> 0 `i `b ]
+"774
+}
+[e :U 260 ]
+[; ;auto_washing_machine.c: 774: }
+[; ;auto_washing_machine.c: 775: if(TMR2IF)
+"775
+[e $ ! _TMR2IF 283  ]
+[; ;auto_washing_machine.c: 776: {
+"776
+{
+[; ;auto_washing_machine.c: 778: if(0b1 != RE0)
+"778
+[e $ ! != -> 1 `i -> _RE0 `i 284  ]
+[; ;auto_washing_machine.c: 779: {
+"779
+{
+[; ;auto_washing_machine.c: 780: suspend();
+"780
+[e ( _suspend ..  ]
+[; ;auto_washing_machine.c: 781: return;
+"781
+[e $UE 259  ]
+"782
+}
+[e :U 284 ]
+[; ;auto_washing_machine.c: 782: }
+[; ;auto_washing_machine.c: 785: if(dp_on && !dp_is_on)
+"785
+[e $ ! && _dp_on ! _dp_is_on 285  ]
+[; ;auto_washing_machine.c: 786: {
+"786
+{
+[; ;auto_washing_machine.c: 787: RD1 = 0b1;
+"787
+[e = _RD1 -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 788: dp_is_on = 0b1;
+"788
+[e = _dp_is_on -> -> 1 `i `b ]
+"789
+}
+[; ;auto_washing_machine.c: 789: }
+[e $U 286  ]
+"790
+[e :U 285 ]
+[; ;auto_washing_machine.c: 790: else if(!dp_on && dp_is_on)
+[e $ ! && ! _dp_on _dp_is_on 287  ]
+[; ;auto_washing_machine.c: 791: {
+"791
+{
+[; ;auto_washing_machine.c: 792: RD1 = !0b1;
+"792
+[e = _RD1 ! != -> 1 `i -> 0 `i ]
+[; ;auto_washing_machine.c: 793: dp_is_on = 0b0;
+"793
+[e = _dp_is_on -> -> 0 `i `b ]
+"794
+}
+[e :U 287 ]
+"796
+[e :U 286 ]
+[; ;auto_washing_machine.c: 794: }
+[; ;auto_washing_machine.c: 796: if(0b0 == RE1)
+[e $ ! == -> 0 `i -> _RE1 `i 288  ]
+[; ;auto_washing_machine.c: 797: {
+"797
+{
+[; ;auto_washing_machine.c: 798: RD0 = !0b1;
+"798
+[e = _RD0 ! != -> 1 `i -> 0 `i ]
+[; ;auto_washing_machine.c: 799: ht_on = 0b0;
+"799
+[e = _ht_on -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 800: ht_is_on = 0b0;
+"800
+[e = _ht_is_on -> -> 0 `i `b ]
+"801
+}
+[e :U 288 ]
+[; ;auto_washing_machine.c: 801: }
+[; ;auto_washing_machine.c: 804: if(ht_on && !ht_is_on)
+"804
+[e $ ! && _ht_on ! _ht_is_on 289  ]
+[; ;auto_washing_machine.c: 805: {
+"805
+{
+[; ;auto_washing_machine.c: 806: if(0b0 == RE1)
+"806
+[e $ ! == -> 0 `i -> _RE1 `i 290  ]
+[; ;auto_washing_machine.c: 807: {
+"807
+{
+[; ;auto_washing_machine.c: 808: RD0 = !0b1;
+"808
+[e = _RD0 ! != -> 1 `i -> 0 `i ]
+[; ;auto_washing_machine.c: 809: ht_on = 0b0;
+"809
+[e = _ht_on -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 810: ht_is_on = 0b0;
+"810
+[e = _ht_is_on -> -> 0 `i `b ]
+"811
+}
+[; ;auto_washing_machine.c: 811: }
+[e $U 291  ]
+"812
+[e :U 290 ]
+[; ;auto_washing_machine.c: 812: else
+[; ;auto_washing_machine.c: 813: {
+"813
+{
+[; ;auto_washing_machine.c: 814: RD0 = 0b1;
+"814
+[e = _RD0 -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 815: ht_is_on = 0b1;
+"815
+[e = _ht_is_on -> -> 1 `i `b ]
+"816
+}
+[e :U 291 ]
+"817
+}
+[; ;auto_washing_machine.c: 816: }
+[; ;auto_washing_machine.c: 817: }
+[e $U 292  ]
+"818
+[e :U 289 ]
+[; ;auto_washing_machine.c: 818: else if(!ht_on && ht_is_on)
+[e $ ! && ! _ht_on _ht_is_on 293  ]
+[; ;auto_washing_machine.c: 819: {
+"819
+{
+[; ;auto_washing_machine.c: 820: RD0 = !0b1;
+"820
+[e = _RD0 ! != -> 1 `i -> 0 `i ]
+[; ;auto_washing_machine.c: 821: ht_is_on = 0b0;
+"821
+[e = _ht_is_on -> -> 0 `i `b ]
+"822
+}
+[e :U 293 ]
+"825
+[e :U 292 ]
+[; ;auto_washing_machine.c: 822: }
+[; ;auto_washing_machine.c: 825: if(sol1_on && !sol2_on && !sol3_on && !sol_is_on)
+[e $ ! && && && _sol1_on ! _sol2_on ! _sol3_on ! _sol_is_on 294  ]
+[; ;auto_washing_machine.c: 826: {
+"826
+{
+[; ;auto_washing_machine.c: 827: RD3 = 0b1;
+"827
+[e = _RD3 -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 828: for(i = 0; i < 3u; i++)
+"828
+{
+[e = F1222 -> -> 0 `i `ui ]
+[e $ < F1222 -> 3 `ui 295  ]
+[e $U 296  ]
+"829
+[e :U 295 ]
+[; ;auto_washing_machine.c: 829: {
+{
+[; ;auto_washing_machine.c: 830: rev_cw();
+"830
+[e ( _rev_cw ..  ]
+[; ;auto_washing_machine.c: 831: asm("clrwdt");
+"831
+[; <" clrwdt ;# ">
+[; ;auto_washing_machine.c: 832: _delay((unsigned long)((50)*(4000000/4000.0)));
+"832
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"833
+}
+"828
+[e ++ F1222 -> -> 1 `i `ui ]
+[e $ < F1222 -> 3 `ui 295  ]
+[e :U 296 ]
+"833
+}
+[; ;auto_washing_machine.c: 833: }
+[; ;auto_washing_machine.c: 834: sol_is_on = 0b1;
+"834
+[e = _sol_is_on -> -> 1 `i `b ]
+"835
+}
+[; ;auto_washing_machine.c: 835: }
+[e $U 298  ]
+"836
+[e :U 294 ]
+[; ;auto_washing_machine.c: 836: else if(!sol1_on && sol2_on && !sol3_on && !sol_is_on)
+[e $ ! && && && ! _sol1_on _sol2_on ! _sol3_on ! _sol_is_on 299  ]
+[; ;auto_washing_machine.c: 837: {
+"837
+{
+[; ;auto_washing_machine.c: 838: RD3 = 0b1;
+"838
+[e = _RD3 -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 839: for(i = 0; i < 6u; i++)
+"839
+{
+[e = F1222 -> -> 0 `i `ui ]
+[e $ < F1222 -> 6 `ui 300  ]
+[e $U 301  ]
+"840
+[e :U 300 ]
+[; ;auto_washing_machine.c: 840: {
+{
+[; ;auto_washing_machine.c: 841: rev_cw();
+"841
+[e ( _rev_cw ..  ]
+[; ;auto_washing_machine.c: 842: asm("clrwdt");
+"842
+[; <" clrwdt ;# ">
+[; ;auto_washing_machine.c: 843: _delay((unsigned long)((50)*(4000000/4000.0)));
+"843
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"844
+}
+"839
+[e ++ F1222 -> -> 1 `i `ui ]
+[e $ < F1222 -> 6 `ui 300  ]
+[e :U 301 ]
+"844
+}
+[; ;auto_washing_machine.c: 844: }
+[; ;auto_washing_machine.c: 845: sol_is_on = 0b1;
+"845
+[e = _sol_is_on -> -> 1 `i `b ]
+"846
+}
+[; ;auto_washing_machine.c: 846: }
+[e $U 303  ]
+"847
+[e :U 299 ]
+[; ;auto_washing_machine.c: 847: else if(!sol1_on && !sol2_on && sol3_on && !sol_is_on)
+[e $ ! && && && ! _sol1_on ! _sol2_on _sol3_on ! _sol_is_on 304  ]
+[; ;auto_washing_machine.c: 848: {
+"848
+{
+[; ;auto_washing_machine.c: 849: RD3 = 0b1;
+"849
+[e = _RD3 -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 850: for(i = 0; i < 9u; i++)
+"850
+{
+[e = F1222 -> -> 0 `i `ui ]
+[e $ < F1222 -> 9 `ui 305  ]
+[e $U 306  ]
+"851
+[e :U 305 ]
+[; ;auto_washing_machine.c: 851: {
+{
+[; ;auto_washing_machine.c: 852: rev_cw();
+"852
+[e ( _rev_cw ..  ]
+[; ;auto_washing_machine.c: 853: asm("clrwdt");
+"853
+[; <" clrwdt ;# ">
+[; ;auto_washing_machine.c: 854: _delay((unsigned long)((50)*(4000000/4000.0)));
+"854
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"855
+}
+"850
+[e ++ F1222 -> -> 1 `i `ui ]
+[e $ < F1222 -> 9 `ui 305  ]
+[e :U 306 ]
+"855
+}
+[; ;auto_washing_machine.c: 855: }
+[; ;auto_washing_machine.c: 856: sol_is_on = 0b1;
+"856
+[e = _sol_is_on -> -> 1 `i `b ]
+"857
+}
+[; ;auto_washing_machine.c: 857: }
+[e $U 308  ]
+"858
+[e :U 304 ]
+[; ;auto_washing_machine.c: 858: else if(!sol1_on && !sol2_on && !sol3_on && sol_is_on)
+[e $ ! && && && ! _sol1_on ! _sol2_on ! _sol3_on _sol_is_on 309  ]
+[; ;auto_washing_machine.c: 859: {
+"859
+{
+[; ;auto_washing_machine.c: 860: RD3 = !0b1;
+"860
+[e = _RD3 ! != -> 1 `i -> 0 `i ]
+[; ;auto_washing_machine.c: 861: mot_off();
+"861
+[e ( _mot_off ..  ]
+[; ;auto_washing_machine.c: 862: sol_is_on = 0b0;
+"862
+[e = _sol_is_on -> -> 0 `i `b ]
+"863
+}
+[e :U 309 ]
+"864
+[e :U 308 ]
+[e :U 303 ]
+[e :U 298 ]
+[; ;auto_washing_machine.c: 863: }
+[; ;auto_washing_machine.c: 864: TMR2IF = 0b0;
+[e = _TMR2IF -> -> 0 `i `b ]
+"865
+}
+[e :U 283 ]
+[; ;auto_washing_machine.c: 865: }
+[; ;auto_washing_machine.c: 867: if(INTF)
+"867
+[e $ ! _INTF 310  ]
+[; ;auto_washing_machine.c: 868: {
+"868
+{
+[; ;auto_washing_machine.c: 869: _delay((unsigned long)((150)*(4000000/4000.0)));
+"869
+[e ( __delay (1 -> * -> -> 150 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;auto_washing_machine.c: 871: if(BEGINNING == cur_state)
+"871
+[e $ ! == -> . `E1105 0 `i -> _cur_state `i 311  ]
+[; ;auto_washing_machine.c: 872: {
+"872
+{
+[; ;auto_washing_machine.c: 873: RD2 = 0b1;
+"873
+[e = _RD2 -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 874: _delay((unsigned long)((12)*(4000000/4000.0)));
+"874
+[e ( __delay (1 -> * -> -> 12 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;auto_washing_machine.c: 876: if(0b1 == RE0)
+"876
+[e $ ! == -> 1 `i -> _RE0 `i 312  ]
+[; ;auto_washing_machine.c: 877: {
+"877
+{
+[; ;auto_washing_machine.c: 878: cur_state = skip_end;
+"878
+[e = _cur_state _skip_end ]
+[; ;auto_washing_machine.c: 879: TMR1ON = 0b1;
+"879
+[e = _TMR1ON -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 880: TMR2ON = 0b1;
+"880
+[e = _TMR2ON -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 881: RD4 = !0b1;
+"881
+[e = _RD4 ! != -> 1 `i -> 0 `i ]
+"882
+}
+[; ;auto_washing_machine.c: 882: }
+[e $U 313  ]
+"883
+[e :U 312 ]
+[; ;auto_washing_machine.c: 883: else
+[; ;auto_washing_machine.c: 884: {
+"884
+{
+[; ;auto_washing_machine.c: 885: RD4 = 0b1;
+"885
+[e = _RD4 -> -> 1 `i `b ]
+"886
+}
+[e :U 313 ]
+"887
+}
+[; ;auto_washing_machine.c: 886: }
+[; ;auto_washing_machine.c: 887: }
+[e $U 314  ]
+"888
+[e :U 311 ]
+[; ;auto_washing_machine.c: 888: else if(SUSPENSION == cur_state)
+[e $ ! == -> . `E1105 1 `i -> _cur_state `i 315  ]
+[; ;auto_washing_machine.c: 889: resume();
+"889
+[e ( _resume ..  ]
+[e $U 316  ]
+"890
+[e :U 315 ]
+[; ;auto_washing_machine.c: 890: else
+[; ;auto_washing_machine.c: 891: suspend();
+"891
+[e ( _suspend ..  ]
+[e :U 316 ]
+[e :U 314 ]
+[; ;auto_washing_machine.c: 894: ticks = 0;
+"894
+[e = F1223 -> -> -> 0 `i `l `ul ]
+[; ;auto_washing_machine.c: 895: while(0b0 == RB0)
+"895
+[e $U 317  ]
+[e :U 318 ]
+[; ;auto_washing_machine.c: 896: {
+"896
+{
+[; ;auto_washing_machine.c: 897: asm("clrwdt");
+"897
+[; <" clrwdt ;# ">
+[; ;auto_washing_machine.c: 898: ticks++;
+"898
+[e ++ F1223 -> -> -> 1 `i `l `ul ]
+[; ;auto_washing_machine.c: 899: if(ticks >= ((((unsigned long)1 * (unsigned long)4000000) / 4ul) / 4ul))
+"899
+[e $ ! >= F1223 / / * -> -> 1 `i `ul -> -> 4000000 `l `ul -> 4 `ul -> 4 `ul 320  ]
+[; ;auto_washing_machine.c: 900: {
+"900
+{
+[; ;auto_washing_machine.c: 901: RA0 = 0b1;
+"901
+[e = _RA0 -> -> 1 `i `b ]
+"902
+}
+[e :U 320 ]
+"903
+}
+[e :U 317 ]
+"895
+[e $ == -> 0 `i -> _RB0 `i 318  ]
+[e :U 319 ]
+[; ;auto_washing_machine.c: 902: }
+[; ;auto_washing_machine.c: 903: }
+[; ;auto_washing_machine.c: 904: INTF = 0b0;
+"904
+[e = _INTF -> -> 0 `i `b ]
+"905
+}
+[e :U 310 ]
+[; ;auto_washing_machine.c: 905: }
+[; ;auto_washing_machine.c: 907: if(RBIF)
+"907
+[e $ ! _RBIF 321  ]
+[; ;auto_washing_machine.c: 908: {
+"908
+{
+[; ;auto_washing_machine.c: 909: _delay((unsigned long)((150)*(4000000/4000.0)));
+"909
+[e ( __delay (1 -> * -> -> 150 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;auto_washing_machine.c: 911: if(0b0 == RB5)
+"911
+[e $ ! == -> 0 `i -> _RB5 `i 322  ]
+[; ;auto_washing_machine.c: 912: {
+"912
+{
+[; ;auto_washing_machine.c: 914: while(0b0 == RB5)
+"914
+[e $U 323  ]
+[e :U 324 ]
+[; ;auto_washing_machine.c: 915: asm("clrwdt");
+"915
+[; <" clrwdt ;# ">
+[e :U 323 ]
+"914
+[e $ == -> 0 `i -> _RB5 `i 324  ]
+[e :U 325 ]
+[; ;auto_washing_machine.c: 918: if(0b1 == no_spin)
+"918
+[e $ ! == -> 1 `i -> _no_spin `i 326  ]
+[; ;auto_washing_machine.c: 919: {
+"919
+{
+[; ;auto_washing_machine.c: 920: no_spin = 0b0;
+"920
+[e = _no_spin -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 921: RD5 = !0b1;
+"921
+[e = _RD5 ! != -> 1 `i -> 0 `i ]
+"922
+}
+[; ;auto_washing_machine.c: 922: }
+[e $U 327  ]
+"923
+[e :U 326 ]
+[; ;auto_washing_machine.c: 923: else
+[; ;auto_washing_machine.c: 924: {
+"924
+{
+[; ;auto_washing_machine.c: 925: no_spin = 0b1;
+"925
+[e = _no_spin -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 926: RD5 = 0b1;
+"926
+[e = _RD5 -> -> 1 `i `b ]
+"927
+}
+[e :U 327 ]
+"928
+}
+[e :U 322 ]
+[; ;auto_washing_machine.c: 927: }
+[; ;auto_washing_machine.c: 928: }
+[; ;auto_washing_machine.c: 930: if(0b0 == RB4)
+"930
+[e $ ! == -> 0 `i -> _RB4 `i 328  ]
+[; ;auto_washing_machine.c: 931: {
+"931
+{
+[; ;auto_washing_machine.c: 933: while(0b0 == RB4)
+"933
+[e $U 329  ]
+[e :U 330 ]
+[; ;auto_washing_machine.c: 934: asm("clrwdt");
+"934
+[; <" clrwdt ;# ">
+[e :U 329 ]
+"933
+[e $ == -> 0 `i -> _RB4 `i 330  ]
+[e :U 331 ]
+[; ;auto_washing_machine.c: 935: half_load = !half_load;
+"935
+[e = _half_load ! _half_load ]
+[; ;auto_washing_machine.c: 937: if(0b1 == half_load)
+"937
+[e $ ! == -> 1 `i -> _half_load `i 332  ]
+[; ;auto_washing_machine.c: 938: RD6 = 0b1;
+"938
+[e = _RD6 -> -> 1 `i `b ]
+[e $U 333  ]
+"939
+[e :U 332 ]
+[; ;auto_washing_machine.c: 939: else
+[; ;auto_washing_machine.c: 940: RD6 = !0b1;
+"940
+[e = _RD6 ! != -> 1 `i -> 0 `i ]
+[e :U 333 ]
+"941
+}
+[e :U 328 ]
+[; ;auto_washing_machine.c: 941: }
+[; ;auto_washing_machine.c: 943: if(0b0 == RB7)
+"943
+[e $ ! == -> 0 `i -> _RB7 `i 334  ]
+[; ;auto_washing_machine.c: 944: {
+"944
+{
+[; ;auto_washing_machine.c: 946: while(0b0 == RB7)
+"946
+[e $U 335  ]
+[e :U 336 ]
+[; ;auto_washing_machine.c: 947: asm("clrwdt");
+"947
+[; <" clrwdt ;# ">
+[e :U 335 ]
+"946
+[e $ == -> 0 `i -> _RB7 `i 336  ]
+[e :U 337 ]
+[; ;auto_washing_machine.c: 950: if(BEGINNING == cur_state)
+"950
+[e $ ! == -> . `E1105 0 `i -> _cur_state `i 338  ]
+[; ;auto_washing_machine.c: 951: {
+"951
+{
+[; ;auto_washing_machine.c: 952: skip_end = ((unsigned char)skip_end + 1u) % 14u;
+"952
+[e = _skip_end -> % + -> -> _skip_end `uc `ui -> 1 `ui -> 14 `ui `E1105 ]
+[; ;auto_washing_machine.c: 953: (PORTC = ((unsigned char)(unsigned char)skip_end << 4) | (PORTC & 0x0F));
+"953
+[e = _PORTC -> | << -> -> _skip_end `uc `i -> 4 `i & -> _PORTC `i -> 15 `i `uc ]
+"954
+}
+[; ;auto_washing_machine.c: 954: }
+[e $U 339  ]
+"957
+[e :U 338 ]
+[; ;auto_washing_machine.c: 957: else if(SUSPENSION == cur_state)
+[e $ ! == -> . `E1105 1 `i -> _cur_state `i 340  ]
+[; ;auto_washing_machine.c: 958: {
+"958
+{
+[; ;auto_washing_machine.c: 959: if(prev_state < 7u)
+"959
+[e $ ! < -> _prev_state `ui -> 7 `ui 341  ]
+[; ;auto_washing_machine.c: 960: temp = ((unsigned char)temp + 1u) % 7u;
+"960
+[e = _temp -> % + -> -> _temp `uc `ui -> 1 `ui -> 7 `ui `E1105 ]
+[e $U 342  ]
+"961
+[e :U 341 ]
+[; ;auto_washing_machine.c: 961: else
+[; ;auto_washing_machine.c: 962: temp = (((unsigned char)temp + 1u) % (14u - 7u)) + 7u;
+"962
+[e = _temp -> + % + -> -> _temp `uc `ui -> 1 `ui - -> 14 `ui -> 7 `ui -> 7 `ui `E1105 ]
+[e :U 342 ]
+[; ;auto_washing_machine.c: 963: (PORTC = ((unsigned char)(unsigned short)temp << 4) | (PORTC & 0x0F));
+"963
+[e = _PORTC -> | << -> -> -> _temp `us `uc `i -> 4 `i & -> _PORTC `i -> 15 `i `uc ]
+"964
+}
+[e :U 340 ]
+"965
+[e :U 339 ]
+}
+[e :U 334 ]
+[; ;auto_washing_machine.c: 964: }
+[; ;auto_washing_machine.c: 965: }
+[; ;auto_washing_machine.c: 967: if(0b0 == RB6)
+"967
+[e $ ! == -> 0 `i -> _RB6 `i 343  ]
+[; ;auto_washing_machine.c: 968: {
+"968
+{
+[; ;auto_washing_machine.c: 970: while(0b0 == RB6)
+"970
+[e $U 344  ]
+[e :U 345 ]
+[; ;auto_washing_machine.c: 971: asm("clrwdt");
+"971
+[; <" clrwdt ;# ">
+[e :U 344 ]
+"970
+[e $ == -> 0 `i -> _RB6 `i 345  ]
+[e :U 346 ]
+[; ;auto_washing_machine.c: 974: if(BEGINNING == cur_state || SUSPENSION == cur_state)
+"974
+[e $ ! || == -> . `E1105 0 `i -> _cur_state `i == -> . `E1105 1 `i -> _cur_state `i 347  ]
+[; ;auto_washing_machine.c: 975: {
+"975
+{
+[; ;auto_washing_machine.c: 976: temp_beg = temp_end;
+"976
+[e = _temp_beg _temp_end ]
+[; ;auto_washing_machine.c: 977: temp_end = temp;
+"977
+[e = _temp_end _temp ]
+"978
+}
+[e :U 347 ]
+"979
+}
+[e :U 343 ]
+[; ;auto_washing_machine.c: 978: }
+[; ;auto_washing_machine.c: 979: }
+[; ;auto_washing_machine.c: 980: RBIF = 0b0;
+"980
+[e = _RBIF -> -> 0 `i `b ]
+"981
+}
+[e :U 321 ]
+[; ;auto_washing_machine.c: 981: }
+[; ;auto_washing_machine.c: 982: }
+"982
+[e :UE 259 ]
+}
+"987
+[v _resume `(v ~T0 @X0 1 ef ]
+"988
+{
+[; ;auto_washing_machine.c: 987: void resume(void)
+[; ;auto_washing_machine.c: 988: {
+[e :U _resume ]
+[f ]
+[; ;auto_washing_machine.c: 989: RD2 = 0b1;
+"989
+[e = _RD2 -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 990: _delay((unsigned long)((12)*(4000000/4000.0)));
+"990
+[e ( __delay (1 -> * -> -> 12 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;auto_washing_machine.c: 992: if(0b1 != RE0)
+"992
+[e $ ! != -> 1 `i -> _RE0 `i 349  ]
+[; ;auto_washing_machine.c: 993: {
+"993
+{
+[; ;auto_washing_machine.c: 994: RD4 = 0b1;
+"994
+[e = _RD4 -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 995: return;
+"995
+[e $UE 348  ]
+"996
+}
+[; ;auto_washing_machine.c: 996: }
+[e $U 350  ]
+"997
+[e :U 349 ]
+[; ;auto_washing_machine.c: 997: else
+[; ;auto_washing_machine.c: 998: RD4 = !0b1;
+"998
+[e = _RD4 ! != -> 1 `i -> 0 `i ]
+[e :U 350 ]
+[; ;auto_washing_machine.c: 999: cur_state = prev_state;
+"999
+[e = _cur_state _prev_state ]
+[; ;auto_washing_machine.c: 1001: if(mot_is_rot)
+"1001
+[e $ ! _mot_is_rot 351  ]
+[; ;auto_washing_machine.c: 1002: RC0 = 0b1;
+"1002
+[e = _RC0 -> -> 1 `i `b ]
+[e :U 351 ]
+[; ;auto_washing_machine.c: 1003: if(ht_is_on)
+"1003
+[e $ ! _ht_is_on 352  ]
+[; ;auto_washing_machine.c: 1004: RD0 = 0b1;
+"1004
+[e = _RD0 -> -> 1 `i `b ]
+[e :U 352 ]
+[; ;auto_washing_machine.c: 1006: if(dp_is_on)
+"1006
+[e $ ! _dp_is_on 353  ]
+[; ;auto_washing_machine.c: 1007: RD1 = 0b1;
+"1007
+[e = _RD1 -> -> 1 `i `b ]
+[e :U 353 ]
+[; ;auto_washing_machine.c: 1008: if(sol_is_on)
+"1008
+[e $ ! _sol_is_on 354  ]
+[; ;auto_washing_machine.c: 1009: RD3 = 0b1;
+"1009
+[e = _RD3 -> -> 1 `i `b ]
+[e :U 354 ]
+[; ;auto_washing_machine.c: 1013: if(temp_beg != BEGINNING && ((temp_beg < 7u && temp_end < 7u) || (temp_beg >= 7u && temp_end >= 7u)))
+"1013
+[e $ ! && != -> _temp_beg `i -> . `E1105 0 `i || && < -> _temp_beg `ui -> 7 `ui < -> _temp_end `ui -> 7 `ui && >= -> _temp_beg `ui -> 7 `ui >= -> _temp_end `ui -> 7 `ui 355  ]
+[; ;auto_washing_machine.c: 1014: {
+"1014
+{
+[; ;auto_washing_machine.c: 1015: skip_beg = temp_beg;
+"1015
+[e = _skip_beg _temp_beg ]
+[; ;auto_washing_machine.c: 1016: skip_end = temp_end;
+"1016
+[e = _skip_end _temp_end ]
+"1017
+}
+[e :U 355 ]
+[; ;auto_washing_machine.c: 1017: }
+[; ;auto_washing_machine.c: 1018: TMR1ON = 0b1;
+"1018
+[e = _TMR1ON -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 1019: TMR2ON = 0b1;
+"1019
+[e = _TMR2ON -> -> 1 `i `b ]
+[; ;auto_washing_machine.c: 1020: (PORTC = ((unsigned char)(unsigned char)cur_state << 4) | (PORTC & 0x0F));
+"1020
+[e = _PORTC -> | << -> -> _cur_state `uc `i -> 4 `i & -> _PORTC `i -> 15 `i `uc ]
+[; ;auto_washing_machine.c: 1021: }
+"1021
+[e :UE 348 ]
+}
+"1027
+[v _suspend `(v ~T0 @X0 1 ef ]
+"1028
+{
+[; ;auto_washing_machine.c: 1027: void suspend(void)
+[; ;auto_washing_machine.c: 1028: {
+[e :U _suspend ]
+[f ]
+[; ;auto_washing_machine.c: 1029: TMR1ON = 0b0;
+"1029
+[e = _TMR1ON -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 1030: TMR2ON = 0b0;
+"1030
+[e = _TMR2ON -> -> 0 `i `b ]
+[; ;auto_washing_machine.c: 1031: RC0 = !0b1;
+"1031
+[e = _RC0 ! != -> 1 `i -> 0 `i ]
+[; ;auto_washing_machine.c: 1032: RD1 = !0b1;
+"1032
+[e = _RD1 ! != -> 1 `i -> 0 `i ]
+[; ;auto_washing_machine.c: 1033: RD0 = !0b1;
+"1033
+[e = _RD0 ! != -> 1 `i -> 0 `i ]
+[; ;auto_washing_machine.c: 1034: RD2 = !0b1;
+"1034
+[e = _RD2 ! != -> 1 `i -> 0 `i ]
+[; ;auto_washing_machine.c: 1035: RD3 = !0b1;
+"1035
+[e = _RD3 ! != -> 1 `i -> 0 `i ]
+[; ;auto_washing_machine.c: 1036: temp = cur_state;
+"1036
+[e = _temp _cur_state ]
+[; ;auto_washing_machine.c: 1037: prev_state = cur_state;
+"1037
+[e = _prev_state _cur_state ]
+[; ;auto_washing_machine.c: 1038: cur_state = SUSPENSION;
+"1038
+[e = _cur_state . `E1105 1 ]
+[; ;auto_washing_machine.c: 1039: temp_beg = BEGINNING;
+"1039
+[e = _temp_beg . `E1105 0 ]
+[; ;auto_washing_machine.c: 1040: temp_end = BEGINNING;
+"1040
+[e = _temp_end . `E1105 0 ]
+[; ;auto_washing_machine.c: 1041: }
+"1041
+[e :UE 356 ]
+}

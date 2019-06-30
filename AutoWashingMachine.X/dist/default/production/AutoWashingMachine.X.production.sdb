@@ -1,0 +1,399 @@
+[p LITE_MODE AUTOSTATIC PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F877A ]
+[d frameptr 6 ]
+"50 /home/atom/Documents/Work/MyWork/ECS/AutoWashingMachine.X/auto_washing_machine.c
+[e E1105 state `c
+BEGINNING -2
+SUSPENSION -1
+A 0
+B 1
+C 2
+D 3
+F 4
+G 5
+H 6
+J 7
+K 8
+L 9
+M 10
+N 11
+P 12
+Q 13
+NO_SPIN 14
+HALF_LOAD 15
+]
+"62 /opt/microchip/xc8/v1.36/sources/common/float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 /opt/microchip/xc8/v1.36/sources/common/ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"6 /opt/microchip/xc8/v1.36/sources/common/lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"6 /opt/microchip/xc8/v1.36/sources/pic/eeprom.c
+[v _eecpymem eecpymem `(v  1 e 1 0 ]
+"39
+[v _memcpyee memcpyee `(v  1 e 1 0 ]
+"122 /home/atom/Documents/Work/MyWork/ECS/AutoWashingMachine.X/auto_washing_machine.c
+[v _main main `(v  1 e 1 0 ]
+"239
+[v _init init `(v  1 e 1 0 ]
+"296
+[v _state_a state_a `(v  1 e 1 0 ]
+"338
+[v _state_b state_b `(v  1 e 1 0 ]
+"379
+[v _state_c state_c `(v  1 e 1 0 ]
+"422
+[v _state_d state_d `(v  1 e 1 0 ]
+"468
+[v _state_f state_f `(v  1 e 1 0 ]
+"546
+[v _state_g state_g `(v  1 e 1 0 ]
+"592
+[v _state_h state_h `(v  1 e 1 0 ]
+"616
+[v _state_j state_j `(v  1 e 1 0 ]
+"622
+[v _state_k state_k `(v  1 e 1 0 ]
+"628
+[v _state_l state_l `(v  1 e 1 0 ]
+"634
+[v _state_m state_m `(v  1 e 1 0 ]
+"640
+[v _state_n state_n `(v  1 e 1 0 ]
+"646
+[v _state_p state_p `(v  1 e 1 0 ]
+"652
+[v _state_q state_q `(v  1 e 1 0 ]
+"657
+[v _discharge discharge `(v  1 e 1 0 ]
+"671
+[v _isr isr `II(v  1 e 1 0 ]
+"987
+[v _resume resume `(v  1 e 1 0 ]
+"1027
+[v _suspend suspend `(v  1 e 1 0 ]
+"16 /home/atom/Documents/Work/MyWork/ECS/AutoWashingMachine.X/steppr.c
+[v _step step `(v  1 s 1 step ]
+"77
+[v _step_cw step_cw `(v  1 e 1 0 ]
+"84
+[v _step_ccw step_ccw `(v  1 e 1 0 ]
+"94
+[v _rev_cw rev_cw `(v  1 e 1 0 ]
+"110
+[v _mot_off mot_off `(v  1 e 1 0 ]
+"55 /opt/microchip/xc8/v1.36/include/pic16f877a.h
+[v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
+"270
+[v _PORTC PORTC `VEuc  1 e 1 @7 ]
+"442
+[v _INTCON INTCON `VEuc  1 e 1 @11 ]
+"519
+[v _PIR1 PIR1 `VEuc  1 e 1 @12 ]
+"580
+[v _PIR2 PIR2 `VEuc  1 e 1 @13 ]
+"625
+[v _TMR1L TMR1L `VEuc  1 e 1 @14 ]
+"631
+[v _TMR1H TMR1H `VEuc  1 e 1 @15 ]
+"637
+[v _T1CON T1CON `VEuc  1 e 1 @16 ]
+"711
+[v _TMR2 TMR2 `VEuc  1 e 1 @17 ]
+"717
+[v _T2CON T2CON `VEuc  1 e 1 @18 ]
+"880
+[v _CCP1CON CCP1CON `VEuc  1 e 1 @23 ]
+"1061
+[v _CCP2CON CCP2CON `VEuc  1 e 1 @29 ]
+"1124
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @31 ]
+"1219
+[v _OPTION_REG OPTION_REG `VEuc  1 e 1 @129 ]
+"1288
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
+"1337
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
+"1398
+[v _TRISC TRISC `VEuc  1 e 1 @135 ]
+"1459
+[v _TRISD TRISD `VEuc  1 e 1 @136 ]
+"1520
+[v _TRISE TRISE `VEuc  1 e 1 @137 ]
+"1576
+[v _PIE1 PIE1 `VEuc  1 e 1 @140 ]
+"1637
+[v _PIE2 PIE2 `VEuc  1 e 1 @141 ]
+"1770
+[v _PR2 PR2 `VEuc  1 e 1 @146 ]
+"2036
+[v _CMCON CMCON `VEuc  1 e 1 @156 ]
+"2105
+[v _CVRCON CVRCON `VEuc  1 e 1 @157 ]
+"2175
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @159 ]
+"2443
+[v _GIE GIE `VEb  1 e 0 @95 ]
+"2467
+[v _INTF INTF `VEb  1 e 0 @89 ]
+"2501
+[v _RA0 RA0 `VEb  1 e 0 @40 ]
+"2503
+[v _RA1 RA1 `VEb  1 e 0 @41 ]
+"2505
+[v _RA2 RA2 `VEb  1 e 0 @42 ]
+"2507
+[v _RA3 RA3 `VEb  1 e 0 @43 ]
+"2511
+[v _RA5 RA5 `VEb  1 e 0 @45 ]
+"2513
+[v _RB0 RB0 `VEb  1 e 0 @48 ]
+"2515
+[v _RB1 RB1 `VEb  1 e 0 @49 ]
+"2517
+[v _RB2 RB2 `VEb  1 e 0 @50 ]
+"2519
+[v _RB3 RB3 `VEb  1 e 0 @51 ]
+"2521
+[v _RB4 RB4 `VEb  1 e 0 @52 ]
+"2523
+[v _RB5 RB5 `VEb  1 e 0 @53 ]
+"2525
+[v _RB6 RB6 `VEb  1 e 0 @54 ]
+"2527
+[v _RB7 RB7 `VEb  1 e 0 @55 ]
+"2531
+[v _RBIF RBIF `VEb  1 e 0 @88 ]
+"2533
+[v _RC0 RC0 `VEb  1 e 0 @56 ]
+"2535
+[v _RC1 RC1 `VEb  1 e 0 @57 ]
+"2537
+[v _RC2 RC2 `VEb  1 e 0 @58 ]
+"2563
+[v _RD0 RD0 `VEb  1 e 0 @64 ]
+"2565
+[v _RD1 RD1 `VEb  1 e 0 @65 ]
+"2567
+[v _RD2 RD2 `VEb  1 e 0 @66 ]
+"2569
+[v _RD3 RD3 `VEb  1 e 0 @67 ]
+"2571
+[v _RD4 RD4 `VEb  1 e 0 @68 ]
+"2573
+[v _RD5 RD5 `VEb  1 e 0 @69 ]
+"2575
+[v _RD6 RD6 `VEb  1 e 0 @70 ]
+"2577
+[v _RD7 RD7 `VEb  1 e 0 @71 ]
+"2579
+[v _RE0 RE0 `VEb  1 e 0 @72 ]
+"2581
+[v _RE1 RE1 `VEb  1 e 0 @73 ]
+"2605
+[v _SPEN SPEN `VEb  1 e 0 @199 ]
+"2609
+[v _SSPEN SSPEN `VEb  1 e 0 @165 ]
+"2657
+[v _TMR1IF TMR1IF `VEb  1 e 0 @96 ]
+"2659
+[v _TMR1ON TMR1ON `VEb  1 e 0 @128 ]
+"2663
+[v _TMR2IF TMR2IF `VEb  1 e 0 @97 ]
+"2665
+[v _TMR2ON TMR2ON `VEb  1 e 0 @146 ]
+"2675
+[v _TRISA0 TRISA0 `VEb  1 e 0 @1064 ]
+"2733
+[v _TRISD7 TRISD7 `VEb  1 e 0 @1095 ]
+"50 /home/atom/Documents/Work/MyWork/ECS/AutoWashingMachine.X/auto_washing_machine.c
+[v _cur_state cur_state `E1105  1 e 1 0 ]
+[v _prev_state prev_state `E1105  1 e 1 0 ]
+[v _skip_beg skip_beg `E1105  1 e 1 0 ]
+[v _skip_end skip_end `E1105  1 e 1 0 ]
+[v _temp temp `E1105  1 e 1 0 ]
+[v _temp_beg temp_beg `E1105  1 e 1 0 ]
+[v _temp_end temp_end `E1105  1 e 1 0 ]
+"52
+[v _no_spin no_spin `VEb  1 e 0 0 ]
+"54
+[v _half_load half_load `VEb  1 e 0 0 ]
+"56
+[v _dp_on dp_on `VEb  1 e 0 0 ]
+"58
+[v _dp_is_on dp_is_on `b  1 s 0 dp_is_on ]
+"60
+[v _mot_rot mot_rot `VEb  1 e 0 0 ]
+"62
+[v _mot_is_rot mot_is_rot `b  1 s 0 mot_is_rot ]
+"64
+[v _mot_high mot_high `VEb  1 e 0 0 ]
+"66
+[v _ht_on ht_on `VEb  1 e 0 0 ]
+"68
+[v _ht_is_on ht_is_on `b  1 s 0 ht_is_on ]
+"70
+[v _sol1_on sol1_on `VEb  1 e 0 0 ]
+"72
+[v _sol2_on sol2_on `VEb  1 e 0 0 ]
+"74
+[v _sol3_on sol3_on `VEb  1 e 0 0 ]
+"76
+[v _sol_is_on sol_is_on `b  1 s 0 sol_is_on ]
+"78
+[v _rot_time rot_time `VEuc  1 e 1 0 ]
+"80
+[v _seconds seconds `VEuc  1 e 1 0 ]
+"82
+[v _idle_time idle_time `VEuc  1 e 1 0 ]
+"84
+[v _sol_op_time sol_op_time `VEuc  1 e 1 0 ]
+"86
+[v _dp_op_time dp_op_time `VEuc  1 e 1 0 ]
+"11 /home/atom/Documents/Work/MyWork/ECS/AutoWashingMachine.X/steppr.c
+[v _cur_step cur_step `uc  1 s 1 cur_step ]
+"122 /home/atom/Documents/Work/MyWork/ECS/AutoWashingMachine.X/auto_washing_machine.c
+[v _main main `(v  1 e 1 0 ]
+{
+"233
+} 0
+"652
+[v _state_q state_q `(v  1 e 1 0 ]
+{
+"655
+} 0
+"646
+[v _state_p state_p `(v  1 e 1 0 ]
+{
+"649
+} 0
+"640
+[v _state_n state_n `(v  1 e 1 0 ]
+{
+"643
+} 0
+"634
+[v _state_m state_m `(v  1 e 1 0 ]
+{
+"637
+} 0
+"628
+[v _state_l state_l `(v  1 e 1 0 ]
+{
+"631
+} 0
+"622
+[v _state_k state_k `(v  1 e 1 0 ]
+{
+"625
+} 0
+"616
+[v _state_j state_j `(v  1 e 1 0 ]
+{
+"619
+} 0
+"592
+[v _state_h state_h `(v  1 e 1 0 ]
+{
+"613
+} 0
+"239
+[v _init init `(v  1 e 1 0 ]
+{
+"292
+} 0
+"546
+[v _state_g state_g `(v  1 e 1 0 ]
+{
+"589
+} 0
+"468
+[v _state_f state_f `(v  1 e 1 0 ]
+{
+"543
+} 0
+"422
+[v _state_d state_d `(v  1 e 1 0 ]
+{
+"465
+} 0
+"379
+[v _state_c state_c `(v  1 e 1 0 ]
+{
+"419
+} 0
+"338
+[v _state_b state_b `(v  1 e 1 0 ]
+{
+"376
+} 0
+"296
+[v _state_a state_a `(v  1 e 1 0 ]
+{
+"335
+} 0
+"657
+[v _discharge discharge `(v  1 e 1 0 ]
+{
+"667
+} 0
+"671
+[v _isr isr `II(v  1 e 1 0 ]
+{
+"674
+[v isr@i i `ui  1 s 2 i ]
+"676
+[v isr@ticks ticks `ul  1 s 4 ticks ]
+"678
+[v isr@mot_is_left mot_is_left `b  1 s 0 mot_is_left ]
+"680
+[v isr@mot_is_high mot_is_high `b  1 s 0 mot_is_high ]
+"982
+} 0
+"1027
+[v _suspend suspend `(v  1 e 1 0 ]
+{
+"1041
+} 0
+"94 /home/atom/Documents/Work/MyWork/ECS/AutoWashingMachine.X/steppr.c
+[v _rev_cw rev_cw `(v  1 e 1 0 ]
+{
+"96
+[v rev_cw@i i `i  1 a 2 2 ]
+"99
+} 0
+"77
+[v _step_cw step_cw `(v  1 e 1 0 ]
+{
+"81
+} 0
+"16
+[v _step step `(v  1 s 1 step ]
+{
+[v step@step_num step_num `uc  1 a 1 wreg ]
+[v step@step_num step_num `uc  1 a 1 wreg ]
+[v step@step_num step_num `uc  1 a 1 0 ]
+"74
+} 0
+"987 /home/atom/Documents/Work/MyWork/ECS/AutoWashingMachine.X/auto_washing_machine.c
+[v _resume resume `(v  1 e 1 0 ]
+{
+"1021
+} 0
+"110 /home/atom/Documents/Work/MyWork/ECS/AutoWashingMachine.X/steppr.c
+[v _mot_off mot_off `(v  1 e 1 0 ]
+{
+"116
+} 0
+"6 /opt/microchip/xc8/v1.36/sources/common/lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+{
+"11
+[v ___lwmod@counter counter `uc  1 a 1 5 ]
+"6
+[v ___lwmod@divisor divisor `ui  1 p 2 0 ]
+[v ___lwmod@dividend dividend `ui  1 p 2 2 ]
+"26
+} 0

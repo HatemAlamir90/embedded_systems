@@ -1,0 +1,5 @@
+_main: CODE, 2364 0 136
+__initialization: CODE, 2500 0 14
+_ipus: SMALLCONST, 2048 0 4
+_isr: CODE, 8 0 2356
+Total: 2510

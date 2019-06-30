@@ -1,0 +1,1652 @@
+
+
+Microchip Technology PIC LITE Macro Assembler V1.36 build -262312587 
+                                                                                               Sun May  8 17:59:30 2016
+
+Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150325
+     1                           	processor	16F84A
+     2                           	opt	pw 120
+     3                           	opt	lm
+     4                           	psect	eeprom_data,global,class=EEDATA,space=3,delta=2
+     5                           	psect	idataBANK0,global,class=CODE,delta=2
+     6                           	psect	nvBANK0,global,class=BANK0,space=1,delta=1
+     7                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     8                           	psect	bssBANK0,global,class=BANK0,space=1,delta=1
+     9                           	psect	dataBANK0,global,class=BANK0,space=1,delta=1
+    10                           	psect	bitbssBANK0,global,bit,class=BANK0,space=1,delta=1
+    11                           	psect	cstackBANK0,global,class=BANK0,space=1,delta=1
+    12                           	psect	maintext,global,class=CODE,split=1,delta=2
+    13                           	psect	text1,local,class=CODE,merge=1,delta=2
+    14                           	psect	text2,local,class=CODE,merge=1,delta=2
+    15                           	psect	intentry,global,class=CODE,delta=2
+    16                           	psect	text3,local,class=CODE,merge=1,delta=2
+    17                           	psect	text4,local,class=CODE,merge=1,delta=2
+    18                           	dabs	1,0x4E,2
+    19  0000                     	;# 
+    20  0001                     	;# 
+    21  0002                     	;# 
+    22  0003                     	;# 
+    23  0004                     	;# 
+    24  0005                     	;# 
+    25  0006                     	;# 
+    26  0008                     	;# 
+    27  0009                     	;# 
+    28  000A                     	;# 
+    29  000B                     	;# 
+    30  0081                     	;# 
+    31  0085                     	;# 
+    32  0086                     	;# 
+    33  0088                     	;# 
+    34  0089                     	;# 
+    35                           
+    36                           	psect	eeprom_data
+    37  0000  0000 00FF 00FF 00FF 00FF 00FF 00FF 00FF 	db	0,255,255,255,255,255,255,255	;# 
+    38                           
+    39                           	psect	idataBANK0
+    40  0218                     __pidataBANK0:	
+    41                           
+    42                           ;initializer for _master_key
+    43  0218  3404               	retlw	4
+    44  0219  3405               	retlw	5
+    45  021A  3400               	retlw	0
+    46  021B  3407               	retlw	7
+    47  021C  3403               	retlw	3
+    48  021D  3409               	retlw	9
+    49  021E  3402               	retlw	2
+    50  021F  3407               	retlw	7
+    51                           
+    52                           	psect	nvBANK0
+    53  002C                     __pnvBANK0:	
+    54  002C                     _digit_count:	
+    55  002C                     	ds	1
+    56  0009                     _EEADR	set	9
+    57  0008                     _EEDATA	set	8
+    58  000B                     _INTCON	set	11
+    59  0005                     _PORTA	set	5
+    60  0006                     _PORTB	set	6
+    61  0018                     _CARRY	set	24
+    62  005E                     _EEIE	set	94
+    63  005F                     _GIE	set	95
+    64  0028                     _RA0	set	40
+    65  0029                     _RA1	set	41
+    66  002A                     _RA2	set	42
+    67  002B                     _RA3	set	43
+    68  0030                     _RB0	set	48
+    69  0031                     _RB1	set	49
+    70  0032                     _RB2	set	50
+    71  0033                     _RB3	set	51
+    72  0034                     _RB4	set	52
+    73  0035                     _RB5	set	53
+    74  0036                     _RB6	set	54
+    75  0037                     _RB7	set	55
+    76  0058                     _RBIF	set	88
+    77  005A                     _T0IF	set	90
+    78  0088                     _EECON1	set	136
+    79  0089                     _EECON2	set	137
+    80  0081                     _OPTION_REG	set	129
+    81  0085                     _TRISA	set	133
+    82  0086                     _TRISB	set	134
+    83  0440                     _RD	set	1088
+    84  0441                     _WR	set	1089
+    85  0442                     _WREN	set	1090
+    86                           
+    87                           ; #config settings
+    88  0000                     
+    89                           	psect	cinit
+    90  0010                     start_initialization:	
+    91  0010                     __initialization:	
+    92                           
+    93                           ; Clear objects allocated to BANK0
+    94  0010  019A               	clrf	__pbssBANK0& (0+127)
+    95  0011  019B               	clrf	(__pbssBANK0+1)& (0+127)
+    96  0012  019C               	clrf	(__pbssBANK0+2)& (0+127)
+    97  0013  019D               	clrf	(__pbssBANK0+3)& (0+127)
+    98  0014  019E               	clrf	(__pbssBANK0+4)& (0+127)
+    99  0015  019F               	clrf	(__pbssBANK0+5)& (0+127)
+   100  0016  01A0               	clrf	(__pbssBANK0+6)& (0+127)
+   101  0017  01A1               	clrf	(__pbssBANK0+7)& (0+127)
+   102  0018  01A2               	clrf	(__pbssBANK0+8)& (0+127)
+   103                           
+   104                           ; Clear objects allocated to BITBANK0
+   105  0019  01AB               	clrf	(__pbitbssBANK0/(0+8))& (0+127)
+   106                           
+   107                           ; Initialize objects allocated to BANK0
+   108  001A  2218               	fcall	__pidataBANK0	;fetch initializer
+   109  001B  00A3               	movwf	__pdataBANK0& (0+127)
+   110  001C  2219               	fcall	__pidataBANK0+1	;fetch initializer
+   111  001D  00A4               	movwf	(__pdataBANK0+1)& (0+127)
+   112  001E  221A               	fcall	__pidataBANK0+2	;fetch initializer
+   113  001F  00A5               	movwf	(__pdataBANK0+2)& (0+127)
+   114  0020  221B               	fcall	__pidataBANK0+3	;fetch initializer
+   115  0021  00A6               	movwf	(__pdataBANK0+3)& (0+127)
+   116  0022  221C               	fcall	__pidataBANK0+4	;fetch initializer
+   117  0023  00A7               	movwf	(__pdataBANK0+4)& (0+127)
+   118  0024  221D               	fcall	__pidataBANK0+5	;fetch initializer
+   119  0025  00A8               	movwf	(__pdataBANK0+5)& (0+127)
+   120  0026  221E               	fcall	__pidataBANK0+6	;fetch initializer
+   121  0027  00A9               	movwf	(__pdataBANK0+6)& (0+127)
+   122  0028  221F               	fcall	__pidataBANK0+7	;fetch initializer
+   123  0029  00AA               	movwf	(__pdataBANK0+7)& (0+127)
+   124  002A                     end_of_initialization:	
+   125                           ;End of C runtime variable initialization code
+   126                           
+   127  002A                     __end_of__initialization:	
+   128  002A  0183               	clrf	3
+   129  002B  296E               	ljmp	_main	;jump to C main() function
+   130                           
+   131                           	psect	bssBANK0
+   132  001A                     __pbssBANK0:	
+   133  001A                     _buz_time:	
+   134  001A                     	ds	1
+   135  001B                     _ch_pres_cnt:	
+   136  001B                     	ds	1
+   137  001C                     _digit:	
+   138  001C                     	ds	1
+   139  001D                     _digits_entered:	
+   140  001D                     	ds	1
+   141  001E                     _last_pres_time_h:	
+   142  001E                     	ds	1
+   143  001F                     _last_pres_time_l:	
+   144  001F                     	ds	1
+   145  0020                     _lock_time:	
+   146  0020                     	ds	1
+   147  0021                     _read_digit:	
+   148  0021                     	ds	1
+   149  0022                     _w_led_time:	
+   150  0022                     	ds	1
+   151                           
+   152                           	psect	dataBANK0
+   153  0023                     __pdataBANK0:	
+   154  0023                     _master_key:	
+   155  0023                     	ds	8
+   156                           
+   157                           	psect	bitbssBANK0
+   158  0158                     __pbitbssBANK0:	
+   159  0158                     _but_pres:	
+   160  0158                     	ds	1
+   161  0159                     _changing:	
+   162  0159                     	ds	1
+   163  015A                     _open:	
+   164  015A                     	ds	1
+   165  015B                     _sleeping:	
+   166  015B                     	ds	1
+   167  015C                     _wrong:	
+   168  015C                     	ds	1
+   169                           
+   170                           	psect	cstackBANK0
+   171  000C                     __pcstackBANK0:	
+   172  000C                     ?_eeprom_write:	
+   173  000C                     ?_eeprom_read:	
+   174                           ; 1 bytes @ 0x0
+   175                           
+   176  000C                     ?_isr:	
+   177                           ; 1 bytes @ 0x0
+   178                           
+   179  000C                     ?_main:	
+   180                           ; 1 bytes @ 0x0
+   181                           
+   182  000C                     ?i1_eeprom_read:	
+   183                           ; 1 bytes @ 0x0
+   184                           
+   185  000C                     ??i1_eeprom_read:	
+   186                           ; 1 bytes @ 0x0
+   187                           
+   188  000C                     eeprom_write@value:	
+   189                           ; 1 bytes @ 0x0
+   190                           
+   191                           
+   192                           ; 1 bytes @ 0x0
+   193  000C                     	ds	1
+   194  000D                     ??_eeprom_write:	
+   195  000D                     i1eeprom_read@addr:	
+   196                           ; 1 bytes @ 0x1
+   197                           
+   198                           
+   199                           ; 1 bytes @ 0x1
+   200  000D                     	ds	1
+   201  000E                     eeprom_write@addr:	
+   202                           
+   203                           ; 1 bytes @ 0x2
+   204  000E                     	ds	1
+   205  000F                     ??_isr:	
+   206                           
+   207                           ; 1 bytes @ 0x3
+   208  000F                     	ds	6
+   209  0015                     ??_eeprom_read:	
+   210                           
+   211                           ; 1 bytes @ 0x9
+   212  0015                     	ds	1
+   213  0016                     eeprom_read@addr:	
+   214                           
+   215                           ; 1 bytes @ 0xA
+   216  0016                     	ds	1
+   217  0017                     ??_main:	
+   218                           
+   219                           ; 1 bytes @ 0xB
+   220  0017                     	ds	3
+   221                           
+   222                           	psect	maintext
+   223  016E                     __pmaintext:	
+   224 ;;
+   225 ;;Main: autosize = 0, tempsize = 3, incstack = 0, save=0
+   226 ;;
+   227 ;; *************** function _main *****************
+   228 ;; Defined at:
+   229 ;;		line 306 in file "electronic_drawer_lock.c"
+   230 ;; Parameters:    Size  Location     Type
+   231 ;;		None
+   232 ;; Auto vars:     Size  Location     Type
+   233 ;;		None
+   234 ;; Return value:  Size  Location     Type
+   235 ;;                  1    wreg      void 
+   236 ;; Registers used:
+   237 ;;		wreg, status,2, status,0, pclath, cstack
+   238 ;; Tracked objects:
+   239 ;;		On entry : B00/0
+   240 ;;		On exit  : 0/0
+   241 ;;		Unchanged: 0/0
+   242 ;; Data sizes:     COMMON   BANK0
+   243 ;;      Params:         0       0
+   244 ;;      Locals:         0       0
+   245 ;;      Temps:          0       3
+   246 ;;      Totals:         0       3
+   247 ;;Total ram usage:        3 bytes
+   248 ;; Hardware stack levels required when called:    3
+   249 ;; This function calls:
+   250 ;;		_eeprom_read
+   251 ;; This function is called by:
+   252 ;;		Startup code after reset
+   253 ;; This function uses a non-reentrant model
+   254 ;;
+   255                           
+   256                           
+   257                           ;psect for function _main
+   258  016E                     _main:	
+   259                           
+   260                           ;electronic_drawer_lock.c: 319: INTCON = 0x68;
+   261                           
+   262                           ;incstack = 0
+   263                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
+   264  016E  3068               	movlw	104
+   265  016F  008B               	movwf	11	;volatile
+   266                           
+   267                           ;electronic_drawer_lock.c: 329: OPTION_REG = 0x87;
+   268  0170  3087               	movlw	135
+   269  0171  1683               	bsf	3,5	;RP0=1, select bank1
+   270  0172  0081               	movwf	1	;volatile
+   271                           
+   272                           ;electronic_drawer_lock.c: 332: PORTA = 0x00;
+   273  0173  1283               	bcf	3,5	;RP0=0, select bank0
+   274  0174  0185               	clrf	5	;volatile
+   275                           
+   276                           ;electronic_drawer_lock.c: 333: TRISA = 0x00;
+   277  0175  1683               	bsf	3,5	;RP0=1, select bank1
+   278  0176  0185               	clrf	5	;volatile
+   279                           
+   280                           ;electronic_drawer_lock.c: 336: PORTB = 0x00;
+   281  0177  1283               	bcf	3,5	;RP0=0, select bank0
+   282  0178  0186               	clrf	6	;volatile
+   283                           
+   284                           ;electronic_drawer_lock.c: 337: TRISB = 0x70;
+   285  0179  3070               	movlw	112
+   286  017A  1683               	bsf	3,5	;RP0=1, select bank1
+   287  017B  0086               	movwf	6	;volatile
+   288                           
+   289                           ;electronic_drawer_lock.c: 340: changing = 0b0;
+   290  017C  1283               	bcf	3,5	;RP0=0, select bank0
+   291  017D  10AB               	bcf	_changing/(0+8),_changing& (0+7)	;volatile
+   292                           
+   293                           ;electronic_drawer_lock.c: 341: wrong = 0b0;
+   294  017E  122B               	bcf	_wrong/(0+8),_wrong& (0+7)	;volatile
+   295                           
+   296                           ;electronic_drawer_lock.c: 342: open = 0b0;
+   297  017F  112B               	bcf	_open/(0+8),_open& (0+7)	;volatile
+   298                           
+   299                           ;electronic_drawer_lock.c: 343: sleeping = 0b0;
+   300  0180  11AB               	bcf	_sleeping/(0+8),_sleeping& (0+7)	;volatile
+   301                           
+   302                           ;electronic_drawer_lock.c: 344: but_pres = 0b0;
+   303  0181  102B               	bcf	_but_pres/(0+8),_but_pres& (0+7)	;volatile
+   304                           
+   305                           ;electronic_drawer_lock.c: 345: digit_count = eeprom_read(0);
+   306  0182  3000               	movlw	0
+   307  0183  21E8               	fcall	_eeprom_read
+   308  0184  1283               	bcf	3,5	;RP0=0, select bank0
+   309  0185  0097               	movwf	??_main
+   310  0186  0817               	movf	??_main,w
+   311  0187  00AC               	movwf	_digit_count	;volatile
+   312                           
+   313                           ;electronic_drawer_lock.c: 346: digits_entered = 0;
+   314  0188  019D               	clrf	_digits_entered	;volatile
+   315                           
+   316                           ;electronic_drawer_lock.c: 347: last_pres_time_l = 0;
+   317  0189  019F               	clrf	_last_pres_time_l	;volatile
+   318                           
+   319                           ;electronic_drawer_lock.c: 348: last_pres_time_h = 0;
+   320  018A  019E               	clrf	_last_pres_time_h	;volatile
+   321                           
+   322                           ;electronic_drawer_lock.c: 349: w_led_time = 0;
+   323  018B  01A2               	clrf	_w_led_time	;volatile
+   324                           
+   325                           ;electronic_drawer_lock.c: 350: buz_time = 0;
+   326  018C  019A               	clrf	_buz_time	;volatile
+   327                           
+   328                           ;electronic_drawer_lock.c: 351: lock_time = 0;
+   329  018D  01A0               	clrf	_lock_time	;volatile
+   330                           
+   331                           ;electronic_drawer_lock.c: 352: ch_pres_cnt = 0;
+   332  018E  019B               	clrf	_ch_pres_cnt	;volatile
+   333                           
+   334                           ;electronic_drawer_lock.c: 353: RA0 = !0b1;
+   335  018F  1005               	bcf	5,0	;volatile
+   336                           
+   337                           ;electronic_drawer_lock.c: 354: RA2 = 0b1;
+   338  0190  1505               	bsf	5,2	;volatile
+   339                           
+   340                           ;electronic_drawer_lock.c: 355: RA3 = 0b1;
+   341  0191  1585               	bsf	5,3	;volatile
+   342                           
+   343                           ;electronic_drawer_lock.c: 356: RB7 = 0b1;
+   344  0192  1786               	bsf	6,7	;volatile
+   345                           
+   346                           ;electronic_drawer_lock.c: 357: _delay((unsigned long)((1000)*(4000000/4000.0)));
+   347  0193  3006               	movlw	6
+   348  0194  0099               	movwf	??_main+2
+   349  0195  3013               	movlw	19
+   350  0196  0098               	movwf	??_main+1
+   351  0197  30B1               	movlw	177
+   352  0198  0097               	movwf	??_main
+   353  0199                     u1097:	
+   354  0199  0B97               	decfsz	??_main,f
+   355  019A  2999               	goto	u1097
+   356  019B  0B98               	decfsz	??_main+1,f
+   357  019C  2999               	goto	u1097
+   358  019D  0B99               	decfsz	??_main+2,f
+   359  019E  2999               	goto	u1097
+   360  019F  29A0               	nop2
+   361                           
+   362                           ;electronic_drawer_lock.c: 358: RA2 = !0b1;
+   363  01A0  1283               	bcf	3,5	;RP0=0, select bank0
+   364  01A1  1105               	bcf	5,2	;volatile
+   365                           
+   366                           ;electronic_drawer_lock.c: 359: RA3 = !0b1;
+   367  01A2  1185               	bcf	5,3	;volatile
+   368                           
+   369                           ;electronic_drawer_lock.c: 360: RB7 = !0b1;
+   370  01A3  1386               	bcf	6,7	;volatile
+   371                           
+   372                           ;electronic_drawer_lock.c: 361: RA1 = !0b1;
+   373  01A4  1085               	bcf	5,1	;volatile
+   374                           
+   375                           ;electronic_drawer_lock.c: 362: (GIE = 1);
+   376  01A5  178B               	bsf	11,7	;volatile
+   377  01A6                     l1252:	
+   378                           ;electronic_drawer_lock.c: 363: while(1)
+   379                           
+   380                           
+   381                           ;electronic_drawer_lock.c: 364: {
+   382                           ;electronic_drawer_lock.c: 365: RB1 = !0b1;
+   383  01A6  1086               	bcf	6,1	;volatile
+   384                           
+   385                           ;electronic_drawer_lock.c: 366: RB2 = !0b1;
+   386  01A7  1106               	bcf	6,2	;volatile
+   387                           
+   388                           ;electronic_drawer_lock.c: 367: RB3 = !0b1;
+   389  01A8  1186               	bcf	6,3	;volatile
+   390                           
+   391                           ;electronic_drawer_lock.c: 368: RB0 = 0b1;
+   392  01A9  1406               	bsf	6,0	;volatile
+   393                           
+   394                           ;electronic_drawer_lock.c: 369: __nop();
+   395  01AA  0000               	nop
+   396  01AB                     l155:	
+   397                           ;electronic_drawer_lock.c: 370: while(but_pres);
+   398                           
+   399  01AB  1283               	bcf	3,5	;RP0=0, select bank0
+   400  01AC  182B               	btfsc	_but_pres/(0+8),_but_pres& (0+7)	;volatile
+   401  01AD  29AB               	goto	l155
+   402                           
+   403                           ;electronic_drawer_lock.c: 372: RB0 = !0b1;
+   404  01AE  1006               	bcf	6,0	;volatile
+   405                           
+   406                           ;electronic_drawer_lock.c: 373: RB2 = !0b1;
+   407  01AF  1106               	bcf	6,2	;volatile
+   408                           
+   409                           ;electronic_drawer_lock.c: 374: RB3 = !0b1;
+   410  01B0  1186               	bcf	6,3	;volatile
+   411                           
+   412                           ;electronic_drawer_lock.c: 375: RB1 = 0b1;
+   413  01B1  1486               	bsf	6,1	;volatile
+   414                           
+   415                           ;electronic_drawer_lock.c: 376: __nop();
+   416  01B2  0000               	nop
+   417  01B3                     l158:	
+   418                           ;electronic_drawer_lock.c: 377: while(but_pres);
+   419                           
+   420  01B3  1283               	bcf	3,5	;RP0=0, select bank0
+   421  01B4  182B               	btfsc	_but_pres/(0+8),_but_pres& (0+7)	;volatile
+   422  01B5  29B3               	goto	l158
+   423                           
+   424                           ;electronic_drawer_lock.c: 379: RB0 = !0b1;
+   425  01B6  1006               	bcf	6,0	;volatile
+   426                           
+   427                           ;electronic_drawer_lock.c: 380: RB1 = !0b1;
+   428  01B7  1086               	bcf	6,1	;volatile
+   429                           
+   430                           ;electronic_drawer_lock.c: 381: RB3 = !0b1;
+   431  01B8  1186               	bcf	6,3	;volatile
+   432                           
+   433                           ;electronic_drawer_lock.c: 382: RB2 = 0b1;
+   434  01B9  1506               	bsf	6,2	;volatile
+   435                           
+   436                           ;electronic_drawer_lock.c: 383: __nop();
+   437  01BA  0000               	nop
+   438  01BB                     l161:	
+   439                           ;electronic_drawer_lock.c: 384: while(but_pres);
+   440                           
+   441  01BB  1283               	bcf	3,5	;RP0=0, select bank0
+   442  01BC  182B               	btfsc	_but_pres/(0+8),_but_pres& (0+7)	;volatile
+   443  01BD  29BB               	goto	l161
+   444                           
+   445                           ;electronic_drawer_lock.c: 386: RB0 = !0b1;
+   446  01BE  1006               	bcf	6,0	;volatile
+   447                           
+   448                           ;electronic_drawer_lock.c: 387: RB1 = !0b1;
+   449  01BF  1086               	bcf	6,1	;volatile
+   450                           
+   451                           ;electronic_drawer_lock.c: 388: RB2 = !0b1;
+   452  01C0  1106               	bcf	6,2	;volatile
+   453                           
+   454                           ;electronic_drawer_lock.c: 389: RB3 = 0b1;
+   455  01C1  1586               	bsf	6,3	;volatile
+   456                           
+   457                           ;electronic_drawer_lock.c: 390: __nop();
+   458  01C2  0000               	nop
+   459  01C3                     l164:	
+   460                           ;electronic_drawer_lock.c: 391: while(but_pres);
+   461                           
+   462  01C3  1283               	bcf	3,5	;RP0=0, select bank0
+   463  01C4  1C2B               	btfss	_but_pres/(0+8),_but_pres& (0+7)	;volatile
+   464  01C5  29A6               	goto	l1252
+   465  01C6  29C3               	goto	l164
+   466  01C7                     __end_of_main:	
+   467                           
+   468                           	psect	text1
+   469  01E8                     __ptext1:	
+   470 ;; *************** function _eeprom_read *****************
+   471 ;; Defined at:
+   472 ;;		line 6 in file "/opt/microchip/xc8/v1.36/sources/pic/eeread.c"
+   473 ;; Parameters:    Size  Location     Type
+   474 ;;  addr            1    wreg     unsigned char 
+   475 ;; Auto vars:     Size  Location     Type
+   476 ;;  addr            1   10[BANK0 ] unsigned char 
+   477 ;; Return value:  Size  Location     Type
+   478 ;;                  1    wreg      unsigned char 
+   479 ;; Registers used:
+   480 ;;		wreg, status,2, status,0
+   481 ;; Tracked objects:
+   482 ;;		On entry : 0/0
+   483 ;;		On exit  : 0/0
+   484 ;;		Unchanged: 0/0
+   485 ;; Data sizes:     COMMON   BANK0
+   486 ;;      Params:         0       0
+   487 ;;      Locals:         0       1
+   488 ;;      Temps:          0       1
+   489 ;;      Totals:         0       2
+   490 ;;Total ram usage:        2 bytes
+   491 ;; Hardware stack levels used:    1
+   492 ;; Hardware stack levels required when called:    2
+   493 ;; This function calls:
+   494 ;;		Nothing
+   495 ;; This function is called by:
+   496 ;;		_main
+   497 ;; This function uses a non-reentrant model
+   498 ;;
+   499                           
+   500                           
+   501                           ;psect for function _eeprom_read
+   502  01E8                     _eeprom_read:	
+   503                           
+   504                           ;incstack = 0
+   505                           ; Regs used in _eeprom_read: [wreg+status,2+status,0]
+   506                           ;eeprom_read@addr stored from wreg
+   507  01E8  1283               	bcf	3,5	;RP0=0, select bank0
+   508  01E9  0096               	movwf	eeprom_read@addr
+   509  01EA                     l182:	
+   510  01EA  0064               	clrwdt	;# 
+   511  01EB  1683               	bsf	3,5	;RP0=1, select bank1
+   512  01EC  1888               	btfsc	8,1	;volsfr
+   513  01ED  29EA               	goto	l182
+   514  01EE  1283               	bcf	3,5	;RP0=0, select bank0
+   515  01EF  0816               	movf	eeprom_read@addr,w
+   516  01F0  0089               	movwf	9	;volatile
+   517  01F1  303F               	movlw	63
+   518  01F2  0095               	movwf	??_eeprom_read
+   519  01F3  0815               	movf	??_eeprom_read,w
+   520  01F4  1683               	bsf	3,5	;RP0=1, select bank1
+   521  01F5  0588               	andwf	8,f	;volsfr
+   522  01F6  1408               	bsf	8,0	;volsfr
+   523  01F7  1003               	clrc
+   524  01F8  1808               	btfsc	8,0	;volsfr
+   525  01F9  1403               	setc
+   526  01FA  3000               	movlw	0
+   527  01FB  1803               	skipnc
+   528  01FC  3001               	movlw	1
+   529  01FD  1283               	bcf	3,5	;RP0=0, select bank0
+   530  01FE  0808               	movf	8,w	;volatile
+   531  01FF  0008               	return
+   532  0200                     __end_of_eeprom_read:	
+   533                           
+   534                           	psect	text2
+   535  002C                     __ptext2:	
+   536 ;; *************** function _isr *****************
+   537 ;; Defined at:
+   538 ;;		line 40 in file "electronic_drawer_lock.c"
+   539 ;; Parameters:    Size  Location     Type
+   540 ;;		None
+   541 ;; Auto vars:     Size  Location     Type
+   542 ;;		None
+   543 ;; Return value:  Size  Location     Type
+   544 ;;                  1    wreg      void 
+   545 ;; Registers used:
+   546 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   547 ;; Tracked objects:
+   548 ;;		On entry : 0/0
+   549 ;;		On exit  : 0/0
+   550 ;;		Unchanged: 0/0
+   551 ;; Data sizes:     COMMON   BANK0
+   552 ;;      Params:         0       0
+   553 ;;      Locals:         0       0
+   554 ;;      Temps:          0       6
+   555 ;;      Totals:         0       6
+   556 ;;Total ram usage:        6 bytes
+   557 ;; Hardware stack levels used:    1
+   558 ;; Hardware stack levels required when called:    1
+   559 ;; This function calls:
+   560 ;;		_eeprom_write
+   561 ;;		i1_eeprom_read
+   562 ;; This function is called by:
+   563 ;;		Interrupt level 1
+   564 ;; This function uses a non-reentrant model
+   565 ;;
+   566                           
+   567                           
+   568                           ;psect for function _isr
+   569  002C                     _isr:	
+   570                           
+   571                           ;electronic_drawer_lock.c: 42: if(T0IF)
+   572  002C  1D0B               	btfss	11,2	;volatile
+   573  002D  2875               	goto	i1l1056
+   574                           
+   575                           ;electronic_drawer_lock.c: 43: {
+   576                           ;electronic_drawer_lock.c: 44: T0IF = 0b0;
+   577  002E  110B               	bcf	11,2	;volatile
+   578                           
+   579                           ;electronic_drawer_lock.c: 45: if(RA3 == 0b1)
+   580  002F  1D85               	btfss	5,3	;volatile
+   581  0030  283C               	goto	i1l1006
+   582                           
+   583                           ;electronic_drawer_lock.c: 46: {
+   584                           ;electronic_drawer_lock.c: 47: w_led_time++;
+   585  0031  3001               	movlw	1
+   586  0032  008F               	movwf	??_isr
+   587  0033  080F               	movf	??_isr,w
+   588  0034  07A2               	addwf	_w_led_time,f	;volatile
+   589                           
+   590                           ;electronic_drawer_lock.c: 48: if(w_led_time >= 23)
+   591  0035  3017               	movlw	23
+   592  0036  0222               	subwf	_w_led_time,w	;volatile
+   593  0037  1C03               	skipc
+   594  0038  283C               	goto	i1l1006
+   595                           
+   596                           ;electronic_drawer_lock.c: 49: {
+   597                           ;electronic_drawer_lock.c: 50: RA3 = !0b1;
+   598  0039  1185               	bcf	5,3	;volatile
+   599                           
+   600                           ;electronic_drawer_lock.c: 51: RA1 = !0b1;
+   601  003A  1085               	bcf	5,1	;volatile
+   602                           
+   603                           ;electronic_drawer_lock.c: 52: w_led_time = 0;
+   604  003B  01A2               	clrf	_w_led_time	;volatile
+   605  003C                     i1l1006:	
+   606                           
+   607                           ;electronic_drawer_lock.c: 53: }
+   608                           ;electronic_drawer_lock.c: 54: }
+   609                           ;electronic_drawer_lock.c: 55: if(RA1 == 0b1)
+   610  003C  1C85               	btfss	5,1	;volatile
+   611  003D  284A               	goto	i1l1018
+   612                           
+   613                           ;electronic_drawer_lock.c: 56: {
+   614                           ;electronic_drawer_lock.c: 57: if(changing == 0b0)
+   615  003E  18AB               	btfsc	_changing/(0+8),_changing& (0+7)	;volatile
+   616  003F  2844               	goto	i1l1012
+   617                           
+   618                           ;electronic_drawer_lock.c: 58: buz_time++;
+   619  0040  3001               	movlw	1
+   620  0041  008F               	movwf	??_isr
+   621  0042  080F               	movf	??_isr,w
+   622  0043  079A               	addwf	_buz_time,f	;volatile
+   623  0044                     i1l1012:	
+   624                           
+   625                           ;electronic_drawer_lock.c: 59: if(buz_time >= 23)
+   626  0044  3017               	movlw	23
+   627  0045  021A               	subwf	_buz_time,w	;volatile
+   628  0046  1C03               	skipc
+   629  0047  284A               	goto	i1l1018
+   630                           
+   631                           ;electronic_drawer_lock.c: 60: {
+   632                           ;electronic_drawer_lock.c: 61: RA1 = !0b1;
+   633  0048  1085               	bcf	5,1	;volatile
+   634                           
+   635                           ;electronic_drawer_lock.c: 62: buz_time = 0;
+   636  0049  019A               	clrf	_buz_time	;volatile
+   637  004A                     i1l1018:	
+   638                           
+   639                           ;electronic_drawer_lock.c: 63: }
+   640                           ;electronic_drawer_lock.c: 64: }
+   641                           ;electronic_drawer_lock.c: 65: if(RA0 == 0b1)
+   642  004A  1C05               	btfss	5,0	;volatile
+   643  004B  2857               	goto	i1l1028
+   644                           
+   645                           ;electronic_drawer_lock.c: 66: {
+   646                           ;electronic_drawer_lock.c: 67: lock_time++;
+   647  004C  3001               	movlw	1
+   648  004D  008F               	movwf	??_isr
+   649  004E  080F               	movf	??_isr,w
+   650  004F  07A0               	addwf	_lock_time,f	;volatile
+   651                           
+   652                           ;electronic_drawer_lock.c: 68: if(lock_time >= 23)
+   653  0050  3017               	movlw	23
+   654  0051  0220               	subwf	_lock_time,w	;volatile
+   655  0052  1C03               	skipc
+   656  0053  2857               	goto	i1l1028
+   657                           
+   658                           ;electronic_drawer_lock.c: 69: {
+   659                           ;electronic_drawer_lock.c: 70: RA0 = !0b1;
+   660  0054  1005               	bcf	5,0	;volatile
+   661                           
+   662                           ;electronic_drawer_lock.c: 71: RA2 = 0b1;
+   663  0055  1505               	bsf	5,2	;volatile
+   664                           
+   665                           ;electronic_drawer_lock.c: 72: lock_time = 0;
+   666  0056  01A0               	clrf	_lock_time	;volatile
+   667  0057                     i1l1028:	
+   668                           
+   669                           ;electronic_drawer_lock.c: 73: }
+   670                           ;electronic_drawer_lock.c: 74: }
+   671                           ;electronic_drawer_lock.c: 75: if(!but_pres)
+   672  0057  182B               	btfsc	_but_pres/(0+8),_but_pres& (0+7)	;volatile
+   673  0058  285D               	goto	i1l95
+   674                           
+   675                           ;electronic_drawer_lock.c: 76: last_pres_time_l++;
+   676  0059  3001               	movlw	1
+   677  005A  008F               	movwf	??_isr
+   678  005B  080F               	movf	??_isr,w
+   679  005C  079F               	addwf	_last_pres_time_l,f	;volatile
+   680  005D                     i1l95:	
+   681                           
+   682                           ;electronic_drawer_lock.c: 77: if(last_pres_time_l >= 255)
+   683  005D  0A1F               	incf	_last_pres_time_l,w	;volatile
+   684  005E  1D03               	btfss	3,2
+   685  005F  2864               	goto	i1l1034
+   686                           
+   687                           ;electronic_drawer_lock.c: 78: last_pres_time_h++;
+   688  0060  3001               	movlw	1
+   689  0061  008F               	movwf	??_isr
+   690  0062  080F               	movf	??_isr,w
+   691  0063  079E               	addwf	_last_pres_time_h,f	;volatile
+   692  0064                     i1l1034:	
+   693                           
+   694                           ;electronic_drawer_lock.c: 79: if(last_pres_time_h >= 4)
+   695  0064  3004               	movlw	4
+   696  0065  021E               	subwf	_last_pres_time_h,w	;volatile
+   697  0066  1C03               	skipc
+   698  0067  2875               	goto	i1l1056
+   699                           
+   700                           ;electronic_drawer_lock.c: 80: {
+   701                           ;electronic_drawer_lock.c: 82: last_pres_time_h = 0;
+   702  0068  019E               	clrf	_last_pres_time_h	;volatile
+   703                           
+   704                           ;electronic_drawer_lock.c: 83: digits_entered = 0;
+   705  0069  019D               	clrf	_digits_entered	;volatile
+   706                           
+   707                           ;electronic_drawer_lock.c: 84: wrong = 0b0;
+   708  006A  122B               	bcf	_wrong/(0+8),_wrong& (0+7)	;volatile
+   709                           
+   710                           ;electronic_drawer_lock.c: 85: ch_pres_cnt = 0;
+   711  006B  019B               	clrf	_ch_pres_cnt	;volatile
+   712                           
+   713                           ;electronic_drawer_lock.c: 86: RA2 = !0b1;
+   714  006C  1105               	bcf	5,2	;volatile
+   715                           
+   716                           ;electronic_drawer_lock.c: 87: RA3 = !0b1;
+   717  006D  1185               	bcf	5,3	;volatile
+   718                           
+   719                           ;electronic_drawer_lock.c: 88: RA1 = !0b1;
+   720  006E  1085               	bcf	5,1	;volatile
+   721                           
+   722                           ;electronic_drawer_lock.c: 89: RB0 = !0b1;
+   723  006F  1006               	bcf	6,0	;volatile
+   724                           
+   725                           ;electronic_drawer_lock.c: 90: RB1 = !0b1;
+   726  0070  1086               	bcf	6,1	;volatile
+   727                           
+   728                           ;electronic_drawer_lock.c: 91: RB2 = !0b1;
+   729  0071  1106               	bcf	6,2	;volatile
+   730                           
+   731                           ;electronic_drawer_lock.c: 92: RB3 = 0b1;
+   732  0072  1586               	bsf	6,3	;volatile
+   733                           
+   734                           ;electronic_drawer_lock.c: 93: sleeping = 0b1;
+   735  0073  15AB               	bsf	_sleeping/(0+8),_sleeping& (0+7)	;volatile
+   736  0074  0063               	sleep	;# 
+   737  0075                     i1l1056:	
+   738                           
+   739                           ;electronic_drawer_lock.c: 95: }
+   740                           ;electronic_drawer_lock.c: 96: }
+   741                           ;electronic_drawer_lock.c: 97: if(RBIF)
+   742  0075  1C0B               	btfss	11,0	;volatile
+   743  0076  295D               	goto	i1l1192
+   744                           
+   745                           ;electronic_drawer_lock.c: 98: {
+   746                           ;electronic_drawer_lock.c: 99: _delay((unsigned long)((150)*(4000000/4000.0)));
+   747  0077  30C3               	movlw	195
+   748  0078  1283               	bcf	3,5	;RP0=0, select bank0
+   749  0079  0090               	movwf	??_isr+1
+   750  007A  30CD               	movlw	205
+   751  007B  008F               	movwf	??_isr
+   752  007C                     u110_27:	
+   753  007C  0B8F               	decfsz	??_isr,f
+   754  007D  287C               	goto	u110_27
+   755  007E  0B90               	decfsz	??_isr+1,f
+   756  007F  287C               	goto	u110_27
+   757                           
+   758                           ;electronic_drawer_lock.c: 100: digit = 10;
+   759  0080  300A               	movlw	10
+   760  0081  1283               	bcf	3,5	;RP0=0, select bank0
+   761  0082  008F               	movwf	??_isr
+   762  0083  080F               	movf	??_isr,w
+   763  0084  009C               	movwf	_digit	;volatile
+   764                           
+   765                           ;electronic_drawer_lock.c: 101: last_pres_time_l = 0;
+   766  0085  019F               	clrf	_last_pres_time_l	;volatile
+   767                           
+   768                           ;electronic_drawer_lock.c: 102: last_pres_time_h = 0;
+   769  0086  019E               	clrf	_last_pres_time_h	;volatile
+   770                           
+   771                           ;electronic_drawer_lock.c: 103: if(sleeping)
+   772  0087  1DAB               	btfss	_sleeping/(0+8),_sleeping& (0+7)	;volatile
+   773  0088  288B               	goto	i1l99
+   774                           
+   775                           ;electronic_drawer_lock.c: 104: {
+   776                           ;electronic_drawer_lock.c: 105: sleeping = 0b0;
+   777  0089  11AB               	bcf	_sleeping/(0+8),_sleeping& (0+7)	;volatile
+   778                           
+   779                           ;electronic_drawer_lock.c: 106: return;
+   780  008A  2962               	goto	i1l100
+   781  008B                     i1l99:	
+   782                           
+   783                           ;electronic_drawer_lock.c: 107: }
+   784                           ;electronic_drawer_lock.c: 108: if(RB6 == 0b1)
+   785  008B  1F06               	btfss	6,6	;volatile
+   786  008C  28C2               	goto	i1l101
+   787                           
+   788                           ;electronic_drawer_lock.c: 109: {
+   789                           ;electronic_drawer_lock.c: 110: but_pres = 0b1;
+   790  008D  142B               	bsf	_but_pres/(0+8),_but_pres& (0+7)	;volatile
+   791                           
+   792                           ;electronic_drawer_lock.c: 111: if(RB0 == 0b1)
+   793  008E  1C06               	btfss	6,0	;volatile
+   794  008F  2892               	goto	i1l102
+   795                           
+   796                           ;electronic_drawer_lock.c: 112: {
+   797                           ;electronic_drawer_lock.c: 113: digit = 1;
+   798  0090  3001               	movlw	1
+   799  0091  28E3               	goto	L8
+   800  0092                     i1l102:	
+   801                           ;electronic_drawer_lock.c: 114: }
+   802                           
+   803                           
+   804                           ;electronic_drawer_lock.c: 115: else if(RB1 == 0b1)
+   805  0092  1C86               	btfss	6,1	;volatile
+   806  0093  2896               	goto	i1l104
+   807                           
+   808                           ;electronic_drawer_lock.c: 116: {
+   809                           ;electronic_drawer_lock.c: 117: digit = 4;
+   810  0094  3004               	movlw	4
+   811  0095  28E3               	goto	L8
+   812  0096                     i1l104:	
+   813                           ;electronic_drawer_lock.c: 118: }
+   814                           
+   815                           
+   816                           ;electronic_drawer_lock.c: 119: else if(RB2 == 0b1)
+   817  0096  1D06               	btfss	6,2	;volatile
+   818  0097  289A               	goto	i1l106
+   819                           
+   820                           ;electronic_drawer_lock.c: 120: {
+   821                           ;electronic_drawer_lock.c: 121: digit = 7;
+   822  0098  3007               	movlw	7
+   823  0099  28E3               	goto	L8
+   824  009A                     i1l106:	
+   825                           ;electronic_drawer_lock.c: 122: }
+   826                           
+   827                           
+   828                           ;electronic_drawer_lock.c: 123: else if(RB3 == 0b1)
+   829  009A  1D86               	btfss	6,3	;volatile
+   830  009B  290A               	goto	i1l1156
+   831                           
+   832                           ;electronic_drawer_lock.c: 124: {
+   833                           ;electronic_drawer_lock.c: 126: digits_entered = 0;
+   834  009C  019D               	clrf	_digits_entered	;volatile
+   835                           
+   836                           ;electronic_drawer_lock.c: 127: wrong = 0b0;
+   837  009D  122B               	bcf	_wrong/(0+8),_wrong& (0+7)	;volatile
+   838                           
+   839                           ;electronic_drawer_lock.c: 131: if(open)
+   840  009E  1D2B               	btfss	_open/(0+8),_open& (0+7)	;volatile
+   841  009F  2908               	goto	L9
+   842                           
+   843                           ;electronic_drawer_lock.c: 132: {
+   844                           ;electronic_drawer_lock.c: 136: if(changing)
+   845  00A0  1CAB               	btfss	_changing/(0+8),_changing& (0+7)	;volatile
+   846  00A1  28A5               	goto	i1l1086
+   847                           
+   848                           ;electronic_drawer_lock.c: 137: {
+   849                           ;electronic_drawer_lock.c: 138: changing = 0b0;
+   850  00A2  10AB               	bcf	_changing/(0+8),_changing& (0+7)	;volatile
+   851                           
+   852                           ;electronic_drawer_lock.c: 139: RB7 = !0b1;
+   853  00A3  1386               	bcf	6,7	;volatile
+   854                           
+   855                           ;electronic_drawer_lock.c: 140: }
+   856  00A4  28B5               	goto	i1l1098
+   857  00A5                     i1l1086:	
+   858                           
+   859                           ;electronic_drawer_lock.c: 145: else
+   860                           ;electronic_drawer_lock.c: 146: {
+   861                           ;electronic_drawer_lock.c: 147: ch_pres_cnt++;
+   862  00A5  3001               	movlw	1
+   863  00A6  008F               	movwf	??_isr
+   864  00A7  080F               	movf	??_isr,w
+   865  00A8  079B               	addwf	_ch_pres_cnt,f	;volatile
+   866                           
+   867                           ;electronic_drawer_lock.c: 148: if(ch_pres_cnt >= 3)
+   868  00A9  3003               	movlw	3
+   869  00AA  021B               	subwf	_ch_pres_cnt,w	;volatile
+   870  00AB  1C03               	skipc
+   871  00AC  28B5               	goto	i1l1098
+   872                           
+   873                           ;electronic_drawer_lock.c: 149: {
+   874                           ;electronic_drawer_lock.c: 150: ch_pres_cnt = 0;
+   875  00AD  019B               	clrf	_ch_pres_cnt	;volatile
+   876                           
+   877                           ;electronic_drawer_lock.c: 152: changing = 0b1;
+   878  00AE  14AB               	bsf	_changing/(0+8),_changing& (0+7)	;volatile
+   879                           
+   880                           ;electronic_drawer_lock.c: 153: digit_count = 0;
+   881  00AF  01AC               	clrf	_digit_count	;volatile
+   882                           
+   883                           ;electronic_drawer_lock.c: 155: eeprom_write(0, 0);
+   884  00B0  018C               	clrf	eeprom_write@value
+   885  00B1  3000               	movlw	0
+   886  00B2  21C7               	fcall	_eeprom_write
+   887                           
+   888                           ;electronic_drawer_lock.c: 156: RB7 = 0b1;
+   889  00B3  1283               	bcf	3,5	;RP0=0, select bank0
+   890  00B4  1786               	bsf	6,7	;volatile
+   891  00B5                     i1l1098:	
+   892                           
+   893                           ;electronic_drawer_lock.c: 157: }
+   894                           ;electronic_drawer_lock.c: 158: }
+   895                           ;electronic_drawer_lock.c: 159: RA1 = 0b1;
+   896  00B5  1485               	bsf	5,1	;volatile
+   897                           
+   898                           ;electronic_drawer_lock.c: 160: _delay((unsigned long)((100)*(4000000/4000.0)));
+   899  00B6  3082               	movlw	130
+   900  00B7  0090               	movwf	??_isr+1
+   901  00B8  30DD               	movlw	221
+   902  00B9  008F               	movwf	??_isr
+   903  00BA                     u111_27:	
+   904  00BA  0B8F               	decfsz	??_isr,f
+   905  00BB  28BA               	goto	u111_27
+   906  00BC  0B90               	decfsz	??_isr+1,f
+   907  00BD  28BA               	goto	u111_27
+   908  00BE  28BF               	nop2
+   909                           
+   910                           ;electronic_drawer_lock.c: 161: RA1 = !0b1;
+   911  00BF  1283               	bcf	3,5	;RP0=0, select bank0
+   912  00C0  1085               	bcf	5,1	;volatile
+   913  00C1  2908               	goto	L9
+   914  00C2                     i1l101:	
+   915                           ;electronic_drawer_lock.c: 165: }
+   916                           ;electronic_drawer_lock.c: 166: }
+   917                           
+   918                           ;electronic_drawer_lock.c: 164: return;
+   919                           
+   920                           ;electronic_drawer_lock.c: 162: }
+   921                           ;electronic_drawer_lock.c: 163: RBIF = 0b0;
+   922                           
+   923                           
+   924                           ;electronic_drawer_lock.c: 167: else if(RB5 == 0b1)
+   925  00C2  1E86               	btfss	6,5	;volatile
+   926  00C3  28D5               	goto	i1l114
+   927                           
+   928                           ;electronic_drawer_lock.c: 168: {
+   929                           ;electronic_drawer_lock.c: 169: but_pres = 0b1;
+   930  00C4  142B               	bsf	_but_pres/(0+8),_but_pres& (0+7)	;volatile
+   931                           
+   932                           ;electronic_drawer_lock.c: 170: if(RB0 == 0b1)
+   933  00C5  1C06               	btfss	6,0	;volatile
+   934  00C6  28C9               	goto	i1l115
+   935                           
+   936                           ;electronic_drawer_lock.c: 171: {
+   937                           ;electronic_drawer_lock.c: 172: digit = 2;
+   938  00C7  3002               	movlw	2
+   939  00C8  28E3               	goto	L8
+   940  00C9                     i1l115:	
+   941                           ;electronic_drawer_lock.c: 173: }
+   942                           
+   943                           
+   944                           ;electronic_drawer_lock.c: 174: else if(RB1 == 0b1)
+   945  00C9  1C86               	btfss	6,1	;volatile
+   946  00CA  28CD               	goto	i1l117
+   947                           
+   948                           ;electronic_drawer_lock.c: 175: {
+   949                           ;electronic_drawer_lock.c: 176: digit = 5;
+   950  00CB  3005               	movlw	5
+   951  00CC  28E3               	goto	L8
+   952  00CD                     i1l117:	
+   953                           ;electronic_drawer_lock.c: 177: }
+   954                           
+   955                           
+   956                           ;electronic_drawer_lock.c: 178: else if(RB2 == 0b1)
+   957  00CD  1D06               	btfss	6,2	;volatile
+   958  00CE  28D1               	goto	i1l119
+   959                           
+   960                           ;electronic_drawer_lock.c: 179: {
+   961                           ;electronic_drawer_lock.c: 180: digit = 8;
+   962  00CF  3008               	movlw	8
+   963  00D0  28E3               	goto	L8
+   964  00D1                     i1l119:	
+   965                           ;electronic_drawer_lock.c: 181: }
+   966                           
+   967                           
+   968                           ;electronic_drawer_lock.c: 182: else if(RB3 == 0b1)
+   969  00D1  1D86               	btfss	6,3	;volatile
+   970  00D2  290A               	goto	i1l1156
+   971                           
+   972                           ;electronic_drawer_lock.c: 183: {
+   973                           ;electronic_drawer_lock.c: 184: digit = 0;
+   974  00D3  019C               	clrf	_digit	;volatile
+   975                           
+   976                           ;electronic_drawer_lock.c: 185: }
+   977                           ;electronic_drawer_lock.c: 186: }
+   978  00D4  290A               	goto	i1l1156
+   979  00D5                     i1l114:	
+   980                           
+   981                           ;electronic_drawer_lock.c: 187: else if(RB4 == 0b1)
+   982  00D5  1E06               	btfss	6,4	;volatile
+   983  00D6  2907               	goto	i1l123
+   984                           
+   985                           ;electronic_drawer_lock.c: 188: {
+   986                           ;electronic_drawer_lock.c: 189: but_pres = 0b1;
+   987  00D7  142B               	bsf	_but_pres/(0+8),_but_pres& (0+7)	;volatile
+   988                           
+   989                           ;electronic_drawer_lock.c: 190: if(RB0 == 0b1)
+   990  00D8  1C06               	btfss	6,0	;volatile
+   991  00D9  28DC               	goto	i1l124
+   992                           
+   993                           ;electronic_drawer_lock.c: 191: {
+   994                           ;electronic_drawer_lock.c: 192: digit = 3;
+   995  00DA  3003               	movlw	3
+   996  00DB  28E3               	goto	L8
+   997  00DC                     i1l124:	
+   998                           ;electronic_drawer_lock.c: 193: }
+   999                           
+  1000                           
+  1001                           ;electronic_drawer_lock.c: 194: else if(RB1 == 0b1)
+  1002  00DC  1C86               	btfss	6,1	;volatile
+  1003  00DD  28E0               	goto	i1l126
+  1004                           
+  1005                           ;electronic_drawer_lock.c: 195: {
+  1006                           ;electronic_drawer_lock.c: 196: digit = 6;
+  1007  00DE  3006               	movlw	6
+  1008  00DF  28E3               	goto	L8
+  1009  00E0                     i1l126:	
+  1010                           ;electronic_drawer_lock.c: 197: }
+  1011                           
+  1012                           
+  1013                           ;electronic_drawer_lock.c: 198: else if(RB2 == 0b1)
+  1014  00E0  1D06               	btfss	6,2	;volatile
+  1015  00E1  28E7               	goto	i1l128
+  1016                           
+  1017                           ;electronic_drawer_lock.c: 199: {
+  1018                           ;electronic_drawer_lock.c: 200: digit = 9;
+  1019  00E2  3009               	movlw	9
+  1020  00E3                     L8:	
+  1021  00E3  008F               	movwf	??_isr
+  1022  00E4  080F               	movf	??_isr,w
+  1023  00E5  009C               	movwf	_digit	;volatile
+  1024                           
+  1025                           ;electronic_drawer_lock.c: 201: }
+  1026  00E6  290A               	goto	i1l1156
+  1027  00E7                     i1l128:	
+  1028                           
+  1029                           ;electronic_drawer_lock.c: 202: else if(RB3 == 0b1)
+  1030  00E7  1D86               	btfss	6,3	;volatile
+  1031  00E8  290A               	goto	i1l1156
+  1032                           
+  1033                           ;electronic_drawer_lock.c: 203: {
+  1034                           ;electronic_drawer_lock.c: 208: if(changing == 0b0)
+  1035  00E9  18AB               	btfsc	_changing/(0+8),_changing& (0+7)	;volatile
+  1036  00EA  2908               	goto	L9
+  1037                           
+  1038                           ;electronic_drawer_lock.c: 209: {
+  1039                           ;electronic_drawer_lock.c: 211: if(open)
+  1040  00EB  1D2B               	btfss	_open/(0+8),_open& (0+7)	;volatile
+  1041  00EC  28F1               	goto	i1l132
+  1042                           
+  1043                           ;electronic_drawer_lock.c: 212: {
+  1044                           ;electronic_drawer_lock.c: 213: RA0 = !0b1;
+  1045  00ED  1005               	bcf	5,0	;volatile
+  1046                           
+  1047                           ;electronic_drawer_lock.c: 214: open = 0b0;
+  1048  00EE  112B               	bcf	_open/(0+8),_open& (0+7)	;volatile
+  1049                           
+  1050                           ;electronic_drawer_lock.c: 215: RA2 = !0b1;
+  1051  00EF  1105               	bcf	5,2	;volatile
+  1052                           
+  1053                           ;electronic_drawer_lock.c: 216: }
+  1054  00F0  2903               	goto	i1l1150
+  1055  00F1                     i1l132:	
+  1056                           
+  1057                           ;electronic_drawer_lock.c: 217: else if(wrong)
+  1058  00F1  1A2B               	btfsc	_wrong/(0+8),_wrong& (0+7)	;volatile
+  1059  00F2  2900               	goto	i1l1144
+  1060                           
+  1061                           ;electronic_drawer_lock.c: 226: else if(digits_entered == digit_count || digits_entered 
+      +                          == 8u)
+  1062                           
+  1063                           ;electronic_drawer_lock.c: 222: }
+  1064                           
+  1065                           ;electronic_drawer_lock.c: 221: RA1 = 0b1;
+  1066                           
+  1067                           ;electronic_drawer_lock.c: 220: RA3 = 0b1;
+  1068                           
+  1069                           ;electronic_drawer_lock.c: 218: {
+  1070                           ;electronic_drawer_lock.c: 219: w_led_time = 0;
+  1071  00F3  081D               	movf	_digits_entered,w	;volatile
+  1072  00F4  062C               	xorwf	_digit_count,w	;volatile
+  1073  00F5  1903               	skipnz
+  1074  00F6  28FB               	goto	i1l138
+  1075  00F7  3008               	movlw	8
+  1076  00F8  061D               	xorwf	_digits_entered,w	;volatile
+  1077  00F9  1D03               	btfss	3,2
+  1078  00FA  2900               	goto	i1l1144
+  1079  00FB                     i1l138:	
+  1080                           
+  1081                           ;electronic_drawer_lock.c: 227: {
+  1082                           ;electronic_drawer_lock.c: 228: RA3 = !0b1;
+  1083  00FB  1185               	bcf	5,3	;volatile
+  1084                           
+  1085                           ;electronic_drawer_lock.c: 229: RA0 = 0b1;
+  1086  00FC  1405               	bsf	5,0	;volatile
+  1087                           
+  1088                           ;electronic_drawer_lock.c: 230: open = 0b1;
+  1089  00FD  152B               	bsf	_open/(0+8),_open& (0+7)	;volatile
+  1090                           
+  1091                           ;electronic_drawer_lock.c: 231: lock_time = 0;
+  1092  00FE  01A0               	clrf	_lock_time	;volatile
+  1093                           
+  1094                           ;electronic_drawer_lock.c: 232: }
+  1095  00FF  2903               	goto	i1l1150
+  1096  0100                     i1l1144:	
+  1097                           
+  1098                           ;electronic_drawer_lock.c: 233: else
+  1099                           ;electronic_drawer_lock.c: 234: {
+  1100                           ;electronic_drawer_lock.c: 235: w_led_time = 0;
+  1101  0100  01A2               	clrf	_w_led_time	;volatile
+  1102                           
+  1103                           ;electronic_drawer_lock.c: 236: RA3 = 0b1;
+  1104  0101  1585               	bsf	5,3	;volatile
+  1105                           
+  1106                           ;electronic_drawer_lock.c: 237: RA1 = 0b1;
+  1107  0102  1485               	bsf	5,1	;volatile
+  1108  0103                     i1l1150:	
+  1109                           
+  1110                           ;electronic_drawer_lock.c: 238: }
+  1111                           ;electronic_drawer_lock.c: 239: wrong = 0b0;
+  1112  0103  122B               	bcf	_wrong/(0+8),_wrong& (0+7)	;volatile
+  1113                           
+  1114                           ;electronic_drawer_lock.c: 240: digits_entered = 0;
+  1115  0104  019D               	clrf	_digits_entered	;volatile
+  1116                           
+  1117                           ;electronic_drawer_lock.c: 241: ch_pres_cnt = 0;
+  1118  0105  019B               	clrf	_ch_pres_cnt	;volatile
+  1119  0106  2908               	goto	L9
+  1120  0107                     i1l123:	
+  1121                           ;electronic_drawer_lock.c: 245: }
+  1122                           ;electronic_drawer_lock.c: 246: }
+  1123                           
+  1124                           ;electronic_drawer_lock.c: 244: return;
+  1125                           
+  1126                           ;electronic_drawer_lock.c: 242: }
+  1127                           ;electronic_drawer_lock.c: 243: RBIF = 0b0;
+  1128                           
+  1129                           
+  1130                           ;electronic_drawer_lock.c: 247: else
+  1131                           ;electronic_drawer_lock.c: 248: {
+  1132                           ;electronic_drawer_lock.c: 249: but_pres = 0b0;
+  1133  0107  102B               	bcf	_but_pres/(0+8),_but_pres& (0+7)	;volatile
+  1134  0108                     L9:	
+  1135                           
+  1136                           ;electronic_drawer_lock.c: 250: RBIF = 0b0;
+  1137  0108  100B               	bcf	11,0	;volatile
+  1138                           
+  1139                           ;electronic_drawer_lock.c: 251: return;
+  1140  0109  2962               	goto	i1l100
+  1141  010A                     i1l1156:	
+  1142                           
+  1143                           ;electronic_drawer_lock.c: 252: }
+  1144                           ;electronic_drawer_lock.c: 253: if(digit < 10)
+  1145  010A  300A               	movlw	10
+  1146  010B  021C               	subwf	_digit,w	;volatile
+  1147  010C  1803               	skipnc
+  1148  010D  295C               	goto	i1l1190
+  1149                           
+  1150                           ;electronic_drawer_lock.c: 254: {
+  1151                           ;electronic_drawer_lock.c: 259: if(changing)
+  1152  010E  1CAB               	btfss	_changing/(0+8),_changing& (0+7)	;volatile
+  1153  010F  2931               	goto	i1l142
+  1154                           
+  1155                           ;electronic_drawer_lock.c: 260: {
+  1156                           ;electronic_drawer_lock.c: 262: if(digit_count < (64 - 2))
+  1157  0110  303E               	movlw	62
+  1158  0111  022C               	subwf	_digit_count,w	;volatile
+  1159  0112  1803               	skipnc
+  1160  0113  295C               	goto	i1l1190
+  1161                           
+  1162                           ;electronic_drawer_lock.c: 263: {
+  1163                           ;electronic_drawer_lock.c: 264: digit_count++;
+  1164  0114  3001               	movlw	1
+  1165  0115  008F               	movwf	??_isr
+  1166  0116  080F               	movf	??_isr,w
+  1167  0117  07AC               	addwf	_digit_count,f	;volatile
+  1168                           
+  1169                           ;electronic_drawer_lock.c: 265: eeprom_write(digit_count, digit);
+  1170  0118  081C               	movf	_digit,w	;volatile
+  1171  0119  008F               	movwf	??_isr
+  1172  011A  080F               	movf	??_isr,w
+  1173  011B  008C               	movwf	eeprom_write@value
+  1174  011C  082C               	movf	_digit_count,w	;volatile
+  1175  011D  21C7               	fcall	_eeprom_write
+  1176                           
+  1177                           ;electronic_drawer_lock.c: 266: eeprom_write(0, digit_count);
+  1178  011E  1283               	bcf	3,5	;RP0=0, select bank0
+  1179  011F  082C               	movf	_digit_count,w	;volatile
+  1180  0120  008F               	movwf	??_isr
+  1181  0121  080F               	movf	??_isr,w
+  1182  0122  008C               	movwf	eeprom_write@value
+  1183  0123  3000               	movlw	0
+  1184  0124  21C7               	fcall	_eeprom_write
+  1185                           
+  1186                           ;electronic_drawer_lock.c: 267: RA1 = 0b1;
+  1187  0125  1283               	bcf	3,5	;RP0=0, select bank0
+  1188  0126  1485               	bsf	5,1	;volatile
+  1189                           
+  1190                           ;electronic_drawer_lock.c: 268: _delay((unsigned long)((100)*(4000000/4000.0)));
+  1191  0127  3082               	movlw	130
+  1192  0128  0090               	movwf	??_isr+1
+  1193  0129  30DD               	movlw	221
+  1194  012A  008F               	movwf	??_isr
+  1195  012B                     u112_27:	
+  1196  012B  0B8F               	decfsz	??_isr,f
+  1197  012C  292B               	goto	u112_27
+  1198  012D  0B90               	decfsz	??_isr+1,f
+  1199  012E  292B               	goto	u112_27
+  1200  012F  2930               	nop2
+  1201  0130  295A               	goto	i1l1188
+  1202  0131                     i1l142:	
+  1203                           ;electronic_drawer_lock.c: 270: }
+  1204                           ;electronic_drawer_lock.c: 272: }
+  1205                           
+  1206                           ;electronic_drawer_lock.c: 269: RA1 = !0b1;
+  1207                           
+  1208                           
+  1209                           ;electronic_drawer_lock.c: 276: else if(!open)
+  1210  0131  192B               	btfsc	_open/(0+8),_open& (0+7)	;volatile
+  1211  0132  295C               	goto	i1l1190
+  1212                           
+  1213                           ;electronic_drawer_lock.c: 277: {
+  1214                           ;electronic_drawer_lock.c: 278: if(!wrong)
+  1215  0133  1A2B               	btfsc	_wrong/(0+8),_wrong& (0+7)	;volatile
+  1216  0134  2950               	goto	i1l146
+  1217                           
+  1218                           ;electronic_drawer_lock.c: 279: {
+  1219                           ;electronic_drawer_lock.c: 280: digits_entered++;
+  1220  0135  3001               	movlw	1
+  1221  0136  008F               	movwf	??_isr
+  1222  0137  080F               	movf	??_isr,w
+  1223  0138  079D               	addwf	_digits_entered,f	;volatile
+  1224                           
+  1225                           ;electronic_drawer_lock.c: 281: read_digit = eeprom_read(digits_entered);
+  1226  0139  081D               	movf	_digits_entered,w	;volatile
+  1227  013A  2200               	fcall	i1_eeprom_read
+  1228  013B  1283               	bcf	3,5	;RP0=0, select bank0
+  1229  013C  008F               	movwf	??_isr
+  1230  013D  080F               	movf	??_isr,w
+  1231  013E  00A1               	movwf	_read_digit	;volatile
+  1232                           
+  1233                           ;electronic_drawer_lock.c: 284: if(read_digit != digit)
+  1234  013F  0821               	movf	_read_digit,w	;volatile
+  1235  0140  061C               	xorwf	_digit,w	;volatile
+  1236  0141  1903               	skipnz
+  1237  0142  2950               	goto	i1l146
+  1238                           
+  1239                           ;electronic_drawer_lock.c: 285: {
+  1240                           ;electronic_drawer_lock.c: 287: if(digits_entered > 8u || digit != master_key[digits_ent
+      +                          ered - 1])
+  1241  0143  3009               	movlw	9
+  1242  0144  021D               	subwf	_digits_entered,w	;volatile
+  1243  0145  1803               	skipnc
+  1244  0146  294F               	goto	i1l150
+  1245  0147  081D               	movf	_digits_entered,w
+  1246  0148  3EFF               	addlw	255
+  1247  0149  3E23               	addlw	(low (_master_key| 0))& (0+255)
+  1248  014A  0084               	movwf	4
+  1249  014B  1383               	bcf	3,7	;select IRP bank0
+  1250  014C  0800               	movf	0,w
+  1251  014D  061C               	xorwf	_digit,w	;volatile
+  1252  014E  1D03               	btfss	3,2
+  1253  014F                     i1l150:	
+  1254                           
+  1255                           ;electronic_drawer_lock.c: 288: wrong = 0b1;
+  1256  014F  162B               	bsf	_wrong/(0+8),_wrong& (0+7)	;volatile
+  1257  0150                     i1l146:	
+  1258                           
+  1259                           ;electronic_drawer_lock.c: 289: }
+  1260                           ;electronic_drawer_lock.c: 290: }
+  1261                           ;electronic_drawer_lock.c: 291: RA1 = 0b1;
+  1262  0150  1485               	bsf	5,1	;volatile
+  1263                           
+  1264                           ;electronic_drawer_lock.c: 292: _delay((unsigned long)((100)*(4000000/4000.0)));
+  1265  0151  3082               	movlw	130
+  1266  0152  0090               	movwf	??_isr+1
+  1267  0153  30DD               	movlw	221
+  1268  0154  008F               	movwf	??_isr
+  1269  0155                     u113_27:	
+  1270  0155  0B8F               	decfsz	??_isr,f
+  1271  0156  2955               	goto	u113_27
+  1272  0157  0B90               	decfsz	??_isr+1,f
+  1273  0158  2955               	goto	u113_27
+  1274  0159  295A               	nop2
+  1275  015A                     i1l1188:	
+  1276                           
+  1277                           ;electronic_drawer_lock.c: 293: RA1 = !0b1;
+  1278  015A  1283               	bcf	3,5	;RP0=0, select bank0
+  1279  015B  1085               	bcf	5,1	;volatile
+  1280  015C                     i1l1190:	
+  1281                           
+  1282                           ;electronic_drawer_lock.c: 294: }
+  1283                           ;electronic_drawer_lock.c: 295: }
+  1284                           ;electronic_drawer_lock.c: 296: RBIF = 0b0;
+  1285  015C  100B               	bcf	11,0	;volatile
+  1286  015D                     i1l1192:	
+  1287                           
+  1288                           ;electronic_drawer_lock.c: 297: }
+  1289                           ;electronic_drawer_lock.c: 298: if(EEIE)
+  1290  015D  1F0B               	btfss	11,6	;volatile
+  1291  015E  2962               	goto	i1l100
+  1292                           
+  1293                           ;electronic_drawer_lock.c: 299: {
+  1294                           ;electronic_drawer_lock.c: 300: RA1 = !0b1;
+  1295  015F  1283               	bcf	3,5	;RP0=0, select bank0
+  1296  0160  1085               	bcf	5,1	;volatile
+  1297                           
+  1298                           ;electronic_drawer_lock.c: 301: EEIE = 0b0;
+  1299  0161  130B               	bcf	11,6	;volatile
+  1300  0162                     i1l100:	
+  1301  0162  1283               	bcf	3,5	;RP0=0, select bank0
+  1302  0163  0814               	movf	??_isr+5,w
+  1303  0164  00CF               	movwf	79
+  1304  0165  0813               	movf	??_isr+4,w
+  1305  0166  008A               	movwf	10
+  1306  0167  0812               	movf	??_isr+3,w
+  1307  0168  0084               	movwf	4
+  1308  0169  0E11               	swapf	(??_isr+2)^0,w
+  1309  016A  0083               	movwf	3
+  1310  016B  0ECE               	swapf	78,f
+  1311  016C  0E4E               	swapf	78,w
+  1312  016D  0009               	retfie
+  1313  016E                     __end_of_isr:	
+  1314                           
+  1315                           	psect	intentry
+  1316  0004                     __pintentry:	
+  1317                           ;incstack = 0
+  1318                           ; Regs used in _isr: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  1319                           
+  1320  0004                     interrupt_function:	
+  1321  004E                     saved_w	set	btemp
+  1322  0004  00CE               	movwf	btemp
+  1323  0005  0E03               	swapf	3,w
+  1324  0006  1283               	bcf	3,5	;RP0=0, select bank0
+  1325  0007  0091               	movwf	??_isr+2
+  1326  0008  0804               	movf	4,w
+  1327  0009  0092               	movwf	??_isr+3
+  1328  000A  080A               	movf	10,w
+  1329  000B  0093               	movwf	??_isr+4
+  1330  000C  084F               	movf	btemp+1,w
+  1331  000D  0094               	movwf	??_isr+5
+  1332  000E  282C               	ljmp	_isr
+  1333                           
+  1334                           	psect	text3
+  1335  0200                     __ptext3:	
+  1336 ;; *************** function i1_eeprom_read *****************
+  1337 ;; Defined at:
+  1338 ;;		line 6 in file "/opt/microchip/xc8/v1.36/sources/pic/eeread.c"
+  1339 ;; Parameters:    Size  Location     Type
+  1340 ;;  addr            1    wreg     unsigned char 
+  1341 ;; Auto vars:     Size  Location     Type
+  1342 ;;  addr            1    1[BANK0 ] unsigned char 
+  1343 ;; Return value:  Size  Location     Type
+  1344 ;;                  1    wreg      unsigned char 
+  1345 ;; Registers used:
+  1346 ;;		wreg, status,2, status,0
+  1347 ;; Tracked objects:
+  1348 ;;		On entry : 0/0
+  1349 ;;		On exit  : 0/0
+  1350 ;;		Unchanged: 0/0
+  1351 ;; Data sizes:     COMMON   BANK0
+  1352 ;;      Params:         0       0
+  1353 ;;      Locals:         0       1
+  1354 ;;      Temps:          0       1
+  1355 ;;      Totals:         0       2
+  1356 ;;Total ram usage:        2 bytes
+  1357 ;; Hardware stack levels used:    1
+  1358 ;; This function calls:
+  1359 ;;		Nothing
+  1360 ;; This function is called by:
+  1361 ;;		_isr
+  1362 ;; This function uses a non-reentrant model
+  1363 ;;
+  1364                           
+  1365                           
+  1366                           ;psect for function i1_eeprom_read
+  1367  0200                     i1_eeprom_read:	
+  1368                           
+  1369                           ;incstack = 0
+  1370                           ; Regs used in i1_eeprom_read: [wreg+status,2+status,0]
+  1371                           ;i1eeprom_read@addr stored from wreg
+  1372  0200  1283               	bcf	3,5	;RP0=0, select bank0
+  1373  0201  008D               	movwf	i1eeprom_read@addr
+  1374  0202                     i1l182:	
+  1375  0202  0064               	clrwdt	;# 
+  1376  0203  1683               	bsf	3,5	;RP0=1, select bank1
+  1377  0204  1888               	btfsc	8,1	;volsfr
+  1378  0205  2A02               	goto	i1l182
+  1379  0206  1283               	bcf	3,5	;RP0=0, select bank0
+  1380  0207  080D               	movf	i1eeprom_read@addr,w
+  1381  0208  0089               	movwf	9	;volatile
+  1382  0209  303F               	movlw	63
+  1383  020A  008C               	movwf	??i1_eeprom_read
+  1384  020B  080C               	movf	??i1_eeprom_read,w
+  1385  020C  1683               	bsf	3,5	;RP0=1, select bank1
+  1386  020D  0588               	andwf	8,f	;volsfr
+  1387  020E  1408               	bsf	8,0	;volsfr
+  1388  020F  1003               	clrc
+  1389  0210  1808               	btfsc	8,0	;volsfr
+  1390  0211  1403               	setc
+  1391  0212  3000               	movlw	0
+  1392  0213  1803               	skipnc
+  1393  0214  3001               	movlw	1
+  1394  0215  1283               	bcf	3,5	;RP0=0, select bank0
+  1395  0216  0808               	movf	8,w	;volatile
+  1396  0217  0008               	return
+  1397  0218                     __end_ofi1_eeprom_read:	
+  1398                           
+  1399                           	psect	text4
+  1400  01C7                     __ptext4:	
+  1401 ;; *************** function _eeprom_write *****************
+  1402 ;; Defined at:
+  1403 ;;		line 6 in file "/opt/microchip/xc8/v1.36/sources/pic/eewrite.c"
+  1404 ;; Parameters:    Size  Location     Type
+  1405 ;;  addr            1    wreg     unsigned char 
+  1406 ;;  value           1    0[BANK0 ] unsigned char 
+  1407 ;; Auto vars:     Size  Location     Type
+  1408 ;;  addr            1    2[BANK0 ] unsigned char 
+  1409 ;; Return value:  Size  Location     Type
+  1410 ;;                  1    wreg      void 
+  1411 ;; Registers used:
+  1412 ;;		wreg, status,2, status,0
+  1413 ;; Tracked objects:
+  1414 ;;		On entry : 0/0
+  1415 ;;		On exit  : 0/0
+  1416 ;;		Unchanged: 0/0
+  1417 ;; Data sizes:     COMMON   BANK0
+  1418 ;;      Params:         0       1
+  1419 ;;      Locals:         0       1
+  1420 ;;      Temps:          0       1
+  1421 ;;      Totals:         0       3
+  1422 ;;Total ram usage:        3 bytes
+  1423 ;; Hardware stack levels used:    1
+  1424 ;; This function calls:
+  1425 ;;		Nothing
+  1426 ;; This function is called by:
+  1427 ;;		_isr
+  1428 ;; This function uses a non-reentrant model
+  1429 ;;
+  1430                           
+  1431                           
+  1432                           ;psect for function _eeprom_write
+  1433  01C7                     _eeprom_write:	
+  1434                           
+  1435                           ;incstack = 0
+  1436                           ; Regs used in _eeprom_write: [wreg+status,2+status,0]
+  1437                           ;eeprom_write@addr stored from wreg
+  1438  01C7  1283               	bcf	3,5	;RP0=0, select bank0
+  1439  01C8  008E               	movwf	eeprom_write@addr
+  1440  01C9                     i1l204:	
+  1441  01C9  1683               	bsf	3,5	;RP0=1, select bank1
+  1442  01CA  1888               	btfsc	8,1	;volsfr
+  1443  01CB  29C9               	goto	i1l204
+  1444  01CC  1283               	bcf	3,5	;RP0=0, select bank0
+  1445  01CD  080E               	movf	eeprom_write@addr,w
+  1446  01CE  0089               	movwf	9	;volatile
+  1447  01CF  080C               	movf	eeprom_write@value,w
+  1448  01D0  0088               	movwf	8	;volatile
+  1449  01D1  303F               	movlw	63
+  1450  01D2  008D               	movwf	??_eeprom_write
+  1451  01D3  080D               	movf	??_eeprom_write,w
+  1452  01D4  1683               	bsf	3,5	;RP0=1, select bank1
+  1453  01D5  0588               	andwf	8,f	;volsfr
+  1454  01D6  1283               	bcf	3,5	;RP0=0, select bank0
+  1455  01D7  1003               	bcf	3,0	;volatile
+  1456  01D8  1B8B               	btfsc	11,7	;volatile
+  1457  01D9  1403               	bsf	3,0	;volatile
+  1458  01DA  138B               	bcf	11,7	;volatile
+  1459  01DB  1683               	bsf	3,5	;RP0=1, select bank1
+  1460  01DC  1508               	bsf	8,2	;volsfr
+  1461  01DD  3055               	movlw	85
+  1462  01DE  0089               	movwf	9	;volsfr
+  1463  01DF  30AA               	movlw	170
+  1464  01E0  0089               	movwf	9	;volsfr
+  1465  01E1  1488               	bsf	8,1	;volsfr
+  1466  01E2  1108               	bcf	8,2	;volsfr
+  1467  01E3  1283               	bcf	3,5	;RP0=0, select bank0
+  1468  01E4  1C03               	btfss	3,0	;volatile
+  1469  01E5  0008               	return
+  1470  01E6  178B               	bsf	11,7	;volatile
+  1471  01E7  0008               	return
+  1472  01E8                     __end_of_eeprom_write:	
+  1473  004E                     btemp	set	78	;btemp
+  1474  004E                     wtemp	set	78
+  1475  004E                     wtemp0	set	78
+  1476  0050                     wtemp1	set	80
+  1477  0052                     wtemp2	set	82
+  1478  0054                     wtemp3	set	84
+  1479  0056                     wtemp4	set	86
+  1480  0058                     wtemp5	set	88
+  1481  004F                     wtemp6	set	79
+  1482  004E                     ttemp	set	78
+  1483  004E                     ttemp0	set	78
+  1484  0051                     ttemp1	set	81
+  1485  0054                     ttemp2	set	84
+  1486  0057                     ttemp3	set	87
+  1487  004F                     ttemp4	set	79
+  1488  004E                     ltemp	set	78
+  1489  004E                     ltemp0	set	78
+  1490  0052                     ltemp1	set	82
+  1491  0056                     ltemp2	set	86
+  1492  0050                     ltemp3	set	80
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        8
+    BSS         9
+    Persistent  1
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON            0      0       0
+    BANK0            66     14      33
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMMON
+
+    None.
+
+Critical Paths under _isr in COMMON
+
+    None.
+
+Critical Paths under _main in BANK0
+
+    _main->_eeprom_read
+
+Critical Paths under _isr in BANK0
+
+    _isr->_eeprom_write
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 3     3      0      22
+                                             11 BANK0      3     3      0
+                        _eeprom_read
+ ---------------------------------------------------------------------------------
+ (1) _eeprom_read                                          2     2      0      22
+                                              9 BANK0      2     2      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 1
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (2) _isr                                                  6     6      0     225
+                                              3 BANK0      6     6      0
+                       _eeprom_write
+                      i1_eeprom_read
+ ---------------------------------------------------------------------------------
+ (3) i1_eeprom_read                                        2     2      0      22
+                                              0 BANK0      2     2      0
+ ---------------------------------------------------------------------------------
+ (3) _eeprom_write                                         3     2      1     203
+                                              0 BANK0      3     2      1
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 3
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _eeprom_read
+
+ _isr (ROOT)
+   _eeprom_write
+   i1_eeprom_read
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+SFR1                 0      0       0       2        0.0%
+BITSFR1              0      0       0       2        0.0%
+BANK0               42      E      21       3       50.0%
+BITBANK0            42      0       1       5        1.5%
+SFR0                 0      0       0       1        0.0%
+BITSFR0              0      0       0       1        0.0%
+COMMON               0      0       0       1        0.0%
+BITCOMMON            0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+DATA                 0      0      21       6        0.0%
+ABS                  0      0      21       4        0.0%
+NULL                 0      0       0       0        0.0%
+STACK                0      0       0       2        0.0%
+EEDATA              40      0       0       0        0.0%
+
+
+Microchip Technology PIC Macro Assembler V1.36 build -262312587 
+Symbol Table                                                                                   Sun May  8 17:59:30 2016
+
+             __CFG_CP$ON 0000                       _RD 0440                       _WR 0441  
+                    l161 01BB                      l155 01AB                      l164 01C3  
+                    l182 01EA                      l158 01B3                      _GIE 005F  
+                    _RA0 0028                      _RA1 0029                      _RB0 0030  
+                    _RA2 002A                      _RB1 0031                      _RA3 002B  
+                    _RB2 0032                      _RB3 0033                      _RB4 0034  
+                    _RB5 0035                      _RB6 0036                      _RB7 0037  
+                    _isr 002C                      fsr0 0004                      indf 0000  
+           __CFG_FOSC$HS 0000                     l1252 01A6                     ?_isr 000C  
+                   _EEIE 005E                     _T0IF 005A                     u1097 0199  
+                   _RBIF 0058                     i1l95 005D                     i1l99 008B  
+                   _WREN 0442           ??_eeprom_write 000D                     _main 016E  
+                   _open 015A                     btemp 004E                     ltemp 004E  
+                   start 000F                     ttemp 004E                     wtemp 004E  
+                  ??_isr 000F         _last_pres_time_h 001E         _last_pres_time_l 001F  
+                  ?_main 000C                    _EEADR 0009            __CFG_WDTE$OFF 0000  
+                  _CARRY 0018                    i1l100 0162                    i1l101 00C2  
+                  i1l102 0092                    i1l104 0096                    i1l114 00D5  
+                  i1l106 009A                    i1l123 0107                    i1l115 00C9  
+                  i1l204 01C9                    i1l132 00F1                    i1l124 00DC  
+                  i1l117 00CD                    i1l150 014F                    i1l142 0131  
+                  i1l126 00E0                    i1l119 00D1                    i1l128 00E7  
+                  i1l146 0150                    i1l138 00FB                    i1l182 0202  
+                  _PORTA 0005                    _PORTB 0006                    _TRISA 0085  
+                  _TRISB 0086            __CFG_PWRTE$ON 0000                    _digit 001C  
+                  _wrong 015C                    pclath 000A                    ltemp0 004E  
+                  ltemp1 0052                    ltemp2 0056                    ltemp3 0050  
+                  ttemp0 004E                    ttemp1 0051                    ttemp2 0054  
+                  ttemp3 0057                    ttemp4 004F                    status 0003  
+                  wtemp0 004E                    wtemp1 0050                    wtemp2 0052  
+                  wtemp3 0054                    wtemp4 0056                    wtemp5 0058  
+                  wtemp6 004F          __initialization 0010             __end_of_main 01C7  
+                 ??_main 0017   __size_ofi1_eeprom_read 0018                   _EEDATA 0008  
+                 _EECON1 0088                   _EECON2 0089                   i1l1012 0044  
+                 i1l1006 003C                   i1l1034 0064                   i1l1018 004A  
+                 i1l1028 0057                   i1l1150 0103                   u110_27 007C  
+                 i1l1144 0100                   i1l1056 0075                   i1l1156 010A  
+                 i1l1190 015C                   i1l1086 00A5                   u111_27 00BA  
+                 i1l1192 015D                   i1l1098 00B5                   i1l1188 015A  
+                 u112_27 012B                   u113_27 0155                   _INTCON 000B  
+   __size_of_eeprom_read 0018     __end_of_eeprom_write 01E8                   saved_w 004E  
+__end_of__initialization 002A          eeprom_read@addr 0016            i1_eeprom_read 0200  
+           __pidataBANK0 0218        eeprom_write@value 000C               __pbssBANK0 001A  
+         ?i1_eeprom_read 000C               __pmaintext 016E               __pintentry 0004  
+  __size_of_eeprom_write 0021               _read_digit 0021               _master_key 0023  
+                __ptext1 01E8                  __ptext2 002C                  __ptext3 0200  
+                __ptext4 01C7             __size_of_isr 0142     end_of_initialization 002A  
+        ??i1_eeprom_read 000C             _eeprom_write 01C7               _w_led_time 0022  
+          ??_eeprom_read 0015           _digits_entered 001D            __pbitbssBANK0 0158  
+    start_initialization 0010              __end_of_isr 016E      __end_of_eeprom_read 0200  
+            __pdataBANK0 0023                ___latbits 0000            __pcstackBANK0 000C  
+            _ch_pres_cnt 001B         eeprom_write@addr 000E                __pnvBANK0 002C  
+            _digit_count 002C                _lock_time 0020        interrupt_function 0004  
+            _eeprom_read 01E8    __end_ofi1_eeprom_read 0218                 _changing 0159  
+      i1eeprom_read@addr 000D                 _but_pres 0158                 _buz_time 001A  
+          __size_of_main 0059                 _sleeping 015B                 intlevel1 0000  
+             _OPTION_REG 0081            ?_eeprom_write 000C             ?_eeprom_read 000C  

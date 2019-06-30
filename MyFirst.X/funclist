@@ -1,0 +1,7 @@
+_main: CODE, 1028 0 30
+__initialization: CODE, 1060 0 8
+___flpack: CODE, 668 0 274
+_isr: CODE, 8 0 158
+___asfladd: CODE, 946 0 78
+___fladd: CODE, 172 0 492
+Total: 1040

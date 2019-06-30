@@ -1,0 +1,608 @@
+
+
+Microchip Technology PIC18 LITE Macro Assembler V1.21 build 54009 
+                                                                                               Sun Jan 19 23:27:24 2014
+
+Microchip Technology Omniscient Code Generator (Lite mode) build 54009
+     1                           	processor	18F458
+     2                           	fnconf	rparam,??,?,0
+     3                           	opt	pw 120
+     4                           	opt	lm
+     5                           	psect	intcode,global,reloc=2,class=CODE,delta=1
+     6                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     7                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1
+     8                           	psect	text0,global,reloc=2,class=CODE,delta=1
+     9                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1
+    10                           	psect	rparam,global,class=COMRAM,space=1,delta=1
+    11  0000                     _ADCON0	set	4034
+    12  0000                     _ADCON1	set	4033
+    13  0000                     _ADRESH	set	4036
+    14  0000                     _ADRESL	set	4035
+    15  0000                     _IPR2	set	4002
+    16  0000                     _LATB	set	3978
+    17  0000                     _LATD	set	3980
+    18  0000                     _PIE2	set	4000
+    19  0000                     _PIR2	set	4001
+    20  0000                     _TRISA	set	3986
+    21  0000                     _TRISB	set	3987
+    22  0000                     _TRISD	set	3989
+    23  0000                     _TRISE	set	3990
+    24  0000                     _ADCS0	set	32278
+    25  0000                     _ADCS1	set	32279
+    26  0000                     _ADCS2	set	32270
+    27  0000                     _ADFM	set	32271
+    28  0000                     _ADIE	set	31982
+    29  0000                     _ADIF	set	31990
+    30  0000                     _ADIP	set	31998
+    31  0000                     _ADON	set	32272
+    32  0000                     _GIE	set	32663
+    33  0000                     _GO_nDONE	set	32274
+    34  0000                     _IPEN	set	32391
+    35  0000                     _PEIE	set	32662
+    36                           
+    37 ;; *************** function _isr *****************
+    38 ;; Defined at:
+    39 ;;		line 7 in file "TestAD.c"
+    40 ;; Parameters:    Size  Location     Type
+    41 ;;		None
+    42 ;; Auto vars:     Size  Location     Type
+    43 ;;		None
+    44 ;; Return value:  Size  Location     Type
+    45 ;;		None               void
+    46 ;; Registers used:
+    47 ;;		wreg, status,2, status,0
+    48 ;; Tracked objects:
+    49 ;;		On entry : 0/0
+    50 ;;		On exit  : 0/0
+    51 ;;		Unchanged: 0/0
+    52 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+    53 ;;      Params:         0       0       0       0       0       0       0
+    54 ;;      Locals:         0       0       0       0       0       0       0
+    55 ;;      Temps:         14       0       0       0       0       0       0
+    56 ;;      Totals:        14       0       0       0       0       0       0
+    57 ;;Total ram usage:       14 bytes
+    58 ;; Hardware stack levels used:    1
+    59 ;; This function calls:
+    60 ;;		Nothing
+    61 ;; This function is called by:
+    62 ;;		Interrupt level 2
+    63 ;; This function uses a non-reentrant model
+    64 ;;
+    65                           
+    66                           	psect	intcode
+    67  000008                     __pintcode:
+    68                           	opt stack 0
+    69                           
+    70                           ; #config settings
+    71  000008                     _isr:
+    72                           	opt stack 30
+    73                           
+    74                           ;incstack = 0
+    75  000008  FFFF               	dw	65535	; errata NOP
+    76  00000A  CFFA F001          	movff	pclath,??_isr
+    77  00000E  CFFB F002          	movff	pclatu,??_isr+1
+    78  000012  CFE9 F003          	movff	fsr0l,??_isr+2
+    79  000016  CFEA F004          	movff	fsr0h,??_isr+3
+    80  00001A  CFE1 F005          	movff	fsr1l,??_isr+4
+    81  00001E  CFE2 F006          	movff	fsr1h,??_isr+5
+    82  000022  CFD9 F007          	movff	fsr2l,??_isr+6
+    83  000026  CFDA F008          	movff	fsr2h,??_isr+7
+    84  00002A  CFF3 F009          	movff	prodl,??_isr+8
+    85  00002E  CFF4 F00A          	movff	prodh,??_isr+9
+    86  000032  CFF6 F00B          	movff	tblptrl,??_isr+10
+    87  000036  CFF7 F00C          	movff	tblptrh,??_isr+11
+    88  00003A  CFF8 F00D          	movff	tblptru,??_isr+12
+    89  00003E  CFF5 F00E          	movff	tablat,??_isr+13
+    90  000042                     
+    91                           ;TestAD.c: 8: if(ADIF)
+    92  000042  AC9E               	btfss	3998,6,c	;volatile
+    93  000044  D001               	goto	i2u1_41
+    94  000046  D001               	goto	i2u1_40
+    95  000048                     i2u1_41:
+    96  000048  D008               	goto	i2l56
+    97  00004A                     i2u1_40:
+    98  00004A                     
+    99                           ;TestAD.c: 9: {
+   100                           ;TestAD.c: 10: ADIF = 0b0;
+   101  00004A  9C9E               	bcf	3998,6,c	;volatile
+   102  00004C                     
+   103                           ;TestAD.c: 11: LATB = ~ADRESH;
+   104  00004C  50C4               	movf	4036,w,c	;volatile
+   105  00004E  0AFF               	xorlw	255
+   106  000050  6E8A               	movwf	3978,c	;volatile
+   107                           
+   108                           ;TestAD.c: 12: LATD = ~ADRESL;
+   109  000052  50C3               	movf	4035,w,c	;volatile
+   110  000054  0AFF               	xorlw	255
+   111  000056  6E8C               	movwf	3980,c	;volatile
+   112  000058  D000               	goto	i2l56
+   113  00005A                     i2l56:
+   114  00005A  C00E  FFF5         	movff	??_isr+13,tablat
+   115  00005E  C00D  FFF8         	movff	??_isr+12,tblptru
+   116  000062  C00C  FFF7         	movff	??_isr+11,tblptrh
+   117  000066  C00B  FFF6         	movff	??_isr+10,tblptrl
+   118  00006A  C00A  FFF4         	movff	??_isr+9,prodh
+   119  00006E  C009  FFF3         	movff	??_isr+8,prodl
+   120  000072  C008  FFDA         	movff	??_isr+7,fsr2h
+   121  000076  C007  FFD9         	movff	??_isr+6,fsr2l
+   122  00007A  C006  FFE2         	movff	??_isr+5,fsr1h
+   123  00007E  C005  FFE1         	movff	??_isr+4,fsr1l
+   124  000082  C004  FFEA         	movff	??_isr+3,fsr0h
+   125  000086  C003  FFE9         	movff	??_isr+2,fsr0l
+   126  00008A  C002  FFFB         	movff	??_isr+1,pclatu
+   127  00008E  C001  FFFA         	movff	??_isr,pclath
+   128  000092  0011               	retfie		f
+   129  000094  FFFF               	dw	65535	; errata NOP
+   130  000096                     __end_of_isr:
+   131                           	opt stack 0
+   132  0000                     pclatu	equ	0xFFB
+   133                           pclath	equ	0xFFA
+   134                           tblptru	equ	0xFF8
+   135                           tblptrh	equ	0xFF7
+   136                           tblptrl	equ	0xFF6
+   137                           tablat	equ	0xFF5
+   138                           prodh	equ	0xFF4
+   139                           prodl	equ	0xFF3
+   140                           fsr0h	equ	0xFEA
+   141                           fsr0l	equ	0xFE9
+   142                           fsr1h	equ	0xFE2
+   143                           fsr1l	equ	0xFE1
+   144                           fsr2h	equ	0xFDA
+   145                           fsr2l	equ	0xFD9
+   146                           
+   147                           	psect	cinit
+   148  0000FE                     __pcinit:
+   149                           	opt stack 0
+   150  0000FE                     start_initialization:
+   151                           	opt stack 0
+   152  0000FE                     __initialization:
+   153                           	opt stack 0
+   154  0000FE                     end_of_initialization:
+   155                           	opt stack 0
+   156  0000FE                     __end_of__initialization:
+   157                           	opt stack 0
+   158  0000FE  0100               	movlb	0
+   159  000100  EF4E  F000         	goto	_main	;jump to C main() function
+   160                           pclatu	equ	0xFFB
+   161                           pclath	equ	0xFFA
+   162                           tblptru	equ	0xFF8
+   163                           tblptrh	equ	0xFF7
+   164                           tblptrl	equ	0xFF6
+   165                           tablat	equ	0xFF5
+   166                           prodh	equ	0xFF4
+   167                           prodl	equ	0xFF3
+   168                           fsr0h	equ	0xFEA
+   169                           fsr0l	equ	0xFE9
+   170                           fsr1h	equ	0xFE2
+   171                           fsr1l	equ	0xFE1
+   172                           fsr2h	equ	0xFDA
+   173                           fsr2l	equ	0xFD9
+   174                           
+   175                           	psect	cstackCOMRAM
+   176  000001                     __pcstackCOMRAM:
+   177                           	opt stack 0
+   178  000001                     ??_isr:
+   179  000001                     
+   180                           ; 0 bytes @ 0x0
+   181  000001                     	ds	14
+   182  00000F                     pclatu	equ	0xFFB
+   183                           pclath	equ	0xFFA
+   184                           tblptru	equ	0xFF8
+   185                           tblptrh	equ	0xFF7
+   186                           tblptrl	equ	0xFF6
+   187                           tablat	equ	0xFF5
+   188                           prodh	equ	0xFF4
+   189                           prodl	equ	0xFF3
+   190                           fsr0h	equ	0xFEA
+   191                           fsr0l	equ	0xFE9
+   192                           fsr1h	equ	0xFE2
+   193                           fsr1l	equ	0xFE1
+   194                           fsr2h	equ	0xFDA
+   195                           fsr2l	equ	0xFD9
+   196                           
+   197                           ; 0 bytes @ 0xE
+   198 ;;
+   199 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   200 ;;
+   201 ;; *************** function _main *****************
+   202 ;; Defined at:
+   203 ;;		line 16 in file "TestAD.c"
+   204 ;; Parameters:    Size  Location     Type
+   205 ;;		None
+   206 ;; Auto vars:     Size  Location     Type
+   207 ;;		None
+   208 ;; Return value:  Size  Location     Type
+   209 ;;		None               void
+   210 ;; Registers used:
+   211 ;;		wreg, status,2, status,0
+   212 ;; Tracked objects:
+   213 ;;		On entry : 0/0
+   214 ;;		On exit  : 0/0
+   215 ;;		Unchanged: 0/0
+   216 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   217 ;;      Params:         0       0       0       0       0       0       0
+   218 ;;      Locals:         0       0       0       0       0       0       0
+   219 ;;      Temps:          0       0       0       0       0       0       0
+   220 ;;      Totals:         0       0       0       0       0       0       0
+   221 ;;Total ram usage:        0 bytes
+   222 ;; Hardware stack levels required when called:    1
+   223 ;; This function calls:
+   224 ;;		Nothing
+   225 ;; This function is called by:
+   226 ;;		Startup code after reset
+   227 ;; This function uses a non-reentrant model
+   228 ;;
+   229                           
+   230                           	psect	text0
+   231  00009A                     __ptext0:
+   232                           	opt stack 0
+   233  00009A  FFFF               	dw	65535	; assembler added errata NOP
+   234  00009C                     _main:
+   235                           	opt stack 30
+   236                           
+   237                           ;incstack = 0
+   238  00009C  FFFF               	dw	65535
+   239                           
+   240                           ;TestAD.c: 17: ADCON1 &= 0xF0;
+   241                           
+   242                           ;incstack = 0
+   243  00009E  0EF0               	movlw	240
+   244  0000A0  16C1               	andwf	4033,f,c	;volatile
+   245                           
+   246                           ;TestAD.c: 18: ADCON1 |= 0x0E;
+   247  0000A2  0E0E               	movlw	14
+   248  0000A4  12C1               	iorwf	4033,f,c	;volatile
+   249                           
+   250                           ;TestAD.c: 19: ADCON0 &= 0xC7;
+   251  0000A6  0EC7               	movlw	199
+   252  0000A8  16C2               	andwf	4034,f,c	;volatile
+   253                           
+   254                           ;TestAD.c: 20: ADCS0 = 0b1;
+   255  0000AA  8CC2               	bsf	4034,6,c	;volatile
+   256                           
+   257                           ;TestAD.c: 21: ADCS1 = 0b0;
+   258  0000AC  9EC2               	bcf	4034,7,c	;volatile
+   259                           
+   260                           ;TestAD.c: 22: ADCS2 = 0b1;
+   261  0000AE  8CC1               	bsf	4033,6,c	;volatile
+   262                           
+   263                           ;TestAD.c: 23: ADFM = 0b0;
+   264  0000B0  9EC1               	bcf	4033,7,c	;volatile
+   265                           
+   266                           ;TestAD.c: 24: TRISA = 0xFF;
+   267  0000B2  6892               	setf	3986,c	;volatile
+   268                           
+   269                           ;TestAD.c: 25: TRISE |= 0x07;
+   270  0000B4  0E07               	movlw	7
+   271  0000B6  1296               	iorwf	3990,f,c	;volatile
+   272                           
+   273                           ;TestAD.c: 26: TRISB = 0x00;
+   274  0000B8  0E00               	movlw	0
+   275  0000BA  6E93               	movwf	3987,c	;volatile
+   276                           
+   277                           ;TestAD.c: 27: TRISD = 0x3F;
+   278  0000BC  0E3F               	movlw	63
+   279  0000BE  6E95               	movwf	3989,c	;volatile
+   280                           
+   281                           ;TestAD.c: 28: ADON = 0b1;
+   282  0000C0  80C2               	bsf	4034,0,c	;volatile
+   283                           
+   284                           ;TestAD.c: 29: IPEN = 0b0;
+   285  0000C2  9ED0               	bcf	4048,7,c	;volatile
+   286                           
+   287                           ;TestAD.c: 30: ADIF = 0b0;
+   288  0000C4  9C9E               	bcf	3998,6,c	;volatile
+   289                           
+   290                           ;TestAD.c: 31: ADIE = 0b1;
+   291  0000C6  8C9D               	bsf	3997,6,c	;volatile
+   292                           
+   293                           ;TestAD.c: 32: ADIP = 0b1;
+   294  0000C8  8C9F               	bsf	3999,6,c	;volatile
+   295                           
+   296                           ;TestAD.c: 33: PIR2 = 0x00;
+   297  0000CA  0E00               	movlw	0
+   298  0000CC  6EA1               	movwf	4001,c	;volatile
+   299                           
+   300                           ;TestAD.c: 34: PIE2 = 0x00;
+   301  0000CE  0E00               	movlw	0
+   302  0000D0  6EA0               	movwf	4000,c	;volatile
+   303                           
+   304                           ;TestAD.c: 35: IPR2 = 0x00;
+   305  0000D2  0E00               	movlw	0
+   306  0000D4  6EA2               	movwf	4002,c	;volatile
+   307                           
+   308                           ;TestAD.c: 36: PEIE = 0b1;
+   309  0000D6  8CF2               	bsf	intcon,6,c	;volatile
+   310                           
+   311                           ;TestAD.c: 37: GIE = 0b1;
+   312  0000D8  8EF2               	bsf	intcon,7,c	;volatile
+   313                           
+   314                           ;TestAD.c: 38: LATB = 0xFF;
+   315  0000DA  688A               	setf	3978,c	;volatile
+   316                           
+   317                           ;TestAD.c: 39: LATD = 0xFF;
+   318  0000DC  688C               	setf	3980,c	;volatile
+   319                           
+   320                           ;TestAD.c: 40: GO_nDONE = 0b0;
+   321  0000DE  94C2               	bcf	4034,2,c	;volatile
+   322  0000E0                     l60:
+   323  0000E0  FFFF               	dw	65535	; assembler added errata NOP
+   324  0000E2  B4C2               	btfsc	4034,2,c	;volatile
+   325  0000E4  D7FD               	goto	l60
+   326                           
+   327                           ;TestAD.c: 44: _delay((unsigned long)((15)*(4000000/4000000.0)));
+   328  0000E6  0E03               	movlw	3
+   329  0000E8                     u37:
+   330  0000E8  FFFF               	dw	65535	; assembler added errata NOP
+   331  0000EA  F000               	nop	
+   332  0000EC  2EE8               	decfsz	wreg,f,c
+   333  0000EE  D7FC               	goto	u37
+   334                           
+   335                           ;TestAD.c: 45: GO_nDONE = 0b1;
+   336  0000F0  84C2               	bsf	4034,2,c	;volatile
+   337  0000F2  D7F6               	goto	l60
+   338  0000F4                     __end_of_main:
+   339                           	opt stack 0
+   340  0000F4  FFFF               	dw	65535	; assembler added errata NOP
+   341                           pclatu	equ	0xFFB
+   342                           pclath	equ	0xFFA
+   343                           tblptru	equ	0xFF8
+   344                           tblptrh	equ	0xFF7
+   345                           tblptrl	equ	0xFF6
+   346                           tablat	equ	0xFF5
+   347                           prodh	equ	0xFF4
+   348                           prodl	equ	0xFF3
+   349                           intcon	equ	0xFF2
+   350                           fsr0h	equ	0xFEA
+   351                           fsr0l	equ	0xFE9
+   352                           wreg	equ	0xFE8
+   353                           fsr1h	equ	0xFE2
+   354                           fsr1l	equ	0xFE1
+   355                           fsr2h	equ	0xFDA
+   356                           fsr2l	equ	0xFD9
+   357                           pclatu	equ	0xFFB
+   358                           pclath	equ	0xFFA
+   359                           tblptru	equ	0xFF8
+   360                           tblptrh	equ	0xFF7
+   361                           tblptrl	equ	0xFF6
+   362                           tablat	equ	0xFF5
+   363                           prodh	equ	0xFF4
+   364                           prodl	equ	0xFF3
+   365                           intcon	equ	0xFF2
+   366                           fsr0h	equ	0xFEA
+   367                           fsr0l	equ	0xFE9
+   368                           wreg	equ	0xFE8
+   369                           fsr1h	equ	0xFE2
+   370                           fsr1l	equ	0xFE1
+   371                           fsr2h	equ	0xFDA
+   372                           fsr2l	equ	0xFD9
+   373                           
+   374                           	psect	rparam
+   375  0000                     pclatu	equ	0xFFB
+   376                           pclath	equ	0xFFA
+   377                           tblptru	equ	0xFF8
+   378                           tblptrh	equ	0xFF7
+   379                           tblptrl	equ	0xFF6
+   380                           tablat	equ	0xFF5
+   381                           prodh	equ	0xFF4
+   382                           prodl	equ	0xFF3
+   383                           intcon	equ	0xFF2
+   384                           fsr0h	equ	0xFEA
+   385                           fsr0l	equ	0xFE9
+   386                           wreg	equ	0xFE8
+   387                           fsr1h	equ	0xFE2
+   388                           fsr1l	equ	0xFE1
+   389                           fsr2h	equ	0xFDA
+   390                           fsr2l	equ	0xFD9
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         0
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM           95     14      14
+    BANK0           160      0       0
+    BANK1           256      0       0
+    BANK2           256      0       0
+    BANK3           256      0       0
+    BANK4           256      0       0
+    BANK5           256      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMRAM
+
+    None.
+
+Critical Paths under _isr in COMRAM
+
+    None.
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _isr in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _isr in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _isr in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _isr in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _isr in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Critical Paths under _isr in BANK5
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 0     0      0       0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 0
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (1) _isr                                                 14    14      0       0
+                                              0 COMRAM    14    14      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 1
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+
+ _isr (ROOT)
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMRAM           5F      0       0       0        0.0%
+EEDATA             100      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+COMRAM              5F      E       E       1       14.7%
+STACK                0      0       0       2        0.0%
+BITBANK0            A0      0       0       3        0.0%
+BANK0               A0      0       0       4        0.0%
+BITBANK1           100      0       0       5        0.0%
+BANK1              100      0       0       6        0.0%
+BITBANK2           100      0       0       7        0.0%
+BANK2              100      0       0       8        0.0%
+ABS                  0      0       0       9        0.0%
+BITBANK3           100      0       0      10        0.0%
+BANK3              100      0       0      11        0.0%
+BITBANK4           100      0       0      12        0.0%
+BANK4              100      0       0      13        0.0%
+BITBANK5           100      0       0      14        0.0%
+BANK5              100      0       0      15        0.0%
+BIGRAM             5FF      0       0      16        0.0%
+DATA                 0      0       0      17        0.0%
+BITSFR_1             0      0       0      40        0.0%
+SFR_1                0      0       0      40        0.0%
+BITSFR               0      0       0      40        0.0%
+SFR                  0      0       0      40        0.0%
+
+
+Microchip Technology PIC18 Macro Assembler V1.21 build 54009 
+Symbol Table                                                                                   Sun Jan 19 23:27:24 2014
+
+                                                           l60 00E0  
+                                                           u37 00E8  
+                                                  __CFG_OSC$HS 000000  
+                                                          _GIE 007F97  
+                                                          _isr 0008  
+                                                          wreg 000FE8  
+                                                 __CFG_WDT$OFF 000000  
+                                                         _ADIE 007CEE  
+                                                         _ADIF 007CF6  
+                                                         _ADFM 007E0F  
+                                                         ?_isr 0001  
+                                                         _ADIP 007CFE  
+                                                         _ADON 007E10  
+                                                         _LATB 000F8A  
+                                                         _LATD 000F8C  
+                                                         _IPR2 000FA2  
+                                                         _IPEN 007E87  
+                                                         _PIE2 000FA0  
+                                                         _PEIE 007F96  
+                                                         _PIR2 000FA1  
+                                                         i2l55 005A  
+                                                         i2l56 005A  
+                                                         _main 009C  
+                                                         fsr0h 000FEA  
+                                                         fsr1h 000FE2  
+                                                         fsr0l 000FE9  
+                                                         fsr2h 000FDA  
+                                                         fsr1l 000FE1  
+                                                         fsr2l 000FD9  
+                                                         pclat 000FFA  
+                                                         prodh 000FF4  
+                                                         prodl 000FF3  
+                                                         start 0096  
+                                                        ??_isr 0001  
+                                                        _ADCS0 007E16  
+                                                        _ADCS1 007E17  
+                                                        _ADCS2 007E0E  
+                                                        ?_main 0001  
+                                                        i2l641 0042  
+                                                        i2l643 004A  
+                                                        i2l645 004C  
+                                                        _TRISA 000F92  
+                                                        _TRISB 000F93  
+                                                        _TRISD 000F95  
+                                                        _TRISE 000F96  
+                                                        tablat 000FF5  
+                                              __initialization 00FE  
+                                                 __end_of_main 00F4  
+                                                       ??_main 000F  
+                                                __activetblptr 000000  
+                                                       _ADCON0 000FC2  
+                                                       _ADCON1 000FC1  
+                                                       _ADRESH 000FC4  
+                                                       _ADRESL 000FC3  
+                                                       i2u1_40 004A  
+                                                       i2u1_41 0048  
+                                                       tblptrh 000FF7  
+                                                       tblptrl 000FF6  
+                                                       tblptru 000FF8  
+                                                   __accesstop 0060  
+                                      __end_of__initialization 00FE  
+                                               __pcstackCOMRAM 0001  
+                                                      __Hparam 0000  
+                                                      __Lparam 0000  
+                                                      __pcinit 00FE  
+                                                      __ramtop 0600  
+                                                      __ptext0 009A  
+                                                 __size_of_isr 008E  
+                                         end_of_initialization 00FE  
+                                          start_initialization 00FE  
+                                                  __end_of_isr 0096  
+                                                    __pintcode 0008  
+                                                     _GO_nDONE 007E12  
+                                                     __Hrparam 0000  
+                                                     __Lrparam 0000  
+                                                __size_of_main 0058  
+                                                     intlevel2 00FA  

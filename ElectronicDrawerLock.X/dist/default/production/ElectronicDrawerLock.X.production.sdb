@@ -1,0 +1,151 @@
+[p LITE_MODE AUTOSTATIC PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F84A ]
+[d frameptr 6 ]
+"62 /opt/microchip/xc8/v1.36/sources/common/float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 /opt/microchip/xc8/v1.36/sources/common/ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"6 /opt/microchip/xc8/v1.36/sources/pic/eeprom.c
+[v _eecpymem eecpymem `(v  1 e 1 0 ]
+"39
+[v _memcpyee memcpyee `(v  1 e 1 0 ]
+"6 /opt/microchip/xc8/v1.36/sources/pic/eeread.c
+[v _eeprom_read eeprom_read `(uc  1 e 1 0 ]
+[v i1_eeprom_read eeprom_read `(uc  1 e 1 0 ]
+"6 /opt/microchip/xc8/v1.36/sources/pic/eewrite.c
+[v _eeprom_write eeprom_write `(v  1 e 1 0 ]
+"40 /home/atom/Documents/Work/MyWork/ECS/ElectronicDrawerLock.X/electronic_drawer_lock.c
+[v _isr isr `II(v  1 e 1 0 ]
+"306
+[v _main main `(v  1 e 1 0 ]
+"160 /opt/microchip/xc8/v1.36/include/pic16f84a.h
+[v _PORTA PORTA `VEuc  1 e 1 @5 ]
+"203
+[v _PORTB PORTB `VEuc  1 e 1 @6 ]
+"264
+[v _EEDATA EEDATA `VEuc  1 e 1 @8 ]
+"270
+[v _EEADR EEADR `VEuc  1 e 1 @9 ]
+"295
+[v _INTCON INTCON `VEuc  1 e 1 @11 ]
+"372
+[v _OPTION_REG OPTION_REG `VEuc  1 e 1 @129 ]
+"441
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
+"484
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
+"545
+[v _EECON1 EECON1 `VEuc  1 e 1 @136 ]
+"588
+[v _EECON2 EECON2 `VEuc  1 e 1 @137 ]
+"600
+[v _CARRY CARRY `VEb  1 e 0 @24 ]
+"604
+[v _EEIE EEIE `VEb  1 e 0 @94 ]
+"608
+[v _GIE GIE `VEb  1 e 0 @95 ]
+"626
+[v _RA0 RA0 `VEb  1 e 0 @40 ]
+"628
+[v _RA1 RA1 `VEb  1 e 0 @41 ]
+"630
+[v _RA2 RA2 `VEb  1 e 0 @42 ]
+"632
+[v _RA3 RA3 `VEb  1 e 0 @43 ]
+"636
+[v _RB0 RB0 `VEb  1 e 0 @48 ]
+"638
+[v _RB1 RB1 `VEb  1 e 0 @49 ]
+"640
+[v _RB2 RB2 `VEb  1 e 0 @50 ]
+"642
+[v _RB3 RB3 `VEb  1 e 0 @51 ]
+"644
+[v _RB4 RB4 `VEb  1 e 0 @52 ]
+"646
+[v _RB5 RB5 `VEb  1 e 0 @53 ]
+"648
+[v _RB6 RB6 `VEb  1 e 0 @54 ]
+"650
+[v _RB7 RB7 `VEb  1 e 0 @55 ]
+"654
+[v _RBIF RBIF `VEb  1 e 0 @88 ]
+"656
+[v _RD RD `VEb  1 e 0 @1088 ]
+"666
+[v _T0IF T0IF `VEb  1 e 0 @90 ]
+"700
+[v _WR WR `VEb  1 e 0 @1089 ]
+"702
+[v _WREN WREN `VEb  1 e 0 @1090 ]
+"22 /home/atom/Documents/Work/MyWork/ECS/ElectronicDrawerLock.X/electronic_drawer_lock.c
+[v _changing changing `VEb  1 e 0 0 ]
+"23
+[v _wrong wrong `VEb  1 e 0 0 ]
+"24
+[v _open open `VEb  1 e 0 0 ]
+"25
+[v _sleeping sleeping `VEb  1 e 0 0 ]
+"26
+[v _but_pres but_pres `VEb  1 e 0 0 ]
+"27
+[v _digit_count digit_count `VEuc  1 e 1 0 ]
+"28
+[v _digits_entered digits_entered `VEuc  1 e 1 0 ]
+"29
+[v _digit digit `VEuc  1 e 1 0 ]
+"30
+[v _read_digit read_digit `VEuc  1 e 1 0 ]
+"31
+[v _last_pres_time_l last_pres_time_l `VEuc  1 e 1 0 ]
+"32
+[v _last_pres_time_h last_pres_time_h `VEuc  1 e 1 0 ]
+"33
+[v _w_led_time w_led_time `VEuc  1 e 1 0 ]
+"34
+[v _buz_time buz_time `VEuc  1 e 1 0 ]
+"35
+[v _lock_time lock_time `VEuc  1 e 1 0 ]
+"36
+[v _ch_pres_cnt ch_pres_cnt `VEuc  1 e 1 0 ]
+"37
+[v _master_key master_key `VE[8]uc  1 e 8 0 ]
+"306
+[v _main main `(v  1 e 1 0 ]
+{
+"393
+} 0
+"6 /opt/microchip/xc8/v1.36/sources/pic/eeread.c
+[v _eeprom_read eeprom_read `(uc  1 e 1 0 ]
+{
+[v eeprom_read@addr addr `uc  1 a 1 wreg ]
+[v eeprom_read@addr addr `uc  1 a 1 wreg ]
+"9
+[v eeprom_read@addr addr `uc  1 a 1 10 ]
+"12
+} 0
+"40 /home/atom/Documents/Work/MyWork/ECS/ElectronicDrawerLock.X/electronic_drawer_lock.c
+[v _isr isr `II(v  1 e 1 0 ]
+{
+"303
+} 0
+"6 /opt/microchip/xc8/v1.36/sources/pic/eeread.c
+[v i1_eeprom_read eeprom_read `(uc  1 e 1 0 ]
+{
+[v i1eeprom_read@addr addr `uc  1 a 1 wreg ]
+[v i1eeprom_read@addr addr `uc  1 a 1 wreg ]
+"9
+[v i1eeprom_read@addr addr `uc  1 a 1 1 ]
+"12
+} 0
+"6 /opt/microchip/xc8/v1.36/sources/pic/eewrite.c
+[v _eeprom_write eeprom_write `(v  1 e 1 0 ]
+{
+[v eeprom_write@addr addr `uc  1 a 1 wreg ]
+[v eeprom_write@addr addr `uc  1 a 1 wreg ]
+[v eeprom_write@value value `uc  1 p 1 0 ]
+[v eeprom_write@addr addr `uc  1 a 1 2 ]
+"9
+} 0

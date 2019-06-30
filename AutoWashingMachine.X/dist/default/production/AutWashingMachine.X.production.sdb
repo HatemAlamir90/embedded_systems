@@ -1,0 +1,248 @@
+[p LITE_MODE AUTOSTATIC PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F877A ]
+[d frameptr 6 ]
+"35 /home/leprince/Documents/Work/MyWork/ECS/AutWashingMachine.X/auto_washing_machine.c
+[e E1095 . `c
+BEGINNING -2
+SUSPENSION -1
+A 0
+B 1
+C 2
+D 3
+F1 4
+F2 5
+Gs 6
+Gr 7
+H 8
+J 9
+K 10
+L 11
+M 12
+N 13
+P 14
+Q 15
+NO_SPIN 16
+HALF_LOAD 17
+]
+"62 /opt/microchip/xc8/v1.35/sources/common/float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 /opt/microchip/xc8/v1.35/sources/common/ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"6 /opt/microchip/xc8/v1.35/sources/pic/eeprom.c
+[v _eecpymem eecpymem `(v  1 e 0 0 ]
+"24
+[v _memcpyee memcpyee `(v  1 e 0 0 ]
+"70 /home/leprince/Documents/Work/MyWork/ECS/AutWashingMachine.X/auto_washing_machine.c
+[v _main main `(v  1 e 0 0 ]
+"189
+[v _isr isr `II(v  1 e 0 0 ]
+"500
+[v _terminate terminate `(v  1 e 0 0 ]
+[v i1_terminate terminate `(v  1 e 0 0 ]
+"550
+[v _resume resume `(v  1 e 0 0 ]
+"581
+[v _state_jump state_jump `(v  1 e 0 0 ]
+"617
+[v _begin_current_state begin_current_state `(v  1 e 0 0 ]
+"655
+[v _suspend suspend `(v  1 e 0 0 ]
+"55 /opt/microchip/xc8/v1.35/include/pic16f877a.h
+[v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
+"270
+[v _PORTC PORTC `VEuc  1 e 1 @7 ]
+"442
+[v _INTCON INTCON `VEuc  1 e 1 @11 ]
+"519
+[v _PIR1 PIR1 `VEuc  1 e 1 @12 ]
+"580
+[v _PIR2 PIR2 `VEuc  1 e 1 @13 ]
+"625
+[v _TMR1L TMR1L `VEuc  1 e 1 @14 ]
+"631
+[v _TMR1H TMR1H `VEuc  1 e 1 @15 ]
+"637
+[v _T1CON T1CON `VEuc  1 e 1 @16 ]
+"711
+[v _TMR2 TMR2 `VEuc  1 e 1 @17 ]
+"717
+[v _T2CON T2CON `VEuc  1 e 1 @18 ]
+"880
+[v _CCP1CON CCP1CON `VEuc  1 e 1 @23 ]
+"1061
+[v _CCP2CON CCP2CON `VEuc  1 e 1 @29 ]
+"1124
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @31 ]
+"1219
+[v _OPTION_REG OPTION_REG `VEuc  1 e 1 @129 ]
+"1288
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
+"1337
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
+"1398
+[v _TRISC TRISC `VEuc  1 e 1 @135 ]
+"1459
+[v _TRISD TRISD `VEuc  1 e 1 @136 ]
+"1520
+[v _TRISE TRISE `VEuc  1 e 1 @137 ]
+"1576
+[v _PIE1 PIE1 `VEuc  1 e 1 @140 ]
+"1637
+[v _PIE2 PIE2 `VEuc  1 e 1 @141 ]
+"1770
+[v _PR2 PR2 `VEuc  1 e 1 @146 ]
+"2036
+[v _CMCON CMCON `VEuc  1 e 1 @156 ]
+"2105
+[v _CVRCON CVRCON `VEuc  1 e 1 @157 ]
+"2175
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @159 ]
+"2443
+[v _GIE GIE `VEb  1 e 0 @95 ]
+"2467
+[v _INTF INTF `VEb  1 e 0 @89 ]
+"2501
+[v _RA0 RA0 `VEb  1 e 0 @40 ]
+"2503
+[v _RA1 RA1 `VEb  1 e 0 @41 ]
+"2505
+[v _RA2 RA2 `VEb  1 e 0 @42 ]
+"2515
+[v _RB1 RB1 `VEb  1 e 0 @49 ]
+"2517
+[v _RB2 RB2 `VEb  1 e 0 @50 ]
+"2519
+[v _RB3 RB3 `VEb  1 e 0 @51 ]
+"2521
+[v _RB4 RB4 `VEb  1 e 0 @52 ]
+"2523
+[v _RB5 RB5 `VEb  1 e 0 @53 ]
+"2525
+[v _RB6 RB6 `VEb  1 e 0 @54 ]
+"2527
+[v _RB7 RB7 `VEb  1 e 0 @55 ]
+"2531
+[v _RBIF RBIF `VEb  1 e 0 @88 ]
+"2533
+[v _RC0 RC0 `VEb  1 e 0 @56 ]
+"2535
+[v _RC1 RC1 `VEb  1 e 0 @57 ]
+"2537
+[v _RC2 RC2 `VEb  1 e 0 @58 ]
+"2563
+[v _RD0 RD0 `VEb  1 e 0 @64 ]
+"2565
+[v _RD1 RD1 `VEb  1 e 0 @65 ]
+"2571
+[v _RD4 RD4 `VEb  1 e 0 @68 ]
+"2573
+[v _RD5 RD5 `VEb  1 e 0 @69 ]
+"2575
+[v _RD6 RD6 `VEb  1 e 0 @70 ]
+"2577
+[v _RD7 RD7 `VEb  1 e 0 @71 ]
+"2579
+[v _RE0 RE0 `VEb  1 e 0 @72 ]
+"2581
+[v _RE1 RE1 `VEb  1 e 0 @73 ]
+"2605
+[v _SPEN SPEN `VEb  1 e 0 @199 ]
+"2609
+[v _SSPEN SSPEN `VEb  1 e 0 @165 ]
+"2657
+[v _TMR1IF TMR1IF `VEb  1 e 0 @96 ]
+"2659
+[v _TMR1ON TMR1ON `VEb  1 e 0 @128 ]
+"2663
+[v _TMR2IF TMR2IF `VEb  1 e 0 @97 ]
+"2665
+[v _TMR2ON TMR2ON `VEb  1 e 0 @146 ]
+"2733
+[v _TRISD7 TRISD7 `VEb  1 e 0 @1095 ]
+"35 /home/leprince/Documents/Work/MyWork/ECS/AutWashingMachine.X/auto_washing_machine.c
+[v _cur_state cur_state `E1095  1 e 1 0 ]
+[v _prev_state prev_state `E1095  1 e 1 0 ]
+[v _back_cur_state back_cur_state `E1095  1 e 1 0 ]
+[v _skip_beg skip_beg `E1095  1 e 1 0 ]
+[v _skip_end skip_end `E1095  1 e 1 0 ]
+[v _temp temp `E1095  1 e 1 0 ]
+"38
+[v _state_rot_timeout state_rot_timeout `[16]uc  1 e 16 0 ]
+"40
+[v _state_led state_led `[16]us  1 e 32 0 ]
+"41
+[v _seconds seconds `uc  1 e 1 0 ]
+"42
+[v _minutes minutes `uc  1 e 1 0 ]
+"43
+[v _sol_op_time sol_op_time `uc  1 e 1 0 ]
+"44
+[v _dpump_op_time dpump_op_time `uc  1 e 1 0 ]
+"45
+[v _rot_spin_time rot_spin_time `uc  1 e 1 0 ]
+"46
+[v _rot_spin_timeout rot_spin_timeout `uc  1 e 1 0 ]
+"48
+[v _rot_dir_time rot_dir_time `uc  1 e 1 0 ]
+"50
+[v _door_open door_open `b  1 e 0 0 ]
+"51
+[v _spin spin `b  1 e 0 0 ]
+"52
+[v _half_load half_load `b  1 e 0 0 ]
+"56
+[v _dp_on dp_on `b  1 e 0 0 ]
+"57
+[v _mot_rot mot_rot `b  1 e 0 0 ]
+"58
+[v _mot_active mot_active `b  1 e 0 0 ]
+"59
+[v _ht_on ht_on `b  1 e 0 0 ]
+"60
+[v _sol1_on sol1_on `b  1 e 0 0 ]
+"61
+[v _sol2_on sol2_on `b  1 e 0 0 ]
+"62
+[v _sol3_on sol3_on `b  1 e 0 0 ]
+"70
+[v _main main `(v  1 e 0 0 ]
+{
+"182
+} 0
+"500
+[v _terminate terminate `(v  1 e 0 0 ]
+{
+"546
+} 0
+"189
+[v _isr isr `II(v  1 e 0 0 ]
+{
+"495
+} 0
+"500
+[v i1_terminate terminate `(v  1 e 0 0 ]
+{
+"546
+} 0
+"655
+[v _suspend suspend `(v  1 e 0 0 ]
+{
+"666
+} 0
+"581
+[v _state_jump state_jump `(v  1 e 0 0 ]
+{
+"612
+} 0
+"550
+[v _resume resume `(v  1 e 0 0 ]
+{
+"576
+} 0
+"617
+[v _begin_current_state begin_current_state `(v  1 e 0 0 ]
+{
+"649
+} 0

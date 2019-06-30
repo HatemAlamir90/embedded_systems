@@ -1,0 +1,7 @@
+__stringtab: STRING, 145 0 6
+_main: CODE, 113 0 32
+__initialization: CODE, 21 0 0
+_Add_Low: STRING, 152 0 1
+_isr: CODE, 25 0 88
+_Add_High: STRING, 151 0 1
+Total: 128

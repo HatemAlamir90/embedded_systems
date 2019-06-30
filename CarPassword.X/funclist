@@ -1,0 +1,19 @@
+_init: CODE, 3605 0 491
+_chk_bf: CODE, 5826 0 54
+_read: CODE, 62 0 994
+_main: CODE, 6069 0 75
+i1_chk_bf: CODE, 5776 0 50
+___lmul: CODE, 5880 0 63
+__initialization: CODE, 21 0 37
+_spec_func1: CODE, 5692 0 2
+_spec_func2: CODE, 2445 0 347
+_spec_func3: CODE, 5943 0 63
+_spec_func4: CODE, 2048 0 2
+_isr: CODE, 3154 0 451
+i1_init: CODE, 2105 0 340
+_disp_off: CODE, 2050 0 55
+_keypad_read: CODE, 1056 0 962
+_eeprom_read: CODE, 5711 0 27
+_eeprom_write: CODE, 5738 0 38
+_disp: CODE, 2792 0 362
+Total: 4413

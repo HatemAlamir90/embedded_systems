@@ -1,0 +1,577 @@
+
+
+Microchip Technology PIC18 LITE Macro Assembler V1.21 build 54009 
+                                                                                               Tue Jan 14 22:04:52 2014
+
+Microchip Technology Omniscient Code Generator (Lite mode) build 54009
+     1                           	processor	18F458
+     2                           	fnconf	rparam,??,?,0
+     3                           	opt	pw 120
+     4                           	opt	lm
+     5                           	psect	intcode,global,reloc=2,class=CODE,delta=1
+     6                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     7                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1
+     8                           	psect	text0,global,reloc=2,class=CODE,delta=1
+     9                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1
+    10                           	psect	rparam,global,class=COMRAM,space=1,delta=1
+    11  0000                     _LATD	set	3980
+    12  0000                     _RCREG	set	4014
+    13  0000                     _SPBRG	set	4015
+    14  0000                     _TXREG	set	4013
+    15  0000                     _ADDEN	set	32091
+    16  0000                     _BRGH	set	32098
+    17  0000                     _CREN	set	32092
+    18  0000                     _GIE	set	32663
+    19  0000                     _IPEN	set	32391
+    20  0000                     _OERR	set	32089
+    21  0000                     _PEIE	set	32662
+    22  0000                     _RCIE	set	31981
+    23  0000                     _RCIF	set	31989
+    24  0000                     _RX9	set	32094
+    25  0000                     _SPEN	set	32095
+    26  0000                     _SYNC	set	32100
+    27  0000                     _TX9	set	32102
+    28  0000                     _TXEN	set	32101
+    29  0000                     _TXIE	set	31980
+    30                           
+    31 ;; *************** function _isr *****************
+    32 ;; Defined at:
+    33 ;;		line 6 in file "TestRS232.c"
+    34 ;; Parameters:    Size  Location     Type
+    35 ;;		None
+    36 ;; Auto vars:     Size  Location     Type
+    37 ;;  rcb             1   14[COMRAM] volatile unsigned char 
+    38 ;; Return value:  Size  Location     Type
+    39 ;;		None               void
+    40 ;; Registers used:
+    41 ;;		None
+    42 ;; Tracked objects:
+    43 ;;		On entry : 0/0
+    44 ;;		On exit  : 0/0
+    45 ;;		Unchanged: 0/0
+    46 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+    47 ;;      Params:         0       0       0       0       0       0       0
+    48 ;;      Locals:         1       0       0       0       0       0       0
+    49 ;;      Temps:         14       0       0       0       0       0       0
+    50 ;;      Totals:        15       0       0       0       0       0       0
+    51 ;;Total ram usage:       15 bytes
+    52 ;; Hardware stack levels used:    1
+    53 ;; This function calls:
+    54 ;;		Nothing
+    55 ;; This function is called by:
+    56 ;;		Interrupt level 2
+    57 ;; This function uses a non-reentrant model
+    58 ;;
+    59                           
+    60                           	psect	intcode
+    61  000008                     __pintcode:
+    62                           	opt stack 0
+    63                           
+    64                           ; #config settings
+    65  000008                     _isr:
+    66                           	opt stack 30
+    67                           
+    68                           ;incstack = 0
+    69  000008  FFFF               	dw	65535	; errata NOP
+    70  00000A  CFFA F001          	movff	pclath,??_isr
+    71  00000E  CFFB F002          	movff	pclatu,??_isr+1
+    72  000012  CFE9 F003          	movff	fsr0l,??_isr+2
+    73  000016  CFEA F004          	movff	fsr0h,??_isr+3
+    74  00001A  CFE1 F005          	movff	fsr1l,??_isr+4
+    75  00001E  CFE2 F006          	movff	fsr1h,??_isr+5
+    76  000022  CFD9 F007          	movff	fsr2l,??_isr+6
+    77  000026  CFDA F008          	movff	fsr2h,??_isr+7
+    78  00002A  CFF3 F009          	movff	prodl,??_isr+8
+    79  00002E  CFF4 F00A          	movff	prodh,??_isr+9
+    80  000032  CFF6 F00B          	movff	tblptrl,??_isr+10
+    81  000036  CFF7 F00C          	movff	tblptrh,??_isr+11
+    82  00003A  CFF8 F00D          	movff	tblptru,??_isr+12
+    83  00003E  CFF5 F00E          	movff	tablat,??_isr+13
+    84  000042                     
+    85                           ;TestRS232.c: 7: volatile unsigned char rcb;
+    86                           ;TestRS232.c: 8: if(RCIF)
+    87  000042  AA9E               	btfss	3998,5,c	;volatile
+    88  000044  D001               	goto	i2u1_41
+    89  000046  D001               	goto	i2u1_40
+    90  000048                     i2u1_41:
+    91  000048  D015               	goto	i2l44
+    92  00004A                     i2u1_40:
+    93  00004A                     
+    94                           ;TestRS232.c: 9: {
+    95                           ;TestRS232.c: 10: RCIF = 0b0;
+    96  00004A  9A9E               	bcf	3998,5,c	;volatile
+    97                           
+    98                           ;TestRS232.c: 11: rcb = RCREG;
+    99  00004C  CFAE F00F          	movff	4014,isr@rcb	;volatile
+   100                           
+   101                           ;TestRS232.c: 12: LATD = rcb;
+   102  000050  C00F  FF8C         	movff	isr@rcb,3980	;volatile
+   103                           
+   104                           ;TestRS232.c: 13: if(OERR)
+   105  000054  A2AB               	btfss	4011,1,c	;volatile
+   106  000056  D001               	goto	i2u2_41
+   107  000058  D001               	goto	i2u2_40
+   108  00005A                     i2u2_41:
+   109  00005A  D001               	goto	i2l42
+   110  00005C                     i2u2_40:
+   111  00005C                     
+   112                           ;TestRS232.c: 14: CREN = 0b0;
+   113  00005C  98AB               	bcf	4011,4,c	;volatile
+   114  00005E                     i2l42:
+   115                           
+   116                           ;TestRS232.c: 15: TX9 = 0b0;
+   117  00005E  9CAC               	bcf	4012,6,c	;volatile
+   118                           
+   119                           ;TestRS232.c: 16: TXEN = 0b1;
+   120  000060  8AAC               	bsf	4012,5,c	;volatile
+   121                           
+   122                           ;TestRS232.c: 17: TXREG = rcb;
+   123  000062  C00F  FFAD         	movff	isr@rcb,4013	;volatile
+   124                           
+   125                           ;TestRS232.c: 18: if(!CREN)
+   126  000066  B8AB               	btfsc	4011,4,c	;volatile
+   127  000068  D001               	goto	i2u3_41
+   128  00006A  D001               	goto	i2u3_40
+   129  00006C                     i2u3_41:
+   130  00006C  D003               	goto	i2l44
+   131  00006E                     i2u3_40:
+   132  00006E                     
+   133                           ;TestRS232.c: 19: CREN = 0b1;
+   134  00006E  88AB               	bsf	4011,4,c	;volatile
+   135  000070  D001               	goto	i2l44
+   136  000072  D000               	goto	i2l44
+   137  000074                     i2l44:
+   138  000074  C00E  FFF5         	movff	??_isr+13,tablat
+   139  000078  C00D  FFF8         	movff	??_isr+12,tblptru
+   140  00007C  C00C  FFF7         	movff	??_isr+11,tblptrh
+   141  000080  C00B  FFF6         	movff	??_isr+10,tblptrl
+   142  000084  C00A  FFF4         	movff	??_isr+9,prodh
+   143  000088  C009  FFF3         	movff	??_isr+8,prodl
+   144  00008C  C008  FFDA         	movff	??_isr+7,fsr2h
+   145  000090  C007  FFD9         	movff	??_isr+6,fsr2l
+   146  000094  C006  FFE2         	movff	??_isr+5,fsr1h
+   147  000098  C005  FFE1         	movff	??_isr+4,fsr1l
+   148  00009C  C004  FFEA         	movff	??_isr+3,fsr0h
+   149  0000A0  C003  FFE9         	movff	??_isr+2,fsr0l
+   150  0000A4  C002  FFFB         	movff	??_isr+1,pclatu
+   151  0000A8  C001  FFFA         	movff	??_isr,pclath
+   152  0000AC  0011               	retfie		f
+   153  0000AE  FFFF               	dw	65535	; errata NOP
+   154  0000B0                     __end_of_isr:
+   155                           	opt stack 0
+   156  0000                     pclatu	equ	0xFFB
+   157                           pclath	equ	0xFFA
+   158                           tblptru	equ	0xFF8
+   159                           tblptrh	equ	0xFF7
+   160                           tblptrl	equ	0xFF6
+   161                           tablat	equ	0xFF5
+   162                           prodh	equ	0xFF4
+   163                           prodl	equ	0xFF3
+   164                           fsr0h	equ	0xFEA
+   165                           fsr0l	equ	0xFE9
+   166                           fsr1h	equ	0xFE2
+   167                           fsr1l	equ	0xFE1
+   168                           fsr2h	equ	0xFDA
+   169                           fsr2l	equ	0xFD9
+   170                           
+   171                           	psect	cinit
+   172  0000E0                     __pcinit:
+   173                           	opt stack 0
+   174  0000E0                     start_initialization:
+   175                           	opt stack 0
+   176  0000E0                     __initialization:
+   177                           	opt stack 0
+   178  0000E0                     end_of_initialization:
+   179                           	opt stack 0
+   180  0000E0                     __end_of__initialization:
+   181                           	opt stack 0
+   182  0000E0  0100               	movlb	0
+   183  0000E2  EF5B  F000         	goto	_main	;jump to C main() function
+   184                           pclatu	equ	0xFFB
+   185                           pclath	equ	0xFFA
+   186                           tblptru	equ	0xFF8
+   187                           tblptrh	equ	0xFF7
+   188                           tblptrl	equ	0xFF6
+   189                           tablat	equ	0xFF5
+   190                           prodh	equ	0xFF4
+   191                           prodl	equ	0xFF3
+   192                           fsr0h	equ	0xFEA
+   193                           fsr0l	equ	0xFE9
+   194                           fsr1h	equ	0xFE2
+   195                           fsr1l	equ	0xFE1
+   196                           fsr2h	equ	0xFDA
+   197                           fsr2l	equ	0xFD9
+   198                           
+   199                           	psect	cstackCOMRAM
+   200  000001                     __pcstackCOMRAM:
+   201                           	opt stack 0
+   202  000001                     ??_isr:
+   203  000001                     
+   204                           ; 0 bytes @ 0x0
+   205  000001                     	ds	14
+   206  00000F                     isr@rcb:
+   207                           	opt stack 0
+   208                           
+   209                           ; 1 bytes @ 0xE
+   210  00000F                     	ds	1
+   211  000010                     pclatu	equ	0xFFB
+   212                           pclath	equ	0xFFA
+   213                           tblptru	equ	0xFF8
+   214                           tblptrh	equ	0xFF7
+   215                           tblptrl	equ	0xFF6
+   216                           tablat	equ	0xFF5
+   217                           prodh	equ	0xFF4
+   218                           prodl	equ	0xFF3
+   219                           fsr0h	equ	0xFEA
+   220                           fsr0l	equ	0xFE9
+   221                           fsr1h	equ	0xFE2
+   222                           fsr1l	equ	0xFE1
+   223                           fsr2h	equ	0xFDA
+   224                           fsr2l	equ	0xFD9
+   225                           
+   226                           ; 0 bytes @ 0xF
+   227 ;;
+   228 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   229 ;;
+   230 ;; *************** function _main *****************
+   231 ;; Defined at:
+   232 ;;		line 23 in file "TestRS232.c"
+   233 ;; Parameters:    Size  Location     Type
+   234 ;;		None
+   235 ;; Auto vars:     Size  Location     Type
+   236 ;;		None
+   237 ;; Return value:  Size  Location     Type
+   238 ;;		None               void
+   239 ;; Registers used:
+   240 ;;		wreg, status,2
+   241 ;; Tracked objects:
+   242 ;;		On entry : 0/0
+   243 ;;		On exit  : 0/0
+   244 ;;		Unchanged: 0/0
+   245 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   246 ;;      Params:         0       0       0       0       0       0       0
+   247 ;;      Locals:         0       0       0       0       0       0       0
+   248 ;;      Temps:          0       0       0       0       0       0       0
+   249 ;;      Totals:         0       0       0       0       0       0       0
+   250 ;;Total ram usage:        0 bytes
+   251 ;; Hardware stack levels required when called:    1
+   252 ;; This function calls:
+   253 ;;		Nothing
+   254 ;; This function is called by:
+   255 ;;		Startup code after reset
+   256 ;; This function uses a non-reentrant model
+   257 ;;
+   258                           
+   259                           	psect	text0
+   260  0000B4                     __ptext0:
+   261                           	opt stack 0
+   262  0000B4  FFFF               	dw	65535	; assembler added errata NOP
+   263  0000B6                     _main:
+   264                           	opt stack 30
+   265                           
+   266                           ;incstack = 0
+   267  0000B6  FFFF               	dw	65535
+   268                           
+   269                           ;TestRS232.c: 24: SPBRG = 0x19;
+   270                           
+   271                           ;incstack = 0
+   272  0000B8  0E19               	movlw	25
+   273  0000BA  6EAF               	movwf	4015,c	;volatile
+   274                           
+   275                           ;TestRS232.c: 25: BRGH = 0b1;
+   276  0000BC  84AC               	bsf	4012,2,c	;volatile
+   277                           
+   278                           ;TestRS232.c: 26: SPEN = 0b1;
+   279  0000BE  8EAB               	bsf	4011,7,c	;volatile
+   280                           
+   281                           ;TestRS232.c: 27: SYNC = 0b0;
+   282  0000C0  98AC               	bcf	4012,4,c	;volatile
+   283                           
+   284                           ;TestRS232.c: 28: IPEN = 0b0;
+   285  0000C2  9ED0               	bcf	4048,7,c	;volatile
+   286                           
+   287                           ;TestRS232.c: 29: GIE = 0b1;
+   288  0000C4  8EF2               	bsf	intcon,7,c	;volatile
+   289                           
+   290                           ;TestRS232.c: 30: PEIE = 0b1;
+   291  0000C6  8CF2               	bsf	intcon,6,c	;volatile
+   292                           
+   293                           ;TestRS232.c: 31: RCIE = 0b1;
+   294  0000C8  8A9D               	bsf	3997,5,c	;volatile
+   295                           
+   296                           ;TestRS232.c: 32: RX9 = 0b0;
+   297  0000CA  9CAB               	bcf	4011,6,c	;volatile
+   298                           
+   299                           ;TestRS232.c: 33: ADDEN = 0b0;
+   300  0000CC  96AB               	bcf	4011,3,c	;volatile
+   301                           
+   302                           ;TestRS232.c: 34: CREN = 0b1;
+   303  0000CE  88AB               	bsf	4011,4,c	;volatile
+   304                           
+   305                           ;TestRS232.c: 35: TXIE = 0b0;
+   306  0000D0  989D               	bcf	3997,4,c	;volatile
+   307  0000D2                     l47:
+   308  0000D2  FFFF               	dw	65535	; assembler added errata NOP
+   309  0000D4  D7FE               	goto	l47
+   310  0000D6                     __end_of_main:
+   311                           	opt stack 0
+   312  0000D6  FFFF               	dw	65535	; assembler added errata NOP
+   313                           pclatu	equ	0xFFB
+   314                           pclath	equ	0xFFA
+   315                           tblptru	equ	0xFF8
+   316                           tblptrh	equ	0xFF7
+   317                           tblptrl	equ	0xFF6
+   318                           tablat	equ	0xFF5
+   319                           prodh	equ	0xFF4
+   320                           prodl	equ	0xFF3
+   321                           intcon	equ	0xFF2
+   322                           fsr0h	equ	0xFEA
+   323                           fsr0l	equ	0xFE9
+   324                           fsr1h	equ	0xFE2
+   325                           fsr1l	equ	0xFE1
+   326                           fsr2h	equ	0xFDA
+   327                           fsr2l	equ	0xFD9
+   328                           pclatu	equ	0xFFB
+   329                           pclath	equ	0xFFA
+   330                           tblptru	equ	0xFF8
+   331                           tblptrh	equ	0xFF7
+   332                           tblptrl	equ	0xFF6
+   333                           tablat	equ	0xFF5
+   334                           prodh	equ	0xFF4
+   335                           prodl	equ	0xFF3
+   336                           intcon	equ	0xFF2
+   337                           fsr0h	equ	0xFEA
+   338                           fsr0l	equ	0xFE9
+   339                           fsr1h	equ	0xFE2
+   340                           fsr1l	equ	0xFE1
+   341                           fsr2h	equ	0xFDA
+   342                           fsr2l	equ	0xFD9
+   343                           
+   344                           	psect	rparam
+   345  0000                     pclatu	equ	0xFFB
+   346                           pclath	equ	0xFFA
+   347                           tblptru	equ	0xFF8
+   348                           tblptrh	equ	0xFF7
+   349                           tblptrl	equ	0xFF6
+   350                           tablat	equ	0xFF5
+   351                           prodh	equ	0xFF4
+   352                           prodl	equ	0xFF3
+   353                           intcon	equ	0xFF2
+   354                           fsr0h	equ	0xFEA
+   355                           fsr0l	equ	0xFE9
+   356                           fsr1h	equ	0xFE2
+   357                           fsr1l	equ	0xFE1
+   358                           fsr2h	equ	0xFDA
+   359                           fsr2l	equ	0xFD9
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         0
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM           95     15      15
+    BANK0           160      0       0
+    BANK1           256      0       0
+    BANK2           256      0       0
+    BANK3           256      0       0
+    BANK4           256      0       0
+    BANK5           256      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMRAM
+
+    None.
+
+Critical Paths under _isr in COMRAM
+
+    None.
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _isr in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _isr in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _isr in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _isr in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _isr in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Critical Paths under _isr in BANK5
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 0     0      0       0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 0
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (1) _isr                                                 15    15      0      30
+                                              0 COMRAM    15    15      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 1
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+
+ _isr (ROOT)
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMRAM           5F      0       0       0        0.0%
+EEDATA             100      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+COMRAM              5F      F       F       1       15.8%
+STACK                0      0       0       2        0.0%
+BITBANK0            A0      0       0       3        0.0%
+BANK0               A0      0       0       4        0.0%
+BITBANK1           100      0       0       5        0.0%
+BANK1              100      0       0       6        0.0%
+BITBANK2           100      0       0       7        0.0%
+BANK2              100      0       0       8        0.0%
+ABS                  0      0       0       9        0.0%
+BITBANK3           100      0       0      10        0.0%
+BANK3              100      0       0      11        0.0%
+BITBANK4           100      0       0      12        0.0%
+BANK4              100      0       0      13        0.0%
+BITBANK5           100      0       0      14        0.0%
+BANK5              100      0       0      15        0.0%
+BIGRAM             5FF      0       0      16        0.0%
+DATA                 0      0       0      17        0.0%
+BITSFR_1             0      0       0      40        0.0%
+SFR_1                0      0       0      40        0.0%
+BITSFR               0      0       0      40        0.0%
+SFR                  0      0       0      40        0.0%
+
+
+Microchip Technology PIC18 Macro Assembler V1.21 build 54009 
+Symbol Table                                                                                   Tue Jan 14 22:04:52 2014
+
+                                                              l47 00D2  
+                                                     __CFG_OSC$HS 000000  
+                                                             _GIE 007F97  
+                                                             _RX9 007D5E  
+                                                             _TX9 007D66  
+                                                             _isr 0008  
+                                                    __CFG_WDT$OFF 000000  
+                                                            ?_isr 0001  
+                                                            _BRGH 007D62  
+                                                            _CREN 007D5C  
+                                                            _LATD 000F8C  
+                                                            _IPEN 007E87  
+                                                            _PEIE 007F96  
+                                                            _RCIE 007CED  
+                                                            _RCIF 007CF5  
+                                                            i2l41 0074  
+                                                            i2l42 005E  
+                                                            i2l43 0072  
+                                                            i2l44 0074  
+                                                            _OERR 007D59  
+                                                            _SPEN 007D5F  
+                                                            _TXIE 007CEC  
+                                                            _TXEN 007D65  
+                                                            _SYNC 007D64  
+                                                            _main 00B6  
+                                                            fsr0h 000FEA  
+                                                            fsr1h 000FE2  
+                                                            fsr0l 000FE9  
+                                                            fsr2h 000FDA  
+                                                            fsr1l 000FE1  
+                                                            fsr2l 000FD9  
+                                                            pclat 000FFA  
+                                                            prodh 000FF4  
+                                                            prodl 000FF3  
+                                                            start 00B0  
+                                                           ??_isr 0001  
+                                                           _ADDEN 007D5B  
+                                                           ?_main 0001  
+                                                           i2l630 005C  
+                                                           i2l632 006E  
+                                                           i2l626 0042  
+                                                           i2l628 004A  
+                                                           _RCREG 000FAE  
+                                                           _SPBRG 000FAF  
+                                                           _TXREG 000FAD  
+                                                           tablat 000FF5  
+                                                 __initialization 00E0  
+                                                    __end_of_main 00D6  
+                                                          ??_main 0010  
+                                                   __activetblptr 000000  
+                                                          i2u1_40 004A  
+                                                          i2u1_41 0048  
+                                                          i2u2_40 005C  
+                                                          i2u2_41 005A  
+                                                          i2u3_40 006E  
+                                                          i2u3_41 006C  
+                                                          isr@rcb 000F  
+                                                          tblptrh 000FF7  
+                                                          tblptrl 000FF6  
+                                                          tblptru 000FF8  
+                                                      __accesstop 0060  
+                                         __end_of__initialization 00E0  
+                                                  __pcstackCOMRAM 0001  
+                                                         __Hparam 0000  
+                                                         __Lparam 0000  
+                                                         __pcinit 00E0  
+                                                         __ramtop 0600  
+                                                         __ptext0 00B4  
+                                                    __size_of_isr 00A8  
+                                            end_of_initialization 00E0  
+                                             start_initialization 00E0  
+                                                     __end_of_isr 00B0  
+                                                       __pintcode 0008  
+                                                        __Hrparam 0000  
+                                                        __Lrparam 0000  
+                                                   __size_of_main 0020  
+                                                        intlevel2 00DC  

@@ -1,0 +1,251 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$C:\Users\bh\AppData\Local\Temp\s4t8.obj
+end_init CODE 0 12 12 3 2
+reset_vec CODE 0 0 0 3 2
+config CONFIG 0 2007 2007 1 2
+$dist/default/production\TestI2C_Slave.X.production.obj
+cinit CODE 0 15 15 4 2
+intentry CODE 0 4 4 E 2
+text1 CODE 0 19 19 58 2
+maintext CODE 0 71 71 20 2
+cstackCOMMON COMMON 1 70 70 6 1
+strings STRING 0 91 91 8 2
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+BANK0 0020-006F 1
+BANK1 00A0-00EF 1
+BANK2 0110-016F 1
+BANK3 0190-01EF 1
+CODE 0003-0003 2
+CODE 0099-1FFF 2
+COMMON 0076-007D 1
+CONST 0003-0003 2
+CONST 0099-1FFF 2
+EEDATA 2100-21FF 2
+ENTRY 0003-0003 2
+ENTRY 0099-1FFF 2
+IDLOC 2000-2003 2
+RAM 0020-006F 1
+RAM 00A0-00EF 1
+RAM 0110-016F 1
+RAM 0190-01EF 1
+SFR0 0000-001F 1
+SFR1 0080-009F 1
+SFR2 0100-010F 1
+SFR3 0180-018F 1
+STRCODE 0003-0003 2
+STRCODE 0099-1FFF 2
+STRING 0003-0003 2
+STRING 0099-1FFF 2
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <file name>:<line number> <address> <psect name> <class name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/default/production\TestI2C_Slave.X.production.obj
+"D:\WORK\CSE\ECS\MyWork\TestI2C_Slave.X\TestI2C_Slave.c":7 4 intentry CODE
+"C:\Users\bh\AppData\Local\Temp\s4t8.":259 15 cinit CODE
+"C:\Users\bh\AppData\Local\Temp\s4t8.":260 16 cinit CODE
+"D:\WORK\CSE\ECS\MyWork\TestI2C_Slave.X\TestI2C_Slave.c":9 19 text1 CODE
+"D:\WORK\CSE\ECS\MyWork\TestI2C_Slave.X\TestI2C_Slave.c":11 1D text1 CODE
+"D:\WORK\CSE\ECS\MyWork\TestI2C_Slave.X\TestI2C_Slave.c":12 23 text1 CODE
+"D:\WORK\CSE\ECS\MyWork\TestI2C_Slave.X\TestI2C_Slave.c":14 27 text1 CODE
+"D:\WORK\CSE\ECS\MyWork\TestI2C_Slave.X\TestI2C_Slave.c":15 34 text1 CODE
+"D:\WORK\CSE\ECS\MyWork\TestI2C_Slave.X\TestI2C_Slave.c":16 3E text1 CODE
+"D:\WORK\CSE\ECS\MyWork\TestI2C_Slave.X\TestI2C_Slave.c":17 4B text1 CODE
+"D:\WORK\CSE\ECS\MyWork\TestI2C_Slave.X\TestI2C_Slave.c":19 54 text1 CODE
+"D:\WORK\CSE\ECS\MyWork\TestI2C_Slave.X\TestI2C_Slave.c":21 58 text1 CODE
+"D:\WORK\CSE\ECS\MyWork\TestI2C_Slave.X\TestI2C_Slave.c":22 5C text1 CODE
+"D:\WORK\CSE\ECS\MyWork\TestI2C_Slave.X\TestI2C_Slave.c":25 5D text1 CODE
+"D:\WORK\CSE\ECS\MyWork\TestI2C_Slave.X\TestI2C_Slave.c":27 61 text1 CODE
+"D:\WORK\CSE\ECS\MyWork\TestI2C_Slave.X\TestI2C_Slave.c":29 65 text1 CODE
+"D:\WORK\CSE\ECS\MyWork\TestI2C_Slave.X\TestI2C_Slave.c":32 71 maintext CODE
+"D:\WORK\CSE\ECS\MyWork\TestI2C_Slave.X\TestI2C_Slave.c":33 72 maintext CODE
+"D:\WORK\CSE\ECS\MyWork\TestI2C_Slave.X\TestI2C_Slave.c":34 73 maintext CODE
+"D:\WORK\CSE\ECS\MyWork\TestI2C_Slave.X\TestI2C_Slave.c":35 76 maintext CODE
+"D:\WORK\CSE\ECS\MyWork\TestI2C_Slave.X\TestI2C_Slave.c":36 79 maintext CODE
+"D:\WORK\CSE\ECS\MyWork\TestI2C_Slave.X\TestI2C_Slave.c":37 7A maintext CODE
+"D:\WORK\CSE\ECS\MyWork\TestI2C_Slave.X\TestI2C_Slave.c":38 7C maintext CODE
+"D:\WORK\CSE\ECS\MyWork\TestI2C_Slave.X\TestI2C_Slave.c":39 7D maintext CODE
+"D:\WORK\CSE\ECS\MyWork\TestI2C_Slave.X\TestI2C_Slave.c":40 7E maintext CODE
+"D:\WORK\CSE\ECS\MyWork\TestI2C_Slave.X\TestI2C_Slave.c":41 82 maintext CODE
+"D:\WORK\CSE\ECS\MyWork\TestI2C_Slave.X\TestI2C_Slave.c":42 85 maintext CODE
+"D:\WORK\CSE\ECS\MyWork\TestI2C_Slave.X\TestI2C_Slave.c":43 86 maintext CODE
+"D:\WORK\CSE\ECS\MyWork\TestI2C_Slave.X\TestI2C_Slave.c":44 8A maintext CODE
+"D:\WORK\CSE\ECS\MyWork\TestI2C_Slave.X\TestI2C_Slave.c":45 8E maintext CODE
+"D:\WORK\CSE\ECS\MyWork\TestI2C_Slave.X\TestI2C_Slave.c":46 90 maintext CODE
+"D:\WORK\CSE\ECS\MyWork\TestI2C_Slave.X\TestI2C_Slave.c":47 91 maintext CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.21\include\pic16f877a.h":2298 91 strings STRING
+"D:\WORK\CSE\ECS\MyWork\TestI2C_Slave.X\TestI2C_Slave.c":5 97 strings STRING
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+_UA 4A1 0 ABS 0 - dist/default/production\TestI2C_Slave.X.production.obj
+__S0 2008 0 ABS 0 - -
+__S1 76 0 ABS 0 - -
+__S3 0 0 ABS 0 - -
+_CKE 4A6 0 ABS 0 - dist/default/production\TestI2C_Slave.X.production.obj
+_GIE 5F 0 ABS 0 - dist/default/production\TestI2C_Slave.X.production.obj
+_CKP A4 0 ABS 0 - dist/default/production\TestI2C_Slave.X.production.obj
+_SMP 4A7 0 ABS 0 - dist/default/production\TestI2C_Slave.X.production.obj
+__Hintentry 24 0 CODE 0 intentry -
+__Lintentry 8 0 CODE 0 intentry -
+__pintentry 8 0 CODE 0 intentry dist/default/production\TestI2C_Slave.X.production.obj
+_isr 32 0 CODE 0 text1 dist/default/production\TestI2C_Slave.X.production.obj
+_PEIE 5E 0 ABS 0 - dist/default/production\TestI2C_Slave.X.production.obj
+_main E2 0 CODE 0 maintext dist/default/production\TestI2C_Slave.X.production.obj
+btemp 7E 0 ABS 0 - dist/default/production\TestI2C_Slave.X.production.obj
+start 24 0 CODE 0 init C:\Users\bh\AppData\Local\Temp\s4t8.obj
+_Add_High 12E 0 STRING 0 strings dist/default/production\TestI2C_Slave.X.production.obj
+_SSPIE 463 0 ABS 0 - dist/default/production\TestI2C_Slave.X.production.obj
+_TRISB 86 0 ABS 0 - dist/default/production\TestI2C_Slave.X.production.obj
+_SSPIF 63 0 ABS 0 - dist/default/production\TestI2C_Slave.X.production.obj
+_TRISC 87 0 ABS 0 - dist/default/production\TestI2C_Slave.X.production.obj
+reset_vec 0 0 CODE 0 reset_vec C:\Users\bh\AppData\Local\Temp\s4t8.obj
+_TRISD 88 0 ABS 0 - dist/default/production\TestI2C_Slave.X.production.obj
+_PORTB 6 0 ABS 0 - dist/default/production\TestI2C_Slave.X.production.obj
+_PORTD 8 0 ABS 0 - dist/default/production\TestI2C_Slave.X.production.obj
+wtemp0 7E 0 ABS 0 - dist/default/production\TestI2C_Slave.X.production.obj
+_nRBPU 40F 0 ABS 0 - dist/default/production\TestI2C_Slave.X.production.obj
+interrupt_function 8 0 CODE 0 intentry dist/default/production\TestI2C_Slave.X.production.obj
+__Hconfig 4010 0 CONFIG 0 config -
+__Lconfig 400E 0 CONFIG 0 config -
+__end_of__stringtab 12E 0 STRING 0 strings dist/default/production\TestI2C_Slave.X.production.obj
+isr@rc 75 0 COMMON 1 cstackCOMMON dist/default/production\TestI2C_Slave.X.production.obj
+__Hram 0 0 ABS 0 ram -
+__Lram 0 0 ABS 0 ram -
+__size_of_isr 0 0 ABS 0 - dist/default/production\TestI2C_Slave.X.production.obj
+__Hfunctab 0 0 CODE 0 functab -
+__Lfunctab 0 0 CODE 0 functab -
+__Hcommon 0 0 ABS 0 common -
+__Lcommon 0 0 ABS 0 common -
+__Heeprom_data 0 0 EEDATA 3 eeprom_data -
+__Leeprom_data 0 0 EEDATA 3 eeprom_data -
+_SSPBUF 13 0 ABS 0 - dist/default/production\TestI2C_Slave.X.production.obj
+__Habs1 0 0 ABS 0 abs1 -
+__Labs1 0 0 ABS 0 abs1 -
+_SSPCON 14 0 ABS 0 - dist/default/production\TestI2C_Slave.X.production.obj
+__Hsfr0 0 0 ABS 0 sfr0 -
+__Lsfr0 0 0 ABS 0 sfr0 -
+__Hsfr1 0 0 ABS 0 sfr1 -
+__Lsfr1 0 0 ABS 0 sfr1 -
+__Hsfr2 0 0 ABS 0 sfr2 -
+__Lsfr2 0 0 ABS 0 sfr2 -
+__Hsfr3 0 0 ABS 0 sfr3 -
+__Lsfr3 0 0 ABS 0 sfr3 -
+__Hcode 0 0 ABS 0 code -
+__Lcode 0 0 ABS 0 code -
+saved_w 7E 0 ABS 0 - dist/default/production\TestI2C_Slave.X.production.obj
+__Hinit 24 0 CODE 0 init -
+__Linit 24 0 CODE 0 init -
+__end_of_main 122 0 CODE 0 maintext dist/default/production\TestI2C_Slave.X.production.obj
+__Htext 0 0 ABS 0 text -
+__Ltext 0 0 ABS 0 text -
+end_of_initialization 2A 0 CODE 0 cinit dist/default/production\TestI2C_Slave.X.production.obj
+_SSPCON2 91 0 ABS 0 - dist/default/production\TestI2C_Slave.X.production.obj
+__stringtab 122 0 STRING 0 strings dist/default/production\TestI2C_Slave.X.production.obj
+__Hstrings 0 0 ABS 0 strings -
+__Lstrings 0 0 ABS 0 strings -
+__pstrings 122 0 STRING 0 strings dist/default/production\TestI2C_Slave.X.production.obj
+_PSPMODE 44C 0 ABS 0 - dist/default/production\TestI2C_Slave.X.production.obj
+__Hbank0 0 0 ABS 0 bank0 -
+__Lbank0 0 0 ABS 0 bank0 -
+__Hbank1 0 0 ABS 0 bank1 -
+__Lbank1 0 0 ABS 0 bank1 -
+__Hbank2 0 0 ABS 0 bank2 -
+__Lbank2 0 0 ABS 0 bank2 -
+__Hbank3 0 0 ABS 0 bank3 -
+__Lbank3 0 0 ABS 0 bank3 -
+___latbits 2 0 ABS 0 - C:\Users\bh\AppData\Local\Temp\s4t8.obj
+__Hpowerup 0 0 CODE 0 powerup -
+_SSPSTAT 94 0 ABS 0 - dist/default/production\TestI2C_Slave.X.production.obj
+__Lpowerup 0 0 CODE 0 powerup -
+__ptext1 32 0 CODE 0 text1 dist/default/production\TestI2C_Slave.X.production.obj
+__Hclrtext 0 0 ABS 0 clrtext -
+__Lclrtext 0 0 ABS 0 clrtext -
+__end_of__initialization 2A 0 CODE 0 cinit dist/default/production\TestI2C_Slave.X.production.obj
+__end_of_Add_Low 132 0 STRING 0 strings dist/default/production\TestI2C_Slave.X.production.obj
+__Hidloc 0 0 IDLOC 0 idloc -
+__Lidloc 0 0 IDLOC 0 idloc -
+__end_of_isr E2 0 CODE 0 text1 dist/default/production\TestI2C_Slave.X.production.obj
+_Add_Low 130 0 STRING 0 strings dist/default/production\TestI2C_Slave.X.production.obj
+__Hcinit 32 0 CODE 0 cinit -
+__Lcinit 2A 0 CODE 0 cinit -
+__CFG_FOSC$HS 0 0 ABS 0 - dist/default/production\TestI2C_Slave.X.production.obj
+__size_of_main 0 0 ABS 0 - dist/default/production\TestI2C_Slave.X.production.obj
+__end_of_Add_High 130 0 STRING 0 strings dist/default/production\TestI2C_Slave.X.production.obj
+__Hend_init 2A 0 CODE 0 end_init -
+__Lend_init 24 0 CODE 0 end_init -
+__Hreset_vec 6 0 CODE 0 reset_vec -
+__Lreset_vec 0 0 CODE 0 reset_vec -
+intlevel0 0 0 CODE 0 functab C:\Users\bh\AppData\Local\Temp\s4t8.obj
+__CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production\TestI2C_Slave.X.production.obj
+intlevel1 0 0 CODE 0 functab C:\Users\bh\AppData\Local\Temp\s4t8.obj
+intlevel2 0 0 CODE 0 functab C:\Users\bh\AppData\Local\Temp\s4t8.obj
+intlevel3 0 0 CODE 0 functab C:\Users\bh\AppData\Local\Temp\s4t8.obj
+intlevel4 0 0 CODE 0 functab C:\Users\bh\AppData\Local\Temp\s4t8.obj
+intlevel5 0 0 CODE 0 functab C:\Users\bh\AppData\Local\Temp\s4t8.obj
+__HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+__LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+__pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\TestI2C_Slave.X.production.obj
+start_initialization 2A 0 CODE 0 cinit dist/default/production\TestI2C_Slave.X.production.obj
+__Hmaintext 0 0 ABS 0 maintext -
+__Lmaintext 0 0 ABS 0 maintext -
+__pmaintext E2 0 CODE 0 maintext dist/default/production\TestI2C_Slave.X.production.obj
+__initialization 2A 0 CODE 0 cinit dist/default/production\TestI2C_Slave.X.production.obj
+__stringbase 12C 0 STRING 0 strings dist/default/production\TestI2C_Slave.X.production.obj
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+- 1 7E 2
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta> <class name>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+reset_vec 0 0 0 3 2 CODE
+intentry 0 4 8 8D 2 CODE
+config 0 2007 400E 1 2 CONFIG
+cstackCOMMON 1 70 70 6 1 COMMON
+strings 0 91 122 8 2 STRING

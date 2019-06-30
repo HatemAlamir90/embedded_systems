@@ -1,0 +1,10 @@
+--cpu Cortex-M3
+".\objects\main.o"
+".\objects\using_sam3n.o"
+"C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\RTOS\RTX\LIB\ARM\RTX_CM3.lib"
+".\objects\rtx_conf_cm.o"
+".\objects\startup_sam3n.o"
+".\objects\system_sam3n.o"
+--ro-base 0x00400000 --entry 0x00400000 --rw-base 0x20000000 --entry Reset_Handler --first __Vectors --strict --summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\using_sam3n.map" -o .\Objects\using_sam3n.axf

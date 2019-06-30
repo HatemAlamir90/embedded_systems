@@ -1,0 +1,590 @@
+
+
+Microchip Technology PIC18 LITE Macro Assembler V1.21 build 54009 
+                                                                                               Mon Jan  6 11:54:13 2014
+
+Microchip Technology Omniscient Code Generator (Lite mode) build 54009
+     1                           	processor	18F458
+     2                           	fnconf	rparam,??,?,0
+     3                           	opt	pw 120
+     4                           	opt	lm
+     5                           	psect	intcode,global,reloc=2,class=CODE,delta=1
+     6                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     7                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1
+     8                           	psect	text0,global,reloc=2,class=CODE,delta=1
+     9                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1
+    10                           	psect	rparam,global,class=COMRAM,space=1,delta=1
+    11  0000                     _INTCON	set	4082
+    12  0000                     _INTCON2	set	4081
+    13  0000                     _IPR1	set	3999
+    14  0000                     _LATD	set	3980
+    15  0000                     _PIE1	set	3997
+    16  0000                     _PIR1	set	3998
+    17  0000                     _PORTB	set	3969
+    18  0000                     _RCON	set	4048
+    19  0000                     _SSPBUF	set	4041
+    20  0000                     _SSPCON1	set	4038
+    21  0000                     _SSPSTAT	set	4039
+    22  0000                     _TRISB	set	3987
+    23  0000                     _TRISC	set	3988
+    24  0000                     _TRISD	set	3989
+    25                           
+    26 ;; *************** function _isr *****************
+    27 ;; Defined at:
+    28 ;;		line 6 in file "TestSPI.c"
+    29 ;; Parameters:    Size  Location     Type
+    30 ;;		None
+    31 ;; Auto vars:     Size  Location     Type
+    32 ;;  temp            1   14[COMRAM] volatile unsigned char 
+    33 ;; Return value:  Size  Location     Type
+    34 ;;		None               void
+    35 ;; Registers used:
+    36 ;;		status,2, status,0
+    37 ;; Tracked objects:
+    38 ;;		On entry : 0/0
+    39 ;;		On exit  : 0/0
+    40 ;;		Unchanged: 0/0
+    41 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+    42 ;;      Params:         0       0       0       0       0       0       0
+    43 ;;      Locals:         1       0       0       0       0       0       0
+    44 ;;      Temps:         14       0       0       0       0       0       0
+    45 ;;      Totals:        15       0       0       0       0       0       0
+    46 ;;Total ram usage:       15 bytes
+    47 ;; Hardware stack levels used:    1
+    48 ;; This function calls:
+    49 ;;		Nothing
+    50 ;; This function is called by:
+    51 ;;		Interrupt level 2
+    52 ;; This function uses a non-reentrant model
+    53 ;;
+    54                           
+    55                           	psect	intcode
+    56  000008                     __pintcode:
+    57                           	opt stack 0
+    58                           
+    59                           ; #config settings
+    60  000008                     _isr:
+    61                           	opt stack 30
+    62                           
+    63                           ;incstack = 0
+    64  000008  FFFF               	dw	65535	; errata NOP
+    65  00000A  CFFA F001          	movff	pclath,??_isr
+    66  00000E  CFFB F002          	movff	pclatu,??_isr+1
+    67  000012  CFE9 F003          	movff	fsr0l,??_isr+2
+    68  000016  CFEA F004          	movff	fsr0h,??_isr+3
+    69  00001A  CFE1 F005          	movff	fsr1l,??_isr+4
+    70  00001E  CFE2 F006          	movff	fsr1h,??_isr+5
+    71  000022  CFD9 F007          	movff	fsr2l,??_isr+6
+    72  000026  CFDA F008          	movff	fsr2h,??_isr+7
+    73  00002A  CFF3 F009          	movff	prodl,??_isr+8
+    74  00002E  CFF4 F00A          	movff	prodh,??_isr+9
+    75  000032  CFF6 F00B          	movff	tblptrl,??_isr+10
+    76  000036  CFF7 F00C          	movff	tblptrh,??_isr+11
+    77  00003A  CFF8 F00D          	movff	tblptru,??_isr+12
+    78  00003E  CFF5 F00E          	movff	tablat,??_isr+13
+    79  000042                     
+    80                           ;TestSPI.c: 7: volatile unsigned char temp;
+    81                           ;TestSPI.c: 8: if(PIR1 & 0x08)
+    82  000042  A69E               	btfss	3998,3,c	;volatile
+    83  000044  D001               	goto	i2u1_41
+    84  000046  D001               	goto	i2u1_40
+    85  000048                     i2u1_41:
+    86  000048  D006               	goto	i2l32
+    87  00004A                     i2u1_40:
+    88  00004A                     
+    89                           ;TestSPI.c: 9: {
+    90                           ;TestSPI.c: 10: PIR1 &= 0xF7;
+    91  00004A  969E               	bcf	3998,3,c	;volatile
+    92  00004C                     
+    93                           ;TestSPI.c: 11: temp = SSPBUF;
+    94  00004C  CFC9 F00F          	movff	4041,isr@temp	;volatile
+    95  000050                     
+    96                           ;TestSPI.c: 12: LATD = temp;
+    97  000050  C00F  FF8C         	movff	isr@temp,3980	;volatile
+    98  000054  D000               	goto	i2l32
+    99  000056                     i2l32:
+   100  000056  C00E  FFF5         	movff	??_isr+13,tablat
+   101  00005A  C00D  FFF8         	movff	??_isr+12,tblptru
+   102  00005E  C00C  FFF7         	movff	??_isr+11,tblptrh
+   103  000062  C00B  FFF6         	movff	??_isr+10,tblptrl
+   104  000066  C00A  FFF4         	movff	??_isr+9,prodh
+   105  00006A  C009  FFF3         	movff	??_isr+8,prodl
+   106  00006E  C008  FFDA         	movff	??_isr+7,fsr2h
+   107  000072  C007  FFD9         	movff	??_isr+6,fsr2l
+   108  000076  C006  FFE2         	movff	??_isr+5,fsr1h
+   109  00007A  C005  FFE1         	movff	??_isr+4,fsr1l
+   110  00007E  C004  FFEA         	movff	??_isr+3,fsr0h
+   111  000082  C003  FFE9         	movff	??_isr+2,fsr0l
+   112  000086  C002  FFFB         	movff	??_isr+1,pclatu
+   113  00008A  C001  FFFA         	movff	??_isr,pclath
+   114  00008E  0011               	retfie		f
+   115  000090  FFFF               	dw	65535	; errata NOP
+   116  000092                     __end_of_isr:
+   117                           	opt stack 0
+   118  0000                     pclatu	equ	0xFFB
+   119                           pclath	equ	0xFFA
+   120                           tblptru	equ	0xFF8
+   121                           tblptrh	equ	0xFF7
+   122                           tblptrl	equ	0xFF6
+   123                           tablat	equ	0xFF5
+   124                           prodh	equ	0xFF4
+   125                           prodl	equ	0xFF3
+   126                           fsr0h	equ	0xFEA
+   127                           fsr0l	equ	0xFE9
+   128                           fsr1h	equ	0xFE2
+   129                           fsr1l	equ	0xFE1
+   130                           fsr2h	equ	0xFDA
+   131                           fsr2l	equ	0xFD9
+   132                           
+   133                           	psect	cinit
+   134  0000F6                     __pcinit:
+   135                           	opt stack 0
+   136  0000F6                     start_initialization:
+   137                           	opt stack 0
+   138  0000F6                     __initialization:
+   139                           	opt stack 0
+   140  0000F6                     end_of_initialization:
+   141                           	opt stack 0
+   142  0000F6                     __end_of__initialization:
+   143                           	opt stack 0
+   144  0000F6  0100               	movlb	0
+   145  0000F8  EF4C  F000         	goto	_main	;jump to C main() function
+   146                           pclatu	equ	0xFFB
+   147                           pclath	equ	0xFFA
+   148                           tblptru	equ	0xFF8
+   149                           tblptrh	equ	0xFF7
+   150                           tblptrl	equ	0xFF6
+   151                           tablat	equ	0xFF5
+   152                           prodh	equ	0xFF4
+   153                           prodl	equ	0xFF3
+   154                           fsr0h	equ	0xFEA
+   155                           fsr0l	equ	0xFE9
+   156                           fsr1h	equ	0xFE2
+   157                           fsr1l	equ	0xFE1
+   158                           fsr2h	equ	0xFDA
+   159                           fsr2l	equ	0xFD9
+   160                           
+   161                           	psect	cstackCOMRAM
+   162  000001                     __pcstackCOMRAM:
+   163                           	opt stack 0
+   164  000001                     ??_isr:
+   165  000001                     
+   166                           ; 0 bytes @ 0x0
+   167  000001                     	ds	14
+   168  00000F                     isr@temp:
+   169                           	opt stack 0
+   170                           
+   171                           ; 1 bytes @ 0xE
+   172  00000F                     	ds	1
+   173  000010                     main@tem:
+   174                           	opt stack 0
+   175                           
+   176                           ; 1 bytes @ 0xF
+   177  000010                     	ds	1
+   178  000011                     main@in:
+   179                           	opt stack 0
+   180                           
+   181                           ; 1 bytes @ 0x10
+   182  000011                     	ds	1
+   183                           pclatu	equ	0xFFB
+   184                           pclath	equ	0xFFA
+   185                           tblptru	equ	0xFF8
+   186                           tblptrh	equ	0xFF7
+   187                           tblptrl	equ	0xFF6
+   188                           tablat	equ	0xFF5
+   189                           prodh	equ	0xFF4
+   190                           prodl	equ	0xFF3
+   191                           fsr0h	equ	0xFEA
+   192                           fsr0l	equ	0xFE9
+   193                           fsr1h	equ	0xFE2
+   194                           fsr1l	equ	0xFE1
+   195                           fsr2h	equ	0xFDA
+   196                           fsr2l	equ	0xFD9
+   197                           
+   198 ;;
+   199 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   200 ;;
+   201 ;; *************** function _main *****************
+   202 ;; Defined at:
+   203 ;;		line 16 in file "TestSPI.c"
+   204 ;; Parameters:    Size  Location     Type
+   205 ;;		None
+   206 ;; Auto vars:     Size  Location     Type
+   207 ;;  in              1   16[COMRAM] volatile unsigned char 
+   208 ;;  tem             1   15[COMRAM] volatile unsigned char 
+   209 ;; Return value:  Size  Location     Type
+   210 ;;		None               void
+   211 ;; Registers used:
+   212 ;;		wreg, status,2, status,0
+   213 ;; Tracked objects:
+   214 ;;		On entry : 0/0
+   215 ;;		On exit  : 0/0
+   216 ;;		Unchanged: 0/0
+   217 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   218 ;;      Params:         0       0       0       0       0       0       0
+   219 ;;      Locals:         2       0       0       0       0       0       0
+   220 ;;      Temps:          0       0       0       0       0       0       0
+   221 ;;      Totals:         2       0       0       0       0       0       0
+   222 ;;Total ram usage:        2 bytes
+   223 ;; Hardware stack levels required when called:    1
+   224 ;; This function calls:
+   225 ;;		Nothing
+   226 ;; This function is called by:
+   227 ;;		Startup code after reset
+   228 ;; This function uses a non-reentrant model
+   229 ;;
+   230                           
+   231                           	psect	text0
+   232  000096                     __ptext0:
+   233                           	opt stack 0
+   234  000096  FFFF               	dw	65535	; assembler added errata NOP
+   235  000098                     _main:
+   236                           	opt stack 30
+   237                           
+   238                           ;incstack = 0
+   239  000098  FFFF               	dw	65535
+   240                           
+   241                           ;TestSPI.c: 17: volatile unsigned char in,tem;
+   242                           ;TestSPI.c: 18: RCON &= 0x7F;
+   243                           
+   244                           ;incstack = 0
+   245  00009A  9ED0               	bcf	4048,7,c	;volatile
+   246                           
+   247                           ;TestSPI.c: 19: INTCON = 0xC0;
+   248  00009C  0EC0               	movlw	192
+   249  00009E  6EF2               	movwf	intcon,c	;volatile
+   250                           
+   251                           ;TestSPI.c: 20: PIR1 = 0x00;
+   252  0000A0  0E00               	movlw	0
+   253  0000A2  6E9E               	movwf	3998,c	;volatile
+   254                           
+   255                           ;TestSPI.c: 21: IPR1 = 0xFF;
+   256  0000A4  689F               	setf	3999,c	;volatile
+   257                           
+   258                           ;TestSPI.c: 22: PIE1 = 0x08;
+   259  0000A6  0E08               	movlw	8
+   260  0000A8  6E9D               	movwf	3997,c	;volatile
+   261                           
+   262                           ;TestSPI.c: 23: INTCON2 = 0x00;
+   263  0000AA  0E00               	movlw	0
+   264  0000AC  6EF1               	movwf	intcon2,c	;volatile
+   265                           
+   266                           ;TestSPI.c: 24: TRISB = 0xFF;
+   267  0000AE  6893               	setf	3987,c	;volatile
+   268                           
+   269                           ;TestSPI.c: 25: TRISD = 0x00;
+   270  0000B0  0E00               	movlw	0
+   271  0000B2  6E95               	movwf	3989,c	;volatile
+   272                           
+   273                           ;TestSPI.c: 26: SSPSTAT &= 0x3F;
+   274  0000B4  0E3F               	movlw	63
+   275  0000B6  16C7               	andwf	4039,f,c	;volatile
+   276                           
+   277                           ;TestSPI.c: 27: SSPCON1 = 0x22;
+   278  0000B8  0E22               	movlw	34
+   279  0000BA  6EC6               	movwf	4038,c	;volatile
+   280                           
+   281                           ;TestSPI.c: 28: TRISC = 0xD3;
+   282  0000BC  0ED3               	movlw	211
+   283  0000BE  6E94               	movwf	3988,c	;volatile
+   284  0000C0                     l649:
+   285  0000C0  FFFF               	dw	65535	; assembler added errata NOP
+   286                           
+   287                           ;TestSPI.c: 30: {
+   288                           ;TestSPI.c: 31: if(in != PORTB)
+   289  0000C2  5011               	movf	main@in,w,c	;volatile
+   290  0000C4  1881               	xorwf	3969,w,c	;volatile
+   291  0000C6  B4D8               	btfsc	status,2,c
+   292  0000C8  D7FB               	goto	l649
+   293                           
+   294                           ;TestSPI.c: 32: {
+   295                           ;TestSPI.c: 33: in = PORTB;
+   296  0000CA  CF81 F011          	movff	3969,main@in	;volatile
+   297                           
+   298                           ;TestSPI.c: 34: if(SSPSTAT & 0x01)
+   299  0000CE  A0C7               	btfss	4039,0,c	;volatile
+   300  0000D0  D007               	goto	L1
+   301                           
+   302                           ;TestSPI.c: 35: {
+   303                           ;TestSPI.c: 36: tem = SSPBUF;
+   304  0000D2  CFC9 F010          	movff	4041,main@tem	;volatile
+   305                           
+   306                           ;TestSPI.c: 37: LATD = tem;
+   307  0000D6  C010  FF8C         	movff	main@tem,3980	;volatile
+   308  0000DA  D002               	goto	L1
+   309  0000DC                     l655:
+   310  0000DC  FFFF               	dw	65535	; assembler added errata NOP
+   311                           
+   312                           ;TestSPI.c: 41: {
+   313                           ;TestSPI.c: 42: SSPCON1 &= 0x7F;
+   314  0000DE  9EC6               	bcf	4038,7,c	;volatile
+   315  0000E0                     L1:
+   316  0000E0  FFFF               	dw	65535	; assembler added errata NOP
+   317                           
+   318                           ;TestSPI.c: 43: SSPBUF = in;
+   319  0000E2  C011  FFC9         	movff	main@in,4041	;volatile
+   320  0000E6  AEC6               	btfss	4038,7,c	;volatile
+   321  0000E8  D7EB               	goto	l649
+   322  0000EA  D7F8               	goto	l655
+   323  0000EC                     __end_of_main:
+   324                           	opt stack 0
+   325  0000EC  FFFF               	dw	65535	; assembler added errata NOP
+   326                           pclatu	equ	0xFFB
+   327                           pclath	equ	0xFFA
+   328                           tblptru	equ	0xFF8
+   329                           tblptrh	equ	0xFF7
+   330                           tblptrl	equ	0xFF6
+   331                           tablat	equ	0xFF5
+   332                           prodh	equ	0xFF4
+   333                           prodl	equ	0xFF3
+   334                           intcon	equ	0xFF2
+   335                           intcon2	equ	0xFF1
+   336                           fsr0h	equ	0xFEA
+   337                           fsr0l	equ	0xFE9
+   338                           fsr1h	equ	0xFE2
+   339                           fsr1l	equ	0xFE1
+   340                           fsr2h	equ	0xFDA
+   341                           fsr2l	equ	0xFD9
+   342                           status	equ	0xFD8
+   343                           pclatu	equ	0xFFB
+   344                           pclath	equ	0xFFA
+   345                           tblptru	equ	0xFF8
+   346                           tblptrh	equ	0xFF7
+   347                           tblptrl	equ	0xFF6
+   348                           tablat	equ	0xFF5
+   349                           prodh	equ	0xFF4
+   350                           prodl	equ	0xFF3
+   351                           intcon	equ	0xFF2
+   352                           intcon2	equ	0xFF1
+   353                           fsr0h	equ	0xFEA
+   354                           fsr0l	equ	0xFE9
+   355                           fsr1h	equ	0xFE2
+   356                           fsr1l	equ	0xFE1
+   357                           fsr2h	equ	0xFDA
+   358                           fsr2l	equ	0xFD9
+   359                           status	equ	0xFD8
+   360                           
+   361                           	psect	rparam
+   362  0000                     pclatu	equ	0xFFB
+   363                           pclath	equ	0xFFA
+   364                           tblptru	equ	0xFF8
+   365                           tblptrh	equ	0xFF7
+   366                           tblptrl	equ	0xFF6
+   367                           tablat	equ	0xFF5
+   368                           prodh	equ	0xFF4
+   369                           prodl	equ	0xFF3
+   370                           intcon	equ	0xFF2
+   371                           intcon2	equ	0xFF1
+   372                           fsr0h	equ	0xFEA
+   373                           fsr0l	equ	0xFE9
+   374                           fsr1h	equ	0xFE2
+   375                           fsr1l	equ	0xFE1
+   376                           fsr2h	equ	0xFDA
+   377                           fsr2l	equ	0xFD9
+   378                           status	equ	0xFD8
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         0
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM           95     17      17
+    BANK0           160      0       0
+    BANK1           256      0       0
+    BANK2           256      0       0
+    BANK3           256      0       0
+    BANK4           256      0       0
+    BANK5           256      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMRAM
+
+    None.
+
+Critical Paths under _isr in COMRAM
+
+    None.
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _isr in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _isr in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _isr in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _isr in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _isr in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Critical Paths under _isr in BANK5
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 2     2      0      60
+                                             15 COMRAM     2     2      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 0
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (1) _isr                                                 15    15      0      15
+                                              0 COMRAM    15    15      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 1
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+
+ _isr (ROOT)
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMRAM           5F      0       0       0        0.0%
+EEDATA             100      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+COMRAM              5F     11      11       1       17.9%
+STACK                0      0       0       2        0.0%
+BITBANK0            A0      0       0       3        0.0%
+BANK0               A0      0       0       4        0.0%
+BITBANK1           100      0       0       5        0.0%
+BANK1              100      0       0       6        0.0%
+BITBANK2           100      0       0       7        0.0%
+BANK2              100      0       0       8        0.0%
+ABS                  0      0       0       9        0.0%
+BITBANK3           100      0       0      10        0.0%
+BANK3              100      0       0      11        0.0%
+BITBANK4           100      0       0      12        0.0%
+BANK4              100      0       0      13        0.0%
+BITBANK5           100      0       0      14        0.0%
+BANK5              100      0       0      15        0.0%
+BIGRAM             5FF      0       0      16        0.0%
+DATA                 0      0       0      17        0.0%
+BITSFR_1             0      0       0      40        0.0%
+SFR_1                0      0       0      40        0.0%
+BITSFR               0      0       0      40        0.0%
+SFR                  0      0       0      40        0.0%
+
+
+Microchip Technology PIC18 Macro Assembler V1.21 build 54009 
+Symbol Table                                                                                   Mon Jan  6 11:54:13 2014
+
+                                                   __CFG_OSC$HS 000000  
+                                                           l655 00DC  
+                                                           l649 00C0  
+                                                           _isr 0008  
+                                                  __CFG_WDT$OFF 000000  
+                                                          ?_isr 0001  
+                                                          _LATD 000F8C  
+                                                          _IPR1 000F9F  
+                                                          _PIE1 000F9D  
+                                                          i2l31 0056  
+                                                          i2l32 0056  
+                                                          _PIR1 000F9E  
+                                                          _RCON 000FD0  
+                                                          _main 0098  
+                                                          fsr0h 000FEA  
+                                                          fsr1h 000FE2  
+                                                          fsr0l 000FE9  
+                                                          fsr2h 000FDA  
+                                                          fsr1l 000FE1  
+                                                          fsr2l 000FD9  
+                                                          pclat 000FFA  
+                                                          prodh 000FF4  
+                                                          prodl 000FF3  
+                                                          start 0092  
+                                                         ??_isr 0001  
+                                                         ?_main 0001  
+                                                         i2l621 004A  
+                                                         i2l623 004C  
+                                                         i2l625 0050  
+                                                         i2l619 0042  
+                                                         _PORTB 000F81  
+                                                         _TRISB 000F93  
+                                                         _TRISC 000F94  
+                                                         _TRISD 000F95  
+                                                         tablat 000FF5  
+                                                         status 000FD8  
+                                               __initialization 00F6  
+                                                  __end_of_main 00EC  
+                                                        ??_main 0010  
+                                                 __activetblptr 000000  
+                                                        _INTCON 000FF2  
+                                                        i2u1_40 004A  
+                                                        i2u1_41 0048  
+                                                        _SSPBUF 000FC9  
+                                                        main@in 0011  
+                                                        tblptrh 000FF7  
+                                                        tblptrl 000FF6  
+                                                        tblptru 000FF8  
+                                                    __accesstop 0060  
+                                       __end_of__initialization 00F6  
+                                                __pcstackCOMRAM 0001  
+                                                       _INTCON2 000FF1  
+                                                       _SSPCON1 000FC6  
+                                                       _SSPSTAT 000FC7  
+                                                       __Hparam 0000  
+                                                       __Lparam 0000  
+                                                       __pcinit 00F6  
+                                                       __ramtop 0600  
+                                                       __ptext0 0096  
+                                                  __size_of_isr 008A  
+                                                       main@tem 0010  
+                                          end_of_initialization 00F6  
+                                                       isr@temp 000F  
+                                           start_initialization 00F6  
+                                                   __end_of_isr 0092  
+                                                     __pintcode 0008  
+                                                      __Hrparam 0000  
+                                                      __Lrparam 0000  
+                                                 __size_of_main 0054  
+                                                      intlevel2 00F2  

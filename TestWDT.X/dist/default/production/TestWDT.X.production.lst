@@ -1,0 +1,448 @@
+
+
+Microchip Technology PIC18 LITE Macro Assembler V1.21 build 54009 
+                                                                                               Fri Jan 03 23:10:32 2014
+
+Microchip Technology Omniscient Code Generator (Lite mode) build 54009
+     1                           	processor	18F458
+     2                           	fnconf	rparam,??,?,0
+     3                           	opt	pw 120
+     4                           	opt	lm
+     5                           	psect	text0,global,reloc=2,class=CODE,delta=1
+     6                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     7                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1
+     8                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1
+     9                           	psect	rparam,global,class=COMRAM,space=1,delta=1
+    10  0000                     _INTCON2	set	4081
+    11  0000                     _LATD	set	3980
+    12  0000                     _PORTB	set	3969
+    13  0000                     _TRISB	set	3987
+    14  0000                     _TRISD	set	3989
+    15                           
+    16 ;;
+    17 ;;Main: autosize = 0, tempsize = 1, incstack = 0, save=0
+    18 ;;
+    19 ;; *************** function _main *****************
+    20 ;; Defined at:
+    21 ;;		line 7 in file "TestWDT.c"
+    22 ;; Parameters:    Size  Location     Type
+    23 ;;		None
+    24 ;; Auto vars:     Size  Location     Type
+    25 ;;		None
+    26 ;; Return value:  Size  Location     Type
+    27 ;;		None               void
+    28 ;; Registers used:
+    29 ;;		wreg, status,2
+    30 ;; Tracked objects:
+    31 ;;		On entry : 0/0
+    32 ;;		On exit  : 0/0
+    33 ;;		Unchanged: 0/0
+    34 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+    35 ;;      Params:         0       0       0       0       0       0       0
+    36 ;;      Locals:         0       0       0       0       0       0       0
+    37 ;;      Temps:          1       0       0       0       0       0       0
+    38 ;;      Totals:         1       0       0       0       0       0       0
+    39 ;;Total ram usage:        1 bytes
+    40 ;; This function calls:
+    41 ;;		Nothing
+    42 ;; This function is called by:
+    43 ;;		Startup code after reset
+    44 ;; This function uses a non-reentrant model
+    45 ;;
+    46                           
+    47                           	psect	text0
+    48  003EDA                     __ptext0:
+    49                           	opt stack 0
+    50  003EDA  FFFF               	dw	65535	; assembler added errata NOP
+    51                           
+    52                           ; #config settings
+    53  003EDC                     _main:
+    54                           	opt stack 31
+    55                           
+    56                           ;incstack = 0
+    57  003EDC  FFFF               	dw	65535
+    58                           
+    59                           ;TestWDT.c: 8: TRISB = 0xFF;
+    60                           
+    61                           ;incstack = 0
+    62  003EDE  6893               	setf	3987,c	;volatile
+    63                           
+    64                           ;TestWDT.c: 9: INTCON2 = 0x00;
+    65  003EE0  0E00               	movlw	0
+    66  003EE2  6EF1               	movwf	intcon2,c	;volatile
+    67                           
+    68                           ;TestWDT.c: 10: TRISD = 0xFE;
+    69  003EE4  0EFE               	movlw	254
+    70  003EE6  6E95               	movwf	3989,c	;volatile
+    71                           
+    72                           ;TestWDT.c: 11: LATD = 0xFE;
+    73  003EE8  0EFE               	movlw	254
+    74  003EEA  6E8C               	movwf	3980,c	;volatile
+    75                           
+    76                           ;TestWDT.c: 12: _delay((unsigned long)((197)*(4000000/4000.0)));
+    77  003EEC  0EC0               	movlw	192
+    78  003EEE  6E01               	movwf	??_main& (0+255),c
+    79  003EF0  0E01               	movlw	257
+    80  003EF2                     u27:
+    81  003EF2  FFFF               	dw	65535	; assembler added errata NOP
+    82  003EF4  2EE8               	decfsz	wreg,f,c
+    83  003EF6  D7FD               	goto	u27
+    84  003EF8  2E01               	decfsz	??_main& (0+255),f,c
+    85  003EFA  D7FB               	goto	u27
+    86  003EFC  F000               	nop	
+    87                           
+    88                           ;TestWDT.c: 13: _delay((unsigned long)((197)*(4000000/4000.0)));
+    89  003EFE  0EC0               	movlw	192
+    90  003F00  6E01               	movwf	??_main& (0+255),c
+    91  003F02  0E01               	movlw	257
+    92  003F04                     u37:
+    93  003F04  FFFF               	dw	65535	; assembler added errata NOP
+    94  003F06  2EE8               	decfsz	wreg,f,c
+    95  003F08  D7FD               	goto	u37
+    96  003F0A  2E01               	decfsz	??_main& (0+255),f,c
+    97  003F0C  D7FB               	goto	u37
+    98  003F0E  F000               	nop	
+    99                           
+   100                           ;TestWDT.c: 14: _delay((unsigned long)((197)*(4000000/4000.0)));
+   101  003F10  0EC0               	movlw	192
+   102  003F12  6E01               	movwf	??_main& (0+255),c
+   103  003F14  0E01               	movlw	257
+   104  003F16                     u47:
+   105  003F16  FFFF               	dw	65535	; assembler added errata NOP
+   106  003F18  2EE8               	decfsz	wreg,f,c
+   107  003F1A  D7FD               	goto	u47
+   108  003F1C  2E01               	decfsz	??_main& (0+255),f,c
+   109  003F1E  D7FB               	goto	u47
+   110  003F20  F000               	nop	
+   111                           
+   112                           ;TestWDT.c: 15: _delay((unsigned long)((197)*(4000000/4000.0)));
+   113  003F22  0EC0               	movlw	192
+   114  003F24  6E01               	movwf	??_main& (0+255),c
+   115  003F26  0E01               	movlw	257
+   116  003F28                     u57:
+   117  003F28  FFFF               	dw	65535	; assembler added errata NOP
+   118  003F2A  2EE8               	decfsz	wreg,f,c
+   119  003F2C  D7FD               	goto	u57
+   120  003F2E  2E01               	decfsz	??_main& (0+255),f,c
+   121  003F30  D7FB               	goto	u57
+   122  003F32  F000               	nop	
+   123                           
+   124                           ;TestWDT.c: 16: _delay((unsigned long)((197)*(4000000/4000.0)));
+   125  003F34  0EC0               	movlw	192
+   126  003F36  6E01               	movwf	??_main& (0+255),c
+   127  003F38  0E01               	movlw	257
+   128  003F3A                     u67:
+   129  003F3A  FFFF               	dw	65535	; assembler added errata NOP
+   130  003F3C  2EE8               	decfsz	wreg,f,c
+   131  003F3E  D7FD               	goto	u67
+   132  003F40  2E01               	decfsz	??_main& (0+255),f,c
+   133  003F42  D7FB               	goto	u67
+   134  003F44  F000               	nop	
+   135                           
+   136                           ;TestWDT.c: 17: _delay((unsigned long)((197)*(4000000/4000.0)));
+   137  003F46  0EC0               	movlw	192
+   138  003F48  6E01               	movwf	??_main& (0+255),c
+   139  003F4A  0E01               	movlw	257
+   140  003F4C                     u77:
+   141  003F4C  FFFF               	dw	65535	; assembler added errata NOP
+   142  003F4E  2EE8               	decfsz	wreg,f,c
+   143  003F50  D7FD               	goto	u77
+   144  003F52  2E01               	decfsz	??_main& (0+255),f,c
+   145  003F54  D7FB               	goto	u77
+   146  003F56  F000               	nop	
+   147                           
+   148                           ;TestWDT.c: 18: _delay((unsigned long)((197)*(4000000/4000.0)));
+   149  003F58  0EC0               	movlw	192
+   150  003F5A  6E01               	movwf	??_main& (0+255),c
+   151  003F5C  0E01               	movlw	257
+   152  003F5E                     u87:
+   153  003F5E  FFFF               	dw	65535	; assembler added errata NOP
+   154  003F60  2EE8               	decfsz	wreg,f,c
+   155  003F62  D7FD               	goto	u87
+   156  003F64  2E01               	decfsz	??_main& (0+255),f,c
+   157  003F66  D7FB               	goto	u87
+   158  003F68  F000               	nop	
+   159                           
+   160                           ;TestWDT.c: 19: _delay((unsigned long)((197)*(4000000/4000.0)));
+   161  003F6A  0EC0               	movlw	192
+   162  003F6C  6E01               	movwf	??_main& (0+255),c
+   163  003F6E  0E01               	movlw	257
+   164  003F70                     u97:
+   165  003F70  FFFF               	dw	65535	; assembler added errata NOP
+   166  003F72  2EE8               	decfsz	wreg,f,c
+   167  003F74  D7FD               	goto	u97
+   168  003F76  2E01               	decfsz	??_main& (0+255),f,c
+   169  003F78  D7FB               	goto	u97
+   170  003F7A  F000               	nop	
+   171                           
+   172                           ;TestWDT.c: 20: _delay((unsigned long)((197)*(4000000/4000.0)));
+   173  003F7C  0EC0               	movlw	192
+   174  003F7E  6E01               	movwf	??_main& (0+255),c
+   175  003F80  0E01               	movlw	257
+   176  003F82                     u107:
+   177  003F82  FFFF               	dw	65535	; assembler added errata NOP
+   178  003F84  2EE8               	decfsz	wreg,f,c
+   179  003F86  D7FD               	goto	u107
+   180  003F88  2E01               	decfsz	??_main& (0+255),f,c
+   181  003F8A  D7FB               	goto	u107
+   182  003F8C  F000               	nop	
+   183  003F8E  0004               	clrwdt		;# 
+   184                           
+   185                           ;TestWDT.c: 22: _delay((unsigned long)((197)*(4000000/4000.0)));
+   186  003F90  0EC0               	movlw	192
+   187  003F92  6E01               	movwf	??_main& (0+255),c
+   188  003F94  0E01               	movlw	257
+   189  003F96                     u117:
+   190  003F96  FFFF               	dw	65535	; assembler added errata NOP
+   191  003F98  2EE8               	decfsz	wreg,f,c
+   192  003F9A  D7FD               	goto	u117
+   193  003F9C  2E01               	decfsz	??_main& (0+255),f,c
+   194  003F9E  D7FB               	goto	u117
+   195  003FA0  F000               	nop	
+   196                           
+   197                           ;TestWDT.c: 23: LATD = 0xFF;
+   198  003FA2  688C               	setf	3980,c	;volatile
+   199  003FA4                     l15:
+   200  003FA4  FFFF               	dw	65535	; assembler added errata NOP
+   201  003FA6  0004               	clrwdt		;# 
+   202  003FA8                     l16:
+   203  003FA8  FFFF               	dw	65535	; assembler added errata NOP
+   204  003FAA  AE81               	btfss	3969,7,c	;volatile
+   205  003FAC  D7FD               	goto	l16
+   206                           
+   207                           ;TestWDT.c: 28: LATD = 0xFE;
+   208  003FAE  0EFE               	movlw	254
+   209  003FB0  6E8C               	movwf	3980,c	;volatile
+   210                           
+   211                           ;TestWDT.c: 29: _delay((unsigned long)((100)*(4000000/4000.0)));
+   212  003FB2  0E62               	movlw	98
+   213  003FB4  6E01               	movwf	??_main& (0+255),c
+   214  003FB6  0E76               	movlw	118
+   215  003FB8                     u127:
+   216  003FB8  FFFF               	dw	65535	; assembler added errata NOP
+   217  003FBA  2EE8               	decfsz	wreg,f,c
+   218  003FBC  D7FD               	goto	u127
+   219  003FBE  2E01               	decfsz	??_main& (0+255),f,c
+   220  003FC0  D7FB               	goto	u127
+   221  003FC2  F000               	nop	
+   222                           
+   223                           ;TestWDT.c: 30: _delay((unsigned long)((100)*(4000000/4000.0)));
+   224  003FC4  0E62               	movlw	98
+   225  003FC6  6E01               	movwf	??_main& (0+255),c
+   226  003FC8  0E76               	movlw	118
+   227  003FCA                     u137:
+   228  003FCA  FFFF               	dw	65535	; assembler added errata NOP
+   229  003FCC  2EE8               	decfsz	wreg,f,c
+   230  003FCE  D7FD               	goto	u137
+   231  003FD0  2E01               	decfsz	??_main& (0+255),f,c
+   232  003FD2  D7FB               	goto	u137
+   233  003FD4  F000               	nop	
+   234                           
+   235                           ;TestWDT.c: 31: LATD = 0xFF;
+   236  003FD6  688C               	setf	3980,c	;volatile
+   237                           
+   238                           ;TestWDT.c: 32: _delay((unsigned long)((100)*(4000000/4000.0)));
+   239  003FD8  0E62               	movlw	98
+   240  003FDA  6E01               	movwf	??_main& (0+255),c
+   241  003FDC  0E76               	movlw	118
+   242  003FDE                     u147:
+   243  003FDE  FFFF               	dw	65535	; assembler added errata NOP
+   244  003FE0  2EE8               	decfsz	wreg,f,c
+   245  003FE2  D7FD               	goto	u147
+   246  003FE4  2E01               	decfsz	??_main& (0+255),f,c
+   247  003FE6  D7FB               	goto	u147
+   248  003FE8  F000               	nop	
+   249                           
+   250                           ;TestWDT.c: 33: _delay((unsigned long)((100)*(4000000/4000.0)));
+   251  003FEA  0E62               	movlw	98
+   252  003FEC  6E01               	movwf	??_main& (0+255),c
+   253  003FEE  0E76               	movlw	118
+   254  003FF0                     u157:
+   255  003FF0  FFFF               	dw	65535	; assembler added errata NOP
+   256  003FF2  2EE8               	decfsz	wreg,f,c
+   257  003FF4  D7FD               	goto	u157
+   258  003FF6  2E01               	decfsz	??_main& (0+255),f,c
+   259  003FF8  D7FB               	goto	u157
+   260  003FFA  F000               	nop	
+   261  003FFC  D7D3               	goto	l15
+   262  003FFE                     __end_of_main:
+   263                           	opt stack 0
+   264  003FFE  FFFF               	dw	65535	; assembler added errata NOP
+   265  0000                     intcon2	equ	0xFF1
+   266                           wreg	equ	0xFE8
+   267                           
+   268                           	psect	cinit
+   269  003ECC                     __pcinit:
+   270                           	opt stack 0
+   271  003ECC                     start_initialization:
+   272                           	opt stack 0
+   273  003ECC                     __initialization:
+   274                           	opt stack 0
+   275  003ECC                     end_of_initialization:
+   276                           	opt stack 0
+   277  003ECC                     __end_of__initialization:
+   278                           	opt stack 0
+   279  003ECC  0100               	movlb	0
+   280  003ECE  EF6E  F01F         	goto	_main	;jump to C main() function
+   281                           intcon2	equ	0xFF1
+   282                           wreg	equ	0xFE8
+   283                           
+   284                           	psect	cstackCOMRAM
+   285  000001                     __pcstackCOMRAM:
+   286                           	opt stack 0
+   287  000001                     ??_main:
+   288                           
+   289                           ; 0 bytes @ 0x0
+   290  000001                     	ds	1
+   291                           intcon2	equ	0xFF1
+   292                           wreg	equ	0xFE8
+   293                           intcon2	equ	0xFF1
+   294                           wreg	equ	0xFE8
+   295                           
+   296                           	psect	rparam
+   297  0000                     intcon2	equ	0xFF1
+   298                           wreg	equ	0xFE8
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         0
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM           95      1       1
+    BANK0           160      0       0
+    BANK1           256      0       0
+    BANK2           256      0       0
+    BANK3           256      0       0
+    BANK4           256      0       0
+    BANK5           256      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMRAM
+
+    None.
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 1     1      0       0
+                                              0 COMRAM     1     1      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 0
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMRAM           5F      0       0       0        0.0%
+EEDATA             100      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+COMRAM              5F      1       1       1        1.1%
+STACK                0      0       0       2        0.0%
+BITBANK0            A0      0       0       3        0.0%
+BANK0               A0      0       0       4        0.0%
+BITBANK1           100      0       0       5        0.0%
+BANK1              100      0       0       6        0.0%
+BITBANK2           100      0       0       7        0.0%
+BANK2              100      0       0       8        0.0%
+ABS                  0      0       0       9        0.0%
+BITBANK3           100      0       0      10        0.0%
+BANK3              100      0       0      11        0.0%
+BITBANK4           100      0       0      12        0.0%
+BANK4              100      0       0      13        0.0%
+BITBANK5           100      0       0      14        0.0%
+BANK5              100      0       0      15        0.0%
+BIGRAM             5FF      0       0      16        0.0%
+DATA                 0      0       0      17        0.0%
+BITSFR_1             0      0       0      40        0.0%
+SFR_1                0      0       0      40        0.0%
+BITSFR               0      0       0      40        0.0%
+SFR                  0      0       0      40        0.0%
+
+
+Microchip Technology PIC18 Macro Assembler V1.21 build 54009 
+Symbol Table                                                                                   Fri Jan 03 23:10:32 2014
+
+                                                            l15 3FA4  
+                                                            l16 3FA8  
+                                                            u27 3EF2  
+                                                            u37 3F04  
+                                                            u47 3F16  
+                                                            u57 3F28  
+                                                            u67 3F3A  
+                                                            u77 3F4C  
+                                                            u87 3F5E  
+                                                            u97 3F70  
+                                                   __CFG_OSC$HS 000000  
+                                                   __CFG_WDT$ON 000000  
+                                                           u107 3F82  
+                                                           u117 3F96  
+                                                           u127 3FB8  
+                                                           u137 3FCA  
+                                                           u147 3FDE  
+                                                           u157 3FF0  
+                                                           wreg 000FE8  
+                                                          _LATD 000F8C  
+                                                          _main 3EDC  
+                                                          start 0002  
+                                                         ?_main 0001  
+                                                         _PORTB 000F81  
+                                                         _TRISB 000F93  
+                                                         _TRISD 000F95  
+                                               __initialization 3ECC  
+                                                  __end_of_main 3FFE  
+                                                        ??_main 0001  
+                                                 __activetblptr 000000  
+                                                __CFG_WDTPS$128 000000  
+                                                    __accesstop 0060  
+                                       __end_of__initialization 3ECC  
+                                                __pcstackCOMRAM 0001  
+                                                       _INTCON2 000FF1  
+                                                       __Hparam 0000  
+                                                       __Lparam 0000  
+                                                       __pcinit 3ECC  
+                                                       __ramtop 0600  
+                                                       __ptext0 3EDA  
+                                          end_of_initialization 3ECC  
+                                           start_initialization 3ECC  
+                                                      __Hrparam 0000  
+                                                      __Lrparam 0000  
+                                                 __size_of_main 0122  

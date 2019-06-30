@@ -1,0 +1,126 @@
+Dependencies for Project 'using_sam3n', Target 'Target 1': (DO NOT MODIFY !)
+F (.\main.c)(0x56EFDA97)(-c --cpu Cortex-M3 -D__RTX -D__EVAL -g -O0 --apcs=interwork --split_sections-I E:\Documents\Work\MyWork\ECS\UsingSAM3N\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\RTOS\RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include-D__UVISION_VERSION="516" -D_RTE_ -D__SAM3N4C__-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+I (osObjects.h)(0x51ADCB70)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\RTOS\RTX\INC\cmsis_os.h)(0x5502D38E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AF4A52)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55AF4A52)
+I (using_sam3n.h)(0x56EFD790)
+F (.\using_sam3n.c)(0x56EFEC0D)(-c --cpu Cortex-M3 -D__RTX -D__EVAL -g -O0 --apcs=interwork --split_sections-I E:\Documents\Work\MyWork\ECS\UsingSAM3N\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\RTOS\RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include-D__UVISION_VERSION="516" -D_RTE_ -D__SAM3N4C__-o .\objects\using_sam3n.o --omf_browse .\objects\using_sam3n.crf --depend .\objects\using_sam3n.d)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\sam3n.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\sam3n4c.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AF4A52)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include\core_cm3.h)(0x55099064)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include\core_cmInstr.h)(0x55099064)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include\core_cmFunc.h)(0x55099064)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\system_sam3n.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\component\adc.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\component\chipid.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\component\dacc.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\component\efc.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\component\gpbr.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\component\matrix.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\component\pdc.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\component\pio.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\component\pmc.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\component\pwm.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\component\rstc.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\component\rtc.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\component\rtt.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\component\spi.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\component\supc.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\component\tc.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\component\twi.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\component\uart.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\component\usart.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\component\wdt.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\spi.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\tc0.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\tc1.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\twi0.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\twi1.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\pwm.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\usart0.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\usart1.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\adc.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\dacc.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\matrix.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\pmc.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\uart0.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\chipid.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\uart1.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\efc.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\pioa.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\piob.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\pioc.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\rstc.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\supc.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\rtt.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\wdt.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\rtc.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\gpbr.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\pio\sam3n4c.h)(0x56701C8A)
+I (using_sam3n.h)(0x56EFD790)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\RTOS\RTX\INC\cmsis_os.h)(0x5502D38E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55AF4A52)
+F (.\using_sam3n.h)(0x56EFD790)()
+F (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\RTOS\RTX\LIB\ARM\RTX_CM3.lib)(0x550AC5C6)()
+F (RTE\CMSIS\RTX_Conf_CM.c)(0x5502E29E)(-c --cpu Cortex-M3 -D__RTX -D__EVAL -g -O0 --apcs=interwork --split_sections-I E:\Documents\Work\MyWork\ECS\UsingSAM3N\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\RTOS\RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include-D__UVISION_VERSION="516" -D_RTE_ -D__SAM3N4C__-o .\objects\rtx_conf_cm.o --omf_browse .\objects\rtx_conf_cm.crf --depend .\objects\rtx_conf_cm.d)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\RTOS\RTX\INC\cmsis_os.h)(0x5502D38E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AF4A52)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55AF4A52)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\RTOS\RTX\INC\RTX_CM_lib.h)(0x5502D38E)
+F (RTE\Device\ATSAM3N4A\startup_SAM3N.s)(0x516D4B44)(--cpu Cortex-M3 --pd "__RTX SETA 1" --pd "__EVAL SETA 1" -g --apcs=interwork -I E:\Documents\Work\MyWork\ECS\UsingSAM3N\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\RTOS\RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include--pd "__UVISION_VERSION SETA 516" --pd "_RTE_ SETA 1" --pd "__SAM3N4C__ SETA 1"--list .\listings\startup_sam3n.lst --xref -o .\objects\startup_sam3n.o --depend .\objects\startup_sam3n.d)
+F (RTE\Device\ATSAM3N4A\system_SAM3N.c)(0x56EFECA4)(-c --cpu Cortex-M3 -D__RTX -D__EVAL -g -O0 --apcs=interwork --split_sections-I E:\Documents\Work\MyWork\ECS\UsingSAM3N\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\RTOS\RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include-D__UVISION_VERSION="516" -D_RTE_ -D__SAM3N4C__-o .\objects\system_sam3n.o --omf_browse .\objects\system_sam3n.crf --depend .\objects\system_sam3n.d)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\sam3n.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\sam3n4c.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AF4A52)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include\core_cm3.h)(0x55099064)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include\core_cmInstr.h)(0x55099064)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include\core_cmFunc.h)(0x55099064)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\system_sam3n.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\component\adc.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\component\chipid.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\component\dacc.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\component\efc.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\component\gpbr.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\component\matrix.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\component\pdc.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\component\pio.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\component\pmc.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\component\pwm.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\component\rstc.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\component\rtc.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\component\rtt.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\component\spi.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\component\supc.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\component\tc.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\component\twi.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\component\uart.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\component\usart.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\component\wdt.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\spi.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\tc0.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\tc1.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\twi0.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\twi1.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\pwm.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\usart0.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\usart1.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\adc.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\dacc.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\matrix.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\pmc.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\uart0.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\chipid.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\uart1.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\efc.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\pioa.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\piob.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\pioc.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\rstc.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\supc.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\rtt.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\wdt.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\rtc.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\instance\gpbr.h)(0x56701C8A)
+I (C:\Keil_v5\ARM\PACK\Keil\SAM3_DFP\1.1.0\Device\SAM3N\Include\pio\sam3n4c.h)(0x56701C8A)
