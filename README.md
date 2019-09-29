@@ -1,4 +1,4 @@
-# embedded_systems
+# Embedded Software Projects 
 Embedded Systems projects
 
 This repository contains many of the embedded software projects that I worked on.
